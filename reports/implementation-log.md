@@ -89,16 +89,18 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 
 ---
 
-## T01 预探测（只读，仅安装与版本，未做完整能力探测）
+## T01 · 四个 Agent 能力探测（只读，未读凭证、未改配置）
 
-**实证等级**：`文档校验通过`（本机 `command -v` / Info.plist 读取，未读取任何凭证、未改任何配置）
+**状态**：4 份报告写入 `reports/capabilities/`，对 `capability-report.schema.json` 全 PASS。
+**证据**：`reports/capabilities/{codex,workbuddy,cursor,hermes}.json` + `reports/capabilities/SUMMARY.md` + `evidence/probes/`
 
-| Agent | 本机实测 | 备注 |
-|---|---|---|
-| Codex | `~/.codex/` 存在（含 `hooks.json`、`config.toml`、`version.json`、`app-server-control/app-server-control.sock`）；`version.json` 记录 `latest_version 0.152.0`（2026-09-01 检查）；二进制在 `~/.local/bin/codex`（不在受限 PATH 内，需显式路径调用） | 已安装且有使用痕迹；**CLI-only vs 桌面覆盖待 T01 确认** |
-| WorkBuddy | `/Applications/WorkBuddy.app` 版本 **5.5.3** | 无 CLI；桌面结构化事件源未知 → T01 最高风险项 |
-| Cursor | `/Applications/Cursor.app` 版本 **3.19.14**；`cursor` CLI 不在受限 PATH | IDE Agent Hooks 需在 T01 核对实际入口 |
-| Hermes | 未在 PATH 中找到；未进一步定位 | 待 T01 确认是否安装 |
+- [x] 实机探测版本与入口
+  - Codex CLI 0.152.0，`~/.local/bin/codex`，`~/.codex/config.toml`（notify 已指向 SkyComputerUseClient），无 Codex hooks dir
+  - WorkBuddy Desktop 5.5.3，`/Applications/WorkBuddy.app`；主进程在加密 `app.asar`（不逆向）；`app.asar.unpacked/main/` 仅 `qimei-helper.js`；`app.asar/cli/` 是 `@genie/agent-cli`（CodeBuddy CLI 重打包）→ **CodeBuddy CLI 与 WorkBuddy Desktop 不可等同** 已实测确认
+  - Cursor 3.19.14，`~/.cursor/hooks.json` v1 已用 AgentKeyboard + memmy 占用；任何新增必须最小 diff
+  - Hermes 0.21.0，`~/.local/bin/hermes`，plugin model 完整；`hermes hooks list` 6 个 hooks 全部已有调用方（AgentKeyboard + mnemon）
+- [x] 4 份 capability-report 通过 schema 校验（0 errors）
+- [ ] 用户接受 WorkBuddy 降级（否则 T18 维持 BLOCKED_SOURCE）
+- [ ] T15–T18 干跑 Adapter 实现
 
-未做：读取 `~/.codex/auth.json` 或任何含凭证的文件；修改任何 Agent 配置；安装 Hook/MCP。
-下一步（T01）将按 `docs/adapters/*.md` 逐源填写 `observed/documented/not_available` 证据，并给出 WorkBuddy 的 A/B 选项。
+替换了先前"T01 预探测"占位（旧版本只看了版本，未做完整能力门）。

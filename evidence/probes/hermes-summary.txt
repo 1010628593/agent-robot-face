@@ -1,0 +1,16 @@
+# Hermes 实机探测（只读，无凭据）
+
+- 二进制：`/Users/hanxin/.local/bin/hermes`，版本 **Hermes Agent v0.21.0 (2026.8.31)**
+  - upstream `5ac75e91` / local `63279301`（+1 carried commit）
+  - install method = `git` → install dir `~/.hermes/hermes-agent`
+- 安装目录 `~/.hermes/` 包含：`SOUL.md / agent-hooks/ / assets/ / audio_cache/ / auth.json* / bin/ / bootstrap-cache/ / cache/ / channel_directory.json / config.yaml / context_length_cache.yaml / desktop-plugins/ / hermes-agent/ / hooks/ / logs/ / memory/ / plugins/ / sessions/ / settings.yaml / shell-hooks-allowlist.json[.lock] / state-snapshots/`
+- `agent-hooks/` 仅一个目录 `mnemon/`（用户记忆工具，非 Hermes 官方 hook）
+- `plugins/` 三个已装：
+  - `herdr-agent-state` v1.0（Report Hermes Agent lifecycle state to Herdr panes）
+  - `memmy-memory` v0.1.0，kind=`exclusive`
+  - `memmy-resume` v0.1.0，kind=`standalone`
+- `~/.hermes/node/bin/` 含 node/npm/npx/pnpm/npmx（Hermes 自带 Node 运行时）
+- `~/.hermes/hermes-agent/hermes_cli/hooks.py` + `subcommands/hooks.py` 是 Hermes CLI 的 hooks 子命令实现；与 `~/.hermes/hooks/` 是用户配置的 shell-script hooks（`hermes hooks list/test/revoke/doctor`）
+- `config.yaml` `_config_version: 40`；含 agent.max_turns=60 与多 personalities；**未读取 auth.json 与 credentials**
+- subcommand 总数 70+：`chat / model / gateway / proxy / hooks / mcp / monitor / dashboard / serve / desktop / gui / acp / approvals ...`
+- 未发起任何 chat、未读取任何 provider 凭据

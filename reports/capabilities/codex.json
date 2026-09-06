@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "agent_id": "codex",
+  "product": "OpenAI Codex",
+  "installed_version": "0.152.0",
+  "entry_point": "cli",
+  "status": "partial",
+  "capabilities": {
+    "state": "observed",
+    "usage": "import",
+    "quota": "none",
+    "open_agent": true,
+    "open_usage": false
+  },
+  "state_events": [
+    "beforeSubmitPrompt",
+    "preToolUse",
+    "postToolUse",
+    "stop",
+    "afterAgentResponse"
+  ],
+  "usage_fields": [
+    "turn_started_at",
+    "turn_ended_at",
+    "tool_name",
+    "tool_latency_ms"
+  ],
+  "quota_source": "none: no public read endpoint for Codex CLI quota",
+  "last_verified_at": "2026-09-06T13:12:26Z",
+  "evidence_files": [
+    "evidence/probes/codex-summary.txt",
+    "Bot_Status_v1_Handoff/docs/adapters/CODEX.md"
+  ],
+  "limitations": [
+    "本机 Codex CLI 已装(codex-cli 0.152.0, ~/.local/bin/codex), 但本地Hook dir 不存在; native events 需通过 Codex 自身的 Notify 机制(已在 config.toml 配置 SkyComputerUseClient) 或 app-server",
+    "无 OpenAI 公共API直接拉取账户quota; ChatGPT 账户 usage/rateLimits 文档存在但需要 OAuth 流程且文档明确为 'ChatGPT 模式' 非 'Codex CLI 模式'",
+    "config.toml 显示 sandbox_mode=danger-full-access + approval_policy=on-request, 任何 tool 触发需 on-request 路径",
+    "模型 gpt-6-astra, reasoning_effort=ultra, verbosity=medium — 高延迟/高消耗观察窗口会偏长"
+  ],
+  "auth_required": true,
+  "user_accepted_degradation": false
+}

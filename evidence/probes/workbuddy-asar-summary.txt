@@ -1,0 +1,16 @@
+# WorkBuddy Desktop 实机探测（只读，无凭据）
+
+- App：`/Applications/WorkBuddy.app`，版本 5.5.3，bundle id `com.tencent.workbuddy.mac`
+- Resources 顶层：`TuringShield.bundle`、本地化目录（多语言）、`app.asar`、`app.asar.unpacked`、`default_app.asar`
+- `app.asar.unpacked/main/`：**仅 1 个文件** — `qimei-helper.js`（腾讯遥测，非 Agent hook emitter）
+- `app.asar.unpacked/cli/vendor/shim/`：进程级 broker — `brokered-bin/`、`safe-bin/`、`sitecustomize.py`、`brokered-sandbox-bash-env.sh`、`node-brokered-fs-shim.cjs`、`node-safe-delete-shim.cjs`、`broker-ipc-client.cjs`、`broker-program-policy-check.cjs`、`genie-safe-delete.cjs`
+  - 这些 shim 只作用于 WorkBuddy 启动的子进程；本项目独立 Python venv / `tools/idf-env.sh` 不受影响（已实测 Python `open()` 在 project 内路径正常）
+- `app.asar`（主进程源码）：**加密**，`require()` 直接读会抛 `Invalid or unexpected token`
+- `app.asar` 完整提取后发现仅含 `cli/` 子目录（CodeBuddy CLI 重打包，见 `summary/codebuddy-cli-package.json` + `summary/codebuddy-cli-product.json`）：
+  - `cli/package.json` name=`@genie/agent-cli`，description=`Use CodeBuddy, Tencent's AI assistant, right from your terminal`
+  - bin: `codebuddy-code / codebuddy / cbc / cbc-prewarm`
+  - 依赖含 `@agentclientprotocol/sdk`（ACP 协议）、`@anthropic-ai/sandbox-runtime`、`@celljs/*`
+  - `cli/product.json` 标 productName=`WorkBuddy`、platform=`CLI`、endpoint=`https://copilot.tencent.com`
+  - authentication.id=`workbuddy-desktop`，type=`cli-external-link`（跳转链接登录）
+- **结论**：WorkBuddy Desktop 主进程的 hook emitter 不可在不解密/不逆向的前提下定位。本项目**不会**做逆向、字符串提取或绕过 broker。
+- 依据 `WORKBUDDY.md` 与 `08_ADAPTERS.md §5`，WorkBuddy 走 MCP 降级到 `reported`（短过期、质量低、需用户接受降级才能声明非 `blocked`）。

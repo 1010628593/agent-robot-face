@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "agent_id": "workbuddy",
+  "product": "Tencent WorkBuddy Desktop",
+  "installed_version": "5.5.3",
+  "entry_point": "desktop",
+  "status": "blocked",
+  "capabilities": {
+    "state": "reported",
+    "usage": "import",
+    "quota": "none",
+    "open_agent": true,
+    "open_usage": true
+  },
+  "state_events": [
+    "mcp_reported_run_started",
+    "mcp_reported_tool_started",
+    "mcp_reported_tool_finished",
+    "mcp_reported_run_ended",
+    "mcp_reported_status_change"
+  ],
+  "usage_fields": [
+    "turn_count",
+    "tool_call_count",
+    "report_quality"
+  ],
+  "quota_source": "none: MCP self-report path; no stable read API",
+  "last_verified_at": "2026-09-06T13:12:26Z",
+  "evidence_files": [
+    "evidence/probes/workbuddy-asar-summary.txt",
+    "Bot_Status_v1_Handoff/docs/adapters/WORKBUDDY.md"
+  ],
+  "limitations": [
+    "WorkBuddy Desktop 主进程在加密的 app.asar, 无法只读探测内部 hook emitter (不进行逆向工程)",
+    "app.asar.unpacked/main 仅含 qimei-helper.js (遥测, 非 Agent hook)",
+    "app.asar 内置 cli/ 是 CodeBuddy CLI(@genie/agent-cli) 重打包, 与 WorkBuddy Desktop 自有 hook 不可等同",
+    "PATH 中的 brokered-bin / safe-bin / sitecustomize.py 是进程级 broker, 拦截 open/exec, 仅作用于 WorkBuddy 子进程",
+    "MCP 自报 quality=reported, 短过期; Agent 可能不发结束事件; 必须显式接受降级才能声明 'observed'",
+    "open_usage 仅允许跳转 copilot.tencent.com 域, 不绕过登录"
+  ],
+  "auth_required": true,
+  "user_accepted_degradation": false
+}

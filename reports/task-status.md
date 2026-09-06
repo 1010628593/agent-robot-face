@@ -5,8 +5,8 @@
 | 任务 | 内容 | 状态 | 证据 |
 |---|---|---|---|
 | T00 | 只读盘点与工程基线 | **DONE**（硬件识别子项 BLOCKED_HARDWARE） | `evidence/baseline.md` |
-| T01 | 四个 Agent 能力探测 | PARTIAL（仅只读版本探测） | `reports/implementation-log.md` T01 预探测 |
-| T02 | 原厂备份和 v6.1 官方样例 | **DONE**：构建/识别/备份/烧录/启动日志/屏幕目测 全通；**15 min 稳定性在途** | `evidence/idf61-build.md`、`evidence/hardware-baseline.md`、`evidence/ui/official-demo/` |
+| T01 | 四个 Agent 能力探测 | **DONE**：4 份 capability-report 通过 schema；WorkBuddy 待用户接受 reported 降级 | `reports/capabilities/*.json`、`evidence/probes/` |
+| T02 | 原厂备份和 v6.1 官方样例 | **DONE**（R01 `实机验收通过`：烧录/启动/屏幕/15分钟无复位 全通） | `evidence/hardware-baseline.md`、`evidence/ui/official-demo/` |
 | T03 | 合同模型、构建边界与测试地基 | NOT_STARTED | — |
 | T04 | 独立手势识别 | NOT_STARTED | — |
 | T05 | 设备帧解码、Model 与路由 | NOT_STARTED | — |
@@ -31,6 +31,7 @@
 ## 检查点
 
 - [x] T00：环境盘点（硬件识别已通过接入补齐）
+- [x] T01：四源 capability-report 通过校验；4/4 schema PASS
 - [x] T02：备份 + 官方样例上板；启动日志 v6.1 + 466×466 + 8MB PSRAM；屏幕目测 PASS；15 分钟稳定性在途
 - [ ] T14：三屏 SIM 板上预览，用户确认触控和观感
 - [ ] T15–T18：四源真实能力报告，WorkBuddy 降级须明确接受

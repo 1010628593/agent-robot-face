@@ -1,0 +1,13 @@
+# Codex 实机探测（只读，无凭据）
+
+- 二进制：`/Users/hanxin/.local/bin/codex`，版本 `codex-cli 0.152.0`
+- 版本文件：`~/.codex/version.json`（last_checked_at 2026-09-01）
+- 配置：`~/.codex/config.toml`（已读取前 40 行，token 字段已过滤）
+  - `notify = [...]` 已指向 `Codex Computer Use.app/.../SkyComputerUseClient` + `turn-ended`
+  - `sandbox_mode = "danger-full-access"`、`approval_policy = "on-request"`、`model = "gpt-6-astra"`、`reasoning_effort = "ultra"`
+  - `[desktop]` 段落显示 Codex Desktop 偏好（与 CLI 行为分离）
+  - `[plugins."sites/browser/chrome@openai-bundled"]` 三个内置插件已 enabled
+- hooks 目录：`~/.codex/hooks/` 存在（`agent-keyboard.sh / memmy-* / mnemon/`），但 **没有 Codex 原生 hooks 配置文件**（不是 OpenAI Hook 协议位置）
+- sessions：`~/.codex/sessions/` 1 个
+- app-server：`~/.codex/app-server-control/app-server-control.sock`（Unix socket）
+- 未发起任何 Codex 任务、未读取 auth、未触发登录

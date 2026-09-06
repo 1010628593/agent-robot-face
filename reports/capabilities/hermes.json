@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "agent_id": "hermes",
+  "product": "Nous Research Hermes Agent",
+  "installed_version": "0.21.0 (2026.8.31)",
+  "entry_point": "cli",
+  "status": "ready",
+  "capabilities": {
+    "state": "observed",
+    "usage": "automatic",
+    "quota": "none",
+    "open_agent": true,
+    "open_usage": false
+  },
+  "state_events": [
+    "pre_llm_call",
+    "pre_tool_call",
+    "post_tool_call",
+    "pre_approval_request",
+    "post_approval_response",
+    "on_session_end",
+    "post_api_request",
+    "api_request_error"
+  ],
+  "usage_fields": [
+    "input_tokens",
+    "output_tokens",
+    "cached_input_tokens",
+    "reasoning_tokens",
+    "provider_reported_cost"
+  ],
+  "quota_source": "none: Hermes has no unified quota; query provider",
+  "last_verified_at": "2026-09-06T13:12:26Z",
+  "evidence_files": [
+    "evidence/probes/hermes-summary.txt",
+    "Bot_Status_v1_Handoff/docs/adapters/HERMES.md"
+  ],
+  "limitations": [
+    "本机 hermes CLI 0.21.0 已装, install dir ~/.hermes/hermes-agent, plugin model 完整(agent-hooks/plugins/hooks/config.yaml)",
+    "现有 plugins: herdr-agent-state(独立), memmy-memory(exclusive), memmy-resume(standalone); 任何新插件须最小 diff",
+    "本机回调签名/版本以 ~/.hermes/hermes-agent/hermes_cli/hooks.py 与本机 fixture 为准; Gateway hooks 与 CLI hooks 不同路径, 不可混用",
+    "usage 用 provider 返回字段; 'input 是否包含 cached_input_tokens' 不同 provider 不统一, parser 必须保留事实, 不重复计入 total",
+    "成本只有 provider reported cost 或带明确模型价格版本的估计才显示; 估计带 ~, 不推断钱包余额",
+    "若 Hermes 实际使用 Codex 账户后端, quota 必须共用 account_key, 显示 SHARED, 不可与 Codex quota 相加"
+  ],
+  "auth_required": false,
+  "user_accepted_degradation": false
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "agent_id": "cursor",
+  "product": "Cursor IDE",
+  "installed_version": "3.19.14",
+  "entry_point": "ide",
+  "status": "partial",
+  "capabilities": {
+    "state": "observed",
+    "usage": "import",
+    "quota": "none",
+    "open_agent": true,
+    "open_usage": false
+  },
+  "state_events": [
+    "beforeSubmitPrompt",
+    "preToolUse",
+    "postToolUse",
+    "postToolUseFailure",
+    "afterAgentResponse",
+    "afterAgentThought",
+    "stop",
+    "sessionStart",
+    "sessionEnd"
+  ],
+  "usage_fields": [
+    "tool_name",
+    "tool_latency_ms",
+    "turn_count",
+    "preCompact_context_tokens",
+    "preCompact_context_usage_percent"
+  ],
+  "quota_source": "none: personal plan, no Admin API token",
+  "last_verified_at": "2026-09-06T13:12:26Z",
+  "evidence_files": [
+    "evidence/probes/cursor-hooks-summary.txt",
+    "Bot_Status_v1_Handoff/docs/adapters/CURSOR.md"
+  ],
+  "limitations": [
+    "~/.cursor/hooks.json(v1 schema) 已存在, 当前调用方为 AgentKeyboard notify.sh + memmy-resume-hook.mjs; 任何本项目新增必须最小 diff, 不能清空 hooks.json",
+    "Cursor 没有官方 CLI 二进制; 观察只能经 hooks stdin/stdout JSON",
+    "preCompact 的 context_tokens/context_usage_percent 是上下文窗口占用, 不是每日消耗或套餐余额, 不可混入 quota",
+    "beforeTabFileRead/afterTabFileEdit 应在 adapter 默认排除, 防止 Tab 自动补全事件污染 Agent 状态",
+    "open_usage 不存在/未配置: 个人版没有官方 dashboard 链接可生成"
+  ],
+  "auth_required": false,
+  "user_accepted_degradation": false
+}

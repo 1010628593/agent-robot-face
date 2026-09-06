@@ -1,0 +1,13 @@
+# Cursor IDE 实机探测（只读，无凭据）
+
+- App：`/Applications/Cursor.app`，版本 3.19.14，bundle id `com.todesktop.230313mzl4w4u92`
+- 配置目录：`~/.cursor/`、`~/Library/Application Support/Cursor/`
+- **`~/.cursor/hooks.json`（v1 schema，已存在）**：
+  - 当前调用方 = `AgentKeyboard/notify.sh cursor <event>` + `~/.hermes/node/bin/node ~/.cursor/hooks/memmy-resume-hook.mjs`
+  - 已注册事件：`beforeSubmitPrompt / preToolUse / postToolUseFailure / afterAgentResponse / afterAgentThought / stop`
+  - **任何新增必须最小 diff，保留既有 hooks.json 内容**（`08_ADAPTERS.md §2`：不能覆盖用户已有 hooks）
+- `~/Library/Application Support/Cursor/User/settings.json` 中**没有** `hooks` 键（hook 完全靠独立的 `hooks.json`）
+- `~/.cursor/hooks/` 子目录里是 memmy 工具的 `memmy-turn-state-*.json` 状态文件与 `memmy-resume-hook.mjs`，**不是 Cursor hooks 协议本身**
+- CLI 二进制：**没有**官方 cursor CLI（没有 `/opt/homebrew/bin/cursor` 等）
+- `~/.cursor/plugins/cache/` 与 `local/` 是 Cursor 扩展缓存；本项目不修改
+- 未触发任何 IDE 行为、未启动 Cursor、未发起代码任务
