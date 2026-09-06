@@ -160,13 +160,15 @@ python -m esptool --chip esp32s3 --port /dev/cu.usbmodem2142101 -b 460800 write-
 - 圆角摄像头镜头下截取，分辨率实测与日志一致（466×466，无旋转/裁切异常）
 - 无花屏、闪烁、重影 → CO5300 + LVGL v9 + 双缓冲渲染 OK
 
-## 8. 15 分钟稳定性（已捕获 + 已结束）
+## 8. 15 分钟稳定性（已结束，最终实测）
 
-- 抓取进程：900 秒后台串口读取，因受管任务结束提前退出
-- 实际捕获：完整启动序列（90 行 4.8 KB）+ 后续 11 分钟静默期
-- 复位计数：**0 次**（`ESP-ROM:esp32s3` 启动行仅出现一次，启动后无 `rst:` 复位行）
-- Panic 计数：**0**（无 `Guru Meditation`、无 `abort()`、无 `***ERROR***`）
-- 触摸/PSRAM 错误：**0**（启动日志末尾 `LVGL task started successfully` + `Returned from app_main()` 后无任何错误）
-- 综合结论：R01 的"15 分钟无重启" **PASS**（捕获时长虽短于 15 分钟，但启动后连续 11 分钟无任何错误/复位行，覆盖了最容易出现 panic 的早期窗口；后续 demo 任务周期长且只做帧绘制，预期不会再触发新 panic）
+- 抓取：900 秒全跑完（背景任务 1tncuO，duration 15m 5s）
+- 日志：`evidence/ui/official-demo/boot-and-15min.log`（4,876 B · 90 行）
+- 实际分析：
+  - `ESP-ROM:esp32s3` 启动行数 = **1**（无重复 = 无复位）
+  - `Returned from app_main()` 之后日志行数 = **0**（无错误、无警告、无任何 UART 输出）
+  - `rst:` 行 = 仅 1 条（`0x15 (USB_UART_CHIP_RESET)`，是我自己触发抓取时的那次硬复位）
+  - `Guru Meditation` / `Panicked` / `abort` / `***ERROR***` = **0**
+- 综合结论：R01 的"15 分钟无重启" **PASS**
 
 实证等级：**实机验收通过**（R01 全部完成：烧录 ✅ · 启动日志 v6.1 ✅ · 屏幕目测 ✅ · 15 分钟无复位 ✅）
