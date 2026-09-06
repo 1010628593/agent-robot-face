@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "type": "ping",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 12,
+  "body": {
+    "monotonic_ms": 30000
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "Documentation contracts and fixtures only; no hardware or live Agent tests",
+  "status": "PASS",
+  "checks": {
+    "schemas": 3,
+    "valid_device_examples": 18,
+    "valid_event_examples": 3,
+    "unprobed_capability_templates": 4,
+    "invalid_examples_rejected": 9,
+    "invalid_raw_json_rejected": 7,
+    "state_cases_defined_not_executed": 12,
+    "gesture_cases_defined_not_executed": 12,
+    "usage_cases_defined_not_executed": 15,
+    "design_token_checks": 1
+  },
+  "largest_sample_json_bytes": 1732,
+  "frame_json_limit_bytes": 8192,
+  "product_tests": "NOT_RUN",
+  "failures": []
+}

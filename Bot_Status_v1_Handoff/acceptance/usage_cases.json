@@ -1,0 +1,188 @@
+{
+  "format": "usage-test-vectors-v1",
+  "status": "NOT_RUN",
+  "cases": [
+    {
+      "id": "U01",
+      "rule": "cumulative_monotonic",
+      "inputs": [
+        100,
+        160,
+        160
+      ],
+      "expected_deltas": [
+        100,
+        60,
+        0
+      ],
+      "baseline": 0,
+      "verified_counter_start": true
+    },
+    {
+      "id": "U02",
+      "rule": "duplicate_native_id",
+      "inputs": [
+        {
+          "id": "x",
+          "value": 60
+        },
+        {
+          "id": "x",
+          "value": 60
+        }
+      ],
+      "expected_total": 60
+    },
+    {
+      "id": "U03",
+      "rule": "context_not_consumption",
+      "inputs": {
+        "context_tokens": 32000
+      },
+      "expected_usage_total": null
+    },
+    {
+      "id": "U04",
+      "rule": "unknown_not_zero",
+      "inputs": {
+        "quality": "unavailable",
+        "value": null
+      },
+      "expected_text": "N/A"
+    },
+    {
+      "id": "U05",
+      "rule": "zero_is_known",
+      "inputs": {
+        "quality": "exact",
+        "value": 0
+      },
+      "expected_text": "0"
+    },
+    {
+      "id": "U06",
+      "rule": "unknown_denominator",
+      "inputs": {
+        "remaining": 350,
+        "limit": null
+      },
+      "expected_percent": null
+    },
+    {
+      "id": "U07",
+      "rule": "over_budget",
+      "inputs": {
+        "used": 110,
+        "limit": 100
+      },
+      "expected_used_percent": 110,
+      "expected_ring_percent": 100,
+      "expected_remaining": 0
+    },
+    {
+      "id": "U08",
+      "rule": "shared_account_not_sum",
+      "inputs": [
+        {
+          "account_key": "a",
+          "remaining": 350
+        },
+        {
+          "account_key": "a",
+          "remaining": 350
+        }
+      ],
+      "expected_unique_remaining": 350
+    },
+    {
+      "id": "U09",
+      "rule": "active_interval_union",
+      "inputs": [
+        [
+          0,
+          100
+        ],
+        [
+          50,
+          150
+        ]
+      ],
+      "expected_duration": 150
+    },
+    {
+      "id": "U10",
+      "rule": "authoritative_upsert",
+      "inputs": [
+        {
+          "id": "day1",
+          "value": 100
+        },
+        {
+          "id": "day1",
+          "value": 90
+        }
+      ],
+      "expected_total": 90
+    },
+    {
+      "id": "U11",
+      "rule": "cache_included",
+      "inputs": {
+        "input": 100,
+        "output": 30,
+        "cache_read": 50,
+        "input_includes_cached": true
+      },
+      "expected_total": 130
+    },
+    {
+      "id": "U12",
+      "rule": "counter_reset",
+      "inputs": [
+        {
+          "epoch": "a",
+          "value": 100
+        },
+        {
+          "epoch": "a",
+          "value": 10
+        }
+      ],
+      "expected_action": "mark_partial_and_require_reset_evidence"
+    },
+    {
+      "id": "U13",
+      "rule": "exact_partial",
+      "inputs": {
+        "quality": "exact",
+        "coverage": "partial",
+        "value": 123
+      },
+      "expected_badge": "PARTIAL"
+    },
+    {
+      "id": "U14",
+      "rule": "reset_not_refill",
+      "inputs": {
+        "used_pct": 80,
+        "now_ms": 2000,
+        "resets_at_ms": 1000
+      },
+      "expected_used_percent": 80,
+      "expected_badge": "RESET PENDING"
+    },
+    {
+      "id": "U15",
+      "rule": "first_unknown_cumulative_is_baseline",
+      "inputs": [
+        1000,
+        1300
+      ],
+      "expected_deltas": [
+        0,
+        300
+      ],
+      "expected_coverage": "since_bridge_start"
+    }
+  ]
+}

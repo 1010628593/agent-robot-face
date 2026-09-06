@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "type": "action",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 1,
+  "body": {
+    "action_id": "33333333333333333333333333333333",
+    "action": "select_agent",
+    "agent_id": "workbuddy",
+    "base_selection_rev": 3
+  }
+}

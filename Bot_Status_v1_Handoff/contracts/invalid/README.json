@@ -1,0 +1,3 @@
+{
+  "purpose": "Each file in this directory except README.json must be rejected by schema or semantic validation. Values are synthetic, not actual account data."
+}

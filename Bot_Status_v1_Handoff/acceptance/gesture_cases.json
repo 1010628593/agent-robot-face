@@ -1,0 +1,309 @@
+{
+  "format": "gesture-test-vectors-v1",
+  "status": "NOT_RUN",
+  "cases": [
+    {
+      "id": "G01",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 100,
+          "x": 233,
+          "y": 233
+        }
+      ],
+      "expected": [
+        "tap"
+      ]
+    },
+    {
+      "id": "G02",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "tick",
+          "t_ms": 649,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 649,
+          "x": 233,
+          "y": 233
+        }
+      ],
+      "expected": []
+    },
+    {
+      "id": "G03",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "tick",
+          "t_ms": 650,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 700,
+          "x": 233,
+          "y": 233
+        }
+      ],
+      "expected": [
+        "hold"
+      ]
+    },
+    {
+      "id": "G04",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "move",
+          "t_ms": 300,
+          "x": 246,
+          "y": 233
+        },
+        {
+          "phase": "tick",
+          "t_ms": 650,
+          "x": 246,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 700,
+          "x": 246,
+          "y": 233
+        }
+      ],
+      "expected": []
+    },
+    {
+      "id": "G05",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 300,
+          "y": 233
+        },
+        {
+          "phase": "move",
+          "t_ms": 150,
+          "x": 235,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 250,
+          "x": 210,
+          "y": 233
+        }
+      ],
+      "expected": [
+        "swipe_left"
+      ]
+    },
+    {
+      "id": "G06",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 180,
+          "y": 233
+        },
+        {
+          "phase": "move",
+          "t_ms": 150,
+          "x": 246,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 250,
+          "x": 270,
+          "y": 233
+        }
+      ],
+      "expected": [
+        "swipe_right"
+      ]
+    },
+    {
+      "id": "G07",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 300
+        },
+        {
+          "phase": "move",
+          "t_ms": 150,
+          "x": 233,
+          "y": 235
+        },
+        {
+          "phase": "up",
+          "t_ms": 250,
+          "x": 233,
+          "y": 210
+        }
+      ],
+      "expected": [
+        "swipe_up"
+      ]
+    },
+    {
+      "id": "G08",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 170
+        },
+        {
+          "phase": "move",
+          "t_ms": 150,
+          "x": 233,
+          "y": 238
+        },
+        {
+          "phase": "up",
+          "t_ms": 250,
+          "x": 233,
+          "y": 270
+        }
+      ],
+      "expected": [
+        "swipe_down"
+      ]
+    },
+    {
+      "id": "G09",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "move",
+          "t_ms": 150,
+          "x": 300,
+          "y": 300
+        },
+        {
+          "phase": "up",
+          "t_ms": 250,
+          "x": 310,
+          "y": 310
+        }
+      ],
+      "expected": []
+    },
+    {
+      "id": "G10",
+      "wake_only": true,
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "tick",
+          "t_ms": 650,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 700,
+          "x": 233,
+          "y": 233
+        }
+      ],
+      "expected": [
+        "wake_only"
+      ]
+    },
+    {
+      "id": "G11",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "cancel",
+          "t_ms": 100,
+          "x": 233,
+          "y": 233
+        },
+        {
+          "phase": "tick",
+          "t_ms": 700,
+          "x": 233,
+          "y": 233
+        }
+      ],
+      "expected": []
+    },
+    {
+      "id": "G12",
+      "samples": [
+        {
+          "phase": "down",
+          "t_ms": 0,
+          "x": 300,
+          "y": 233
+        },
+        {
+          "phase": "move",
+          "t_ms": 200,
+          "x": 245,
+          "y": 233
+        },
+        {
+          "phase": "up",
+          "t_ms": 300,
+          "x": 245,
+          "y": 233
+        }
+      ],
+      "expected": []
+    }
+  ]
+}

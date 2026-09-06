@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "canvas": {
+    "width": 466,
+    "height": 466,
+    "center": [
+      233,
+      233
+    ],
+    "safe_radius": 210
+  },
+  "colors": {
+    "background": "#000000",
+    "eyes": "#DDEAF2",
+    "secondary": "#83949F",
+    "working": "#5A9BFF",
+    "tool": "#AE8CFF",
+    "waiting": "#FFBE55",
+    "done": "#6DE1A3",
+    "error": "#FF707C",
+    "unknown": "#647680"
+  },
+  "agent_accents": {
+    "codex": "#66D8DF",
+    "workbuddy": "#7CDDA7",
+    "cursor": "#B4A3F5",
+    "hermes": "#F2B36C"
+  },
+  "type_px": {
+    "title": 24,
+    "status": 24,
+    "hero": 60,
+    "row": 24,
+    "caption": 20
+  },
+  "animation_ms": {
+    "page": 200,
+    "expression": 160,
+    "blink": 120,
+    "poke": 350,
+    "hold_start": 120,
+    "hold_complete": 650,
+    "done_total": 3000,
+    "cancel_total": 2000,
+    "toast": 2000
+  },
+  "brightness_percent": {
+    "normal": 28,
+    "dim": 8,
+    "working_dim": 18
+  },
+  "power_ms": {
+    "dim_after": 180000,
+    "link_offline": 6000,
+    "screen_off_after_disconnect": 30000,
+    "pixel_shift": 300000
+  },
+  "pixel_shift_max": 2,
+  "face": {
+    "left_eye": [
+      178,
+      225,
+      66,
+      92
+    ],
+    "right_eye": [
+      288,
+      225,
+      66,
+      92
+    ],
+    "ring_radius": 199,
+    "gaze_max_px": 10
+  }
+}

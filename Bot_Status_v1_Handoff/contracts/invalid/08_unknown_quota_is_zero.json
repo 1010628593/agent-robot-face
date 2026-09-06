@@ -1,0 +1,53 @@
+{
+  "v": 1,
+  "type": "stats",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 7,
+  "body": {
+    "agent_id": "workbuddy",
+    "selection_rev": 4,
+    "scope": {
+      "kind": "today",
+      "timezone": "Asia/Shanghai",
+      "start_ms": 1788652800000,
+      "end_ms": 1788739200000
+    },
+    "metrics": [
+      {
+        "key": "turns",
+        "label": "TURNS",
+        "value": null,
+        "unit": "turn",
+        "quality": "unavailable",
+        "coverage": "unknown",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 60000
+      }
+    ],
+    "quotas": [
+      {
+        "id": "unknown",
+        "account_key": "demo-shared-account",
+        "scope": "account",
+        "label": "QUOTA",
+        "kind": "unknown",
+        "unit": "none",
+        "used": null,
+        "limit": null,
+        "remaining": 0,
+        "used_pct": null,
+        "resets_at_ms": null,
+        "quality": "unavailable",
+        "coverage": "unknown",
+        "source": "synthetic_fixture",
+        "as_of_ms": null,
+        "stale_after_ms": 180000,
+        "availability": "unsupported",
+        "reason": "No verified desktop quota API",
+        "shared_with": []
+      }
+    ],
+    "sparkline": []
+  }
+}

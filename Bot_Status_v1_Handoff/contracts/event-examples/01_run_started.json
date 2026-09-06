@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "agent_id": "codex",
+  "source_instance": "demo-codex-cli",
+  "event_id": "demo-event-1",
+  "session_key": "demo-session-a",
+  "run_id": "demo-turn-9",
+  "kind": "run_started",
+  "occurred_at_ms": 1788688800000,
+  "received_at_ms": 1788688800010,
+  "source_seq": 1,
+  "quality": "simulated",
+  "tool_call_id": null,
+  "reason": "none",
+  "detail": "Working",
+  "usage_record": null,
+  "source_health": null
+}

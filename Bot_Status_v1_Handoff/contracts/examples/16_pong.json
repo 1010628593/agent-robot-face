@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "pong",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 3,
+  "body": {
+    "echo_monotonic_ms": 30000,
+    "device_uptime_ms": 29000
+  }
+}

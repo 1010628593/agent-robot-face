@@ -1,0 +1,13 @@
+{
+  "v": 1,
+  "type": "ack",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 10,
+  "body": {
+    "action_id": "44444444444444444444444444444444",
+    "status": "rejected",
+    "selected_agent": "workbuddy",
+    "selection_rev": 4,
+    "reason": "conflict"
+  }
+}

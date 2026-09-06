@@ -1,0 +1,45 @@
+# 拟定Bridge配置，实施者需按此契约实现；不是目前已安装软件的配置。
+[bridge]
+host = "127.0.0.1"
+port = 17875
+timezone = "Asia/Shanghai" # 示例；首次doctor确认用户本机时区
+privacy = true
+selected_agent = "codex"
+
+[transport]
+mode = "usb"
+auto_discover = true
+require_confirm_new_device = true
+heartbeat_ms = 2000
+offline_after_ms = 6000
+max_frame_bytes = 8192
+
+[ui]
+brightness_percent = 28
+reduced_motion = false
+
+[security]
+allow_open_agent = false
+allow_open_usage = false
+
+[adapters.codex]
+enabled = true
+entry_point = "detect"
+
+[adapters.workbuddy]
+enabled = true
+entry_point = "desktop"
+allow_reported_fallback = false
+
+[adapters.cursor]
+enabled = true
+entry_point = "ide"
+
+[adapters.hermes]
+enabled = true
+entry_point = "detect"
+
+[usage]
+local_refresh_ms = 1000
+quota_refresh_ms = 60000
+manual_refresh_min_ms = 30000

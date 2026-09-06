@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "type": "hello",
+  "link_id": null,
+  "seq": 0,
+  "body": {
+    "device_id": "demo-device-001",
+    "boot_id": "11111111111111111111111111111111",
+    "firmware": "0.1.0-demo",
+    "display": {
+      "width": 466,
+      "height": 466
+    },
+    "min_version": 1,
+    "max_version": 1,
+    "handshake_id": "66666666666666666666666666666666"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "v": 1,
+  "type": "focus",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 3,
+  "body": {
+    "agent_id": "codex",
+    "selection_rev": 3,
+    "session_key": "demo-session-a",
+    "run_id": "demo-turn-9",
+    "state": "working",
+    "reason": "none",
+    "quality": "simulated",
+    "source_age_ms": 100,
+    "stale": false,
+    "tool": "",
+    "detail": "Working",
+    "run_elapsed_ms": 18400,
+    "active_sessions": 1,
+    "progress": null
+  }
+}

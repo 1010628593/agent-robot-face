@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "tap_max_ms": 250,
+  "tap_slop_px": 12,
+  "hold_ms": 650,
+  "hold_preview_start_ms": 120,
+  "swipe_min_px": 56,
+  "swipe_min_ms": 120,
+  "swipe_max_ms": 700,
+  "swipe_axis_ratio": 1.4,
+  "picker_idle_cancel_ms": 15000,
+  "selection_retry_ms": 2000,
+  "selection_timeout_ms": 4000,
+  "first_wake_touch_consumed": true,
+  "automatic_rotation": false
+}

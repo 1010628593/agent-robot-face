@@ -1,0 +1,15 @@
+{
+  "v": 1,
+  "type": "welcome",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 1,
+  "body": {
+    "bridge_epoch": "22222222222222222222222222222222",
+    "selected_agent": "codex",
+    "selection_rev": 3,
+    "heartbeat_ms": 2000,
+    "offline_after_ms": 6000,
+    "max_frame_bytes": 8192,
+    "demo": true
+  }
+}

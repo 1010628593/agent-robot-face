@@ -1,0 +1,125 @@
+{
+  "v": 1,
+  "type": "stats",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 6,
+  "body": {
+    "agent_id": "codex",
+    "selection_rev": 3,
+    "scope": {
+      "kind": "today",
+      "timezone": "Asia/Shanghai",
+      "start_ms": 1788652800000,
+      "end_ms": 1788739200000
+    },
+    "metrics": [
+      {
+        "key": "turns",
+        "label": "TURNS",
+        "value": 12,
+        "unit": "turn",
+        "quality": "simulated",
+        "coverage": "since_bridge_start",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 60000
+      },
+      {
+        "key": "total_tokens",
+        "label": "TOKENS",
+        "value": 83412,
+        "unit": "token",
+        "quality": "simulated",
+        "coverage": "since_bridge_start",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 60000
+      },
+      {
+        "key": "active_time_ms",
+        "label": "ACTIVE",
+        "value": 1800000,
+        "unit": "ms",
+        "quality": "simulated",
+        "coverage": "since_bridge_start",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 60000
+      }
+    ],
+    "quotas": [
+      {
+        "id": "primary",
+        "account_key": "demo-shared-account",
+        "scope": "account",
+        "label": "SHORT WINDOW",
+        "kind": "rate_window",
+        "unit": "percent",
+        "used": null,
+        "limit": null,
+        "remaining": null,
+        "used_pct": 27,
+        "resets_at_ms": 1788696000000,
+        "quality": "simulated",
+        "coverage": "complete",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 180000,
+        "availability": "available",
+        "reason": "",
+        "shared_with": [
+          "hermes"
+        ]
+      },
+      {
+        "id": "secondary",
+        "account_key": "demo-shared-account",
+        "scope": "account",
+        "label": "LONG WINDOW",
+        "kind": "rate_window",
+        "unit": "percent",
+        "used": null,
+        "limit": null,
+        "remaining": null,
+        "used_pct": 59,
+        "resets_at_ms": 1788696000000,
+        "quality": "simulated",
+        "coverage": "complete",
+        "source": "synthetic_fixture",
+        "as_of_ms": 1788688800000,
+        "stale_after_ms": 180000,
+        "availability": "available",
+        "reason": "",
+        "shared_with": [
+          "hermes"
+        ]
+      }
+    ],
+    "sparkline": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      0,
+      1,
+      2,
+      3,
+      1,
+      0,
+      4,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

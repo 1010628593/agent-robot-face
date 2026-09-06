@@ -1,0 +1,14 @@
+{
+  "v": 1,
+  "type": "notice",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 11,
+  "body": {
+    "notice_id": "demo-cursor-wait-2",
+    "agent_id": "cursor",
+    "run_id": "demo-cursor-turn-2",
+    "kind": "waiting",
+    "label": "Cursor needs input",
+    "expires_in_ms": 2000
+  }
+}

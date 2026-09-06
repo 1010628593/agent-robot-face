@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "agent_id": "codex",
+  "product": "OpenAI Codex",
+  "installed_version": null,
+  "entry_point": "not_detected",
+  "status": "not_probed",
+  "capabilities": {
+    "state": "none",
+    "usage": "none",
+    "quota": "none",
+    "open_agent": false,
+    "open_usage": false
+  },
+  "state_events": [],
+  "usage_fields": [],
+  "quota_source": "unverified",
+  "last_verified_at": null,
+  "evidence_files": [],
+  "limitations": [
+    "Local version and account capability must be probed."
+  ],
+  "auth_required": false,
+  "user_accepted_degradation": false
+}

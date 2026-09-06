@@ -1,0 +1,70 @@
+{
+  "v": 1,
+  "type": "catalog",
+  "link_id": "0123456789abcdef0123456789abcdef",
+  "seq": 2,
+  "body": {
+    "agents": [
+      {
+        "id": "codex",
+        "label": "Codex",
+        "state": "working",
+        "health": "ready",
+        "active_sessions": 1,
+        "attention_count": 0,
+        "capabilities": {
+          "state": "observed",
+          "usage": "automatic",
+          "quota": "official",
+          "open_agent": false,
+          "open_usage": false
+        }
+      },
+      {
+        "id": "workbuddy",
+        "label": "WorkBuddy",
+        "state": "unknown",
+        "health": "partial",
+        "active_sessions": 0,
+        "attention_count": 0,
+        "capabilities": {
+          "state": "reported",
+          "usage": "manual",
+          "quota": "manual",
+          "open_agent": false,
+          "open_usage": false
+        }
+      },
+      {
+        "id": "cursor",
+        "label": "Cursor",
+        "state": "waiting",
+        "health": "partial",
+        "active_sessions": 1,
+        "attention_count": 1,
+        "capabilities": {
+          "state": "observed",
+          "usage": "import",
+          "quota": "none",
+          "open_agent": false,
+          "open_usage": false
+        }
+      },
+      {
+        "id": "hermes",
+        "label": "Hermes",
+        "state": "idle",
+        "health": "ready",
+        "active_sessions": 0,
+        "attention_count": 0,
+        "capabilities": {
+          "state": "observed",
+          "usage": "automatic",
+          "quota": "none",
+          "open_agent": false,
+          "open_usage": false
+        }
+      }
+    ]
+  }
+}

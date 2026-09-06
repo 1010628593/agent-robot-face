@@ -1,0 +1,183 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "agent_id": {
+      "type": "string",
+      "enum": [
+        "codex",
+        "workbuddy",
+        "cursor",
+        "hermes"
+      ]
+    },
+    "product": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[ -~]*$"
+    },
+    "installed_version": {
+      "anyOf": [
+        {
+          "type": "string",
+          "maxLength": 64,
+          "pattern": "^[ -~]*$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "entry_point": {
+      "type": "string",
+      "enum": [
+        "not_detected",
+        "cli",
+        "desktop",
+        "ide",
+        "gateway",
+        "mixed"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "not_probed",
+        "ready",
+        "partial",
+        "blocked",
+        "not_installed"
+      ]
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "observed",
+            "reported",
+            "manual",
+            "none"
+          ]
+        },
+        "usage": {
+          "type": "string",
+          "enum": [
+            "automatic",
+            "import",
+            "manual",
+            "none"
+          ]
+        },
+        "quota": {
+          "type": "string",
+          "enum": [
+            "official",
+            "import",
+            "manual",
+            "none"
+          ]
+        },
+        "open_agent": {
+          "type": "boolean"
+        },
+        "open_usage": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "state",
+        "usage",
+        "quota",
+        "open_agent",
+        "open_usage"
+      ],
+      "additionalProperties": false
+    },
+    "state_events": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 64,
+        "pattern": "^[ -~]*$"
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "usage_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 40,
+        "pattern": "^[ -~]*$"
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "quota_source": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^[ -~]*$"
+    },
+    "last_verified_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "evidence_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 256
+      },
+      "minItems": 0,
+      "maxItems": 32
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 300
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "auth_required": {
+      "type": "boolean"
+    },
+    "user_accepted_degradation": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "agent_id",
+    "product",
+    "installed_version",
+    "entry_point",
+    "status",
+    "capabilities",
+    "state_events",
+    "usage_fields",
+    "quota_source",
+    "last_verified_at",
+    "evidence_files",
+    "limitations",
+    "auth_required",
+    "user_accepted_degradation"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local Agent capability report - fill from real probe"
+}

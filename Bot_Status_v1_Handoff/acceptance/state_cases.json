@@ -1,0 +1,235 @@
+{
+  "format": "reducer-test-vectors-v1",
+  "status": "NOT_RUN",
+  "defaults": {
+    "agent_id": "codex",
+    "session_key": "s1",
+    "source_instance": "test",
+    "quality": "simulated",
+    "step_ms": 100
+  },
+  "cases": [
+    {
+      "id": "S01",
+      "name": "new run",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        }
+      ],
+      "expected_state": "working"
+    },
+    {
+      "id": "S02",
+      "name": "parallel tools",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "tool_started",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        },
+        {
+          "kind": "tool_started",
+          "run_id": "r1",
+          "tool_call_id": "b"
+        },
+        {
+          "kind": "tool_finished",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        }
+      ],
+      "expected_state": "tool"
+    },
+    {
+      "id": "S03",
+      "name": "waiting survives tool result",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "tool_started",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        },
+        {
+          "kind": "waiting_started",
+          "run_id": "r1",
+          "reason": "approval"
+        },
+        {
+          "kind": "tool_finished",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        }
+      ],
+      "expected_state": "waiting"
+    },
+    {
+      "id": "S04",
+      "name": "waiting clears with tool active",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "tool_started",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        },
+        {
+          "kind": "waiting_started",
+          "run_id": "r1",
+          "reason": "input"
+        },
+        {
+          "kind": "waiting_cleared",
+          "run_id": "r1"
+        }
+      ],
+      "expected_state": "tool"
+    },
+    {
+      "id": "S05",
+      "name": "tool failure not terminal",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "tool_started",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        },
+        {
+          "kind": "tool_failed",
+          "run_id": "r1",
+          "tool_call_id": "a"
+        }
+      ],
+      "expected_state": "working"
+    },
+    {
+      "id": "S06",
+      "name": "late old finish cannot override",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "run_started",
+          "run_id": "r2"
+        },
+        {
+          "kind": "run_finished",
+          "run_id": "r1",
+          "reason": "completed"
+        }
+      ],
+      "expected_state": "working",
+      "expected_run_id": "r2"
+    },
+    {
+      "id": "S07",
+      "name": "cancel is not error",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "run_finished",
+          "run_id": "r1",
+          "reason": "cancelled"
+        }
+      ],
+      "expected_state": "cancelled"
+    },
+    {
+      "id": "S08",
+      "name": "terminal failure",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "run_finished",
+          "run_id": "r1",
+          "reason": "failed"
+        }
+      ],
+      "expected_state": "error"
+    },
+    {
+      "id": "S09",
+      "name": "no evidence",
+      "events": [],
+      "expected_state": "unknown"
+    },
+    {
+      "id": "S10",
+      "name": "duplicate start counts once",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1",
+          "event_id": "e1"
+        },
+        {
+          "kind": "run_started",
+          "run_id": "r1",
+          "event_id": "e1"
+        }
+      ],
+      "expected_state": "working",
+      "expected_turns": 1
+    },
+    {
+      "id": "S11",
+      "name": "new run overrides done",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "run_finished",
+          "run_id": "r1",
+          "reason": "completed"
+        },
+        {
+          "kind": "run_started",
+          "run_id": "r2"
+        }
+      ],
+      "expected_state": "working",
+      "expected_run_id": "r2"
+    },
+    {
+      "id": "S12",
+      "name": "ended session without outcome",
+      "events": [
+        {
+          "kind": "run_started",
+          "run_id": "r1"
+        },
+        {
+          "kind": "session_closed",
+          "run_id": null
+        }
+      ],
+      "expected_state": "unknown"
+    }
+  ]
+}
