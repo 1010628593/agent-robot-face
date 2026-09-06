@@ -22,7 +22,7 @@
 | T15 | Codex 真实适配 | NOT_STARTED | — |
 | T16 | Cursor 真实适配 | NOT_STARTED | — |
 | T17 | Hermes 真实适配 | NOT_STARTED | — |
-| T18 | WorkBuddy 桌面适配与显式能力门 | NOT_STARTED | — |
+| T18 | WorkBuddy 桌面适配与显式能力门 | **BLOCKED_SOURCE**（用户选 B，拒绝 reported 降级，2026-09-06） | `reports/capabilities/workbuddy.json` |
 | T19 | 通知、亮度、睡眠与防烧屏 | NOT_STARTED | — |
 | T20 | 安全与故障注入 | NOT_STARTED | — |
 | T21 | 安装、doctor 与恢复 | NOT_STARTED | — |

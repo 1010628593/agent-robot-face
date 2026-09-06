@@ -36,6 +36,7 @@
     "app.asar 内置 cli/ 是 CodeBuddy CLI(@genie/agent-cli) 重打包, 与 WorkBuddy Desktop 自有 hook 不可等同",
     "PATH 中的 brokered-bin / safe-bin / sitecustomize.py 是进程级 broker, 拦截 open/exec, 仅作用于 WorkBuddy 子进程",
     "MCP 自报 quality=reported, 短过期; Agent 可能不发结束事件; 必须显式接受降级才能声明 'observed'",
+    "2026-09-06 用户选择 B: 明确拒绝接受 MCP reported 降级 -> T18 维持 BLOCKED_SOURCE, 不写 adapter, UI 显示 N/A",
     "open_usage 仅允许跳转 copilot.tencent.com 域, 不绕过登录"
   ],
   "auth_required": true,

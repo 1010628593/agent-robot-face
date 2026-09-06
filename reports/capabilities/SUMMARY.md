@@ -36,13 +36,18 @@
 3. `app.asar.unpacked/cli/` 是 **`@genie/agent-cli` = CodeBuddy CLI**（bin: codebuddy / codebuddy-code / cbc）。这印证了 `WORKBUDDY.md` 警告"CodeBuddy CLI 与 WorkBuddy Desktop 不可直接等同"。CodeBuddy 的 hooks 事件**不能**当 WorkBuddy Desktop 事件用。
 4. 进程级 broker（`brokered-bin/safe-bin/sitecustomize.py`）只作用于 WorkBuddy 子进程；不影响本项目的独立 Python venv（已在 `tools/idf-env.sh` 与 `.venv-doccheck` 实测）。
 
-## 提议下一步
+## 用户决策（2026-09-06）
 
-我建议按以下顺序推进，不允许跳过任何红色确认：
+**选项 B**：WorkBuddy 维持 `blocked`，不接受 MCP reported 降级。
 
-1. **请你决定**：WorkBuddy 接受 MCP reported 降级？如不接受，T18 维持 BLOCKED_SOURCE。
-2. 写 4 份 adapter 干跑代码（T15–T18），Hermes 跑真实插件（`hermes hooks doctor`），Cursor 跑 hooks.json 最小 diff，Codex 跑 `codex --help` 子命令清单（不发起任何真实请求），WorkBuddy 跑 `bot-status simulate --scenario wb-mcp-reported`。
-3. 与三屏 SIM 检查点（T14）联调：先看 466×466 跑起 face → picker → quota 三个 demo 屏幕（不接真实 Agent，只看视觉与触控），确认观感。
-4. 再做 T10 USB 握手、T11 Loopback、T12 Host 选择事务。
+- T18 不写 WorkBuddy adapter；三屏里 WorkBuddy 行显示 N/A（BLOCKED_SOURCE）
+- v1 发布条件之一（WorkBuddy 真实接入）标记为**已知不满足**，由用户在发布说明中确认
+- 其他三源（Codex / Cursor / Hermes）按 T15/T16/T17 正常推进
+- 若未来 WorkBuddy 官方公开稳定 hook/MCP 生命周期接口，T18 可重新启用，capability-report 需重新 probe
 
-需要我立即写第一份 Hermes plugin 的最小只读实现（最稳的一源），还是先等你回复 WorkBuddy 的降级决策？
+## 下一步（按依赖排序）
+
+1. T03 合同模型与测试地基
+2. T04 手势 → T05 帧解码/路由 → T06–T08 三屏 + LVGL 模拟器
+3. T14 三屏 SIM 检查点
+4. T15/T16/T17 三源真实 adapter 干跑（T18 跳过）

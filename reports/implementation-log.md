@@ -100,7 +100,7 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
   - Cursor 3.19.14，`~/.cursor/hooks.json` v1 已用 AgentKeyboard + memmy 占用；任何新增必须最小 diff
   - Hermes 0.21.0，`~/.local/bin/hermes`，plugin model 完整；`hermes hooks list` 6 个 hooks 全部已有调用方（AgentKeyboard + mnemon）
 - [x] 4 份 capability-report 通过 schema 校验（0 errors）
-- [ ] 用户接受 WorkBuddy 降级（否则 T18 维持 BLOCKED_SOURCE）
-- [ ] T15–T18 干跑 Adapter 实现
+- [x] 用户决策（2026-09-06）：**选项 B** —— WorkBuddy 不接受 MCP reported 降级，T18 维持 BLOCKED_SOURCE
+- [ ] T15–T17 三源真实 adapter 干跑（T18 跳过）
 
 替换了先前"T01 预探测"占位（旧版本只看了版本，未做完整能力门）。
