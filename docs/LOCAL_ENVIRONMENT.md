@@ -48,8 +48,20 @@
 
 ## 4. 硬件连接现状与确认要求
 
-- 2026-09-06 实测：USB 总线上无 Espressif/Waveshare 设备，唯一串口 `/dev/cu.usbserial-214220` 属于 ASUS 外设。开发板未接入。
-- 后续接入后：**必须通过插拔对比确认端口**，不能匹配"第一个串口"。
+**已识别（2026-09-06 实测，见 `evidence/hardware-baseline.md`）**
+
+| 项 | 值 |
+|---|---|
+| 端口 | `/dev/cu.usbmodem2142101`（原生 USB CDC，插拔对比确认） |
+| 芯片 | ESP32-S3 (QFN56) revision v0.2 |
+| Flash | 16MB（eFuse: quad, 3.3V） |
+| PSRAM | 8MB 内置 (AP_3v3) |
+| USB 模式 | USB-Serial/JTAG |
+| 安全 | Secure Boot 关 / Flash 加密 关 / 无读保护 |
+
+`esptool` 调用统一用 `python -m esptool`（v5 连字符语法，来自 EIM 环境）。
+
+> 注意：另一端口 `/dev/cu.usbserial-214220` 是 ASUS 外设，**不是**开发板；不要凭"第一个串口"匹配。
 - 端口只做两件事可无确认执行：只读 `flash-id` 核对、只读 `read-flash` 备份。
 - **需用户单独确认才可执行的硬件操作**：首次烧录、原厂固件恢复、任何 `erase-flash`、写 eFuse、启用 Secure Boot/Flash Encryption。
 

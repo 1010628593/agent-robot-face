@@ -6,7 +6,7 @@
 |---|---|---|---|
 | T00 | 只读盘点与工程基线 | **DONE**（硬件识别子项 BLOCKED_HARDWARE） | `evidence/baseline.md` |
 | T01 | 四个 Agent 能力探测 | PARTIAL（仅只读版本探测） | `reports/implementation-log.md` T01 预探测 |
-| T02 | 原厂备份和 v6.1 官方样例 | **PARTIAL**：构建 DONE；硬件识别/备份 BLOCKED_HARDWARE | `evidence/idf61-build.md` |
+| T02 | 原厂备份和 v6.1 官方样例 | **PARTIAL**：构建 DONE + 硬件识别/备份 DONE；**烧录待用户确认** | `evidence/idf61-build.md`、`evidence/hardware-baseline.md` |
 | T03 | 合同模型、构建边界与测试地基 | NOT_STARTED | — |
 | T04 | 独立手势识别 | NOT_STARTED | — |
 | T05 | 设备帧解码、Model 与路由 | NOT_STARTED | — |

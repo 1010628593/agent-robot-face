@@ -70,10 +70,14 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] `idf.py -B build-idf61 build` 官方 `02_lvgl_demo_v9` → **Project build complete.（2160/2160）**
       `lvgl_demo_v9.bin` 967,696 B · SHA256 `82fdf3c91dab5ecf…cce34e27`
 - [x] 记录 `dependencies.lock`：BSP `waveshare/esp32_s3_touch_amoled_1_75 3.0.1`、LVGL `9.4.0`、CO5300 `2.1.0`、CST9217 `2.0.0`、idf `6.1.0`
-- [ ] `flash-id` 核对 ESP32-S3 + 16MiB —— **阻塞**：板子未接入
-- [ ] 完整 `read-flash` 私有备份 + 长度 + SHA-256 —— **阻塞**：板子未接入
-- [ ] 首次烧录 —— **待用户单独确认**
+- [x] `flash-id` 核对：ESP32-S3 (QFN56) rev v0.2 · **16MiB** · 8MB PSRAM · USB-Serial/JTAG · MAC `28:84:85:8d:71:e0` → 端口 `/dev/cu.usbmodem2142101`
+- [x] 安全功能只读检查：Secure Boot **关**、Flash 加密 **关**、WR_DIS/RD_DIS=0、JTAG 未禁用 → 无异常，备份为明文
+- [x] 完整 `read-flash` 私有备份：**16,777,216 B**（=16MiB）· SHA256 `4c020428c2fe5c7610a4694682ddc473427707ad553a21afe168c090d0b33c38`
+      → `$HOME/Workspace/bot-status-private-backups/20260906-202608/`（仓库外，`umask 077`）
+- [ ] 首次烧录 —— **待用户单独确认**（已给出待写固件哈希与恢复命令，见 `evidence/hardware-baseline.md`）
 - [ ] 黑白红绿蓝短测 / 四方向触摸 / 15 分钟运行 —— 依赖烧录
+
+补充发现：**原厂分区表与官方示例分区表布局不同**（原厂 `factory@0x110000`，示例 `factory@0x10000`）。烧录示例会覆盖分区表，原厂 factory/assets 成为孤儿分区；因此"原厂恢复"必须整片回写备份，不能只写 app。
 
 补充：构建过程中新增 `tools/idf-env.sh` 解决 EIM 激活脚本缺 cmake 的问题（不改 EIM，不降级）。
 
