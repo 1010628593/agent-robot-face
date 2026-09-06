@@ -28,6 +28,8 @@ typedef struct {
     const char *label;    /* Codex / WorkBuddy / Cursor / Hermes */
     uint32_t accent;      /* theme color (agent_accents) */
     bot_state_t state;
+    /* Change only for a new logical transition/run, never for a heartbeat. */
+    uint32_t transition_id;
     uint8_t active_sessions;
     /* usage (simulated) */
     uint32_t turns;

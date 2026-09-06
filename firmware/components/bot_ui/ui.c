@@ -1,15 +1,13 @@
 /* ui.c — screen manager, touch->gesture pump, router effects, SIM cycler. */
 #include "bot_ui.h"
+#include "bot_face.h"
 
 #include <string.h>
 
 #include "bsp/esp-bsp.h"
-#include "esp_timer.h"
 #include "lvgl.h"
 
 /* shared UI objects defined in face.c / picker.c / stats.c */
-void face_build(lv_obj_t *scr);
-void face_tick(uint32_t now_ms);
 void picker_build(lv_obj_t *scr);
 void picker_refresh(void);
 void stats_build(lv_obj_t *scr);
@@ -29,7 +27,7 @@ static uint32_t s_down_since;
 
 static uint32_t now_ms(void)
 {
-    return (uint32_t)(esp_timer_get_time() / 1000ULL);
+    return lv_tick_get(); /* Same epoch as all face/gesture animation times. */
 }
 
 static void sim_init(void)
@@ -106,9 +104,8 @@ static void sim_tick(uint32_t now)
         if (SIM_CYCLE[i] == a->state) { idx = (int)i; break; }
     }
     a->state = SIM_CYCLE[(idx + 1) % (int)(sizeof(SIM_CYCLE) / sizeof(SIM_CYCLE[0]))];
-    if (g_ui.screen == BOT_SCR_FACE) {
-        bot_ui_show_face();
-    }
+    a->transition_id++;
+    /* face_tick observes the new target without deleting/recreating objects. */
 }
 
 static void sim_badge(lv_obj_t *parent)
@@ -117,11 +114,15 @@ static void sim_badge(lv_obj_t *parent)
     lv_label_set_text(sim, "SIM");
     lv_obj_set_style_text_font(sim, &lv_font_montserrat_20, 0);
     lv_obj_set_style_text_color(sim, lv_color_hex(COL_SIM), 0);
-    lv_obj_set_pos(sim, 386, 30);
+    /* Inside the circular safe area; the previous corner position was clipped. */
+    lv_obj_set_size(sim, 48, 24);
+    lv_obj_set_style_text_align(sim, LV_TEXT_ALIGN_CENTER, 0);
+    lv_obj_set_pos(sim, 209, 24);
 }
 
 static void screen_switch(bot_screen_t scr)
 {
+    if (g_ui.screen == BOT_SCR_FACE) face_suspend(now_ms());
     g_ui.screen = scr;
     switch (scr) {
     case BOT_SCR_FACE: bot_ui_show_face(); break;
@@ -166,8 +167,9 @@ static void apply_effect(bot_effect_t e)
         g_ui.stats_tab ^= 1;
         stats_refresh();
     }
-    /* poke / detail / edge_bump: animation-only effects, handled in face/stats
-     * ticks in a later pass; navigation correctness comes first (T14). */
+    /* FACE touch gaze/hold is handled continuously by touch_pump.
+     * Deliberately no detail text overlay: the display itself is the face.
+     * STATS detail/edge_bump remains outside this animation-only change. */
 }
 
 /* Poll the LVGL indev and feed the gesture FSM (LVGL gesture recognition
@@ -180,27 +182,27 @@ static void touch_pump(uint32_t now)
     lv_indev_state_t st = lv_indev_get_state(s_indev);
     bool pressed = (st == LV_INDEV_STATE_PRESSED);
 
+    bot_gesture_kind_t ev = BOT_GESTURE_NONE;
     if (pressed && !s_was_pressed) {
-        bot_gesture_feed(&s_gesture, BOT_TOUCH_DOWN, now, (int16_t)p.x, (int16_t)p.y);
+        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_DOWN, now, (int16_t)p.x, (int16_t)p.y);
         s_down_since = now;
     } else if (pressed && s_was_pressed) {
-        bot_gesture_kind_t ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_TICK, now,
-                                                 (int16_t)p.x, (int16_t)p.y);
-        if (ev == BOT_GESTURE_NONE) {
-            bot_gesture_feed(&s_gesture, BOT_TOUCH_MOVE, now, (int16_t)p.x, (int16_t)p.y);
-        }
-        if (ev != BOT_GESTURE_NONE) {
-            apply_effect(bot_route(g_ui.screen, ev));
-        }
+        /* Apply the newest movement before testing the 650ms HOLD deadline. */
+        bot_gesture_feed(&s_gesture, BOT_TOUCH_MOVE, now, (int16_t)p.x, (int16_t)p.y);
+        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_TICK, now, (int16_t)p.x, (int16_t)p.y);
     } else if (!pressed && s_was_pressed) {
-        bot_gesture_kind_t ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_UP, now,
-                                                 (int16_t)p.x, (int16_t)p.y);
-        if (ev != BOT_GESTURE_NONE) {
-            apply_effect(bot_route(g_ui.screen, ev));
-        }
+        /* Include final displacement even when no MOVE sample preceded UP. */
+        bot_gesture_feed(&s_gesture, BOT_TOUCH_MOVE, now, (int16_t)p.x, (int16_t)p.y);
+        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_UP, now, (int16_t)p.x, (int16_t)p.y);
     }
+    if (g_ui.screen == BOT_SCR_FACE) {
+        bool tracking = pressed && s_gesture.state == BOT_GS_PRESSED;
+        float hold = tracking && !s_gesture.moved_beyond_slop
+            ? (float)(now - s_down_since) / (float)BOT_HOLD_MS : 0;
+        face_touch(tracking, (int16_t)p.x, (int16_t)p.y, hold, now);
+    }
+    if (ev != BOT_GESTURE_NONE) apply_effect(bot_route(g_ui.screen, ev));
     s_was_pressed = pressed;
-    (void)s_down_since;
 }
 
 void bot_ui_init(void)
