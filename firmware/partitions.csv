@@ -1,0 +1,8 @@
+﻿# Bot Status partition table — identical layout to the official demo
+# (factory app at 0x10000, 8M; storage 7M). Factory restore uses the full
+# 16MiB backup in ~/Workspace/bot-status-private-backups/ (different layout).
+# Name,   Type, SubType, Offset,  Size, Flags
+nvs,      data, nvs,     0x9000,  0x6000,
+phy_init, data, phy,     0xf000,  0x1000,
+factory,  app,  factory, ,        8M,
+storage,  data, spiffs,  ,        7M,

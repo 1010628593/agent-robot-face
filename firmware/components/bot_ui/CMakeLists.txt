@@ -1,0 +1,4 @@
+idf_component_register(
+    SRCS ui.c face.c picker.c stats.c
+    INCLUDE_DIRS include
+    REQUIRES bot_core lvgl esp_timer waveshare__esp32_s3_touch_amoled_1_75)

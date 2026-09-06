@@ -145,3 +145,20 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] `bot_model.c`：仅当前 link + 严格递增 seq 可改 Model；welcome 仅握手期（seq=1）接受并清 pending/旧 stats；新 rev 单槽缓冲，ACK accepted 才提升；旧 link 命令永不生效
 - [x] `bot_router.c`：02_UI_UX §5 手势表纯函数（Face 横滑→Stats / Stats 上下切 tab / Stats 右→Face / Picker 长按取消 / Stats 左仅边界反馈）
 - [x] 测试：15 个真实契约正例字节级过帧；9 个反例全拒；6 严格 JSON 用例；7 语义反例；hello link_id=null/seq=0 唯一例外；流式 3 用例；model 16 断言；router 19 断言
+
+## T06–T08 + T14 · 三屏固件与实机 SIM 检查点
+
+**状态**：固件 DONE（编译+烧录+启动日志确认）；实机视觉/手势验收 **待用户目测**
+**证据**：`firmware/`（独立 ESP-IDF 工程，不复用官方 demo 目录）
+
+- [x] `firmware/`：CMakeLists + sdkconfig.defaults（官方 demo 配置裁剪：去 LV demos，Montserrat 20/24/48）+ partitions.csv（与 demo 相同布局）+ main/idf_component.yml（BSP 3.0.1 钉版 + LVGL 9.4.*）
+- [x] `components/bot_core` 直接消费 T04/T05 全部源码（gesture/bot_json/bot_frame/bot_model/bot_router）
+- [x] `components/bot_ui`：ui.c（屏幕管理 + 10ms LVGL timer 触摸泵 + 路由效果 + SIM 循环器）、face.c（标题/标识点/状态环 r199/双眼 66×92/状态+辅助+提示；idle 眨眼 2.8–6.5s + 视线 ±9px；working 2.4s 旋转弧；waiting 2.2s 呼吸 + "?"；done 弯眼；error X 眼）、picker.c（中央 144² 卡片 + 首字母 + 相邻预览 + 首尾环绕 + SIM 确认事务）、stats.c（usage/quota 双子页；24 桶 sparkline 缺段留空；quota N/A 不伪造 / UNLIMITED / OVER）
+- [x] 触摸路径：LVGL indev 原始坐标 → bot_gesture FSM（LVGL 手势识别保持关闭，T04 契约）；bot_route 唯一手势表驱动导航
+- [x] **每屏右上角常驻 SIM 徽标**（模拟状态绝不冒充真实接入，项目规则）
+- [x] WorkBuddy 卡在 SIM 数据中即显示 N/A（BLOCKED_SOURCE，与决策 B 一致）
+- [x] 亮度 28%（ui_tokens）
+- [x] 编译 0 error（741,680 B，分区余量 91%）；烧录 3 分区 hash verified
+- [x] 实机启动日志：ESP-IDF v6.1 / co5300 2.1.0 / CST9217 466×466 / LVGL task OK / **`bot_status SIM UI started (466x466)`** / 无 Panic
+- [x] 修复：bsp_display_lock 竞态（LVGL task 启动瞬间锁不可用；改 -1 阻塞 + 打印真实 esp_err）
+- [ ] 用户目测三屏 + 手势导航 + SIM 循环（7s/态）→ 通过后 T14 收口
