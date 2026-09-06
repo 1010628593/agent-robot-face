@@ -132,3 +132,16 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] 数值全部来自 interaction_tokens.json（tap 250ms/12px、hold 650ms、swipe 56px/120-700ms/1.4），轴比用整数乘除无浮点
 - [x] 与 bot_types.h 已有枚举合并（bot_gesture_kind_t 单一定义，event struct 留给 T05 路由）
 - [x] 验收：`ctest --test-dir build -R gesture` PASS；全量 ctest 2/2 PASS（-Wall -Wextra -Werror）
+
+## T05 · 设备帧解码、Model 与路由
+
+**状态**：DONE（5/5 native 套件 PASS）
+**证据**：`firmware/components/bot_core/{bot_json,bot_frame,bot_model,bot_router}.c` + 对应头文件 + `tests/native/test_{frame_parser,device_model,router}.c`
+
+- [x] `bot_json.c` 严格 JSON 解析器（固定节点池 512 + 字符串池，零堆分配）：拒 NaN/Infinity/1e999 溢出、重复键、深度>12、非法 UTF-8（含代理对/超长编码）、非对象根、尾随垃圾
+- [x] `bot_frame.c` 字节流状态机：`@bot ` 前缀 + 8192B 预算；拆包/粘包/CRLF/日志夹杂/UTF-8 跨 chunk；超长行丢到下一换行重同步并计数
+- [x] 解码器：envelope + 7 种 H→D body 全字段校验（schema 形状 + validate_contracts.py 语义层：key↔unit 映射、unavailable→null、quota 禁伪造数字、used_pct ±0.1、ACK accepted⟺ok、目录四唯一 agent、shared_with 不含自身）；v1 严格拒未知键；解析树立即释放，只出定长 bot_msg_t
+- [x] 修复：capabilities 有 open_agent/open_usage 字段；sparkline 允许 null 桶（缺段留空，NAN 占位不插值）
+- [x] `bot_model.c`：仅当前 link + 严格递增 seq 可改 Model；welcome 仅握手期（seq=1）接受并清 pending/旧 stats；新 rev 单槽缓冲，ACK accepted 才提升；旧 link 命令永不生效
+- [x] `bot_router.c`：02_UI_UX §5 手势表纯函数（Face 横滑→Stats / Stats 上下切 tab / Stats 右→Face / Picker 长按取消 / Stats 左仅边界反馈）
+- [x] 测试：15 个真实契约正例字节级过帧；9 个反例全拒；6 严格 JSON 用例；7 语义反例；hello link_id=null/seq=0 唯一例外；流式 3 用例；model 16 断言；router 19 断言
