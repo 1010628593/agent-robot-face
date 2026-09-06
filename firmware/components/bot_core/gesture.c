@@ -88,11 +88,16 @@ bot_gesture_kind_t bot_gesture_feed(bot_gesture_t *g, bot_touch_phase_t phase,
         int32_t dy = (int32_t)y - (int32_t)g->down_y;
         uint32_t elapsed = t_ms - g->down_ms;
 
+        /* TICK/UP can contain the first displaced sample. Check it before
+         * classifying HOLD/TAP, even if a MOVE was coalesced by the driver. */
+        if ((phase == BOT_TOUCH_MOVE || phase == BOT_TOUCH_TICK ||
+             phase == BOT_TOUCH_UP) &&
+            (iabs32(dx) > TAP_SLOP_PX || iabs32(dy) > TAP_SLOP_PX)) {
+            g->moved_beyond_slop = true;
+        }
+
         switch (phase) {
         case BOT_TOUCH_MOVE:
-            if (iabs32(dx) > TAP_SLOP_PX || iabs32(dy) > TAP_SLOP_PX) {
-                g->moved_beyond_slop = true;
-            }
             return BOT_GESTURE_NONE;
 
         case BOT_TOUCH_TICK:

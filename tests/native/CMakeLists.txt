@@ -35,3 +35,7 @@ add_test(NAME gesture COMMAND test_gesture)
 add_test(NAME frame_parser COMMAND test_frame_parser)
 add_test(NAME device_model COMMAND test_device_model)
 add_test(NAME router COMMAND test_router)
+
+# The recognizer must also tolerate callers with coalesced TICK/UP samples.
+add_executable(test_gesture_coalesced test_gesture_coalesced.c ${BOT_CORE}/gesture.c)
+add_test(NAME gesture_coalesced COMMAND test_gesture_coalesced)
