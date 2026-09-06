@@ -36,6 +36,8 @@ typedef enum {
     BOT_AGENT_COUNT = 4
 } bot_agent_id_t;
 
+/* Protocol states — what agents send over USB (05_PROTOCOL).
+ * These are the canonical states from the contract schema. */
 typedef enum {
     BOT_STATE_IDLE = 0,
     BOT_STATE_WORKING,
@@ -46,6 +48,30 @@ typedef enum {
     BOT_STATE_CANCELLED,
     BOT_STATE_UNKNOWN
 } bot_state_t;
+
+/* Visual face expressions — SIM-only states for the 18-expression design.
+ * Used by the SIM cycler and mapped to protocol states in the UI. */
+typedef enum {
+    BOT_FACE_DISCONNECTED = 0,
+    BOT_FACE_IDLE,
+    BOT_FACE_BLINK,
+    BOT_FACE_LOOK_LEFT,
+    BOT_FACE_LOOK_RIGHT,
+    BOT_FACE_LOOK_UP,
+    BOT_FACE_LOOK_DOWN,
+    BOT_FACE_CURIOUS,
+    BOT_FACE_WORKING,
+    BOT_FACE_THINKING,
+    BOT_FACE_TOOL,
+    BOT_FACE_WAITING,
+    BOT_FACE_HAPPY,
+    BOT_FACE_DONE,
+    BOT_FACE_SURPRISED,
+    BOT_FACE_ERROR,
+    BOT_FACE_SLEEP,
+    BOT_FACE_ATTENTION,
+    BOT_FACE_COUNT
+} bot_face_t;
 
 typedef enum {
     BOT_QUALITY_OBSERVED = 0,

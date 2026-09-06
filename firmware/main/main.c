@@ -21,8 +21,8 @@ static void ui_timer_cb(lv_timer_t *t)
 
 void app_main(void)
 {
-    lv_display_t *disp = bsp_display_start();
-    if (!disp) {
+    lv_display_t *display = bsp_display_start();
+    if (!display) {
         ESP_LOGE(TAG, "bsp_display_start failed");
         return;
     }

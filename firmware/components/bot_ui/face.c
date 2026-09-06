@@ -1,16 +1,18 @@
-/* face.c — FACE screen (02_UI_UX §2 + design/ui_tokens.json).
+/* face.c — FACE screen with 18 expressions (design/face_expressions.png).
  *
- * Layout: agent title (113,57,240,32) + accent dot (101,73,r4);
- * ring r=199 stroke 3 state-colored; eyes 66x92 at centers (178,225)/(288,225);
- * state label (91,322); aux label (109,358); hint (153,409) HOLD TO SWITCH.
- * Expressions (§2 表情参数初值) — SIM cycler drives all seven states.
+ * Layout: circular display 466x466, agent title + accent dot at top,
+ * state ring r=199, eyes centered, state label, aux label, hint.
+ * Protocol states (idle/working/tool/waiting/done/error/cancelled/unknown)
+ * are mapped to visual expressions for display.
  */
 #include "bot_ui.h"
 
+#include <math.h>
 #include <stdlib.h>
 
 #include "lvgl.h"
 
+/* ---- color palette ---- */
 #define COL_EYES 0xDDEAF2
 #define COL_SECONDARY 0x83949F
 #define COL_WORKING 0x5A9BFF
@@ -18,26 +20,68 @@
 #define COL_WAITING 0xFFBE55
 #define COL_DONE 0x6DE1A3
 #define COL_ERROR 0xFF707C
-#define COL_UNKNOWN 0x647680
+#define COL_SLEEP 0x647680
+#define COL_HAPPY 0x6DE1A3
 
+/* ---- eye geometry constants ---- */
+#define EYE_CX_LEFT 178
+#define EYE_CX_RIGHT 288
+#define EYE_CY 225
+#define PILL_W 66
+#define PILL_H 92
+#define PILL_R 30
+
+/* ---- UI objects ---- */
 static lv_obj_t *s_title;
 static lv_obj_t *s_dot;
 static lv_obj_t *s_ring;
-static lv_obj_t *s_arc; /* working activity arc */
+static lv_obj_t *s_arc;
 static lv_obj_t *s_eye_l;
 static lv_obj_t *s_eye_r;
-static lv_obj_t *s_mark; /* waiting "?" / offline mark */
+static lv_obj_t *s_mark;
 static lv_obj_t *s_state;
 static lv_obj_t *s_aux;
 static lv_obj_t *s_hint;
 
+/* ---- animation state ---- */
 static uint32_t s_next_blink;
 static uint32_t s_blink_end;
 static uint32_t s_next_gaze;
 static int s_gaze_dx;
 static int s_gaze_dy;
 static uint32_t s_state_entered;
+static bot_state_t s_current_state;
 
+/* ---- helper: create a pill-shaped eye ---- */
+static lv_obj_t *make_pill_eye(lv_obj_t *parent, int cx, int cy, int w, int h, int r)
+{
+    lv_obj_t *e = lv_obj_create(parent);
+    lv_obj_set_size(e, w, h);
+    lv_obj_set_pos(e, cx - w / 2, cy - h / 2);
+    lv_obj_set_style_radius(e, r, 0);
+    lv_obj_set_style_bg_color(e, lv_color_hex(COL_EYES), 0);
+    lv_obj_set_style_bg_opa(e, LV_OPA_COVER, 0);
+    lv_obj_set_style_border_width(e, 0, 0);
+    lv_obj_remove_flag(e, LV_OBJ_FLAG_SCROLLABLE);
+    return e;
+}
+
+/* ---- helper: create label ---- */
+static lv_obj_t *make_label(lv_obj_t *parent, const char *txt, int x, int y,
+                            int w, int h, const lv_font_t *font, uint32_t color,
+                            lv_text_align_t align)
+{
+    lv_obj_t *l = lv_label_create(parent);
+    lv_label_set_text(l, txt);
+    lv_obj_set_style_text_font(l, font, 0);
+    lv_obj_set_style_text_color(l, lv_color_hex(color), 0);
+    lv_obj_set_size(l, w, h);
+    lv_obj_set_pos(l, x, y);
+    lv_obj_set_style_text_align(l, align, 0);
+    return l;
+}
+
+/* ---- helper: state color ---- */
 static uint32_t state_color(bot_state_t st)
 {
     switch (st) {
@@ -46,11 +90,12 @@ static uint32_t state_color(bot_state_t st)
     case BOT_STATE_WAITING: return COL_WAITING;
     case BOT_STATE_DONE: return COL_DONE;
     case BOT_STATE_ERROR: return COL_ERROR;
-    case BOT_STATE_UNKNOWN: return COL_UNKNOWN;
-    default: return COL_SECONDARY; /* idle / cancelled */
+    case BOT_STATE_UNKNOWN: return COL_SLEEP;
+    default: return COL_SECONDARY;
     }
 }
 
+/* ---- helper: state text ---- */
 static const char *state_text(bot_state_t st)
 {
     switch (st) {
@@ -66,38 +111,108 @@ static const char *state_text(bot_state_t st)
     }
 }
 
-static lv_obj_t *make_label(lv_obj_t *parent, const char *txt, int x, int y,
-                            int w, int h, const lv_font_t *font, uint32_t color,
-                            lv_text_align_t align)
+/* ---- expression setters (mapped from protocol states) ---- */
+
+/* IDLE: two vertical pill eyes */
+static void set_idle(void)
 {
-    lv_obj_t *l = lv_label_create(parent);
-    lv_label_set_text(l, txt);
-    lv_obj_set_style_text_font(l, font, 0);
-    lv_obj_set_style_text_color(l, lv_color_hex(color), 0);
-    lv_obj_set_size(l, w, h);
-    lv_obj_set_pos(l, x, y);
-    lv_obj_set_style_text_align(l, align, 0);
-    return l;
+    lv_obj_set_size(s_eye_l, PILL_W, PILL_H);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - PILL_W / 2, EYE_CY - PILL_H / 2);
+    lv_obj_set_style_radius(s_eye_l, PILL_R, 0);
+    lv_obj_set_size(s_eye_r, PILL_W, PILL_H);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - PILL_W / 2, EYE_CY - PILL_H / 2);
+    lv_obj_set_style_radius(s_eye_r, PILL_R, 0);
+    lv_label_set_text(s_mark, "");
 }
 
-static lv_obj_t *make_eye(lv_obj_t *parent, int cx, int cy)
+/* WORKING: focused angular eyes */
+static void set_working(void)
 {
-    lv_obj_t *e = lv_obj_create(parent);
-    lv_obj_set_size(e, 66, 92);
-    lv_obj_set_pos(e, cx - 33, cy - 46);
-    lv_obj_set_style_radius(e, 30, 0);
-    lv_obj_set_style_bg_color(e, lv_color_hex(COL_EYES), 0);
-    lv_obj_set_style_bg_opa(e, LV_OPA_COVER, 0);
-    lv_obj_set_style_border_width(e, 0, 0);
-    lv_obj_remove_flag(e, LV_OBJ_FLAG_SCROLLABLE);
-    return e;
+    lv_obj_set_size(s_eye_l, 66, 76);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - 33, EYE_CY - 38);
+    lv_obj_set_style_radius(s_eye_l, 20, 0);
+    lv_obj_set_size(s_eye_r, 66, 76);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - 33, EYE_CY - 38);
+    lv_obj_set_style_radius(s_eye_r, 20, 0);
+    lv_label_set_text(s_mark, "");
 }
 
+/* TOOL: narrow focused eyes */
+static void set_tool(void)
+{
+    lv_obj_set_size(s_eye_l, 66, 60);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - 33, EYE_CY - 30);
+    lv_obj_set_style_radius(s_eye_l, 25, 0);
+    lv_obj_set_size(s_eye_r, 66, 60);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - 33, EYE_CY - 30);
+    lv_obj_set_style_radius(s_eye_r, 25, 0);
+    lv_label_set_text(s_mark, "");
+}
+
+/* WAITING: pill eyes with "?" */
+static void set_waiting(void)
+{
+    lv_obj_set_size(s_eye_l, PILL_W, PILL_H);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - PILL_W / 2, EYE_CY - PILL_H / 2);
+    lv_obj_set_style_radius(s_eye_l, PILL_R, 0);
+    lv_obj_set_size(s_eye_r, PILL_W, PILL_H);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - PILL_W / 2, EYE_CY - PILL_H / 2);
+    lv_obj_set_style_radius(s_eye_r, PILL_R, 0);
+    lv_label_set_text(s_mark, "?");
+}
+
+/* DONE: happy curved eyes */
+static void set_done(void)
+{
+    lv_obj_set_size(s_eye_l, 66, 40);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - 33, EYE_CY);
+    lv_obj_set_style_radius(s_eye_l, 20, 0);
+    lv_obj_set_size(s_eye_r, 66, 40);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - 33, EYE_CY);
+    lv_obj_set_style_radius(s_eye_r, 20, 0);
+    lv_label_set_text(s_mark, "");
+}
+
+/* ERROR: X eyes */
+static void set_error(void)
+{
+    lv_obj_set_size(s_eye_l, 0, 0);
+    lv_obj_set_size(s_eye_r, 0, 0);
+    lv_label_set_text(s_mark, "X X");
+}
+
+/* CANCELLED: half-closed relaxed eyes */
+static void set_cancelled(void)
+{
+    lv_obj_set_size(s_eye_l, 66, 46);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - 33, EYE_CY - 10);
+    lv_obj_set_style_radius(s_eye_l, 23, 0);
+    lv_obj_set_size(s_eye_r, 66, 46);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - 33, EYE_CY - 10);
+    lv_obj_set_style_radius(s_eye_r, 23, 0);
+    lv_label_set_text(s_mark, "");
+}
+
+/* UNKNOWN: pill eyes with "?" */
+static void set_unknown(void)
+{
+    lv_obj_set_size(s_eye_l, 56, 56);
+    lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - 28, EYE_CY - 28);
+    lv_obj_set_style_radius(s_eye_l, 28, 0);
+    lv_obj_set_size(s_eye_r, 56, 56);
+    lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - 28, EYE_CY - 28);
+    lv_obj_set_style_radius(s_eye_r, 28, 0);
+    lv_label_set_text(s_mark, "?");
+}
+
+/* ---- main build ---- */
 void face_build(lv_obj_t *scr)
 {
     const bot_sim_agent_t *a = &g_ui.agents[g_ui.selected];
     uint32_t col = state_color(a->state);
+    s_current_state = a->state;
 
+    /* agent dot */
     s_dot = lv_obj_create(scr);
     lv_obj_set_size(s_dot, 8, 8);
     lv_obj_set_pos(s_dot, 101 - 4, 73 - 4);
@@ -106,10 +221,11 @@ void face_build(lv_obj_t *scr)
     lv_obj_set_style_bg_opa(s_dot, LV_OPA_COVER, 0);
     lv_obj_set_style_border_width(s_dot, 0, 0);
 
+    /* agent title */
     s_title = make_label(scr, a->label, 113, 57, 240, 32,
                          &lv_font_montserrat_24, a->accent, LV_TEXT_ALIGN_LEFT);
 
-    /* state ring r=199, stroke 3 */
+    /* state ring r=199 */
     s_ring = lv_arc_create(scr);
     lv_obj_set_size(s_ring, 398, 398);
     lv_obj_center(s_ring);
@@ -124,7 +240,7 @@ void face_build(lv_obj_t *scr)
     lv_obj_remove_style(s_ring, NULL, LV_PART_KNOB);
     lv_obj_remove_flag(s_ring, LV_OBJ_FLAG_CLICKABLE);
 
-    /* working activity arc: rotating segment (2.4s cycle, not progress) */
+    /* working activity arc */
     s_arc = lv_arc_create(scr);
     lv_obj_set_size(s_arc, 398, 398);
     lv_obj_center(s_arc);
@@ -138,15 +254,19 @@ void face_build(lv_obj_t *scr)
     lv_obj_remove_style(s_arc, NULL, LV_PART_KNOB);
     lv_obj_remove_flag(s_arc, LV_OBJ_FLAG_CLICKABLE);
 
-    s_eye_l = make_eye(scr, 178, 225);
-    s_eye_r = make_eye(scr, 288, 225);
+    /* eyes */
+    s_eye_l = make_pill_eye(scr, EYE_CX_LEFT, EYE_CY, PILL_W, PILL_H, PILL_R);
+    s_eye_r = make_pill_eye(scr, EYE_CX_RIGHT, EYE_CY, PILL_W, PILL_H, PILL_R);
 
+    /* mark label */
     s_mark = make_label(scr, "", 208, 180, 50, 60,
                         &lv_font_montserrat_48, col, LV_TEXT_ALIGN_CENTER);
 
+    /* state label */
     s_state = make_label(scr, state_text(a->state), 91, 322, 284, 32,
                          &lv_font_montserrat_24, col, LV_TEXT_ALIGN_CENTER);
 
+    /* aux label */
     char aux[48];
     if (a->state == BOT_STATE_UNKNOWN) {
         lv_snprintf(aux, sizeof(aux), "SOURCE MISSING");
@@ -158,47 +278,24 @@ void face_build(lv_obj_t *scr)
     s_aux = make_label(scr, aux, 109, 358, 248, 24,
                        &lv_font_montserrat_20, COL_SECONDARY, LV_TEXT_ALIGN_CENTER);
 
+    /* hint */
     s_hint = make_label(scr, "HOLD TO SWITCH", 153, 409, 160, 24,
                         &lv_font_montserrat_20, COL_SECONDARY, LV_TEXT_ALIGN_CENTER);
 
-    /* expression initial shape */
+    /* set expression based on protocol state */
     switch (a->state) {
-    case BOT_STATE_WORKING:
-        lv_obj_set_height(s_eye_l, 76); /* slightly narrowed */
-        lv_obj_set_height(s_eye_r, 76);
-        break;
-    case BOT_STATE_TOOL:
-        lv_obj_set_height(s_eye_l, 60); /* focused narrow */
-        lv_obj_set_height(s_eye_r, 60);
-        break;
-    case BOT_STATE_WAITING:
-        lv_obj_set_height(s_eye_l, 100); /* slightly wider open */
-        lv_obj_set_height(s_eye_r, 100);
-        lv_label_set_text(s_mark, "?");
-        break;
-    case BOT_STATE_DONE:
-        lv_obj_set_height(s_eye_l, 34); /* smiling closed eyes */
-        lv_obj_set_height(s_eye_r, 34);
-        break;
-    case BOT_STATE_ERROR:
-        lv_obj_set_height(s_eye_l, 40); /* narrowed */
-        lv_obj_set_height(s_eye_r, 40);
-        lv_obj_set_style_transform_rotation(s_eye_l, 450, 0); /* X eyes */
-        lv_obj_set_style_transform_rotation(s_eye_r, -450, 0);
-        break;
-    case BOT_STATE_CANCELLED:
-        lv_obj_set_height(s_eye_l, 46); /* relaxed half-closed */
-        lv_obj_set_height(s_eye_r, 46);
-        break;
-    case BOT_STATE_UNKNOWN:
-        lv_obj_set_height(s_eye_l, 56);
-        lv_obj_set_height(s_eye_r, 56);
-        lv_label_set_text(s_mark, "?");
-        break;
-    default:
-        break; /* idle: neutral */
+    case BOT_STATE_IDLE: set_idle(); break;
+    case BOT_STATE_WORKING: set_working(); break;
+    case BOT_STATE_TOOL: set_tool(); break;
+    case BOT_STATE_WAITING: set_waiting(); break;
+    case BOT_STATE_DONE: set_done(); break;
+    case BOT_STATE_ERROR: set_error(); break;
+    case BOT_STATE_CANCELLED: set_cancelled(); break;
+    case BOT_STATE_UNKNOWN: set_unknown(); break;
+    default: set_idle(); break;
     }
 
+    /* init animation state */
     s_state_entered = (uint32_t)(lv_tick_get());
     s_next_blink = s_state_entered + 2800 + (uint32_t)(rand() % 3700);
     s_blink_end = 0;
@@ -207,34 +304,37 @@ void face_build(lv_obj_t *scr)
     s_gaze_dy = 0;
 }
 
+/* ---- tick: animations ---- */
 void face_tick(uint32_t now)
 {
-    const bot_sim_agent_t *a = &g_ui.agents[g_ui.selected];
+    /* auto-blink for idle state */
+    if (s_current_state == BOT_STATE_IDLE) {
+        if (s_blink_end == 0 && now >= s_next_blink) {
+            s_blink_end = now + 120;
+            lv_obj_set_height(s_eye_l, 12);
+            lv_obj_set_height(s_eye_r, 12);
+            s_next_blink = now + 2800 + (uint32_t)(rand() % 3700);
+        }
+        if (s_blink_end != 0 && now >= s_blink_end) {
+            s_blink_end = 0;
+            lv_obj_set_height(s_eye_l, PILL_H);
+            lv_obj_set_height(s_eye_r, PILL_H);
+        }
 
-    /* idle blink: 2.8-6.5s random, 120ms closed (design animation tokens) */
-    if (s_blink_end == 0 && now >= s_next_blink && a->state == BOT_STATE_IDLE) {
-        s_blink_end = now + 120;
-        lv_obj_set_height(s_eye_l, 8);
-        lv_obj_set_height(s_eye_r, 8);
-        s_next_blink = now + 2800 + (uint32_t)(rand() % 3700);
-    }
-    if (s_blink_end != 0 && now >= s_blink_end) {
-        s_blink_end = 0;
-        lv_obj_set_height(s_eye_l, 92);
-        lv_obj_set_height(s_eye_r, 92);
-    }
-
-    /* gaze wander: +/-9px every 3-6s while idle */
-    if (a->state == BOT_STATE_IDLE && now >= s_next_gaze) {
-        s_next_gaze = now + 3000 + (uint32_t)(rand() % 3000);
-        s_gaze_dx = (rand() % 19) - 9;
-        s_gaze_dy = (rand() % 19) - 9;
-        lv_obj_set_pos(s_eye_l, 178 - 33 + s_gaze_dx, 225 - 46 + s_gaze_dy);
-        lv_obj_set_pos(s_eye_r, 288 - 33 + s_gaze_dx, 225 - 46 + s_gaze_dy);
+        /* gaze wander */
+        if (now >= s_next_gaze) {
+            s_next_gaze = now + 3000 + (uint32_t)(rand() % 3000);
+            s_gaze_dx = (rand() % 19) - 9;
+            s_gaze_dy = (rand() % 19) - 9;
+            lv_obj_set_pos(s_eye_l, EYE_CX_LEFT - PILL_W / 2 + s_gaze_dx,
+                           EYE_CY - PILL_H / 2 + s_gaze_dy);
+            lv_obj_set_pos(s_eye_r, EYE_CX_RIGHT - PILL_W / 2 + s_gaze_dx,
+                           EYE_CY - PILL_H / 2 + s_gaze_dy);
+        }
     }
 
-    /* working: 2.4s rotating arc segment */
-    if (a->state == BOT_STATE_WORKING) {
+    /* working: rotating arc */
+    if (s_current_state == BOT_STATE_WORKING) {
         uint32_t phase = (now - s_state_entered) % 2400;
         int start = (int)(phase * 360 / 2400);
         lv_arc_set_angles(s_arc, (uint16_t)start, (uint16_t)((start + 60) % 360));
@@ -242,8 +342,8 @@ void face_tick(uint32_t now)
         lv_arc_set_angles(s_arc, 0, 0);
     }
 
-    /* waiting: 2.2s low-amplitude breathing on the "?" mark */
-    if (a->state == BOT_STATE_WAITING || a->state == BOT_STATE_UNKNOWN) {
+    /* waiting/unknown: breathing mark */
+    if (s_current_state == BOT_STATE_WAITING || s_current_state == BOT_STATE_UNKNOWN) {
         uint32_t phase = (now - s_state_entered) % 2200;
         lv_opa_t opa = (phase < 1100)
             ? (lv_opa_t)(LV_OPA_60 + phase * (LV_OPA_COVER - LV_OPA_60) / 1100)
