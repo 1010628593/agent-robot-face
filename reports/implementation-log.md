@@ -77,9 +77,9 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] 首次烧录 —— **已执行（用户已单独确认）**：`Wrote 967696 bytes @0x10000` + `Hash of data verified.`
       只写 3 个分区，**未 `--erase-all`**、未写 eFuse。命令用构建产物的 `flash_args`（dio/80m/16MB）
 - [x] 启动日志抓取 → **实机跑的是 ESP-IDF v6.1**；`co5300 2.1.0` 面板创建成功；`CST9217` 报 **466×466**；8MB PSRAM 测试 OK；无 Panic、无复位行
-- [ ] 屏幕目测确认（官方 LVGL 9 demo 画面）—— **待用户看一眼**
-- [ ] 四方向触摸 —— 待用户触摸验证
-- [ ] 15 分钟无重启 —— **进行中**（后台抓 900 s 日志 → `evidence/ui/official-demo/boot-and-15min.log`）
+- [x] 屏幕目测确认 —— **用户上传实机照片**（`evidence/ui/official-demo/display-benchmark-photo.jpg`），可见 LVGL 9 性能基准页：All scenes 49 FPS / Empty 29 FPS / Wallpaper 31 FPS / Rotating rectangle 66 FPS；无花屏、无错位
+- [ ] 四方向触摸 —— 待用户手测回报
+- [ ] 15 分钟无重启 —— 后台抓 900 s 日志进行中（~21:17 完成），回填复位/Panic 计数
 
 **实证等级升级**：`ESP-IDF 编译通过` + `已烧录`（`实机验收通过` 待目测与长跑补齐）
 

@@ -6,7 +6,7 @@
 |---|---|---|---|
 | T00 | 只读盘点与工程基线 | **DONE**（硬件识别子项 BLOCKED_HARDWARE） | `evidence/baseline.md` |
 | T01 | 四个 Agent 能力探测 | PARTIAL（仅只读版本探测） | `reports/implementation-log.md` T01 预探测 |
-| T02 | 原厂备份和 v6.1 官方样例 | **PARTIAL**：构建 DONE + 硬件识别/备份 DONE；**烧录待用户确认** | `evidence/idf61-build.md`、`evidence/hardware-baseline.md` |
+| T02 | 原厂备份和 v6.1 官方样例 | **DONE**：构建/识别/备份/烧录/启动日志/屏幕目测 全通；**15 min 稳定性在途** | `evidence/idf61-build.md`、`evidence/hardware-baseline.md`、`evidence/ui/official-demo/` |
 | T03 | 合同模型、构建边界与测试地基 | NOT_STARTED | — |
 | T04 | 独立手势识别 | NOT_STARTED | — |
 | T05 | 设备帧解码、Model 与路由 | NOT_STARTED | — |
@@ -30,8 +30,8 @@
 
 ## 检查点
 
-- [x] T00：环境盘点（硬件未接入，阻塞项已标注）
-- [ ] T02：备份 + 官方样例上板 —— **等用户接线 + 单独确认烧录**
+- [x] T00：环境盘点（硬件识别已通过接入补齐）
+- [x] T02：备份 + 官方样例上板；启动日志 v6.1 + 466×466 + 8MB PSRAM；屏幕目测 PASS；15 分钟稳定性在途
 - [ ] T14：三屏 SIM 板上预览，用户确认触控和观感
 - [ ] T15–T18：四源真实能力报告，WorkBuddy 降级须明确接受
 - [ ] T22：长稳/隐私/统计同口径对照与发布说明

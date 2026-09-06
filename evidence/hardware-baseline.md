@@ -149,4 +149,21 @@ python -m esptool --chip esp32s3 --port /dev/cu.usbmodem2142101 -b 460800 write-
 | `bootloader.bin` | 22,560 B | `4081e71956b520718727b91433dd299d6dfca57ad0a35ffdc610ba11cb068084` |
 | `partition-table.bin` | 3,072 B | `d3e6663d9cbd407623c82f215df58a5c9bd1e353fd937ad519018c06fd9298fb` |
 
-实证等级：**已烧录**（R01 的一半完成；实机显示与 15 分钟稳定性仍需目测/长跑确认）。
+## 7. 实机显示确认（用户目测）
+
+- 照片归档：`evidence/ui/official-demo/display-benchmark-photo.jpg`（JPG 142 KB，2026-09-06 21:02 用户上传）
+- 内容：LVGL v9 性能基准表可读，字体清晰无锯齿；触屏坐标 ↔ 显示一致
+  - All scenes avg: 100% CPU / **49 FPS** / 19 ms (render+flush)
+  - Empty screen: 100% / 29 FPS / 27 ms
+  - Moving wallpaper: 100% / 31 FPS / 29 ms
+  - 旋转矩形: 100% / 66 FPS / 1 ms
+- 圆角摄像头镜头下截取，分辨率实测与日志一致（466×466，无旋转/裁切异常）
+- 无花屏、闪烁、重影 → CO5300 + LVGL v9 + 双缓冲渲染 OK
+
+## 8. 15 分钟稳定性（进行中）
+
+- 抓取进程：后台 `serial.Serial` 900 秒，RTS 复位触发 → `evidence/ui/official-demo/boot-and-15min.log`
+- 完成时间约 21:17；现在 21:04 已记录 4.8 KB 启动日志，无重启迹象
+- 待回填：复位次数、Panic 数、PSRAM/触摸错误计数；通过则 T02 → R01 `实机验收通过`
+
+实证等级：**已烧录 + 显示目测通过**（15 分钟稳定性在途，R01 半完成 → 升 `实机验收通过` 仅差最后一项）
