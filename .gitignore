@@ -1,0 +1,35 @@
+# Bot Status v1 - workspace ignore rules (T00)
+# Python / Bridge
+.venv*/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ESP-IDF build outputs
+.build/
+build/
+build-idf*/
+**/build/
+**/managed_components/
+sdkconfig.old
+dependencies.lockSample
+
+# Vendor BSP: nested clone pinned by commit SHA (see evidence/idf61-build.md)
+vendor/
+
+# Firmware artifacts (never commit binaries)
+*.bin
+*.elf
+*.map
+*.uf2
+
+# Private evidence (factory backups, secrets) - stays outside repo as well
+evidence/private/
+*.secret
+*.token
+
+# macOS
+.DS_Store
+
+# Original handoff archive (directory version is tracked instead)
+Bot_Status_v1_本地Agent实施包.zip
