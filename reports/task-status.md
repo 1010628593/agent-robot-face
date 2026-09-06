@@ -8,7 +8,7 @@
 | T01 | 四个 Agent 能力探测 | **DONE**：4 份 capability-report 通过 schema；WorkBuddy 待用户接受 reported 降级 | `reports/capabilities/*.json`、`evidence/probes/` |
 | T02 | 原厂备份和 v6.1 官方样例 | **DONE**（R01 `实机验收通过`：烧录/启动/屏幕/15分钟无复位 全通） | `evidence/hardware-baseline.md`、`evidence/ui/official-demo/` |
 | T03 | 合同模型、构建边界与测试地基 | **DONE**（20/20 pytest + native ctest PASS，依赖全锁） | `bridge/`、`firmware/components/bot_core/include/bot_types.h`、`tests/native/` |
-| T04 | 独立手势识别 | NOT_STARTED | — |
+| T04 | 独立手势识别 | **DONE**（12/12 表驱动用例 PASS，TDD 留痕） | `firmware/components/bot_core/gesture.c`、`tests/native/gesture_cases.inc` |
 | T05 | 设备帧解码、Model 与路由 | NOT_STARTED | — |
 | T06 | Face 三层动画与 LVGL 模拟器 | NOT_STARTED | — |
 | T07 | Agent Picker 与选择确认 UI | NOT_STARTED | — |

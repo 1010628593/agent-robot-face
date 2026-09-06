@@ -12,7 +12,12 @@ add_compile_options(-Wall -Wextra -Werror)
 
 include_directories(${CMAKE_SOURCE_DIR}/../../firmware/components/bot_core/include)
 
+set(BOT_CORE ${CMAKE_SOURCE_DIR}/../../firmware/components/bot_core)
+
 add_executable(test_bot_types test_bot_types.c)
+
+add_executable(test_gesture test_gesture.c ${BOT_CORE}/gesture.c)
 
 enable_testing()
 add_test(NAME bot_types COMMAND test_bot_types)
+add_test(NAME gesture COMMAND test_gesture)

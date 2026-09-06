@@ -120,3 +120,15 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] `firmware/components/bot_core/include/bot_types.h`（466×466 / 8192B / hold 650ms / swipe 56px 合同 token）
 - [x] `tests/native/CMakeLists.txt` + `test_bot_types.c`：macOS clang 编译 + ctest PASS（`-Wall -Wextra -Werror`）
 - [x] 验收命令复核：`.venv-bridge/bin/python -m pytest bridge/tests/test_contracts.py -q` → **20 passed**；`validate_contracts.py` → **PASS**（未回归）
+
+## T04 · 独立手势识别
+
+**状态**：DONE（TDD：先生成表 + 构建失败 → 实现 → 12/12 PASS）
+**证据**：`firmware/components/bot_core/gesture.c`、`include/bot_gesture.h`、`tests/native/test_gesture.c`、`tests/native/gesture_cases.inc`（由 `tools/gen_gesture_cases.py` 从 `acceptance/gesture_cases.json` 生成）
+
+- [x] 表驱动：12 用例 36 样本全部由 JSON fixture 生成，JSON 保持唯一事实源
+- [x] FSM：IDLE / PRESSED / HOLD_FIRED / CONSUMED；单接触最多一个事件
+- [x] 边界全过：649ms 非 HOLD（G02）；650ms TICK 触发 HOLD（G03，UP 不触发）；13px 取消长按（G04）；HOLD 后 UP 无 TAP（G03）；唤醒接触只产 WAKE_ONLY（G10）；cancel 静默（G11）；斜划被 axis_ratio=1.4 拒绝（G09）；55px 低于 swipe_min_px 拒绝（G12）
+- [x] 数值全部来自 interaction_tokens.json（tap 250ms/12px、hold 650ms、swipe 56px/120-700ms/1.4），轴比用整数乘除无浮点
+- [x] 与 bot_types.h 已有枚举合并（bot_gesture_kind_t 单一定义，event struct 留给 T05 路由）
+- [x] 验收：`ctest --test-dir build -R gesture` PASS；全量 ctest 2/2 PASS（-Wall -Wextra -Werror）
