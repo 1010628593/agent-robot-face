@@ -74,8 +74,14 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [x] 安全功能只读检查：Secure Boot **关**、Flash 加密 **关**、WR_DIS/RD_DIS=0、JTAG 未禁用 → 无异常，备份为明文
 - [x] 完整 `read-flash` 私有备份：**16,777,216 B**（=16MiB）· SHA256 `4c020428c2fe5c7610a4694682ddc473427707ad553a21afe168c090d0b33c38`
       → `$HOME/Workspace/bot-status-private-backups/20260906-202608/`（仓库外，`umask 077`）
-- [ ] 首次烧录 —— **待用户单独确认**（已给出待写固件哈希与恢复命令，见 `evidence/hardware-baseline.md`）
-- [ ] 黑白红绿蓝短测 / 四方向触摸 / 15 分钟运行 —— 依赖烧录
+- [x] 首次烧录 —— **已执行（用户已单独确认）**：`Wrote 967696 bytes @0x10000` + `Hash of data verified.`
+      只写 3 个分区，**未 `--erase-all`**、未写 eFuse。命令用构建产物的 `flash_args`（dio/80m/16MB）
+- [x] 启动日志抓取 → **实机跑的是 ESP-IDF v6.1**；`co5300 2.1.0` 面板创建成功；`CST9217` 报 **466×466**；8MB PSRAM 测试 OK；无 Panic、无复位行
+- [ ] 屏幕目测确认（官方 LVGL 9 demo 画面）—— **待用户看一眼**
+- [ ] 四方向触摸 —— 待用户触摸验证
+- [ ] 15 分钟无重启 —— **进行中**（后台抓 900 s 日志 → `evidence/ui/official-demo/boot-and-15min.log`）
+
+**实证等级升级**：`ESP-IDF 编译通过` + `已烧录`（`实机验收通过` 待目测与长跑补齐）
 
 补充发现：**原厂分区表与官方示例分区表布局不同**（原厂 `factory@0x110000`，示例 `factory@0x10000`）。烧录示例会覆盖分区表，原厂 factory/assets 成为孤儿分区；因此"原厂恢复"必须整片回写备份，不能只写 app。
 
