@@ -104,3 +104,19 @@ T02（官方示例 v6.1 构建 + 只读硬件识别/备份）→ 完成后给用
 - [ ] T15–T17 三源真实 adapter 干跑（T18 跳过）
 
 替换了先前"T01 预探测"占位（旧版本只看了版本，未做完整能力门）。
+
+## T03 · 合同模型、构建边界与测试地基
+
+**状态**：DONE（TDD：测试先行 → 先失败后实现 → 20/20 PASS）
+**证据**：`bridge/`、`firmware/components/bot_core/include/bot_types.h`、`tests/native/`
+
+- [x] `bridge/pyproject.toml` + `bridge/requirements.lock`（pydantic 2.13.5 / jsonschema 4.26.0 / pytest 8.4.2，全锁定）
+- [x] `bridge/src/bot_bridge/models.py` 三层校验：
+  1. `strict_load` 解析器层（8192B / UTF-8 / 拒重复键 / 拒 NaN·Infinity / 深度 ≤12，与 `validate_contracts.py` 同规则）
+  2. Pydantic 严格模型（10 种 DeviceMessage body + AgentEvent + UsageRecord + CapabilityReport，全部 `extra="forbid"`）
+  3. 语义层（metric key/unit、终态 reason、quota 禁止伪造数字、used_pct 一致性、ACK 配对、event id 规则、hello 唯一 link_id=null/seq=0 例外）
+- [x] `bridge/tests/conftest.py` + `test_contracts.py` 20 例：18 正例解析 / 9 反例全拒（含 06 单位错误、07 重复 agent、09 link 缺失）/ 解析器 8 例 / 语义抽查 5 例
+- [x] TDD 过程留痕：首次运行 `ModuleNotFoundError` → 实现后 2 失败（09 link 规则 + source_health 字段）→ 修复后 20/20 PASS，**未修改任何反例**
+- [x] `firmware/components/bot_core/include/bot_types.h`（466×466 / 8192B / hold 650ms / swipe 56px 合同 token）
+- [x] `tests/native/CMakeLists.txt` + `test_bot_types.c`：macOS clang 编译 + ctest PASS（`-Wall -Wextra -Werror`）
+- [x] 验收命令复核：`.venv-bridge/bin/python -m pytest bridge/tests/test_contracts.py -q` → **20 passed**；`validate_contracts.py` → **PASS**（未回归）
