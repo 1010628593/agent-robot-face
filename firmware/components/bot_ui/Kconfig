@@ -1,0 +1,7 @@
+menu "Bot UI"
+config BOT_DEV_SIM
+    bool "Developer simulator (synthetic data on every page)"
+    default n
+    help
+        Independent development build only. Production requires the USB Bridge.
+endmenu

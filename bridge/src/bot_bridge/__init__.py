@@ -1,9 +1,7 @@
-"""Bot Status bridge package (T03).
+"""Bridge runtime v2 plus retained v1 contract validation for historical fixtures.
 
-Single validation entry for HTTP and serial:
-  parse_device_message(raw: bytes) -> DeviceMessage
-  parse_agent_event(raw: bytes) -> AgentEvent
-  parse_capability_report(raw: bytes) -> CapabilityReport
+Production USB uses bot_bridge.usb and docs/protocol-v2.md. The exported
+parse_device_message is the legacy fixture validator, never the production link.
 """
 from .models import (
     AgentEvent,

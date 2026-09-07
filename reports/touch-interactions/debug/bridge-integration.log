@@ -1,0 +1,18 @@
+{
+  "passed": 12,
+  "checks": [
+    "late old terminal cannot replace newer turn",
+    "concurrent tools and approval wait stay independent",
+    "out-of-order independent tool completion",
+    "terminal proof and dedup survive late tool completion",
+    "stable equal priority and pin cannot be stolen",
+    "historical replay does not create new attention",
+    "cumulative baseline and cross-day deltas; missing cost stays null",
+    "selection ledger restart persistence",
+    "WorkBuddy meta response cannot rewrite incomplete human run",
+    "native event schemas retain verified boundaries",
+    "PTY v2 welcome full snapshots action dedup invalid frame and diag isolation",
+    "idempotent installer and owned-entry uninstall preserve existing hooks"
+  ]
+}
+{"api_integration": "PASS", "checks": ["real loopback server", "no-source null metrics", "bearer authentication", "browser origin forbidden", "atomic revision conflict", "pin", "pause release", "resume"]}

@@ -1,0 +1,8 @@
+{
+  "backup_bytes": 8388608,
+  "backup_sha256": "0fae918e558e41c79c57032c4a3953b2b621042a9086f12c50ee7f5bbc3a3529",
+  "image_bytes": 854944,
+  "image_sha256": "df6f06846e34ffb324ca459cb53612ad4531be61ba74ef3a09bf46dbd786c4d5",
+  "offset": "0x10000",
+  "firmware": "2.1.0"
+}

@@ -1,0 +1,186 @@
+{
+  "hermes": [
+    {
+      "agent": "hermes",
+      "session": "b84fdbde1823128bb62fad5bee91ca0b",
+      "run": "fa80d6b2e67e67f0c5dccae7383c7410",
+      "kind": "tool_end",
+      "ts": 1788768950239,
+      "tool": "terminal",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "b84fdbde1823128bb62fad5bee91ca0b",
+      "run": "fa80d6b2e67e67f0c5dccae7383c7410",
+      "kind": "tool_start",
+      "ts": 1788768868553,
+      "tool": "terminal",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "b84fdbde1823128bb62fad5bee91ca0b",
+      "run": "fa80d6b2e67e67f0c5dccae7383c7410",
+      "kind": "start",
+      "ts": 1788768856760,
+      "tool": "",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "a06b600c928299223909f400d3dcc640",
+      "run": "8761637442898dd2e45036fecedc731e",
+      "kind": "done",
+      "ts": 1788768820683,
+      "tool": "",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "a06b600c928299223909f400d3dcc640",
+      "run": "8761637442898dd2e45036fecedc731e",
+      "kind": "tool_end",
+      "ts": 1788768814504,
+      "tool": "terminal",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "a06b600c928299223909f400d3dcc640",
+      "run": "8761637442898dd2e45036fecedc731e",
+      "kind": "tool_start",
+      "ts": 1788768754186,
+      "tool": "terminal",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "a06b600c928299223909f400d3dcc640",
+      "run": "8761637442898dd2e45036fecedc731e",
+      "kind": "start",
+      "ts": 1788768740801,
+      "tool": "",
+      "channel": "hermes_hook"
+    },
+    {
+      "agent": "hermes",
+      "session": "42692409261969be46aa2c188d6dffb4",
+      "run": "55abfc4251a6372424291482bd745a54",
+      "kind": "done",
+      "ts": 1788767482930,
+      "tool": "",
+      "channel": "hermes_cli_db"
+    },
+    {
+      "agent": "hermes",
+      "session": "42692409261969be46aa2c188d6dffb4",
+      "run": "55abfc4251a6372424291482bd745a54",
+      "kind": "tool_start",
+      "ts": 1788767480094,
+      "tool": "terminal",
+      "channel": "hermes_cli_db"
+    },
+    {
+      "agent": "hermes",
+      "session": "42692409261969be46aa2c188d6dffb4",
+      "run": "55abfc4251a6372424291482bd745a54",
+      "kind": "tool_end",
+      "ts": 1788767480094,
+      "tool": "terminal",
+      "channel": "hermes_cli_db"
+    }
+  ],
+  "workbuddy": [
+    {
+      "agent": "workbuddy",
+      "session": "00d1b5e658685979966cf66da1fb2366",
+      "run": "e4c15f7d4e24468b862300070d1b48b4",
+      "kind": "done",
+      "ts": 1788768186958,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "00d1b5e658685979966cf66da1fb2366",
+      "run": "e4c15f7d4e24468b862300070d1b48b4",
+      "kind": "tool_end",
+      "ts": 1788768181665,
+      "tool": "terminal",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "00d1b5e658685979966cf66da1fb2366",
+      "run": "e4c15f7d4e24468b862300070d1b48b4",
+      "kind": "tool_start",
+      "ts": 1788768179737,
+      "tool": "terminal",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "00d1b5e658685979966cf66da1fb2366",
+      "run": "e4c15f7d4e24468b862300070d1b48b4",
+      "kind": "start",
+      "ts": 1788768171600,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "d082963a01863f3112703abe8046bfc6",
+      "kind": "unknown",
+      "ts": 1788765352386,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "d082963a01863f3112703abe8046bfc6",
+      "kind": "start",
+      "ts": 1788765347790,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "f275fa011774f1ebf8bfa0c8c54f9bef",
+      "kind": "done",
+      "ts": 1788765331663,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "f275fa011774f1ebf8bfa0c8c54f9bef",
+      "kind": "tool_end",
+      "ts": 1788765323953,
+      "tool": "terminal",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "f275fa011774f1ebf8bfa0c8c54f9bef",
+      "kind": "tool_start",
+      "ts": 1788765323791,
+      "tool": "terminal",
+      "channel": "workbuddy_desktop_jsonl"
+    },
+    {
+      "agent": "workbuddy",
+      "session": "dc1c30dbf9b657cecbda945770b0b5ea",
+      "run": "f275fa011774f1ebf8bfa0c8c54f9bef",
+      "kind": "start",
+      "ts": 1788765303229,
+      "tool": "",
+      "channel": "workbuddy_desktop_jsonl"
+    }
+  ]
+}

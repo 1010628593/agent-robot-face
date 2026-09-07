@@ -5,9 +5,9 @@
 #include <string.h>
 #define RAD 0.017453292519943295f
 #define DEG 57.29577951308232f
-#define SHAKE_HIGH .60f
-#define SHAKE_LOW .18f
-#define SHAKE_WINDOW_MS 850u
+#define SHAKE_HIGH .22f
+#define SHAKE_LOW .09f
+#define SHAKE_WINDOW_MS 1000u
 static float norm(const float v[3]) { return sqrtf(v[0]*v[0]+v[1]*v[1]+v[2]*v[2]); }
 static float dot(const float a[3],const float b[3]) { return a[0]*b[0]+a[1]*b[1]+a[2]*b[2]; }
 static void unit(float v[3]) { float n=norm(v);if(n>.00001f)for(int i=0;i<3;i++)v[i]/=n; }
@@ -29,7 +29,7 @@ static void predict(float g[3],const float w[3],float dt) {
     unit(g);
 }
 static void event(bot_motion_t *m,bot_reaction_t r,uint32_t now) {
-    m->view.event_id++;m->view.event_ms=now;m->view.reaction=r;
+    m->view.event_id++;m->view.event_ms=now;m->view.reaction=r;m->view.reaction_strength=1;
 }
 static bool valid(const bot_motion_sample_t *s) {
     for(int i=0;i<3;i++)if(!isfinite(s->accel[i]) || !isfinite(s->gyro[i]) ||
@@ -57,14 +57,22 @@ bool bot_motion_feed(bot_motion_t *m,const bot_motion_sample_t *s) {
         /* Do not integrate across a stall, carry shake peaks or learn a false bias. */
         m->peaks=0;m->peak_high=false;m->shake_armed=false;m->stable=false;m->quiet=false;m->moving=false;
         m->calibration_count=0;m->view.reaction=BOT_REACTION_NONE;
-        if(fabsf(an-1)<.12f)memcpy(m->gravity,a,sizeof(a));
         dt=.01f;
     } else if(!fresh)predict(m->gravity,w,dt);
     float linear[3];for(int i=0;i<3;i++)linear[i]=s->accel[i]-m->gravity[i];
     float energy=norm(linear);
-    bool still=fabsf(an-1)<.08f && wn<2.0f && norm(da)<.025f;
+    /* Before bias is known, the raw gyro includes the offset we are trying to
+     * learn (this board measures ~4.7dps at rest). Keep the one-second gravity
+     * stability window; apply the strict gyro gate only after subtracting bias. */
+    float quiet_gyro_limit=m->bias_ready?2.0f:10.0f;
+    bool still=fabsf(an-1)<.08f && wn<quiet_gyro_limit && norm(da)<.025f;
+    if(still && m->stable) {
+        float drift[3];for(int i=0;i<3;i++)drift[i]=a[i]-m->stable_accel[i];
+        if(norm(drift)>.02f)m->stable=false;
+    }
     if(still) {
-        if(!m->stable){m->stable=true;m->stable_ms=s->ms;m->calibration_count=0;}
+        if(!m->stable){m->stable=true;m->stable_ms=s->ms;m->calibration_count=0;
+            memcpy(m->stable_accel,a,sizeof(a));}
         if(!m->bias_ready) {
             if(!m->calibration_count) {
                 memset(m->calibration_sum,0,sizeof(m->calibration_sum));
@@ -83,14 +91,17 @@ bool bot_motion_feed(bot_motion_t *m,const bot_motion_sample_t *s) {
         }
     } else {m->stable=false;m->calibration_count=0;}
     bool settled=still && s->ms-m->stable_ms>=300;
-    if(fabsf(an-1)<.12f && (energy<.32f || settled)) {
+    if(settled && fabsf(an-1)<.08f) {
         if(settled && dot(m->gravity,a)<-.5f)memcpy(m->gravity,a,sizeof(a));
         else {
-            float gain=dt/(.18f+dt);
+            float gain=dt/(.08f+dt);
             for(int i=0;i<3;i++)m->gravity[i]+=gain*(a[i]-m->gravity[i]);
             unit(m->gravity);
         }
     }
+    /* Publish residual against the corrected estimate, not yesterday's gravity. */
+    for(int i=0;i<3;i++)linear[i]=s->accel[i]-m->gravity[i];
+    energy=norm(linear);
     float planar=hypotf(m->gravity[0],m->gravity[1]);
     if(m->view.flat) {if(planar>.35f)m->view.flat=false;}
     else if(planar<.22f)m->view.flat=true;
@@ -98,15 +109,10 @@ bool bot_motion_feed(bot_motion_t *m,const bot_motion_sample_t *s) {
     if(!m->view.flat) {
         float raw=atan2f(m->gravity[0],-m->gravity[1])*DEG;
         float target=bot_motion_wrap(m->rotation_sign*(raw-m->mount_deg));
-        if(fresh)m->view.rotation_deg=target;
-        else {
-            float error=bot_motion_wrap(target-m->view.rotation_deg);
-            if(fabsf(error)>.4f) {
-                float delta=error*(dt/(.06f+dt)),limit=240*dt;
-                delta=fmaxf(-limit,fminf(limit,delta));
-                m->view.rotation_deg=bot_motion_wrap(m->view.rotation_deg+delta);
-            }
-        }
+        /* Gravity already contains gyro prediction and gated accel correction.
+         * A second low-pass here adds phase lag to otherwise valid rotation. */
+        if(fresh || fabsf(bot_motion_wrap(target-m->view.rotation_deg))>.15f)
+            m->view.rotation_deg=target;
     }
     bool quiet=energy<.14f && wn<12 && fabsf(an-1)<.1f;
     bool cooling=m->had_dizzy && s->ms-m->last_dizzy_ms<BOT_MOTION_COOLDOWN_MS;
@@ -129,17 +135,24 @@ bool bot_motion_feed(bot_motion_t *m,const bot_motion_sample_t *s) {
        !m->peak_high && s->ms-m->peak_ms>=70) {
         m->peak_high=true;m->peak_ms=s->ms;
         float dir[3];for(int i=0;i<3;i++)dir[i]=linear[i]/energy;
-        if(!m->peaks || dot(dir,m->peak_dir)>-.3f) {m->peaks=1;m->window_ms=s->ms;}
-        else m->peaks++;
+        if(!m->peaks || dot(dir,m->peak_dir)>-.3f) {m->peaks=1;m->window_ms=s->ms;m->peak_energy=energy;}
+        else {m->peaks++;m->peak_energy+=energy;}
         memcpy(m->peak_dir,dir,sizeof(dir));
         if(m->peaks>=3) {
-            event(m,BOT_REACTION_DIZZY,s->ms);m->last_dizzy_ms=s->ms;m->had_dizzy=true;
+            event(m,BOT_REACTION_DIZZY,s->ms);
+            m->view.reaction_strength=fmaxf(.08f,fminf(1,(m->peak_energy/3-.18f)/.72f));
+            m->last_dizzy_ms=s->ms;m->had_dizzy=true;
             m->peaks=0;m->moving=false;m->shake_armed=false;
         }
     }
     m->last_ms=s->ms;memcpy(m->previous_accel,s->accel,sizeof(m->previous_accel));
     m->view.sampled_ms=s->ms;m->view.available=true;m->view.gyro_calibrated=m->bias_ready;
-    m->view.linear_g=energy;return true;
+    m->view.linear_g=energy;
+    float c=cosf(m->mount_deg*RAD),sn=sinf(m->mount_deg*RAD);
+    m->view.screen_accel[0]=m->rotation_sign*(c*linear[0]+sn*linear[1]);
+    m->view.screen_accel[1]=-sn*linear[0]+c*linear[1];
+    m->view.screen_accel[2]=linear[2];
+    return true;
 }
 bot_motion_view_t bot_motion_view(const bot_motion_t *m,uint32_t now) {
     bot_motion_view_t v={0};if(!m || !m->initialized)return v;

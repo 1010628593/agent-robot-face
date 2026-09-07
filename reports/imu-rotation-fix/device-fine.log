@@ -1,0 +1,153 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x2b (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40056f64
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x1664
+load:0x403c8700,len:0xf7c
+load:0x403cb700,len:0x31ec
+entry 0x403c892c
+I (24) boot: ESP-IDF v6.1-dirty 2nd stage bootloader
+I (24) boot: compile time Sep  7 2026 13:59:54
+I (25) boot: Multicore bootloader
+I (25) boot: chip revision: v0.2
+I (28) boot: efuse block revision: v1.4
+I (32) qio_mode: Enabling default flash chip QIO
+I (36) boot.esp32s3: Boot SPI Speed : 80MHz
+I (40) boot.esp32s3: SPI Mode       : QIO
+I (43) boot.esp32s3: SPI Flash Size : 16MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (61) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (74) boot:  2 factory          factory app      00 00 00010000 00800000
+I (80) boot:  3 storage          Unknown data     01 82 00810000 00700000
+I (87) boot: End of partition table
+I (90) esp_image: segment 0: paddr=00010020 vaddr=3c060020 size=3a5d8h (239064) map
+I (134) esp_image: segment 1: paddr=0004a600 vaddr=3fcac600 size=0394ch ( 14668) load
+I (138) esp_image: segment 2: paddr=0004df54 vaddr=40378000 size=020c4h (  8388) load
+I (140) esp_image: segment 3: paddr=00050020 vaddr=42000020 size=58078h (360568) map
+I (202) esp_image: segment 4: paddr=000a80a0 vaddr=4037a0c4 size=22504h (140548) load
+I (230) esp_image: segment 5: paddr=000ca5ac vaddr=50000000 size=00024h (    36) load
+I (245) boot: Loaded app from partition at offset 0x10000
+I (245) boot: Disabling RNG early entropy source...
+I (255) octal_psram: vendor id    : 0x0d (AP)
+I (255) octal_psram: dev id       : 0x02 (generation 3)
+I (255) octal_psram: density      : 0x03 (64 Mbit)
+I (257) octal_psram: good-die     : 0x01 (Pass)
+I (261) octal_psram: Latency      : 0x01 (Fixed)
+I (266) octal_psram: VCC          : 0x01 (3V)
+I (270) octal_psram: SRF          : 0x01 (Fast Refresh)
+I (275) octal_psram: BurstType    : 0x01 (Hybrid Wrap)
+I (280) octal_psram: BurstLen     : 0x01 (32 Byte)
+I (284) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)
+I (289) octal_psram: DriveStrength: 0x00 (1/1)
+I (294) MSPI Timing: Enter psram timing tuning
+I (298) esp_psram: Found 8MB PSRAM device
+I (302) esp_psram: Speed: 80MHz
+I (319) mmu_psram: Read only data copied and mapped to SPIRAM
+I (346) mmu_psram: Instructions copied and mapped to SPIRAM
+I (346) cpu_start: Multicore app
+I (609) esp_psram: SPI SRAM memory test OK
+I (617) cpu_start: GPIO 44 and 43 are used as console UART I/O pins
+I (618) cpu_start: Pro cpu start user code
+I (618) cpu_start: cpu freq: 240000000 Hz
+I (620) app_init: Application information:
+I (623) app_init: Project name:     bot_status
+I (628) app_init: App version:      b101f98-dirty
+I (632) app_init: Compile time:     Sep  7 2026 14:21:18
+I (637) app_init: ELF file SHA256:  75ceb09a3...
+I (641) app_init: ESP-IDF:          v6.1-dirty
+I (646) efuse_init: Min chip rev:     v0.0
+I (649) efuse_init: Max chip rev:     v0.99 
+I (653) efuse_init: Chip rev:         v0.2
+I (657) heap_init: Initializing. RAM available for dynamic allocation:
+I (664) heap_init: At 3FCB1B80 len 00037B90 (222 KiB): RAM
+I (669) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+I (674) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM
+I (679) esp_psram: Adding pool of 7552K of PSRAM memory to heap allocator
+I (686) esp_psram: Adding pool of 22K of PSRAM memory gap generated due to end address alignment of drom to the heap allocator
+I (697) spi_flash: detected chip: generic
+I (700) spi_flash: flash io: qio
+I (704) sleep_gpio: Configure to isolate all GPIO pins in sleep state
+I (710) sleep_gpio: Enable automatic switching of GPIO sleep configuration
+I (717) main_task: Started on CPU0
+I (720) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations
+I (728) main_task: Calling app_main()
+I (731) esp_lvgl:adapter: LVGL adapter initialized successfully
+I (737) ESP32-S3-Touch-AMOLED-1.75: Initialize SPI bus
+I (742) co5300: version: 2.1.0
+I (745) co5300_spi: LCD panel create success, version: 2.1.0
+W (910) co5300_spi: The 3Ah command has been used and will be overwritten by external initialization sequence
+I (2186) CST9217: Checkcode: 0x204ECACA
+I (2188) CST9217: Resolution X: 466, Y: 466
+I (2190) CST9217: Chip Type: 0x9217, ProjectID: 0x5734
+W (2190) esp_lvgl:touch: LV_USE_GESTURE_RECOGNITION is disabled; only single-point pointer events are available
+I (2197) esp_lvgl:touch: Touch input device registered successfully (IRQ mode: enabled)
+I (2205) esp_lvgl:adapter: LVGL task started successfully
+I (2214) bot_imu: QMI8658 WHO_AM_I=05 addr=6B; +/-4g +/-1024dps; keep still 1s for gyro bias
+I (2235) bot_status: bot_status SIM UI started (466x466)
+I (2236) main_task: Returned from app_main()
+I (3318) bot_imu: a[g]=0.879,0.168,-0.525 w[dps]=-3.56,2.75,-0.31 angle=2.5 flat=0 bias=0 reaction=0
+I (3828) bot_imu: alignment reference: raw=100.93 mount=98.7 residual=2.32 deg; use raw as mount ONLY if screen is physically upright now
+I (4318) bot_imu: a[g]=0.882,0.170,-0.524 w[dps]=-3.81,2.75,-0.38 angle=2.3 flat=0 bias=1 reaction=0
+I (5322) bot_imu: a[g]=0.880,0.168,-0.524 w[dps]=-3.84,2.53,-0.28 angle=2.3 flat=0 bias=1 reaction=0
+I (6328) bot_imu: a[g]=0.880,0.169,-0.525 w[dps]=-3.62,2.75,-0.31 angle=2.3 flat=0 bias=1 reaction=0
+I (7313) bot_status: render: 8.9 updates/s avg=22.9 max=28.7 ms (submission, not scanout)
+I (7328) bot_imu: a[g]=0.881,0.169,-0.525 w[dps]=-3.84,2.50,-0.44 angle=2.2 flat=0 bias=1 reaction=0
+I (8328) bot_imu: a[g]=0.881,0.168,-0.522 w[dps]=-3.66,2.41,-0.38 angle=2.2 flat=0 bias=1 reaction=0
+I (9339) bot_imu: a[g]=0.880,0.168,-0.525 w[dps]=-3.59,2.75,-0.25 angle=2.2 flat=0 bias=1 reaction=0
+I (10348) bot_imu: a[g]=0.879,0.173,-0.526 w[dps]=-3.66,2.34,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (11348) bot_imu: a[g]=0.881,0.169,-0.527 w[dps]=-3.75,2.41,-1.06 angle=2.2 flat=0 bias=1 reaction=0
+I (12329) bot_status: render: 10.6 updates/s avg=23.1 max=23.7 ms (submission, not scanout)
+I (12351) bot_imu: a[g]=0.882,0.171,-0.526 w[dps]=-3.72,2.72,-0.41 angle=2.2 flat=0 bias=1 reaction=0
+I (13358) bot_imu: a[g]=0.884,0.168,-0.522 w[dps]=-3.69,3.03,-0.56 angle=2.2 flat=0 bias=1 reaction=0
+I (14358) bot_imu: a[g]=0.880,0.170,-0.525 w[dps]=-3.69,2.50,-0.25 angle=2.2 flat=0 bias=1 reaction=0
+I (15358) bot_imu: a[g]=0.880,0.169,-0.524 w[dps]=-3.66,2.81,-0.44 angle=2.2 flat=0 bias=1 reaction=0
+I (16358) bot_imu: a[g]=0.880,0.169,-0.523 w[dps]=-3.81,2.50,-0.97 angle=2.2 flat=0 bias=1 reaction=0
+I (17340) bot_status: render: 13.8 updates/s avg=23.2 max=23.8 ms (submission, not scanout)
+I (17358) bot_imu: a[g]=0.881,0.168,-0.523 w[dps]=-3.56,2.12,-0.56 angle=2.2 flat=0 bias=1 reaction=0
+I (18363) bot_imu: a[g]=0.882,0.170,-0.523 w[dps]=-3.62,2.47,-0.50 angle=2.2 flat=0 bias=1 reaction=0
+I (19368) bot_imu: a[g]=0.880,0.170,-0.524 w[dps]=-3.78,2.53,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (20368) bot_imu: a[g]=0.881,0.170,-0.523 w[dps]=-3.59,2.50,-0.41 angle=2.2 flat=0 bias=1 reaction=0
+I (21368) bot_imu: a[g]=0.882,0.172,-0.525 w[dps]=-3.97,2.75,-0.44 angle=2.2 flat=0 bias=1 reaction=0
+I (22368) bot_imu: a[g]=0.881,0.170,-0.525 w[dps]=-3.78,2.72,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (22458) bot_status: render: 7.6 updates/s avg=22.5 max=22.8 ms (submission, not scanout)
+I (23369) bot_imu: a[g]=0.880,0.171,-0.524 w[dps]=-3.47,2.62,-0.31 angle=2.2 flat=0 bias=1 reaction=0
+I (24388) bot_imu: a[g]=0.881,0.169,-0.524 w[dps]=-3.84,2.50,-0.75 angle=2.2 flat=0 bias=1 reaction=0
+I (25398) bot_imu: a[g]=0.880,0.171,-0.523 w[dps]=-3.59,2.47,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (26408) bot_imu: a[g]=0.879,0.170,-0.524 w[dps]=-3.97,2.41,-0.56 angle=2.2 flat=0 bias=1 reaction=0
+I (27418) bot_imu: a[g]=0.882,0.171,-0.523 w[dps]=-3.62,2.88,-0.38 angle=2.2 flat=0 bias=1 reaction=0
+I (28418) bot_imu: a[g]=0.881,0.171,-0.524 w[dps]=-3.62,2.53,-0.44 angle=2.2 flat=0 bias=1 reaction=0
+I (28458) bot_status: render: 4.2 updates/s avg=22.7 max=24.1 ms (submission, not scanout)
+I (29418) bot_imu: a[g]=0.880,0.170,-0.523 w[dps]=-3.78,2.72,-0.25 angle=2.2 flat=0 bias=1 reaction=0
+I (30425) bot_imu: a[g]=0.880,0.170,-0.523 w[dps]=-3.81,2.72,-0.16 angle=2.2 flat=0 bias=1 reaction=0
+I (31428) bot_imu: a[g]=0.880,0.170,-0.525 w[dps]=-3.72,2.19,-0.62 angle=2.2 flat=0 bias=1 reaction=0
+I (32428) bot_imu: a[g]=0.881,0.171,-0.523 w[dps]=-3.59,2.28,-0.47 angle=2.2 flat=0 bias=1 reaction=0
+I (33428) bot_imu: a[g]=0.880,0.168,-0.525 w[dps]=-3.34,2.44,-0.38 angle=2.2 flat=0 bias=1 reaction=0
+I (34428) bot_imu: a[g]=0.882,0.168,-0.523 w[dps]=-3.75,2.41,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (35428) bot_imu: a[g]=0.880,0.169,-0.524 w[dps]=-3.84,2.41,-0.31 angle=2.2 flat=0 bias=1 reaction=0
+I (36428) bot_imu: a[g]=0.880,0.169,-0.524 w[dps]=-3.66,2.34,-0.41 angle=2.2 flat=0 bias=1 reaction=0
+I (37311) bot_status: render: 2.0 updates/s avg=24.4 max=27.6 ms (submission, not scanout)
+I (37429) bot_imu: a[g]=0.881,0.170,-0.523 w[dps]=-3.66,2.25,-0.56 angle=2.2 flat=0 bias=1 reaction=0
+I (38438) bot_imu: a[g]=0.881,0.171,-0.525 w[dps]=-3.62,2.50,-0.47 angle=2.2 flat=0 bias=1 reaction=0
+I (39438) bot_imu: a[g]=0.880,0.170,-0.524 w[dps]=-3.47,2.81,-0.19 angle=2.2 flat=0 bias=1 reaction=0
+I (40448) bot_imu: a[g]=0.879,0.170,-0.525 w[dps]=-3.41,2.50,-0.44 angle=2.2 flat=0 bias=1 reaction=0
+I (41458) bot_imu: a[g]=0.880,0.170,-0.524 w[dps]=-3.69,2.59,-0.53 angle=2.2 flat=0 bias=1 reaction=0
+I (42469) bot_imu: a[g]=0.880,0.170,-0.525 w[dps]=-3.66,2.75,-0.47 angle=2.2 flat=0 bias=1 reaction=0
+I (43478) bot_imu: a[g]=0.880,0.170,-0.524 w[dps]=-3.47,2.31,-0.25 angle=2.2 flat=0 bias=1 reaction=0
+I (44340) bot_status: render: 1.3 updates/s avg=23.6 max=25.7 ms (submission, not scanout)
+I (44483) bot_imu: a[g]=0.881,0.169,-0.523 w[dps]=-3.59,2.34,-0.69 angle=2.2 flat=0 bias=1 reaction=0
+I (45488) bot_imu: a[g]=0.880,0.171,-0.524 w[dps]=-3.97,2.31,-0.22 angle=2.2 flat=0 bias=1 reaction=0
+I (46488) bot_imu: a[g]=0.880,0.171,-0.525 w[dps]=-3.72,2.56,-0.25 angle=2.2 flat=0 bias=1 reaction=0
+I (47488) bot_imu: a[g]=0.880,0.170,-0.525 w[dps]=-3.94,2.72,-0.69 angle=2.2 flat=0 bias=1 reaction=0
+I (48488) bot_imu: a[g]=0.882,0.167,-0.522 w[dps]=-3.59,2.50,-0.50 angle=2.2 flat=0 bias=1 reaction=0
+I (49488) bot_imu: a[g]=0.879,0.170,-0.526 w[dps]=-3.62,2.56,-0.50 angle=2.2 flat=0 bias=1 reaction=0
+I (50488) bot_imu: a[g]=0.879,0.168,-0.523 w[dps]=-3.53,2.50,-0.53 angle=2.2 flat=0 bias=1 reaction=0
+I (51336) bot_status: render: 1.0 updates/s avg=22.9 max=23.2 ms (submission, not scanout)
+I (51498) bot_imu: a[g]=0.880,0.171,-0.526 w[dps]=-3.22,2.38,-0.28 angle=2.2 flat=0 bias=1 reaction=0
+I (52498) bot_imu: a[g]=0.880,0.170,-0.524 w[dps]=-3.84,2.47,-0.41 angle=2.2 flat=0 bias=1 reaction=0
+I (53498) bot_imu: a[g]=0.879,0.170,-0.525 w[dps]=-3.84,2.25,-0.53 angle=2.2 flat=0 bias=1 reaction=0
+I (54498) bot_imu: a[g]=0.882,0.168,-0.524 w[dps]=-3.66,2.53,-0.53 angle=2.2 flat=0 bias=1 reaction=0

@@ -1,0 +1,217 @@
+{
+  "usage_rev": 1,
+  "subject": "all",
+  "period": "30d",
+  "page": 0,
+  "host_now_ms": 1788773823487,
+  "data_rev": 2,
+  "as_of_ms": 1788773567952,
+  "stale": false,
+  "status": "ready",
+  "summary": {
+    "agent_id": "all",
+    "total": 15495296276,
+    "input": 15451291650,
+    "output": 44004626,
+    "cache_read": 14914796562,
+    "cache_write": 1928335,
+    "cost_micros": null,
+    "cost_currency": null,
+    "cost_coverage": "unknown",
+    "cost_source": "",
+    "coverage": "partial"
+  },
+  "agents": [
+    {
+      "id": "codex",
+      "total": 14858469052,
+      "used_pct": 66,
+      "available": true
+    },
+    {
+      "id": "cursor",
+      "total": 418472187,
+      "used_pct": null,
+      "available": true
+    },
+    {
+      "id": "hermes",
+      "total": 9367453,
+      "used_pct": null,
+      "available": true
+    },
+    {
+      "id": "workbuddy",
+      "total": 208987584,
+      "used_pct": null,
+      "available": true
+    }
+  ],
+  "quotas": [
+    {
+      "id": "5de0432f0e8a44a6c78358c95e932ec7",
+      "agent_id": "codex",
+      "label": "Session",
+      "used_pct": 66,
+      "reset_ms": 1789305848000,
+      "stale": false,
+      "availability": "available"
+    },
+    {
+      "id": "3d374fee190b1a0cf1ca91c221129f3d",
+      "agent_id": "codex",
+      "label": "Session",
+      "used_pct": 0,
+      "reset_ms": 1788791568000,
+      "stale": false,
+      "availability": "available"
+    },
+    {
+      "id": "c525df5362f6996c7b6b3f943ae81bd8",
+      "agent_id": "codex",
+      "label": "Weekly",
+      "used_pct": 8,
+      "reset_ms": 1789217274000,
+      "stale": false,
+      "availability": "available"
+    }
+  ],
+  "quota_total": 7,
+  "models": [
+    {
+      "label": "gpt-5.6-sol",
+      "total": 11702882657
+    },
+    {
+      "label": "gpt-6-astra",
+      "total": 1802423138
+    },
+    {
+      "label": "codex-auto-review",
+      "total": 1003762265
+    }
+  ],
+  "model_total": 28,
+  "history": [
+    {
+      "day": "2026-08-09",
+      "total": 448309507
+    },
+    {
+      "day": "2026-08-10",
+      "total": 622554782
+    },
+    {
+      "day": "2026-08-11",
+      "total": 848195283
+    },
+    {
+      "day": "2026-08-12",
+      "total": 642108866
+    },
+    {
+      "day": "2026-08-13",
+      "total": 374261813
+    },
+    {
+      "day": "2026-08-14",
+      "total": 270753864
+    },
+    {
+      "day": "2026-08-15",
+      "total": 481271764
+    },
+    {
+      "day": "2026-08-16",
+      "total": 665844121
+    },
+    {
+      "day": "2026-08-17",
+      "total": 392374515
+    },
+    {
+      "day": "2026-08-18",
+      "total": 554669543
+    },
+    {
+      "day": "2026-08-19",
+      "total": 297803696
+    },
+    {
+      "day": "2026-08-20",
+      "total": 546980255
+    },
+    {
+      "day": "2026-08-21",
+      "total": 751492948
+    },
+    {
+      "day": "2026-08-22",
+      "total": 755122403
+    },
+    {
+      "day": "2026-08-23",
+      "total": 598255367
+    },
+    {
+      "day": "2026-08-24",
+      "total": 154743003
+    },
+    {
+      "day": "2026-08-25",
+      "total": 152826301
+    },
+    {
+      "day": "2026-08-26",
+      "total": 535463785
+    },
+    {
+      "day": "2026-08-27",
+      "total": 456649710
+    },
+    {
+      "day": "2026-08-28",
+      "total": 802344382
+    },
+    {
+      "day": "2026-08-29",
+      "total": 299688536
+    },
+    {
+      "day": "2026-08-30",
+      "total": 150576809
+    },
+    {
+      "day": "2026-08-31",
+      "total": 482243962
+    },
+    {
+      "day": "2026-09-01",
+      "total": 335280713
+    },
+    {
+      "day": "2026-09-02",
+      "total": 615127128
+    },
+    {
+      "day": "2026-09-03",
+      "total": 185871626
+    },
+    {
+      "day": "2026-09-04",
+      "total": 737397716
+    },
+    {
+      "day": "2026-09-05",
+      "total": 646228886
+    },
+    {
+      "day": "2026-09-06",
+      "total": 1031986465
+    },
+    {
+      "day": "2026-09-07",
+      "total": 658868527
+    }
+  ]
+}

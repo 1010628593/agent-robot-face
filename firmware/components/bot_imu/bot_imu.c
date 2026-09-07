@@ -11,6 +11,7 @@
 #include "freertos/task.h"
 #include "sdkconfig.h"
 #include <string.h>
+#include <math.h>
 static QueueHandle_t s_latest;
 static const char *TAG="bot_imu";
 static uint32_t clock_ms(void) { return (uint32_t)(esp_timer_get_time()/1000); }
@@ -34,7 +35,7 @@ static void sensor_task(void *arg) {
         bot_qmi_t qmi;bot_motion_t motion;
         bot_qmi_result_t result=ret==ESP_OK?bot_qmi_init(&qmi,(bot_qmi_bus_t){dev,read_reg,write_reg}):BOT_QMI_IO;
         if(result==BOT_QMI_OK) {
-            bot_motion_init(&motion,CONFIG_BOT_IMU_MOUNT_DEG,
+            bot_motion_init(&motion,CONFIG_BOT_IMU_MOUNT_DEG+CONFIG_BOT_IMU_MOUNT_FINE_TENTHS*.1f,
 #ifdef CONFIG_BOT_IMU_REVERSE_ROTATION
                             -1
 #else
@@ -45,6 +46,7 @@ static void sensor_task(void *arg) {
             vTaskDelay(pdMS_TO_TICKS(100));
             uint32_t last_ok=clock_ms(),last_log=last_ok;
             unsigned errors=0;
+            bool alignment_logged=false;
             TickType_t wake=xTaskGetTickCount();
             while(true) {
                 bot_motion_sample_t sample;
@@ -54,6 +56,14 @@ static void sensor_task(void *arg) {
                     if(bot_motion_feed(&motion,&sample)) {
                         bot_motion_view_t view=bot_motion_view(&motion,sample.ms);
                         xQueueOverwrite(s_latest,&view);last_ok=sample.ms;errors=0;
+                        if(!alignment_logged && view.gyro_calibrated && !view.flat &&
+                           motion.stable && sample.ms-motion.stable_ms>=1500) {
+                            float raw=atan2f(motion.gravity[0],-motion.gravity[1])*57.29577951308232f;
+                            ESP_LOGI(TAG,"alignment reference: raw=%.2f mount=%.1f residual=%.2f deg; "
+                                "use raw as mount ONLY if screen is physically upright now",
+                                (double)raw,(double)motion.mount_deg,(double)view.rotation_deg);
+                            alignment_logged=true;
+                        }
 #ifdef CONFIG_BOT_IMU_DIAGNOSTICS
                         if(sample.ms-last_log>=1000) {
                             last_log=sample.ms;

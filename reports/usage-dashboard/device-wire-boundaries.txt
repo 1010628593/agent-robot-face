@@ -1,0 +1,9 @@
+page=34: rejected
+quota_total=33: rejected
+model_total=101: rejected
+unexpected=1: rejected
+host_now_ms=True: rejected
+boolean total: rejected
+fractional total: rejected
+invalid currency: rejected
+max numeric/label fixture: bytes=3079; decoded=usage nodes=176 usage_rev=1 data_rev=2 subject=1 period=2 page=33 quotas=3 models=3 history=30; frames=1 rejected=0

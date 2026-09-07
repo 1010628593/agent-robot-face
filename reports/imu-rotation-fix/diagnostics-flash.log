@@ -1,0 +1,72 @@
+esptool --chip esp32s3 --port /dev/cu.usbmodem21201 -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-freq 80m --flash-size 16MB 0x0 bootloader/bootloader.bin 0x8000 partition_table/partition-table.bin 0x10000 bot_status.bin
+esptool v5.4.0
+Serial port /dev/cu.usbmodem21201:
+Connecting...
+Connected to ESP32-S3 on /dev/cu.usbmodem21201:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                28:84:85:8d:71:e0
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+
+Writing 'bootloader/bootloader.bin' at 0x00000000...
+SHA digest in image updated.
+Flash will be erased from 0x00000000 to 0x00005fff...
+Compressed 22560 bytes to 14454...
+Writing at 0x00005820 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.0% 14.12kB/14.12kB [0s] 
+Wrote 22560 bytes (14454 compressed) at 0x00000000 in 0.2 seconds (930.0 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'partition_table/partition-table.bin' at 0x00008000...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 3072 bytes to 120...
+Writing at 0x00008c00 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.0% 120B/120B [0s] 
+Wrote 3072 bytes (120 compressed) at 0x00008000 in 0.0 seconds (1219.2 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Writing 'bot_status.bin' at 0x00010000...
+Flash will be erased from 0x00010000 to 0x000cafff...
+Compressed 762784 bytes to 452344...
+Writing at 0x0001ca4e ━                                3.6% 16.00kB/441.74kB [0s] 
+Writing at 0x00024c99 ━━                               7.2% 32.00kB/441.74kB [0s] 
+Writing at 0x0002e184 ━━━                             10.9% 48.00kB/441.74kB [0s] 
+Writing at 0x0003bb3c ━━━━                            14.5% 64.00kB/441.74kB [0s] 
+Writing at 0x0004d610 ━━━━━                           18.1% 80.00kB/441.74kB [0s] 
+Writing at 0x00053849 ━━━━━━╸                         21.7% 96.00kB/441.74kB [1s] 
+Writing at 0x0005901f ━━━━━━━╸                        25.4% 112.00kB/441.74kB [1s] 
+Writing at 0x0005e5fa ━━━━━━━━╸                       29.0% 128.00kB/441.74kB [1s] 
+Writing at 0x00063a18 ━━━━━━━━━╸                      32.6% 144.00kB/441.74kB [1s] 
+Writing at 0x00068df8 ━━━━━━━━━━╸                     36.2% 160.00kB/441.74kB [1s] 
+Writing at 0x0006e1ce ━━━━━━━━━━━╸                    39.8% 176.00kB/441.74kB [1s] 
+Writing at 0x0007330d ━━━━━━━━━━━━━                   43.5% 192.00kB/441.74kB [1s] 
+Writing at 0x00078902 ━━━━━━━━━━━━━━                  47.1% 208.00kB/441.74kB [2s] 
+Writing at 0x0007e865 ━━━━━━━━━━━━━━━                 50.7% 224.00kB/441.74kB [2s] 
+Writing at 0x00083876 ━━━━━━━━━━━━━━━━                54.3% 240.00kB/441.74kB [2s] 
+Writing at 0x00088978 ━━━━━━━━━━━━━━━━━               58.0% 256.00kB/441.74kB [2s] 
+Writing at 0x0008db25 ━━━━━━━━━━━━━━━━━━              61.6% 272.00kB/441.74kB [2s] 
+Writing at 0x00092f27 ━━━━━━━━━━━━━━━━━━━╸            65.2% 288.00kB/441.74kB [2s] 
+Writing at 0x000989a6 ━━━━━━━━━━━━━━━━━━━━╸           68.8% 304.00kB/441.74kB [2s] 
+Writing at 0x0009e220 ━━━━━━━━━━━━━━━━━━━━━╸          72.4% 320.00kB/441.74kB [2s] 
+Writing at 0x000a3c95 ━━━━━━━━━━━━━━━━━━━━━━╸         76.1% 336.00kB/441.74kB [2s] 
+Writing at 0x000a97fd ━━━━━━━━━━━━━━━━━━━━━━━╸        79.7% 352.00kB/441.74kB [3s] 
+Writing at 0x000aee33 ━━━━━━━━━━━━━━━━━━━━━━━━╸       83.3% 368.00kB/441.74kB [3s] 
+Writing at 0x000b51f3 ━━━━━━━━━━━━━━━━━━━━━━━━━━      86.9% 384.00kB/441.74kB [3s] 
+Writing at 0x000bab1b ━━━━━━━━━━━━━━━━━━━━━━━━━━━     90.6% 400.00kB/441.74kB [3s] 
+Writing at 0x000c0648 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━    94.2% 416.00kB/441.74kB [3s] 
+Writing at 0x000c69e4 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   97.8% 432.00kB/441.74kB [3s] 
+Writing at 0x000ca3a0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.0% 441.74kB/441.74kB [3s] 
+Wrote 762784 bytes (452344 compressed) at 0x00010000 in 3.9 seconds (1581.2 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...

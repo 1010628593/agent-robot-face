@@ -1,0 +1,2 @@
+decoded=usage nodes=176 usage_rev=1 data_rev=2 subject=1 period=2 page=0 quotas=3 models=3 history=30
+frames=1 rejected=0

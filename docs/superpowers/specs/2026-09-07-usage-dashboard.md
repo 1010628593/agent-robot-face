@@ -1,0 +1,17 @@
+# Approved usage Dashboard implementation
+
+User approved design03 on2026-09-07: reports/usage-dashboard/approved-design-03.png. Full preceding plan remains binding, with simplified progressive disclosure instead of crowded Dashboard. Four-grid overview -> three-row tool/window list -> individual metric detail. Taps enter; horizontal swipes page; downward gesture returns one level, root dismisses to face. Preserve CURRENT touch contract2.1.0 top/bottom face panel entrances, continuous pet reactions, no long-hold navigation. Do not regress to older gesture spec.
+
+Each gauge ONE solid hue by USED percentage: <25 blue #2563EB, <50 green #22C55E, <75 yellow #EAB308, <90 orange #F97316, else red #EF4444. Trackdarkgray; arc lengthexactusedpercentage. Unknown graydash/noarc. Unlimitedtoken totals have no progressring. Facefixedpaletteunchanged. Diagram's duplicated percentages and inaccurate illustration arc lengths are not implementationrequirements.
+
+Four-grid toolmode Codex/Cursor/Hermes/WorkBuddy; dimensionmode totalToken/actualcost/quota/cache. CurrentAgentdefaultwithalloverview; browseindependentofbusinessfocus. Today/7d/30d incltodaylocalday; cacheinputdefinitionssource-specific; no missing=0. Actualcostonly, provenance/currencyrequired; never genericTokscalepricingestimate, subscriptionamortization or inventedquota.
+
+Reuse pinnedMIT token-monitor headlesscollector subset/Tokscale, noElectron/Hub, no runtime dependency on originalcheckout. IndependentNodeworker managedPythonBridge, bounded sanitizedmetadataJSON, privateRobotFacecache/state,4sourcesonly. Businesslifecycleexistingadapters remain separate; new usage cannotdoublecountoldledger. SQLitev3 idempotentday/model snapshots replace notincrement. 30daybackfillbounded serial scans; livewatchdebounce; no blockingUSB. Actualsource/accountquota via authorizedexistinglogin onlyofficialorigin; noautorefreshcredentialrewrite, no copiedsecrets. Accountsharedwindowsdedup; WorkBuddyunsupportedhonest.
+
+Macnativecompactdashboard progressive disclosurematchingdevice, settings/diagnosticssecondary. USBv3pairedBridge/firmwareupgrade: boundedstatsviewrequests +revision/ACK, queryscope/rangeindependentselectionrevision, <=8192frame; datednullablehistory30points, boundedmetrics/quotapaging. KeepUIthreadownership/serialflashpausewrapper. Localreadonlyusagequery+authenticatedrefreshAPI.
+
+No newfrontend/backendunits. Existingcollectorchecks/protocolintegration/realLVGLrenders/hardware. Everyfirmwarebatchbuildflashphysicaltestauthorized. Do notcommit/push; preserveexistingdirtychanges. Do notmodifytoken-monitorreferenceproject. Missingcapabilitiesneverclaimcomplete. Userconfirmationofdesignisreceived; nofurtherdesignapprovalgate.
+
+## Confirmed visual correction and concentric quota periods
+
+User rejected3.0.1 as crowded, fragmented and unlike the approved reference. Device3.0.2 restores centered monochrome icons, spaced four-grid, three-row lists and64px single-quota details. After inspecting ECharts gauge-ring, user explicitly chose concentric rings for multiple quota periods of the SAME tool: up to3 stable-order rings, independent USED-stage solid colors, ring/center-row tap to period details, horizontal paging for more windows. Tools remain separate in the overview. Mac default surface follows reference02's compact card structure, with the later solid-color/USED semantics retained; advanced stats and settings are secondary. Build/flash/runtime checks do not substitute for the user's renewed physical visual acceptance.

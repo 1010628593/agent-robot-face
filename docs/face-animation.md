@@ -1,4 +1,24 @@
+# Emotional touch layering (3.2.0)
+
+The user found 3.1.0 responsive but emotionally flat. The current motion keeps
+three visible stages: curious asymmetric opening and softened lids; comfort
+building toward a modest smile; and teasing followed by staggered single-eye
+peeking. Smile blending yields to independent two-eye contact, so one-side
+release still works. The hand regains gaze ownership immediately on a new
+contact. See `reports/touch-table/emotion-storyboard.png` and the animated replay.
+
+# Nine-touch completion revision (3.1.0)
+
+Head inclination is now a distinct `roll` channel that moves the eye centers;
+it does not reuse the business eyelid `tilt` shape. Repeated and alternating
+pokes use separate progression, and two-to-one contact retains cupping comfort.
+Stroke sway comes from filtered signed touch velocity. See the current
+[nine-row contract](touch-interactions.md) and `reports/touch-table/` for replay
+and device evidence. Older 2.2.x behavior below is historical.
+
 # Minimal Face Motion
+
+Current touch behavior is defined in [Touch interactions 2.1.0](touch-interactions.md). The historical simulator and verification notes below describe the earlier renderer delivery; current production sources are documented in README.md.
 
 This change implements the final approved direction: **the black display is the face**. It supersedes the older Face screen drawing in the handoff pack, not the Agent selector, statistics, protocol or source adapters.
 
@@ -30,7 +50,7 @@ Resolution is 466 x 466. Neutral eye centers are (170,233) and (296,233); width 
 
 Working eyes use real sloped upper masks. Smile eyes are rounded arcs, not flattened rectangles. X eyes use rounded strokes, not font characters. Gaze pupils share one direction vector, avoiding unintended crossed eyes. Pupils fade out as eyelids close. No blur or persistent decorative halo is required.
 
-Normal rendering is capped at one sample per 33ms (about 30Hz target, **not measured panel FPS**). Missed frames are skipped rather than replayed. Geometry is rounded for dirty comparison; unchanged pixel geometry does not invalidate the surface. The whole display is not cleared/recreated on a state update.
+Normal rendering is capped at one sample per 20ms (about 50Hz target, **not measured panel FPS**). Missed frames are skipped rather than replayed. Geometry is rounded for dirty comparison; unchanged pixel geometry does not invalidate the surface. The whole display is not cleared/recreated on a state update.
 
 ## Protocol-state mapping
 
@@ -68,11 +88,9 @@ All times use the same `lv_tick_get()` uint32 millisecond epoch and unsigned ela
 
 ## Touch and navigation
 
-Touch positions are already in display coordinates. Eyes ease toward the contact within +/-20px horizontally and +/-14px vertically; release eases back over 500ms. A stationary hold squeezes the eyes by up to 13%, without a progress ring or text. It cannot change WAITING/ERROR into success.
+The 2.1.0 input path retains both CST9217 points through one adapter-owned read and arbitrates every UI click with navigation. Top-edge down opens Agent selection; bottom-edge up opens usage. Picker up and usage down dismiss to Face. Long holds never navigate; horizontal home edges are reserved. Usage tabs are tapped directly.
 
-The existing gesture recognizer remains authoritative: Face horizontal swipe -> Stats; hold 650ms -> Agent picker; picker horizontal swipe -> preview, tap -> select, down/hold -> cancel; Stats up/down -> tab, right -> Face. Face taps now respond with eyes only; the old Face detail-overlay suggestion is intentionally superseded. Existing Stats detail/edge-bump placeholders are not implemented by this change.
-
-The newest MOVE sample is processed **before** a TICK can fire HOLD. Final displacement is also fed before UP. This prevents a movement at the 650ms boundary or a sparse final sample from becoming a false long press/tap. Leaving Face releases its touch effect. LVGL DELETE clears the drawing-surface pointer; returning to Face does not gratuitously reset a held terminal expression.
+Region taps, sustained strokes, repeat taps, independent eye contacts, two-finger pinch/spread and midpoint tracking are continuous motion overlays. Existing state topology is protected. See [the complete current contract](touch-interactions.md) for ownership, coordinates, timing, dropout handling and replay diagnostics.
 
 ## Build and inspect on macOS
 
@@ -114,7 +132,16 @@ Do not change the locked BSP/LVGL or clear the whole board to fix a compile issu
 - [ ] Check neutral eyes, blink center, sloped focus, smile arcs and X eyes on the AMOLED.
 - [ ] Confirm no rings, cropped labels, residual old pixels or ghost pill under smile/X eyes.
 - [ ] Confirm SIM remains readable without overlapping selector/stats headings.
-- [ ] Hold <650ms does not navigate; stationary 650ms enters selector; slide at boundary does not.
+- [ ] Holds never navigate; top down/bottom up open their panels, and adding a second finger cancels navigation.
 - [ ] Swipe through selector/stats and return repeatedly without crash or terminal-animation restart.
 - [ ] Measure actual panel FPS, heap and task-stack margins; do not infer them from host tests.
 - [ ] Run sustained state changes and eight-hour idle/working/waiting use before claiming long-term stability.
+# 2026-09-07 touch character update
+
+Touch now gives the face an ordered response: eyes acquire first, the body
+follows with retained velocity, and release leaves a brief look-back and soft
+rebound. Regional pokes recoil and peek back; repeated/alternating taps, stroke
+relaxation and two-finger cupping are driven by actual touch frames. Deliberate
+eye closure is complete in idle/working/tool states; protected task expressions
+retain their topology. See [touch interactions](touch-interactions.md) and the
+offline geometry animation in `reports/touch-interactions/character/preview.gif`.

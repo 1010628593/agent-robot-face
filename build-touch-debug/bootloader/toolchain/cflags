@@ -1,0 +1,5 @@
+"-specs=/Users/hanxin/Workspace/llm/agent-robot-face/build-touch-debug/bootloader/specs/picolibc.specs"
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero

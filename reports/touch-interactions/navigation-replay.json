@@ -1,0 +1,27 @@
+{
+  "top-slow": [
+    {
+      "t": 1820,
+      "event": "swipe_down"
+    }
+  ],
+  "bottom-up": [
+    {
+      "t": 180,
+      "event": "swipe_up"
+    }
+  ],
+  "top-short": [],
+  "top-diagonal": [],
+  "face-to-edge": [],
+  "reserved-side": [],
+  "edge-hold": [],
+  "face-hold": [],
+  "dual-cancels-edge": [],
+  "cancel-consumes-until-up": [
+    {
+      "t": 480,
+      "event": "swipe_down"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ figure{margin:0}figcaption{margin-top:10px;color:#9cacc1;text-align:center;font-
 <main><section><div id="stage"><canvas id="face" width="466" height="466"></canvas></div>
 <aside><select id="choice" aria-label="表情"></select><button id="play">暂停</button><button id="restart">重新播放</button>
 <p id="time"></p><input id="seek" aria-label="时间轴" type="range" min="0" max="149" value="0">
-<p>待机自然眨眼；工作收拢眼睑；工具态左右观察；等待保持关注；完成是一次微笑；错误是一次短震后保持 X 眼。实际屏幕的长按与切页操作由原手势状态机负责。</p>
+<p>待机自然眨眼；工作收拢眼睑；工具态左右观察；等待保持关注；完成是一次微笑；错误是一次短震后保持 X 眼。实际屏幕使用顶部下拉、底部上滑打开面板；长按仅用于互动。</p>
 <p>Done / Error / Disconnected / Sleep 到末帧停住，不用循环伪造新事件。慢速抗烧屏位移在全局时钟上独立运行。</p></aside></section>
 <div id="grid"></div></main>
 <script>

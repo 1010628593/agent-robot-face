@@ -27,27 +27,50 @@ endif()
 
 set(UI "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_ui")
 set(CORE "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_core")
+set(LINK "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_link")
 set(MOTION "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_motion")
 add_executable(test_lvgl_ui test_lvgl_ui.c
-    ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
-    ${UI}/picker.c ${UI}/stats.c ${CORE}/gesture.c ${CORE}/bot_router.c)
+    ${UI}/ui_motion.c ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
+    ${UI}/picker.c ${UI}/stats.c ${UI}/picker_dev.c ${UI}/stats_dev.c
+    ${UI}/assets/icons.c ${UI}/assets/bot_font_22.c ${UI}/assets/bot_font_24.c
+    ${LINK}/bot_link.c ${CORE}/bot_frame.c ${CORE}/bot_json.c ${CORE}/bot_model.c
+    ${CORE}/navigation.c ${CORE}/gesture.c ${CORE}/bot_router.c)
 target_include_directories(test_lvgl_ui PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include)
+    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include ${LINK}/include)
+option(BOT_LVGL_DEV_SIM "Build legacy simulator scenarios" ON)
+if(BOT_LVGL_DEV_SIM)
+    target_compile_definitions(test_lvgl_ui PRIVATE CONFIG_BOT_DEV_SIM=1)
+endif()
 target_compile_options(test_lvgl_ui PRIVATE -Wall -Wextra -Werror)
 target_link_libraries(test_lvgl_ui PRIVATE lvgl::lvgl m)
 enable_testing()
-foreach(case smoke stats_tab quota_unknown quota_full picker_target terminal_resume terminal_hidden cycling motion_rotation motion_reaction)
+foreach(case production smoke stats_tab quota_unknown quota_full picker_target terminal_resume terminal_hidden cycling motion_rotation motion_reaction)
     add_test(NAME lvgl_${case} COMMAND test_lvgl_ui ${case})
 endforeach()
 
 # Exercise inverse touch mapping through real UI routing, not only math helpers.
 add_executable(test_motion_input test_motion_input.c
-    ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
-    ${UI}/picker.c ${UI}/stats.c ${CORE}/gesture.c ${CORE}/bot_router.c)
+    ${UI}/ui_motion.c ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
+    ${UI}/picker.c ${UI}/stats.c ${UI}/picker_dev.c ${UI}/stats_dev.c
+    ${UI}/assets/icons.c ${UI}/assets/bot_font_22.c ${UI}/assets/bot_font_24.c
+    ${LINK}/bot_link.c ${CORE}/bot_frame.c ${CORE}/bot_json.c ${CORE}/bot_model.c
+    ${CORE}/navigation.c ${CORE}/gesture.c ${CORE}/bot_router.c)
 target_include_directories(test_motion_input PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include)
+    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include ${LINK}/include)
+if(BOT_LVGL_DEV_SIM)
+    target_compile_definitions(test_motion_input PRIVATE CONFIG_BOT_DEV_SIM=1)
+endif()
 target_compile_options(test_motion_input PRIVATE -Wall -Wextra -Werror)
 target_link_libraries(test_motion_input PRIVATE lvgl::lvgl m)
 foreach(case navigation contact stale)
     add_test(NAME lvgl_motion_input_${case} COMMAND test_motion_input ${case})
 endforeach()
+
+# Standalone diagnostic, deliberately not a new unit test or CTest assertion.
+get_target_property(OS_REPLAY_SOURCES test_lvgl_ui SOURCES)
+list(REMOVE_ITEM OS_REPLAY_SOURCES test_lvgl_ui.c)
+add_executable(replay_os_ui ../../tools/replay_os_ui.c ${OS_REPLAY_SOURCES})
+target_include_directories(replay_os_ui PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include ${LINK}/include)
+target_compile_options(replay_os_ui PRIVATE -Wall -Wextra -Werror)
+target_link_libraries(replay_os_ui PRIVATE lvgl::lvgl m)

@@ -1,0 +1,8 @@
+{
+  "firmware": "2.0.0",
+  "boot_id": "3e1e11362134c74490d8abbed0d1823f",
+  "handshake_id": "2cb50d2408ec6736ea7faef54b8c3f6f",
+  "reconnected_pong": true,
+  "same_boot": true,
+  "fresh_handshake": true
+}

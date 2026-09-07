@@ -1,0 +1,33 @@
+#ifndef BOT_OS_MOTION_H
+#define BOT_OS_MOTION_H
+/* OS motion design tokens, shared by the recognizer and LVGL presentation. */
+#define BOT_OS_TRAVEL 466.f
+#define BOT_OS_INSET 12
+#define BOT_OS_CARD_SIZE 442
+#define BOT_OS_RADIUS (BOT_OS_CARD_SIZE / 2)
+#define BOT_OS_CARD_COLOR 0x000000
+#define BOT_OS_BORDER_COLOR 0x000000
+#define BOT_OS_HANDLE_COLOR 0x758391
+#define BOT_OS_HANDLE_ACTIVE 0xDDEAF2
+#define BOT_OS_EDGE_TOP 56
+#define BOT_OS_EDGE_BOTTOM 410
+#define BOT_OS_SLOP 12.f
+#define BOT_OS_AXIS_RATIO 1.4f
+#define BOT_OS_COMPLETE .38f
+#define BOT_OS_FLICK_MIN 56.f
+#define BOT_OS_FLICK_SPEED 650.f
+#define BOT_OS_SPEED_WINDOW 80u
+#define BOT_OS_SPRING_OMEGA 24.f
+#define BOT_OS_SETTLE_MAX 450u
+#define BOT_OS_RUBBER_LIMIT 12.f
+#define BOT_OS_RUBBER_SCALE 48.f
+#define BOT_OS_POSITION_EPSILON .5f
+#define BOT_OS_VELOCITY_EPSILON 5.f
+#define BOT_OS_PRESS_COLOR 0x243447
+#define BOT_OS_HANDLE_MS 100u
+#define BOT_OS_PREVIEW_PX 24
+#define BOT_OS_PREVIEW_MS 180u
+#define BOT_OS_TAB_MS 160u
+#define BOT_OS_PRESS_MS 80u
+#define BOT_OS_RELEASE_MS 120u
+#endif

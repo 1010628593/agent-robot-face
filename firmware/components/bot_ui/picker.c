@@ -1,126 +1,62 @@
-/* picker.c — AGENT_PICKER screen (02_UI_UX §3).
- *
- * Title SELECT AGENT (123,58,220,32); center card (161,154,144,144) with
- * agent initial; name y=314; state y=348; ~36px weakened neighbor cards;
- * bottom TAP TO SELECT / SELECTING... ; order fixed codex->workbuddy->
- * cursor->hermes, wraps. Confirm is a SIM transaction in this build.
- */
 #include "bot_ui.h"
-
-#include "lvgl.h"
-
-void picker_refresh(void);
-
-#define COL_SECONDARY 0x83949F
-#define COL_CARD 0x10161B
-
-static lv_obj_t *s_card_l;
-static lv_obj_t *s_card_c;
-static lv_obj_t *s_card_r;
-static lv_obj_t *s_init_c;
-static lv_obj_t *s_name;
-static lv_obj_t *s_state;
-static lv_obj_t *s_hint;
-
-static lv_obj_t *make_card(lv_obj_t *parent, int x, int y, int size, uint32_t accent,
-                           bool center)
-{
-    lv_obj_t *c = lv_obj_create(parent);
-    lv_obj_set_size(c, size, size);
-    lv_obj_set_pos(c, x, y);
-    lv_obj_set_style_radius(c, 24, 0);
-    lv_obj_set_style_bg_color(c, lv_color_hex(COL_CARD), 0);
-    lv_obj_set_style_bg_opa(c, LV_OPA_COVER, 0);
-    lv_obj_set_style_border_width(c, center ? 3 : 1, 0);
-    lv_obj_set_style_border_color(c, lv_color_hex(accent), 0);
-    lv_obj_set_style_border_opa(c, center ? LV_OPA_COVER : LV_OPA_40, 0);
-    lv_obj_remove_flag(c, LV_OBJ_FLAG_SCROLLABLE);
-    return c;
+#include "bot_ui_motion.h"
+#include <stdio.h>
+#ifdef CONFIG_BOT_DEV_SIM
+void picker_dev_build(lv_obj_t *s);void picker_dev_refresh(void);
+#endif
+extern const lv_image_dsc_t bot_icon_0,bot_icon_1,bot_icon_2,bot_icon_3;
+static const lv_image_dsc_t *icons[]={&bot_icon_0,&bot_icon_1,&bot_icon_2,&bot_icon_3};
+static lv_obj_t *cards[3],*name,*health,*hint,*mode,*preview;
+static lv_obj_t *label(lv_obj_t *s,const char *t,int y,int size) {
+ lv_obj_t *l=lv_label_create(s);lv_label_set_text(l,t);lv_obj_set_style_text_font(l,size==24?&bot_font_24:&bot_font_22,0);
+ lv_obj_set_style_text_color(l,lv_color_hex(0xddeaf2),0);lv_obj_set_size(l,326,32);lv_obj_set_pos(l,70,y);lv_obj_set_style_text_align(l,LV_TEXT_ALIGN_CENTER,0);return l;
+}
+void picker_refresh(void) {
+#ifdef CONFIG_BOT_DEV_SIM
+ if(g_ui.dev_sim){picker_dev_refresh();return;}
+#endif
+ if(!preview)return;
+ for(unsigned j=0;j<3;j++) {
+  unsigned i=(g_ui.picker_preview+4+j)%5;lv_obj_clean(cards[j]);
+  if(i<4){lv_obj_t *im=lv_image_create(cards[j]);lv_image_set_src(im,icons[i]);if(j!=1)lv_image_set_scale(im,128);lv_obj_center(im);}
+  else {lv_obj_t *l=lv_label_create(cards[j]);lv_label_set_text(l,LV_SYMBOL_SHUFFLE);lv_obj_set_style_text_font(l,&lv_font_montserrat_24,0);lv_obj_set_style_text_color(l,lv_color_white(),0);lv_obj_center(l);}
+ }
+ char text[160];snprintf(text,sizeof(text),"%s · %s",g_ui.model.mode==BOT_SELECTION_AUTO?"自动关注":"锁定关注",bot_ui_agent_name(g_ui.model.selected_agent));lv_label_set_text(mode,text);
+ lv_label_set_text(name,bot_ui_agent_name(g_ui.picker_preview));
+ lv_label_set_text(health,g_ui.picker_preview==4?"优先关注等待与错误":bot_ui_health(g_ui.picker_preview));
+ if(g_ui.picker_preview<4 && g_ui.model.state==BOT_MS_ONLINE && g_ui.model.has_catalog) {
+  for(unsigned i=0;i<g_ui.model.catalog.count;i++) {
+   const bot_catalog_agent_t *a=&g_ui.model.catalog.agents[i];
+   if(a->id==g_ui.picker_preview && (a->health==BOT_HEALTH_READY || a->health==BOT_HEALTH_PARTIAL) && a->cap_state==BOT_CAP_OBSERVED){snprintf(text,sizeof(text),"%s\n已观测活跃任务 %u",bot_ui_health(g_ui.picker_preview),a->active_sessions);lv_label_set_text(health,text);}
+  }
+ }
+ lv_label_set_text(hint,g_ui.picker_selecting?"正在等待确认":g_ui.model.action_rejected?"切换失败 · 请重试":g_ui.model.state!=BOT_MS_ONLINE?"连接后可切换":"轻点选择");
+}
+void picker_build(lv_obj_t *s) {
+#ifdef CONFIG_BOT_DEV_SIM
+ if(g_ui.dev_sim){picker_dev_build(s);return;}
+#endif
+ label(s,"关注谁", 62,24);mode=label(s,"",102,22);
+ preview=lv_obj_create(s);lv_obj_remove_style_all(preview);lv_obj_set_size(preview,466,466);
+ lv_obj_remove_flag(preview,LV_OBJ_FLAG_SCROLLABLE|LV_OBJ_FLAG_CLICKABLE);
+ for(unsigned j=0;j<3;j++) {
+  cards[j]=lv_obj_create(preview);lv_obj_remove_style_all(cards[j]);lv_obj_set_size(cards[j],j==1?144:64,j==1?144:64);
+  lv_obj_set_pos(cards[j],j==0?70:j==1?161:332,j==1?154:190);
+  lv_obj_set_style_bg_color(cards[j],lv_color_hex(BOT_OS_PRESS_COLOR),0);lv_obj_set_style_bg_opa(cards[j],0,0);
+  lv_obj_set_style_border_color(cards[j],lv_color_hex(j==1?0x9aa6b3:0x30353b),0);lv_obj_set_style_border_width(cards[j],1,0);lv_obj_set_style_radius(cards[j],22,0);
+ }
+ name=label(preview,"",300,24);health=label(preview,"",334,22);lv_obj_set_height(health,44);hint=label(s,"",380,22);lv_obj_set_height(hint,24);picker_refresh();
 }
 
-static void fill_card(lv_obj_t *card, lv_obj_t *init_label, uint8_t agent_idx,
-                      bool center)
-{
-    const bot_sim_agent_t *a = &g_ui.agents[agent_idx];
-    lv_obj_set_style_border_color(card, lv_color_hex(a->accent), 0);
-    if (init_label) {
-        char init[2] = { a->label[0], '\0' };
-        lv_label_set_text(init_label, init);
-        lv_obj_set_style_text_color(init_label, lv_color_hex(a->accent), 0);
-    }
-    (void)center;
+void picker_animate(int direction) {
+#ifdef CONFIG_BOT_DEV_SIM
+ if(g_ui.dev_sim){extern void picker_dev_animate(int);picker_dev_animate(direction);return;}
+#endif
+ bot_ui_preview_slide(preview,direction);
 }
-
-static const char *state_text_short(bot_state_t st)
-{
-    switch (st) {
-    case BOT_STATE_IDLE: return "IDLE";
-    case BOT_STATE_WORKING: return "WORKING";
-    case BOT_STATE_TOOL: return "TOOL";
-    case BOT_STATE_WAITING: return "WAITING";
-    case BOT_STATE_DONE: return "DONE";
-    case BOT_STATE_ERROR: return "ERROR";
-    case BOT_STATE_CANCELLED: return "CANCELLED";
-    case BOT_STATE_UNKNOWN: return "UNKNOWN";
-    default: return "?";
-    }
-}
-
-void picker_build(lv_obj_t *scr)
-{
-    lv_obj_t *title = lv_label_create(scr);
-    lv_label_set_text(title, "SELECT AGENT");
-    lv_obj_set_style_text_font(title, &lv_font_montserrat_24, 0);
-    lv_obj_set_style_text_color(title, lv_color_hex(0xDDEAF2), 0);
-    lv_obj_set_size(title, 220, 32);
-    lv_obj_set_pos(title, 123, 58);
-    lv_obj_set_style_text_align(title, LV_TEXT_ALIGN_CENTER, 0);
-
-    /* neighbor previews ~36px visible at the edges */
-    s_card_l = make_card(scr, 25, 190, 72, 0x000000, false);
-    s_card_c = make_card(scr, 161, 154, 144, 0x000000, true);
-    s_card_r = make_card(scr, 369, 190, 72, 0x000000, false);
-
-    s_init_c = lv_label_create(s_card_c);
-    lv_obj_set_style_text_font(s_init_c, &lv_font_montserrat_48, 0);
-    lv_obj_center(s_init_c);
-
-    s_name = lv_label_create(scr);
-    lv_obj_set_style_text_font(s_name, &lv_font_montserrat_24, 0);
-    lv_obj_set_size(s_name, 240, 32);
-    lv_obj_set_pos(s_name, 113, 314);
-    lv_obj_set_style_text_align(s_name, LV_TEXT_ALIGN_CENTER, 0);
-
-    s_state = lv_label_create(scr);
-    lv_obj_set_style_text_font(s_state, &lv_font_montserrat_20, 0);
-    lv_obj_set_style_text_color(s_state, lv_color_hex(COL_SECONDARY), 0);
-    lv_obj_set_size(s_state, 240, 24);
-    lv_obj_set_pos(s_state, 113, 348);
-    lv_obj_set_style_text_align(s_state, LV_TEXT_ALIGN_CENTER, 0);
-
-    s_hint = lv_label_create(scr);
-    lv_obj_set_style_text_font(s_hint, &lv_font_montserrat_20, 0);
-    lv_obj_set_style_text_color(s_hint, lv_color_hex(COL_SECONDARY), 0);
-    lv_obj_set_size(s_hint, 240, 24);
-    lv_obj_set_pos(s_hint, 113, 409);
-    lv_obj_set_style_text_align(s_hint, LV_TEXT_ALIGN_CENTER, 0);
-
-    picker_refresh();
-}
-
-void picker_refresh(void)
-{
-    uint8_t p = g_ui.picker_preview;
-    uint8_t prev = (uint8_t)((p + BOT_AGENT_COUNT - 1) % BOT_AGENT_COUNT);
-    uint8_t next = (uint8_t)((p + 1) % BOT_AGENT_COUNT);
-
-    fill_card(s_card_c, s_init_c, p, true);
-    fill_card(s_card_l, NULL, prev, false);
-    fill_card(s_card_r, NULL, next, false);
-
-    const bot_sim_agent_t *a = &g_ui.agents[p];
-    lv_label_set_text(s_name, a->label);
-    lv_obj_set_style_text_color(s_name, lv_color_hex(a->accent), 0);
-    lv_label_set_text(s_state, state_text_short(a->state));
-    lv_label_set_text(s_hint, g_ui.picker_selecting ? "SELECTING..." : "TAP TO SELECT");
+void picker_press(bool pressed) {
+#ifdef CONFIG_BOT_DEV_SIM
+ if(g_ui.dev_sim){extern void picker_dev_press(bool);picker_dev_press(pressed);return;}
+#endif
+ bot_ui_press_feedback(cards[1],pressed);
 }

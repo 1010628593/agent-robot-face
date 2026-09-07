@@ -1,0 +1,141 @@
+{
+  "connected": true,
+  "port": "/dev/cu.usbmodem21201",
+  "firmware": "3.2.0",
+  "protocol_version": 3,
+  "last_seen_ms": 1788778608909,
+  "error": null,
+  "diagnostics": {
+    "render_updates": 1,
+    "window_ms": 21969,
+    "avg_us": 7123,
+    "max_us": 7123,
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 436,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "as_of_ms": 1788778603037
+  },
+  "touch_diagnostics": {
+    "reads": 368,
+    "dual": 0,
+    "errors": 1,
+    "overflow": 0,
+    "raw_count": 0,
+    "wire_count": 1,
+    "record0": 0,
+    "record1": 0,
+    "count": 0,
+    "gs": 3,
+    "pet": 0,
+    "blocked": 0,
+    "edge": 0,
+    "x": 345,
+    "y": 370,
+    "taps": 5,
+    "expression": 10,
+    "motion_count": 0,
+    "tapped": 0,
+    "tx": 0.0,
+    "ty": 0.0,
+    "left": 94.0,
+    "right": 94.0,
+    "revision": 29,
+    "as_of_ms": 1788778609156
+  },
+  "firmware_errors": [
+    {
+      "as_of_ms": 1788778398322,
+      "message": "E (73858) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398364,
+      "message": "E (73887) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398385,
+      "message": "E (73910) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398440,
+      "message": "E (73945) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398460,
+      "message": "E (73974) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398481,
+      "message": "E (74005) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398502,
+      "message": "E (74034) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398523,
+      "message": "E (74065) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398565,
+      "message": "E (74095) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398586,
+      "message": "E (74125) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398628,
+      "message": "E (74155) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398709,
+      "message": "E (74242) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398730,
+      "message": "E (74269) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398889,
+      "message": "E (74425) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778398910,
+      "message": "E (74451) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778400113,
+      "message": "E (75650) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778400367,
+      "message": "E (75874) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778400388,
+      "message": "E (75901) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778400525,
+      "message": "E (76048) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    },
+    {
+      "as_of_ms": 1788778400546,
+      "message": "E (76075) spi_common: spicommon_dma_setup_priv_buffer(460): Failed to allocate priv TX buffer"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "firmware": "2.2.0",
+  "wire_protocol": 2,
+  "offset": "0x10000",
+  "image_bytes": 865952,
+  "image_sha256": "40e400c8464efc2f827f7edd20ffa6aa9dee5cfda6b69710b13396ae02ca23c1",
+  "flashed": false,
+  "reason": "Shared workspace is concurrently migrating to protocol v3; preserve device ownership."
+}

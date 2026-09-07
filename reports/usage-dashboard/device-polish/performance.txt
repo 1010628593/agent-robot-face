@@ -1,0 +1,8 @@
+before overview: IDLE ticks=300 cpu_ms=23.873 flush_calls=600
+before overview: PROFILE clock_updates=300 cpu_ms=194.712 flush_calls=1500
+before quota_detail: IDLE ticks=300 cpu_ms=23.695 flush_calls=600
+before quota_detail: PROFILE clock_updates=300 cpu_ms=590.896 flush_calls=3000
+after overview: IDLE ticks=300 cpu_ms=0.142 flush_calls=0
+after overview: PROFILE clock_updates=300 cpu_ms=0.711 flush_calls=0 refresh_calls=303 labels=0 gauges=0 layouts=0
+after quota_detail: IDLE ticks=300 cpu_ms=0.133 flush_calls=0
+after quota_detail: PROFILE clock_updates=300 cpu_ms=1.874 flush_calls=10 refresh_calls=303 labels=5 gauges=0 layouts=0

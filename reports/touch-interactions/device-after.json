@@ -1,0 +1,39 @@
+{
+  "bridge": {
+    "version": "2.0.0",
+    "started_at_ms": 1788770189444,
+    "paused": false,
+    "launch_at_login": true,
+    "demo": false
+  },
+  "device": {
+    "connected": true,
+    "port": "/dev/cu.usbmodem21201",
+    "firmware": "2.1.0",
+    "protocol_version": 2,
+    "last_seen_ms": 1788770765739,
+    "error": null,
+    "diagnostics": {
+      "render_updates": 35,
+      "window_ms": 5040,
+      "avg_us": 3874,
+      "max_us": 4141,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "b4ae9d8989f70a401d3c025f743934ed",
+        "screen": "face"
+      },
+      "as_of_ms": 1788770763280
+    }
+  },
+  "selection": {
+    "mode": "auto",
+    "selected_agent": "codex",
+    "selection_rev": 22
+  },
+  "selection_preserved": true
+}

@@ -1,0 +1,23 @@
+[ 18%] Building C object CMakeFiles/face_motion.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_reaction.c.o
+[ 18%] Building C object CMakeFiles/face_motion.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_geometry.c.o
+[ 18%] Building C object CMakeFiles/face_motion.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_motion.c.o
+[ 25%] Linking C static library libface_motion.a
+[ 31%] Built target face_motion
+[ 43%] Building C object CMakeFiles/test_face_motion.dir/test_face_motion.c.o
+[ 43%] Building C object CMakeFiles/dump_face_frames.dir/Users/hanxin/Workspace/llm/agent-robot-face/tools/dump_face_frames.c.o
+[ 56%] Building C object CMakeFiles/test_ui_lifecycle.dir/test_ui_lifecycle.c.o
+[ 56%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c.o
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c:4:10: fatal error: 'bot_link.h' file not found
+    4 | #include "bot_link.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+make[2]: *** [CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[ 62%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c.o
+[ 68%] Linking C executable dump_face_frames
+[ 75%] Linking C executable test_face_motion
+make[1]: *** [CMakeFiles/test_ui_lifecycle.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 75%] Built target dump_face_frames
+[ 75%] Built target test_face_motion
+make: *** [all] Error 2

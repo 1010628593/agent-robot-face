@@ -1,0 +1,63 @@
+Test project /tmp/robot-face-lvgl
+      Start  1: lvgl_production
+ 1/14 Test  #1: lvgl_production ..................Subprocess aborted***Exception:   0.28 sec
+Assertion failed: (applied), function main, file test_lvgl_ui.c, line 137.
+
+      Start  2: lvgl_smoke
+ 2/14 Test  #2: lvgl_smoke .......................Subprocess aborted***Exception:   0.03 sec
+Assertion failed: (g_ui.screen==BOT_SCR_PICKER), function main, file test_lvgl_ui.c, line 163.
+
+      Start  3: lvgl_stats_tab
+ 3/14 Test  #3: lvgl_stats_tab ...................Subprocess aborted***Exception:   0.03 sec
+Assertion failed: (g_ui.stats_tab==1), function main, file test_lvgl_ui.c, line 175.
+
+      Start  4: lvgl_quota_unknown
+ 4/14 Test  #4: lvgl_quota_unknown ...............   Passed    0.01 sec
+      Start  5: lvgl_quota_full
+ 5/14 Test  #5: lvgl_quota_full ..................   Passed    0.01 sec
+      Start  6: lvgl_picker_target
+ 6/14 Test  #6: lvgl_picker_target ...............Subprocess aborted***Exception:   0.03 sec
+Assertion failed: (g_ui.screen==BOT_SCR_FACE && g_ui.selected==BOT_AGENT_CURSOR), function main, file test_lvgl_ui.c, line 194.
+
+      Start  7: lvgl_terminal_resume
+ 7/14 Test  #7: lvgl_terminal_resume .............   Passed    0.02 sec
+      Start  8: lvgl_terminal_hidden
+ 8/14 Test  #8: lvgl_terminal_hidden .............Subprocess aborted***Exception:   0.04 sec
+Assertion failed: (g_ui.screen==BOT_SCR_FACE), function main, file test_lvgl_ui.c, line 202.
+
+      Start  9: lvgl_cycling
+ 9/14 Test  #9: lvgl_cycling .....................Subprocess aborted***Exception:   0.04 sec
+Assertion failed: (g_ui.screen==BOT_SCR_FACE), function main, file test_lvgl_ui.c, line 209.
+
+      Start 10: lvgl_motion_rotation
+10/14 Test #10: lvgl_motion_rotation .............   Passed    0.03 sec
+      Start 11: lvgl_motion_reaction
+11/14 Test #11: lvgl_motion_reaction .............   Passed    0.02 sec
+      Start 12: lvgl_motion_input_navigation
+12/14 Test #12: lvgl_motion_input_navigation .....Subprocess aborted***Exception:   0.33 sec
+Assertion failed: (g_ui.screen == BOT_SCR_FACE), function rotated_navigation, file test_motion_input.c, line 93.
+
+      Start 13: lvgl_motion_input_contact
+13/14 Test #13: lvgl_motion_input_contact ........Subprocess aborted***Exception:   0.03 sec
+Assertion failed: (rotation() == 900), function contact_matrix, file test_motion_input.c, line 113.
+
+      Start 14: lvgl_motion_input_stale
+14/14 Test #14: lvgl_motion_input_stale ..........Subprocess aborted***Exception:   0.03 sec
+Assertion failed: (g_ui.screen == BOT_SCR_FACE), function stale_and_flat, file test_motion_input.c, line 137.
+
+
+36% tests passed, 9 tests failed out of 14
+
+Total Test time (real) =   0.95 sec
+
+The following tests FAILED:
+	  1 - lvgl_production (Subprocess aborted)
+	  2 - lvgl_smoke (Subprocess aborted)
+	  3 - lvgl_stats_tab (Subprocess aborted)
+	  6 - lvgl_picker_target (Subprocess aborted)
+	  8 - lvgl_terminal_hidden (Subprocess aborted)
+	  9 - lvgl_cycling (Subprocess aborted)
+	 12 - lvgl_motion_input_navigation (Subprocess aborted)
+	 13 - lvgl_motion_input_contact (Subprocess aborted)
+	 14 - lvgl_motion_input_stale (Subprocess aborted)
+Errors while running CTest

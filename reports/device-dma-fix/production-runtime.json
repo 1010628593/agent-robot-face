@@ -1,0 +1,17 @@
+{
+  "connected": true,
+  "firmware": "3.2.3",
+  "boot_id": "53fdf123c836a3769696fb6b77fc5dfb",
+  "heap_diagnostics": {
+    "uptime_ms": 80023,
+    "internal_free": 71727,
+    "largest_free": 31744,
+    "minimum_free": 33160,
+    "psram_free": 7609664,
+    "screen": 0,
+    "as_of_ms": 1788780463421
+  },
+  "firmware_errors": [],
+  "reconnect_count": null,
+  "tx_pending_bytes": 0
+}

@@ -1,0 +1,22 @@
+{
+  "codex": {
+    "page": "https://brand.openai.com/",
+    "url": "https://media.ffycdn.net/us/openai/TMjT3zfy9wAuWBKS3Fk9.png?width=512",
+    "sha256": "c5a5b50f52d610d236fad0d5a0571fd80808e164f33020c0c631dc646177bf6e"
+  },
+  "cursor": {
+    "page": "https://cursor.com/brand",
+    "url": "https://cursor.com/marketing-static/icon-192x192-light.png",
+    "sha256": "267649be4d2a26dea632bb6cc1f7a400daa117e5cd3335a140ba5cb0148aaedc"
+  },
+  "workbuddy": {
+    "page": "https://www.workbuddy.cn/",
+    "url": "https://download.codebuddy.cn/web/workbuddy/1f2371ee806002399af6a996ddf43953db5a2d63/assets/logo.svg",
+    "sha256": "2bf7d72e90529afccda7a879f470f86ace240e84f4c225a6d8a0dfbe397a942e"
+  },
+  "hermes": {
+    "page": "https://hermes-agent.nousresearch.com/",
+    "url": "https://hermes-agent.nousresearch.com/icon.png",
+    "sha256": "5fbced606189c9bfc2925a16f8903333041cabbf1f8699fe9fe9b3e24504048f"
+  }
+}

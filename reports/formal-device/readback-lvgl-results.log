@@ -1,0 +1,33 @@
+Test project /private/tmp/robot-face-lvgl
+      Start  1: lvgl_production
+ 1/14 Test  #1: lvgl_production ..................   Passed    0.84 sec
+      Start  2: lvgl_smoke
+ 2/14 Test  #2: lvgl_smoke .......................   Passed    0.03 sec
+      Start  3: lvgl_stats_tab
+ 3/14 Test  #3: lvgl_stats_tab ...................   Passed    0.01 sec
+      Start  4: lvgl_quota_unknown
+ 4/14 Test  #4: lvgl_quota_unknown ...............   Passed    0.01 sec
+      Start  5: lvgl_quota_full
+ 5/14 Test  #5: lvgl_quota_full ..................   Passed    0.01 sec
+      Start  6: lvgl_picker_target
+ 6/14 Test  #6: lvgl_picker_target ...............   Passed    0.01 sec
+      Start  7: lvgl_terminal_resume
+ 7/14 Test  #7: lvgl_terminal_resume .............   Passed    0.01 sec
+      Start  8: lvgl_terminal_hidden
+ 8/14 Test  #8: lvgl_terminal_hidden .............   Passed    0.01 sec
+      Start  9: lvgl_cycling
+ 9/14 Test  #9: lvgl_cycling .....................   Passed    0.41 sec
+      Start 10: lvgl_motion_rotation
+10/14 Test #10: lvgl_motion_rotation .............   Passed    0.02 sec
+      Start 11: lvgl_motion_reaction
+11/14 Test #11: lvgl_motion_reaction .............   Passed    0.01 sec
+      Start 12: lvgl_motion_input_navigation
+12/14 Test #12: lvgl_motion_input_navigation .....   Passed    0.27 sec
+      Start 13: lvgl_motion_input_contact
+13/14 Test #13: lvgl_motion_input_contact ........   Passed    0.01 sec
+      Start 14: lvgl_motion_input_stale
+14/14 Test #14: lvgl_motion_input_stale ..........   Passed    0.01 sec
+
+100% tests passed out of 14
+
+Total Test time (real) =   1.66 sec

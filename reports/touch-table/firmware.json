@@ -1,0 +1,8 @@
+{
+  "firmware": "3.1.0",
+  "protocol": 3,
+  "image_sha256": "4f67417247aef04ce8dd806b24bbef9829c6579721ae5472b06c5269cb80c0ff",
+  "backup_sha256": "ccded2a8ab2665623600612e34f7faf97710291bb1a6c6f9de294ea2e2895e04",
+  "image_bytes": 901504,
+  "source_sha256": "d256aeb58367db0d9ef5df28d7afc2c444d9491dc77e036df13e3c6cd87643ba"
+}

@@ -1,0 +1,51 @@
+[1/14] Building C object esp-idf/bot_ui/CMakeFiles/__idf_bot_ui.dir/face_geometry.c.obj
+[2/14] Performing build step for 'bootloader'
+[1/1] cd /private/tmp/robot-character-v2/build/bootloader && /Users/hanxin/.espressif/tools/python/v6.1/venv/bin/python /Users/hanxin/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /private/tmp/robot-character-v2/build/bootloader/bootloader.bin
+Bootloader binary size 0x5820 bytes. 0x27e0 bytes (31%) free.
+[3/14] No install step for 'bootloader'
+[4/14] Building C object esp-idf/bot_ui/CMakeFiles/__idf_bot_ui.dir/face_reaction.c.obj
+[5/14] Building C object esp-idf/bot_link/CMakeFiles/__idf_bot_link.dir/bot_link.c.obj
+[6/14] Completed 'bootloader'
+[7/14] Linking C static library esp-idf/bot_link/libbot_link.a
+[8/14] Building C object esp-idf/bot_ui/CMakeFiles/__idf_bot_ui.dir/face.c.obj
+[9/14] Building C object esp-idf/bot_ui/CMakeFiles/__idf_bot_ui.dir/face_motion.c.obj
+[10/14] Linking C static library esp-idf/bot_ui/libbot_ui.a
+[11/14] Generating esp-idf/esp_system/ld/sections.ld
+NOTE: 
+/Users/hanxin/.espressif/v6.1/esp-idf/components/bt/host/nimble/Kconfig.in:1428:
+BT_NIMBLE_MESH_PROVISIONER: 'default 0' is not a valid bool value (only 'y' and 
+'n' are allowed). Value is treated as 'n'.
+NOTE: /Users/hanxin/.espressif/v6.1/esp-idf/components/fatfs/Kconfig:240: 
+FATFS_PRINT_LLI: 'default 0' is not a valid bool value (only 'y' and 'n' are 
+allowed). Value is treated as 'n'.
+NOTE: /Users/hanxin/.espressif/v6.1/esp-idf/components/fatfs/Kconfig:245: 
+FATFS_PRINT_FLOAT: 'default 0' is not a valid bool value (only 'y' and 'n' are 
+allowed). Value is treated as 'n'.
+Default value for BOT_IMU_MOUNT_DEG in sdkconfig is 98 but it is 0
+according to Kconfig.
+Using default value from sdkconfig (98).
+Default value for BOT_IMU_DIAGNOSTICS in sdkconfig is y but it is n
+according to Kconfig.
+Using default value from sdkconfig (y).
+Skipping linker fragment parsing, fragment files unchanged
+[12/14] Linking CXX executable bot_status.elf
+[13/14] Generating binary image from built executable
+esptool v5.4.0
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated /private/tmp/robot-character-v2/build/bot_status.bin
+[14/14] cd /private/tmp/robot-character-v2/build && /Users/hanxin/.espressif/tools/python/v6.1/venv/bin/python /Users/hanxin/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /private/tmp/robot-character-v2/build/partition_table/partition-table.bin /private/tmp/robot-character-v2/build/bot_status.bin
+bot_status.bin binary size 0xd3590 bytes. Smallest app partition is 0x800000 bytes. 0x72ca70 bytes (90%) free.
+Executing action: all (aliases: build)
+Running ninja in directory /private/tmp/robot-character-v2/build
+Executing "ninja all"...
+
+Project build complete. To flash, run:
+ idf.py flash
+or
+ idf.py -p PORT flash
+or
+ python -m esptool --chip esp32s3 -b 460800 --before default-reset --after hard-reset write-flash --flash-mode dio --flash-size 16MB --flash-freq 80m 0x0 ../../../../../private/tmp/robot-character-v2/build/bootloader/bootloader.bin 0x8000 ../../../../../private/tmp/robot-character-v2/build/partition_table/partition-table.bin 0x10000 ../../../../../private/tmp/robot-character-v2/build/bot_status.bin
+or from the "/private/tmp/robot-character-v2/build" directory
+ python -m esptool --chip esp32s3 -b 460800 --before default-reset --after hard-reset write-flash "@flash_args"

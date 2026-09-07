@@ -1,14 +1,6 @@
-/* bot_gesture.h — independent single-contact gesture recognizer (T04).
- *
- * Contract authority: design/interaction_tokens.json + acceptance/gesture_cases.json.
- * One contact produces AT MOST one GestureEvent. No dynamic allocation, no LVGL
- * dependency — host-compilable for tests/native, linkable into ESP-IDF firmware.
- *
- * Numeric tokens (never scatter magic numbers):
- *   tap_max_ms=250  tap_slop_px=12  hold_ms=650
- *   swipe_min_px=56 swipe_min_ms=120 swipe_max_ms=700 swipe_axis_ratio=1.4
- *   first_wake_touch_consumed=true -> a wake contact emits WAKE_ONLY and nothing else
- */
+/* Allocation-free touch arbitration. Complete frames are the production API.
+ * DOWN fixes ownership until all fingers leave. Long holds never navigate.
+ * Single-sample API remains available for existing native callers. */
 #ifndef BOT_GESTURE_H
 #define BOT_GESTURE_H
 
@@ -28,12 +20,31 @@ typedef enum {
     BOT_GS_CONSUMED
 } bot_gesture_state_t;
 
+/* One complete hardware sample; cancelled never means a normal release. */
+typedef struct { uint8_t id; int16_t x,y; } bot_touch_point_t;
+typedef struct {
+    uint32_t time_ms;
+    uint8_t count;
+    bool cancelled;
+    bool final_position; /* points[0] carries a trustworthy last UP coordinate */
+    bot_touch_point_t points[2];
+} bot_touch_frame_t;
+
 typedef struct {
     bot_gesture_state_t state;
-    uint32_t down_ms;
+    uint32_t down_ms, stroke_ms;
+    bool stroking;
     int16_t  down_x;
     int16_t  down_y;
-    bool     moved_beyond_slop; /* > tap_slop_px cancels hold and tap */
+    bool     moved_beyond_slop; /* > tap_slop_px permanently cancels tap */
+    int16_t last_x, last_y, extreme;
+    float path_px;
+    uint8_t reversals;
+    int8_t direction, stroke_axis;
+    bool pet_contact, face_mode;
+    uint8_t edge, contact_count, primary_id;
+    bool multi_contact, frame_active, blocked;
+    bot_touch_frame_t frame;
     bool     wake_contact;      /* first touch that wakes the device */
 } bot_gesture_t;
 
@@ -41,6 +52,8 @@ typedef struct {
 void bot_gesture_init(bot_gesture_t *g);
 
 /* Mark the next DOWN as a wake contact (first_wake_touch_consumed=true). */
+/* Set only before DOWN; central ownership is latched until release. */
+void bot_gesture_set_face_mode(bot_gesture_t *g,bool enabled);
 void bot_gesture_arm_wake(bot_gesture_t *g);
 
 /* Feed one sample. Returns the event produced by THIS sample (usually NONE;
@@ -56,6 +69,9 @@ typedef enum {
 
 bot_gesture_kind_t bot_gesture_feed(bot_gesture_t *g, bot_touch_phase_t phase,
                                      uint32_t t_ms, int16_t x, int16_t y);
+
+/* Whole-contact arbitration, including two -> one and cancellation. */
+bot_gesture_kind_t bot_gesture_feed_frame(bot_gesture_t *g,const bot_touch_frame_t *frame);
 
 const char *bot_gesture_event_name(bot_gesture_kind_t ev);
 

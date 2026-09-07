@@ -5,6 +5,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdio.h>
+#define LV_RADIUS_CIRCLE 32767
 #define LV_OPA_COVER 255
 #define LV_OPA_TRANSP 0
 #define LV_OBJ_FLAG_SCROLLABLE 1
@@ -50,6 +51,7 @@ void lv_obj_set_style_text_color(lv_obj_t *p,lv_color_t c,int s);
 void lv_obj_set_style_text_align(lv_obj_t *p,int a,int s);
 void lv_label_set_text(lv_obj_t *p,const char *t);
 lv_color_t lv_color_hex(uint32_t c);
+lv_color_t lv_color_mix(lv_color_t a,lv_color_t b,uint8_t mix);
 void lv_scr_load(lv_obj_t *p);
 void lv_indev_get_point(lv_indev_t *i,lv_point_t *p);
 lv_indev_state_t lv_indev_get_state(lv_indev_t *i);
@@ -59,6 +61,7 @@ lv_obj_t *lv_event_get_target_obj(lv_event_t *e);
 lv_layer_t *lv_event_get_layer(lv_event_t *e);
 void lv_obj_get_coords(lv_obj_t *p,lv_area_t *a);
 void lv_obj_invalidate(lv_obj_t *p);
+void lv_obj_invalidate_area(lv_obj_t *p,const lv_area_t *area);
 void lv_draw_rect_dsc_init(lv_draw_rect_dsc_t *d);
 void lv_draw_line_dsc_init(lv_draw_line_dsc_t *d);
 void lv_draw_triangle_dsc_init(lv_draw_triangle_dsc_t *d);

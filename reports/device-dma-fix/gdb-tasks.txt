@@ -1,0 +1,99 @@
+lv_draw_dispatch () at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw.c:222
+222	            if(lv_draw_dispatch_layer(disp, layer))
+[New Thread 1070364704]
+[New Thread 1070514992]
+[New Thread 1070523292]
+[New Thread 1070440732]
+[New Thread 1070474960]
+[New Thread 1070453264]
+[New Thread 1070357156]
+[New Thread 1070351460]
+[New Thread 1070352848]
+
+Thread 10 (Thread 1070352848 "ipc1" (Name: ipc1)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x403799c9 in ipc_task (arg=0x1) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/esp_ipc.c:62
+
+Thread 9 (Thread 1070351460 "ipc0" (Name: ipc0)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x403799c9 in ipc_task (arg=0x0) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/esp_ipc.c:62
+
+Thread 8 (Thread 1070357156 "esp_timer" (Name: esp_timer)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x420581cc in timer_task (arg=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_timer/src/esp_timer.c:552
+
+Thread 7 (Thread 1070453264 "bot_imu" (Name: bot_imu)):
+#0  sensor_task (arg=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_imu/bot_imu.c:51
+
+Thread 6 (Thread 1070474960 "bot_usb_rx" (Name: bot_usb_rx)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcdd378) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x4206349f in prvReceiveGeneric (pxRingbuffer=0x3fcdd310, pvItem1=0x3fce23e0, pvItem2=0x0, xItemSize1=0x3fce2410, xItemSize2=0x0, xMaxSize=256, xTicksToWait=<optimized out>, xTicksToWait@entry=50) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_ringbuf/ringbuf.c:893
+#4  0x420635f0 in xRingbufferReceiveUpTo (xRingbuffer=0x3fcdd310, pxItemSize=0x3fce2410, xTicksToWait=50, xMaxSize=256) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_ringbuf/ringbuf.c:1190
+#5  0x4205883d in usb_serial_jtag_read_bytes (buf=0x3fce2442, length=<optimized out>, ticks_to_wait=50) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag.c:246
+#6  0x42016068 in receive (unused=0x0) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_link/bot_link.c:17
+
+Thread 5 (Thread 1070440732 "lvgl" (Name: lvgl, State: Running @CPU0)):
+#0  lv_draw_dispatch () at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw.c:222
+#1  0x4202be02 in lv_draw_finalize_task_creation (layer=<optimized out>, t=0x3fce79fc) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw.c:173
+#2  0x4202e524 in lv_draw_triangle (layer=0x3fce6c74, dsc=0x3fcdb510) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw_triangle.c:76
+#3  0x4200d5fc in draw_primitive (layer=0x3fce6c74, p=0x3fcb4200 <s_geometry+148>, dx=<optimized out>, dy=0, c=1, sn=0) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:117
+#4  0x4200df2a in face_event (e=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:144
+#5  face_event (e=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:130
+#6  0x42033788 in lv_event_send (list=0x3fce2968, e=0x3fcdb6f0, preprocess=false) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/misc/lv_event.c:121
+#7  0x42033886 in lv_event_send (list=<optimized out>, e=0x3fcdb6f0, preprocess=false) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/misc/lv_event.c:98
+#8  0x42024717 in event_send_core (e=0x3fcdb6f0) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_obj_event.c:376
+#9  0x42024817 in lv_obj_send_event (obj=<optimized out>, event_code=LV_EVENT_DRAW_MAIN, param=0x3fce6c74) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_obj_event.c:69
+#10 0x42029af5 in lv_obj_redraw (layer=0x3fce6c74, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:125
+#11 0x42029e58 in lv_obj_refr (layer=0x3fce6c74, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:511
+#12 0x42029bd5 in lv_obj_refr (layer=<optimized out>, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:492
+#13 lv_obj_redraw (layer=0x3fce6c74, obj=0x3fce27e4) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:175
+
+Thread 4 (Thread 1070523292 "swdraw" (Name: swdraw)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x420351b1 in lv_thread_sync_wait (pxCond=0x3fcea310) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/osal/lv_freertos.c:215
+#5  0x4204890f in render_thread_cb (ptr=0x3fcea300) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw.c:357
+#6  0x4203500c in prvRunThread (pxArg=0x3fcea304) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/osal/lv_freertos.c:436
+
+Thread 3 (Thread 1070514992 "swdraw" (Name: swdraw, State: Running @CPU1)):
+#0  0x400570ec in ?? ()
+#1  0x4037ce5c in lv_memset (dst=0x3fce6d88, v=255 '\377', len=442) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/stdlib/clib/lv_string_clib.c:45
+#2  0x4204a860 in lv_draw_sw_fill (t=<optimized out>, dsc=<optimized out>, coords=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw_fill.c:162
+#3  0x4204896d in execute_drawing (t=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw.c:389
+#4  render_thread_cb (ptr=0x3fcea2d8) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/sw/lv_draw_sw.c:365
+#5  0x4203500c in prvRunThread (pxArg=0x3fcea2dc) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/osal/lv_freertos.c:436
+
+Thread 2 (Thread 1070364704 "IDLE0" (Name: IDLE0)):
+#0  0x40393ed6 in esp_cpu_wait_for_intr () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/cpu.c:64
+#1  0x420637d9 in esp_vApplicationIdleHook () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/freertos_hooks.c:58
+#2  0x42064ef3 in prvIdleTask (pvParameters=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4350
+
+Thread 1 (Thread 1070366348 "IDLE1" (Name: IDLE1)):
+#0  lv_draw_dispatch () at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw.c:222
+#1  0x4202be02 in lv_draw_finalize_task_creation (layer=<optimized out>, t=0x3fce79fc) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw.c:173
+#2  0x4202e524 in lv_draw_triangle (layer=0x3fce6c74, dsc=0x3fcdb510) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/draw/lv_draw_triangle.c:76
+#3  0x4200d5fc in draw_primitive (layer=0x3fce6c74, p=0x3fcb4200 <s_geometry+148>, dx=<optimized out>, dy=0, c=1, sn=0) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:117
+#4  0x4200df2a in face_event (e=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:144
+#5  face_event (e=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:130
+#6  0x42033788 in lv_event_send (list=0x3fce2968, e=0x3fcdb6f0, preprocess=false) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/misc/lv_event.c:121
+#7  0x42033886 in lv_event_send (list=<optimized out>, e=0x3fcdb6f0, preprocess=false) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/misc/lv_event.c:98
+#8  0x42024717 in event_send_core (e=0x3fcdb6f0) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_obj_event.c:376
+#9  0x42024817 in lv_obj_send_event (obj=<optimized out>, event_code=LV_EVENT_DRAW_MAIN, param=0x3fce6c74) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_obj_event.c:69
+#10 0x42029af5 in lv_obj_redraw (layer=0x3fce6c74, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:125
+#11 0x42029e58 in lv_obj_refr (layer=0x3fce6c74, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:511
+#12 0x42029bd5 in lv_obj_refr (layer=<optimized out>, obj=0x3fce289c) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:492
+#13 lv_obj_redraw (layer=0x3fce6c74, obj=0x3fce27e4) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/core/lv_refr.c:175
+[Inferior 1 (Remote target) detached]

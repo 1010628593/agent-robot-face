@@ -1,0 +1,317 @@
+{
+  "short_cancel": {
+    "final": {
+      "frame": "3",
+      "time_ms": "1350",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.024",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-391.00",
+      "-391.00",
+      "-454.00"
+    ]
+  },
+  "hold": {
+    "final": {
+      "frame": "3",
+      "time_ms": "3100",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.020",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-454.00",
+      "-454.00",
+      "-454.00"
+    ]
+  },
+  "diagonal": {
+    "final": {
+      "frame": "3",
+      "time_ms": "1250",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.017",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-454.00",
+      "-454.00",
+      "-454.00"
+    ]
+  },
+  "body_to_edge": {
+    "final": {
+      "frame": "3",
+      "time_ms": "1250",
+      "count": "0",
+      "phase": "0",
+      "card": "0",
+      "progress": "0.0000",
+      "y": "478.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.017",
+      "objects": "1"
+    },
+    "positions": [
+      "478.00",
+      "478.00",
+      "478.00",
+      "478.00"
+    ]
+  },
+  "flick": {
+    "final": {
+      "frame": "4",
+      "time_ms": "1055",
+      "count": "0",
+      "phase": "3",
+      "card": "1",
+      "progress": "1.0000",
+      "y": "12.00",
+      "velocity": "0.00",
+      "stable_open": "1",
+      "render_cpu_ms": "0.048",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-426.00",
+      "-386.00",
+      "-386.00",
+      "12.00"
+    ]
+  },
+  "paused_release": {
+    "final": {
+      "frame": "4",
+      "time_ms": "1350",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.019",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-426.00",
+      "-386.00",
+      "-386.00",
+      "-454.00"
+    ]
+  },
+  "reverse_flick": {
+    "final": {
+      "frame": "5",
+      "time_ms": "1245",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.020",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-101.00",
+      "-131.00",
+      "-161.00",
+      "-161.00",
+      "-454.00"
+    ]
+  },
+  "multi_cancel": {
+    "final": {
+      "frame": "5",
+      "time_ms": "1300",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.019",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-221.00",
+      "-221.00",
+      "-299.61",
+      "-382.13",
+      "-454.00"
+    ]
+  },
+  "input_cancel": {
+    "final": {
+      "frame": "4",
+      "time_ms": "1250",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.019",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-221.00",
+      "-221.00",
+      "-299.61",
+      "-454.00"
+    ]
+  },
+  "regrab_cancel": {
+    "final": {
+      "frame": "7",
+      "time_ms": "1350",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.019",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-221.00",
+      "-221.00",
+      "-142.39",
+      "-115.75",
+      "-115.75",
+      "-229.86",
+      "-454.00"
+    ]
+  },
+  "reversal_distance": {
+    "final": {
+      "frame": "4",
+      "time_ms": "1600",
+      "count": "0",
+      "phase": "0",
+      "card": "1",
+      "progress": "0.0000",
+      "y": "-454.00",
+      "velocity": "0.00",
+      "stable_open": "0",
+      "render_cpu_ms": "0.019",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-111.00",
+      "-421.00",
+      "-421.00",
+      "-454.00"
+    ]
+  },
+  "panel_body": {
+    "final": {
+      "frame": "7",
+      "time_ms": "2100",
+      "count": "0",
+      "phase": "3",
+      "card": "1",
+      "progress": "1.0000",
+      "y": "12.00",
+      "velocity": "0.00",
+      "stable_open": "1",
+      "render_cpu_ms": "0.041",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-151.00",
+      "-151.00",
+      "12.00",
+      "12.00",
+      "12.00",
+      "12.00",
+      "12.00"
+    ]
+  },
+  "endpoint_damping": {
+    "final": {
+      "frame": "8",
+      "time_ms": "2350",
+      "count": "0",
+      "phase": "3",
+      "card": "1",
+      "progress": "1.0000",
+      "y": "12.00",
+      "velocity": "0.00",
+      "stable_open": "1",
+      "render_cpu_ms": "0.042",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-151.00",
+      "-151.00",
+      "12.00",
+      "12.00",
+      "-6.00",
+      "17.94",
+      "17.94",
+      "12.00"
+    ]
+  },
+  "rotated_top": {
+    "final": {
+      "frame": "3",
+      "time_ms": "1250",
+      "count": "0",
+      "phase": "3",
+      "card": "1",
+      "progress": "1.0000",
+      "y": "12.00",
+      "velocity": "0.00",
+      "stable_open": "1",
+      "render_cpu_ms": "0.047",
+      "objects": "2"
+    },
+    "positions": [
+      "-454.00",
+      "-151.00",
+      "-151.00",
+      "12.00"
+    ]
+  }
+}

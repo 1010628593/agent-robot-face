@@ -70,6 +70,7 @@ typedef enum {
     BOT_FACE_ERROR,
     BOT_FACE_SLEEP,
     BOT_FACE_ATTENTION,
+    BOT_FACE_CANCELLED,
     BOT_FACE_COUNT
 } bot_face_t;
 
@@ -103,7 +104,8 @@ typedef enum {
     BOT_GESTURE_SWIPE_RIGHT,
     BOT_GESTURE_SWIPE_UP,
     BOT_GESTURE_SWIPE_DOWN,
-    BOT_GESTURE_WAKE_ONLY
+    BOT_GESTURE_WAKE_ONLY,
+    BOT_GESTURE_STROKE
 } bot_gesture_kind_t;
 
 /* Single-contact gesture event: at most one per contact (T04 contract). */

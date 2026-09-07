@@ -1,0 +1,6 @@
+esptool v5.4.0
+Serial port /dev/cu.usbmodem21201:
+
+ERROR: A fatal error occurred: Could not open /dev/cu.usbmodem21201, the port is busy or doesn't exist.
+([Errno 35] Could not exclusively lock port /dev/cu.usbmodem21201: [Errno 35] Resource temporarily unavailable)
+

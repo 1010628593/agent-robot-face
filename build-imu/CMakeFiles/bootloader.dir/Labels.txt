@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/CMakeFiles/bootloader
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/CMakeFiles/bootloader.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/CMakeFiles/bootloader-complete.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

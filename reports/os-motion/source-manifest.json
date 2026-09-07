@@ -1,0 +1,12 @@
+{
+  "source_archive_sha256": "b06349ae7a7577c6b0c3898be30a78ed90e455b446e62b2cb6644873eaed4355",
+  "files": {
+    "components/bot_core/navigation.c": "b893d8ce735e3a43ff69d5593350a642718974f960279253e106cd3690229357",
+    "components/bot_ui/ui.c": "95377976b07739bef33c8c9ada028ffb03318a7372b5a8a7ec30c54d079c2d1d",
+    "components/bot_ui/ui_motion.c": "98dcae16cb6be126f730d5e7ee79c341b35d8e89a7ff9169988dfaa153b751b8",
+    "components/bot_ui/picker.c": "9dbc1d370d82afa83073b5b0879cfcc3226930eb3f734c0589c68f4db8adf40b",
+    "components/bot_ui/stats.c": "7fbaf095deea79419f649fcd5021966fcb7f175cfe1354a9cbac2c82ad3b1933",
+    "components/bot_link/bot_link.c": "e77ee2a6141c2ac7646de71c8fc69114fec8a9a097d57d4ebcb6b9181b2b5b79"
+  },
+  "note": "Frozen v2 baseline with OS navigation. Shared workspace concurrently changed to v3; that change is not included."
+}

@@ -1,0 +1,7362 @@
+[
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 50248,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782810995
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2663,
+      "rx_bytes": 166286,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782810995
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 34,
+      "accepted_pong": 34,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2584,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 6045,
+      "avg_us": 15409,
+      "max_us": 147139,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782808914
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 50248,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782810995
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2663,
+      "rx_bytes": 166286,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782810995
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 34,
+      "accepted_pong": 34,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2585,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 6045,
+      "avg_us": 15409,
+      "max_us": 147139,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782808914
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 50248,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782810995
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2663,
+      "rx_bytes": 166286,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782810995
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 35,
+      "accepted_pong": 35,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2585,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 6045,
+      "avg_us": 15409,
+      "max_us": 147139,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782808914
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 50248,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782810995
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2663,
+      "rx_bytes": 166286,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782810995
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 35,
+      "accepted_pong": 35,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2189,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 50248,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782810995
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2663,
+      "rx_bytes": 166286,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782810995
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 36,
+      "accepted_pong": 36,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2073,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 55260,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782816039
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2923,
+      "rx_bytes": 182489,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782816039
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 36,
+      "accepted_pong": 36,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2701,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 55260,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782816039
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2923,
+      "rx_bytes": 182489,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782816039
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 37,
+      "accepted_pong": 37,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 1049,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 55260,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782816039
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2923,
+      "rx_bytes": 182489,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782816039
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 38,
+      "accepted_pong": 38,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 537,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 55260,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782816039
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 2923,
+      "rx_bytes": 182489,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782816039
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 38,
+      "accepted_pong": 38,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 537,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5953,
+      "avg_us": 100084,
+      "max_us": 139722,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782814889
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 60274,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782821023
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 116,
+      "rx_chunks": 3192,
+      "rx_bytes": 199346,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782821023
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 39,
+      "accepted_pong": 39,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 60274,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782821023
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 116,
+      "rx_chunks": 3192,
+      "rx_bytes": 199346,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782821023
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 39,
+      "accepted_pong": 39,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 60274,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782821023
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 116,
+      "rx_chunks": 3192,
+      "rx_bytes": 199346,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782821023
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 40,
+      "accepted_pong": 40,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 60274,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782821023
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 116,
+      "rx_chunks": 3192,
+      "rx_bytes": 199346,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782821023
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 40,
+      "accepted_pong": 40,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 60274,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782821023
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 116,
+      "rx_chunks": 3192,
+      "rx_bytes": 199346,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782821023
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 41,
+      "accepted_pong": 41,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 65281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782826028
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3486,
+      "rx_bytes": 217623,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782826028
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 41,
+      "accepted_pong": 41,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 36,
+      "window_ms": 6050,
+      "avg_us": 19071,
+      "max_us": 147489,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 886,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782820918
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 65281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782826028
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3486,
+      "rx_bytes": 217623,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782826028
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 42,
+      "accepted_pong": 42,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5949,
+      "avg_us": 100157,
+      "max_us": 140023,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782826864
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 65281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782826028
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3486,
+      "rx_bytes": 217623,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782826028
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 42,
+      "accepted_pong": 42,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5949,
+      "avg_us": 100157,
+      "max_us": 140023,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782826864
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 65281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782826028
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3486,
+      "rx_bytes": 217623,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782826028
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 43,
+      "accepted_pong": 43,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5949,
+      "avg_us": 100157,
+      "max_us": 140023,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782826864
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 70281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782831032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3778,
+      "rx_bytes": 235901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782831032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 43,
+      "accepted_pong": 43,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5949,
+      "avg_us": 100157,
+      "max_us": 140023,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782826864
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 70281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782831032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3778,
+      "rx_bytes": 235901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782831032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 44,
+      "accepted_pong": 44,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5949,
+      "avg_us": 100157,
+      "max_us": 140023,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782826864
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 70281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782831032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3778,
+      "rx_bytes": 235901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782831032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 45,
+      "accepted_pong": 45,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 32,
+      "window_ms": 6047,
+      "avg_us": 22188,
+      "max_us": 146484,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782832898
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 70281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782831032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3778,
+      "rx_bytes": 235901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782831032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 45,
+      "accepted_pong": 45,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 32,
+      "window_ms": 6047,
+      "avg_us": 22188,
+      "max_us": 146484,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782832898
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 70281,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782831032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 3778,
+      "rx_bytes": 235901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782831032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 46,
+      "accepted_pong": 46,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 32,
+      "window_ms": 6047,
+      "avg_us": 22188,
+      "max_us": 146484,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782832898
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 75288,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782836032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4024,
+      "rx_bytes": 251198,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782836032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 46,
+      "accepted_pong": 46,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 32,
+      "window_ms": 6047,
+      "avg_us": 22188,
+      "max_us": 146484,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782832898
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 75288,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782836032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4024,
+      "rx_bytes": 251198,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782836032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 46,
+      "accepted_pong": 46,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2701,
+    "diagnostics": {
+      "render_updates": 32,
+      "window_ms": 6047,
+      "avg_us": 22188,
+      "max_us": 146484,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782832898
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 75288,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782836032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4024,
+      "rx_bytes": 251198,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782836032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 47,
+      "accepted_pong": 47,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 1049,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 75288,
+      "internal_free": 52347,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782836032
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4024,
+      "rx_bytes": 251198,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782836032
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 48,
+      "accepted_pong": 48,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 80288,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782841060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4256,
+      "rx_bytes": 265866,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782841060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 48,
+      "accepted_pong": 48,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 80288,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782841060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4256,
+      "rx_bytes": 265866,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782841060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 49,
+      "accepted_pong": 49,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 80288,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782841060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4256,
+      "rx_bytes": 265866,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782841060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 49,
+      "accepted_pong": 49,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 80288,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782841060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4256,
+      "rx_bytes": 265866,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782841060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 50,
+      "accepted_pong": 50,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5958,
+      "avg_us": 100091,
+      "max_us": 140475,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 887,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782838858
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 80288,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782841060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4256,
+      "rx_bytes": 265866,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782841060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 50,
+      "accepted_pong": 50,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 6043,
+      "avg_us": 25605,
+      "max_us": 147407,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782844916
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 85292,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782846041
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4540,
+      "rx_bytes": 283635,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782846041
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 51,
+      "accepted_pong": 51,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 6043,
+      "avg_us": 25605,
+      "max_us": 147407,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782844916
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 85292,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782846041
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4540,
+      "rx_bytes": 283635,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782846041
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 51,
+      "accepted_pong": 51,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 6043,
+      "avg_us": 25605,
+      "max_us": 147407,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782844916
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 85292,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782846041
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4540,
+      "rx_bytes": 283635,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782846041
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 52,
+      "accepted_pong": 52,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 6043,
+      "avg_us": 25605,
+      "max_us": 147407,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782844916
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 85292,
+      "internal_free": 52351,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782846041
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4540,
+      "rx_bytes": 283635,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782846041
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 52,
+      "accepted_pong": 52,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 6043,
+      "avg_us": 25605,
+      "max_us": 147407,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782844916
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 90301,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782851109
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4833,
+      "rx_bytes": 302033,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782851109
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 53,
+      "accepted_pong": 53,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 90301,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782851109
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4833,
+      "rx_bytes": 302033,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782851109
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 54,
+      "accepted_pong": 54,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 90301,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782851109
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4833,
+      "rx_bytes": 302033,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782851109
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 54,
+      "accepted_pong": 54,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 90301,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782851109
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4833,
+      "rx_bytes": 302033,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782851109
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 55,
+      "accepted_pong": 55,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 90301,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782851109
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 4833,
+      "rx_bytes": 302033,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782851109
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 55,
+      "accepted_pong": 55,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 95304,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782856060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5125,
+      "rx_bytes": 320315,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782856060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 56,
+      "accepted_pong": 56,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5956,
+      "avg_us": 99715,
+      "max_us": 138558,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782850906
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 95304,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782856060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5125,
+      "rx_bytes": 320315,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782856060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 56,
+      "accepted_pong": 56,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 44,
+      "window_ms": 6045,
+      "avg_us": 17252,
+      "max_us": 147766,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782856915
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 95304,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782856060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5125,
+      "rx_bytes": 320315,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782856060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 57,
+      "accepted_pong": 57,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 44,
+      "window_ms": 6045,
+      "avg_us": 17252,
+      "max_us": 147766,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782856915
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 95304,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782856060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5125,
+      "rx_bytes": 320315,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782856060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 57,
+      "accepted_pong": 57,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 44,
+      "window_ms": 6045,
+      "avg_us": 17252,
+      "max_us": 147766,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782856915
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 95304,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782856060
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5125,
+      "rx_bytes": 320315,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782856060
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 58,
+      "accepted_pong": 58,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 44,
+      "window_ms": 6045,
+      "avg_us": 17252,
+      "max_us": 147766,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782856915
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 100313,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782861065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 512,
+      "rx_chunks": 5394,
+      "rx_bytes": 337151,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782861065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 58,
+      "accepted_pong": 58,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 44,
+      "window_ms": 6045,
+      "avg_us": 17252,
+      "max_us": 147766,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 888,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782856915
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 100313,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782861065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 512,
+      "rx_chunks": 5394,
+      "rx_bytes": 337151,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782861065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 59,
+      "accepted_pong": 59,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5950,
+      "avg_us": 100153,
+      "max_us": 139719,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782862857
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 100313,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782861065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 512,
+      "rx_chunks": 5394,
+      "rx_bytes": 337151,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782861065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 59,
+      "accepted_pong": 59,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5950,
+      "avg_us": 100153,
+      "max_us": 139719,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782862857
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 100313,
+      "internal_free": 52335,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 2,
+      "as_of_ms": 1788782861065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 512,
+      "rx_chunks": 5394,
+      "rx_bytes": 337151,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782861065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 60,
+      "accepted_pong": 60,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5950,
+      "avg_us": 100153,
+      "max_us": 139719,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782862857
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 105315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782866071
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5653,
+      "rx_bytes": 353385,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782866071
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 61,
+      "accepted_pong": 61,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5950,
+      "avg_us": 100153,
+      "max_us": 139719,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782862857
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 105315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782866071
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5653,
+      "rx_bytes": 353385,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782866071
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 61,
+      "accepted_pong": 61,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 7,
+      "window_ms": 5950,
+      "avg_us": 100153,
+      "max_us": 139719,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782862857
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 105315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782866071
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5653,
+      "rx_bytes": 353385,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782866071
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 62,
+      "accepted_pong": 62,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 40,
+      "window_ms": 5013,
+      "avg_us": 12409,
+      "max_us": 67560,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782867880
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 105315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782866071
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5653,
+      "rx_bytes": 353385,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782866071
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 62,
+      "accepted_pong": 62,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 40,
+      "window_ms": 5013,
+      "avg_us": 12409,
+      "max_us": 67560,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782867880
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 105315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782866071
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5653,
+      "rx_bytes": 353385,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782866071
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 63,
+      "accepted_pong": 63,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 40,
+      "window_ms": 5013,
+      "avg_us": 12409,
+      "max_us": 67560,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782867880
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 110315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782871057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5945,
+      "rx_bytes": 371783,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782871057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 63,
+      "accepted_pong": 63,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 40,
+      "window_ms": 5013,
+      "avg_us": 12409,
+      "max_us": 67560,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782867880
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 110315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782871057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5945,
+      "rx_bytes": 371783,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782871057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 64,
+      "accepted_pong": 64,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 40,
+      "window_ms": 5013,
+      "avg_us": 12409,
+      "max_us": 67560,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782867880
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 110315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782871057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5945,
+      "rx_bytes": 371783,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782871057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 64,
+      "accepted_pong": 64,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5160,
+      "avg_us": 5043,
+      "max_us": 5680,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782873039
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 110315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782871057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5945,
+      "rx_bytes": 371783,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782871057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 65,
+      "accepted_pong": 65,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5160,
+      "avg_us": 5043,
+      "max_us": 5680,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782873039
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 110315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782871057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 5945,
+      "rx_bytes": 371783,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782871057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 65,
+      "accepted_pong": 65,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5160,
+      "avg_us": 5043,
+      "max_us": 5680,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782873039
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 115315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782876096
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6181,
+      "rx_bytes": 386455,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782876096
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 66,
+      "accepted_pong": 66,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 3098,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5160,
+      "avg_us": 5043,
+      "max_us": 5680,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 889,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782873039
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 115315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782876096
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6181,
+      "rx_bytes": 386455,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782876096
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 67,
+      "accepted_pong": 67,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5199,
+      "avg_us": 5136,
+      "max_us": 5696,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 890,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782878242
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 115315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782876096
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6181,
+      "rx_bytes": 386455,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782876096
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 67,
+      "accepted_pong": 67,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5199,
+      "avg_us": 5136,
+      "max_us": 5696,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 890,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782878242
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 115315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782876096
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6181,
+      "rx_bytes": 386455,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782876096
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 68,
+      "accepted_pong": 68,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5199,
+      "avg_us": 5136,
+      "max_us": 5696,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 890,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782878242
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 120315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782881056
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6476,
+      "rx_bytes": 404847,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782881056
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 68,
+      "accepted_pong": 68,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5199,
+      "avg_us": 5136,
+      "max_us": 5696,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 890,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782878242
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 120315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782881056
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6476,
+      "rx_bytes": 404847,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782881056
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 69,
+      "accepted_pong": 69,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5199,
+      "avg_us": 5136,
+      "max_us": 5696,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 890,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782878242
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 120315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782881056
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6476,
+      "rx_bytes": 404847,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782881056
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 69,
+      "accepted_pong": 69,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 103,
+      "window_ms": 5180,
+      "avg_us": 5771,
+      "max_us": 6466,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 892,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782883407
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 120315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782881056
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6476,
+      "rx_bytes": 404847,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782881056
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 70,
+      "accepted_pong": 70,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 103,
+      "window_ms": 5180,
+      "avg_us": 5771,
+      "max_us": 6466,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 892,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782883407
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 125315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782886059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6770,
+      "rx_bytes": 423117,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782886059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 70,
+      "accepted_pong": 70,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 103,
+      "window_ms": 5180,
+      "avg_us": 5771,
+      "max_us": 6466,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 892,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782883407
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 125315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782886059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6770,
+      "rx_bytes": 423117,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782886059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 71,
+      "accepted_pong": 71,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 103,
+      "window_ms": 5180,
+      "avg_us": 5771,
+      "max_us": 6466,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 892,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782883407
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 125315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782886059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6770,
+      "rx_bytes": 423117,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782886059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 71,
+      "accepted_pong": 71,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 103,
+      "window_ms": 5180,
+      "avg_us": 5771,
+      "max_us": 6466,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 892,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782883407
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 125315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782886059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6770,
+      "rx_bytes": 423117,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782886059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 72,
+      "accepted_pong": 72,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 83,
+      "window_ms": 5059,
+      "avg_us": 5564,
+      "max_us": 6412,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 894,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782888467
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 125315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782886059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 6770,
+      "rx_bytes": 423117,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782886059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 73,
+      "accepted_pong": 73,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 83,
+      "window_ms": 5059,
+      "avg_us": 5564,
+      "max_us": 6412,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 894,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782888467
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 130315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782891091
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7006,
+      "rx_bytes": 437901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782891091
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 73,
+      "accepted_pong": 73,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 83,
+      "window_ms": 5059,
+      "avg_us": 5564,
+      "max_us": 6412,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 894,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782888467
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 130315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782891091
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7006,
+      "rx_bytes": 437901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782891091
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 74,
+      "accepted_pong": 74,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 83,
+      "window_ms": 5059,
+      "avg_us": 5564,
+      "max_us": 6412,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 894,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782888467
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 130315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782891091
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7006,
+      "rx_bytes": 437901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782891091
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 74,
+      "accepted_pong": 74,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5039,
+      "avg_us": 4971,
+      "max_us": 5671,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 896,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782893513
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 130315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782891091
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7006,
+      "rx_bytes": 437901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782891091
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 75,
+      "accepted_pong": 75,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5039,
+      "avg_us": 4971,
+      "max_us": 5671,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 896,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782893513
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 130315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782891091
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7006,
+      "rx_bytes": 437901,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782891091
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 75,
+      "accepted_pong": 75,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5039,
+      "avg_us": 4971,
+      "max_us": 5671,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 896,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782893513
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 135315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782896067
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7300,
+      "rx_bytes": 456180,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782896067
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 76,
+      "accepted_pong": 76,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5039,
+      "avg_us": 4971,
+      "max_us": 5671,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 896,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782893513
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 135315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782896067
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7300,
+      "rx_bytes": 456180,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782896067
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 76,
+      "accepted_pong": 76,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5039,
+      "avg_us": 4971,
+      "max_us": 5671,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 896,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782893513
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 135315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782896067
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7300,
+      "rx_bytes": 456180,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782896067
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 77,
+      "accepted_pong": 77,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5000,
+      "avg_us": 5097,
+      "max_us": 5655,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 898,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782898510
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 135315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782896067
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7300,
+      "rx_bytes": 456180,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782896067
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 77,
+      "accepted_pong": 77,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5000,
+      "avg_us": 5097,
+      "max_us": 5655,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 898,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782898510
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 140315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782901057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7592,
+      "rx_bytes": 474578,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782901057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 78,
+      "accepted_pong": 78,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5000,
+      "avg_us": 5097,
+      "max_us": 5655,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 898,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782898510
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 140315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782901057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7592,
+      "rx_bytes": 474578,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782901057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 78,
+      "accepted_pong": 78,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5000,
+      "avg_us": 5097,
+      "max_us": 5655,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 898,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782898510
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 140315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782901057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7592,
+      "rx_bytes": 474578,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782901057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 79,
+      "accepted_pong": 79,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5000,
+      "avg_us": 5097,
+      "max_us": 5655,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 898,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782898510
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 140315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782901057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7592,
+      "rx_bytes": 474578,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782901057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 80,
+      "accepted_pong": 80,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5039,
+      "avg_us": 5102,
+      "max_us": 5703,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782903576
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 140315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782901057
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 7592,
+      "rx_bytes": 474578,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782901057
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 80,
+      "accepted_pong": 80,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5039,
+      "avg_us": 5102,
+      "max_us": 5703,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782903576
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 145315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782906074
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 26,
+      "rx_chunks": 7886,
+      "rx_bytes": 492860,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782906074
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 81,
+      "accepted_pong": 81,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5039,
+      "avg_us": 5102,
+      "max_us": 5703,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782903576
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 145315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782906074
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 26,
+      "rx_chunks": 7886,
+      "rx_bytes": 492860,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782906074
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 81,
+      "accepted_pong": 81,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 55,
+      "window_ms": 5039,
+      "avg_us": 5102,
+      "max_us": 5703,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782903576
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 145315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782906074
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 26,
+      "rx_chunks": 7886,
+      "rx_bytes": 492860,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782906074
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 82,
+      "accepted_pong": 82,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5020,
+      "avg_us": 5059,
+      "max_us": 5904,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782908581
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 145315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782906074
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 26,
+      "rx_chunks": 7886,
+      "rx_bytes": 492860,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782906074
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 82,
+      "accepted_pong": 82,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5020,
+      "avg_us": 5059,
+      "max_us": 5904,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782908581
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 150315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782911065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8123,
+      "rx_bytes": 507648,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782911065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 83,
+      "accepted_pong": 83,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5020,
+      "avg_us": 5059,
+      "max_us": 5904,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782908581
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 150315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782911065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8123,
+      "rx_bytes": 507648,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782911065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 83,
+      "accepted_pong": 83,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5020,
+      "avg_us": 5059,
+      "max_us": 5904,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782908581
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 150315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782911065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8123,
+      "rx_bytes": 507648,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782911065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 84,
+      "accepted_pong": 84,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 56,
+      "window_ms": 5020,
+      "avg_us": 5059,
+      "max_us": 5904,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782908581
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 150315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782911065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8123,
+      "rx_bytes": 507648,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782911065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 84,
+      "accepted_pong": 84,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 61,
+      "window_ms": 5001,
+      "avg_us": 5081,
+      "max_us": 5699,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782913570
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 150315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782911065
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8123,
+      "rx_bytes": 507648,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782911065
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 85,
+      "accepted_pong": 85,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 61,
+      "window_ms": 5001,
+      "avg_us": 5081,
+      "max_us": 5699,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782913570
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 155315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782916058
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8415,
+      "rx_bytes": 525930,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782916058
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 85,
+      "accepted_pong": 85,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 61,
+      "window_ms": 5001,
+      "avg_us": 5081,
+      "max_us": 5699,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782913570
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 155315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782916058
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8415,
+      "rx_bytes": 525930,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782916058
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 86,
+      "accepted_pong": 86,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 61,
+      "window_ms": 5001,
+      "avg_us": 5081,
+      "max_us": 5699,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782913570
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 155315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782916058
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8415,
+      "rx_bytes": 525930,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782916058
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 87,
+      "accepted_pong": 87,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 61,
+      "window_ms": 5001,
+      "avg_us": 5081,
+      "max_us": 5699,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782913570
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 155315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782916058
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8415,
+      "rx_bytes": 525930,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782916058
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 87,
+      "accepted_pong": 87,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 5098,
+      "avg_us": 5129,
+      "max_us": 5715,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782918703
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 155315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782916058
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8415,
+      "rx_bytes": 525930,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782916058
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 88,
+      "accepted_pong": 88,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 5098,
+      "avg_us": 5129,
+      "max_us": 5715,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782918703
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 160315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782921059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8710,
+      "rx_bytes": 544328,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782921059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 88,
+      "accepted_pong": 88,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 5098,
+      "avg_us": 5129,
+      "max_us": 5715,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782918703
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 160315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782921059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8710,
+      "rx_bytes": 544328,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782921059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 89,
+      "accepted_pong": 89,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 57,
+      "window_ms": 5098,
+      "avg_us": 5129,
+      "max_us": 5715,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 901,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782918703
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 160315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782921059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8710,
+      "rx_bytes": 544328,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782921059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 89,
+      "accepted_pong": 89,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5159,
+      "avg_us": 5099,
+      "max_us": 5652,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782923833
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 160315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782921059
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8710,
+      "rx_bytes": 544328,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782921059
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 90,
+      "accepted_pong": 90,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5159,
+      "avg_us": 5099,
+      "max_us": 5652,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782923833
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 165315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782926055
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8943,
+      "rx_bytes": 559000,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782926055
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 90,
+      "accepted_pong": 90,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5159,
+      "avg_us": 5099,
+      "max_us": 5652,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782923833
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 165315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782926055
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8943,
+      "rx_bytes": 559000,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782926055
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 91,
+      "accepted_pong": 91,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5159,
+      "avg_us": 5099,
+      "max_us": 5652,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782923833
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 165315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782926055
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8943,
+      "rx_bytes": 559000,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782926055
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 91,
+      "accepted_pong": 91,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 51,
+      "window_ms": 5159,
+      "avg_us": 5099,
+      "max_us": 5652,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782923833
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 165315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782926055
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8943,
+      "rx_bytes": 559000,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782926055
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 92,
+      "accepted_pong": 92,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 45,
+      "window_ms": 5119,
+      "avg_us": 4953,
+      "max_us": 5796,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782928949
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 165315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782926055
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 8943,
+      "rx_bytes": 559000,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782926055
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 92,
+      "accepted_pong": 92,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 45,
+      "window_ms": 5119,
+      "avg_us": 4953,
+      "max_us": 5796,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782928949
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 170315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782931069
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 9231,
+      "rx_bytes": 577398,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782931069
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 93,
+      "accepted_pong": 93,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 45,
+      "window_ms": 5119,
+      "avg_us": 4953,
+      "max_us": 5796,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782928949
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 170315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782931069
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 9231,
+      "rx_bytes": 577398,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782931069
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 93,
+      "accepted_pong": 93,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 45,
+      "window_ms": 5119,
+      "avg_us": 4953,
+      "max_us": 5796,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782928949
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 170315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782931069
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 9231,
+      "rx_bytes": 577398,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782931069
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 94,
+      "accepted_pong": 94,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 0,
+    "diagnostics": {
+      "render_updates": 45,
+      "window_ms": 5119,
+      "avg_us": 4953,
+      "max_us": 5796,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782928949
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 170315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782931069
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 9231,
+      "rx_bytes": 577398,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782931069
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 94,
+      "accepted_pong": 94,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2702,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5000,
+      "avg_us": 5036,
+      "max_us": 5779,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782933944
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.7",
+    "boot_id": "d17e91b3a19b40a5c36320b650dc1d10",
+    "heap_diagnostics": {
+      "uptime_ms": 170315,
+      "internal_free": 52339,
+      "largest_free": 31744,
+      "minimum_free": 4312,
+      "psram_free": 7586408,
+      "screen": 0,
+      "as_of_ms": 1788782931069
+    },
+    "link_diagnostics": {
+      "rx_dropped": 0,
+      "bad_lines": 0,
+      "queue_restarts": 0,
+      "timeout_restarts": 0,
+      "tx_failed": 0,
+      "rx_pending_bytes": 0,
+      "rx_chunks": 9231,
+      "rx_bytes": 577398,
+      "poll_gap_max_ms": 197,
+      "as_of_ms": 1788782931069
+    },
+    "firmware_errors": [],
+    "reconnect_count": null,
+    "reconnect_reason": null,
+    "reconnect_evidence": null,
+    "protocol_rx": {
+      "hello": 2,
+      "pong": 95,
+      "accepted_pong": 95,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "invalid_protocol_json": null,
+    "hello_pending_tx_bytes": 0,
+    "tx_pending_bytes": 2074,
+    "diagnostics": {
+      "render_updates": 52,
+      "window_ms": 5000,
+      "avg_us": 5036,
+      "max_us": 5779,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "59905a8d348c347e68b72129dde09de4",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 2,
+        "data_rev": 902,
+        "subject": "cursor",
+        "period": "today",
+        "page": 0,
+        "level": 1
+      },
+      "as_of_ms": 1788782933944
+    }
+  }
+]

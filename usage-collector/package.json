@@ -1,0 +1,1 @@
+{"name":"agent-robot-face-usage-collector","version":"1.0.0","private":true,"license":"MIT","type":"commonjs","engines":{"node":">=22.15.0"},"scripts":{"once":"node index.js --once"},"dependencies":{}}

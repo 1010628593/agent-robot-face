@@ -1,0 +1,68 @@
+0x40393ed6 in esp_cpu_wait_for_intr () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/cpu.c:64
+64	}
+$1 = BOT_SCR_FACE
+$2 = 0
+$3 = 0
+
+Thread 10 (Thread 1070352848 "ipc1" (Name: ipc1)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x403799c9 in ipc_task (arg=0x1) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/esp_ipc.c:62
+
+Thread 9 (Thread 1070351460 "ipc0" (Name: ipc0)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x403799c9 in ipc_task (arg=0x0) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/esp_ipc.c:62
+
+Thread 8 (Thread 1070357156 "esp_timer" (Name: esp_timer)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x420581cc in timer_task (arg=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_timer/src/esp_timer.c:552
+
+Thread 7 (Thread 1070453264 "bot_imu" (Name: bot_imu)):
+#0  sensor_task (arg=<optimized out>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_imu/bot_imu.c:51
+
+Thread 6 (Thread 1070474960 "bot_usb_rx" (Name: bot_usb_rx)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcdd378) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x4206349f in prvReceiveGeneric (pxRingbuffer=0x3fcdd310, pvItem1=0x3fce23e0, pvItem2=0x0, xItemSize1=0x3fce2410, xItemSize2=0x0, xMaxSize=256, xTicksToWait=<optimized out>, xTicksToWait@entry=50) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_ringbuf/ringbuf.c:893
+#4  0x420635f0 in xRingbufferReceiveUpTo (xRingbuffer=0x3fcdd310, pxItemSize=0x3fce2410, xTicksToWait=50, xMaxSize=256) at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_ringbuf/ringbuf.c:1190
+
+Thread 5 (Thread 1070440732 "lvgl" (Name: lvgl, State: Running @CPU0)):
+#0  0x400570ee in ?? ()
+#1  0x4201128a in bot_face_geometry_build (pose=0x3fcdba40, out=0x3fcb2f68 <s_next_geometry>) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_geometry.c:89
+#2  0x4200dc10 in face_tick (now=9174) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c:221
+#3  0x4200cd39 in bot_ui_poll () at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c:479
+#4  0x4200b9d2 in ui_timer_cb (t=0x3fce2ab8) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/main/main.c:77
+
+Thread 4 (Thread 1070523292 "swdraw" (Name: swdraw)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x420351b1 in lv_thread_sync_wait (pxCond=0x3fcea310) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/osal/lv_freertos.c:215
+
+Thread 3 (Thread 1070514992 "swdraw" (Name: swdraw)):
+#0  0x400559e0 in ?? ()
+#1  0x40397cc1 in vPortClearInterruptMaskFromISR (prev_level=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos/portmacro.h:547
+#2  vPortExitCritical (mux=0x3fcad1f0 <xKernelLock>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:528
+#3  0x42065c5d in ulTaskGenericNotifyTake (uxIndexToWait=<optimized out>, xClearCountOnExit=1, xTicksToWait=4294967295) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:5768
+#4  0x420351b1 in lv_thread_sync_wait (pxCond=0x3fcea2e8) at /Users/hanxin/Workspace/llm/agent-robot-face/firmware/managed_components/lvgl__lvgl/src/osal/lv_freertos.c:215
+
+Thread 2 (Thread 1070364704 "IDLE0" (Name: IDLE0)):
+#0  0x40393ed6 in esp_cpu_wait_for_intr () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/cpu.c:64
+#1  0x420637d9 in esp_vApplicationIdleHook () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/freertos_hooks.c:58
+#2  0x42064ef3 in prvIdleTask (pvParameters=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4350
+
+Thread 1 (Thread 1070366348 "IDLE1" (Name: IDLE1, State: Running @CPU1)):
+#0  0x40393ed6 in esp_cpu_wait_for_intr () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/cpu.c:64
+#1  0x420637d9 in esp_vApplicationIdleHook () at /Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/freertos_hooks.c:58
+#2  0x42064ef3 in prvIdleTask (pvParameters=<optimized out>) at /Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/tasks.c:4350
+[Inferior 1 (Remote target) detached]

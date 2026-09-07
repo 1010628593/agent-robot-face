@@ -1,0 +1,463 @@
+{
+  "result": {
+    "hellos": 1,
+    "pongs": 22,
+    "diagnostic_windows": 9,
+    "max_json_bytes_sent": 8192,
+    "scope": "real USB transport only; no source task simulated"
+  },
+  "events": [
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "hello",
+      "link_id": null,
+      "seq": 0,
+      "body": {
+        "device_id": "agent-robot-face",
+        "boot_id": "3e1e11362134c74490d8abbed0d1823f",
+        "firmware": "2.0.0",
+        "display": {
+          "width": 466,
+          "height": 466
+        },
+        "min_version": 2,
+        "max_version": 2,
+        "handshake_id": "0270a0e77fcd50bf6332a3f6284bccaa"
+      }
+    },
+    {
+      "direction": "host",
+      "type": "welcome",
+      "json_bytes": 8192,
+      "seq": 1
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 8192,
+      "seq": 2
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 3
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 1,
+      "body": {
+        "monotonic_ms": 179069337
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 4
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 2,
+      "body": {
+        "monotonic_ms": 179071367
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 53,
+      "window_ms": 5009,
+      "avg_us": 6985,
+      "max_us": 28380
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 5
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 3,
+      "body": {
+        "monotonic_ms": 179073490
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 6
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 4,
+      "body": {
+        "monotonic_ms": 179075525
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 46,
+      "window_ms": 5039,
+      "avg_us": 6672,
+      "max_us": 6751
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 7
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 5,
+      "body": {
+        "monotonic_ms": 179077724
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 8
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 6,
+      "body": {
+        "monotonic_ms": 179079753
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 108,
+      "seq": 9
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 7,
+      "body": {
+        "monotonic_ms": 179081783
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 27,
+      "window_ms": 5000,
+      "avg_us": 6717,
+      "max_us": 6879
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 10
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 8,
+      "body": {
+        "monotonic_ms": 179083938
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 11
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 9,
+      "body": {
+        "monotonic_ms": 179085980
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 30,
+      "window_ms": 5260,
+      "avg_us": 6867,
+      "max_us": 6919
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 12
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 10,
+      "body": {
+        "monotonic_ms": 179088179
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 13
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 11,
+      "body": {
+        "monotonic_ms": 179090211
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 14
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 12,
+      "body": {
+        "monotonic_ms": 179092246
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 33,
+      "window_ms": 5019,
+      "avg_us": 6775,
+      "max_us": 6890
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 15
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 13,
+      "body": {
+        "monotonic_ms": 179094424
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 16
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 14,
+      "body": {
+        "monotonic_ms": 179096454
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 30,
+      "window_ms": 5059,
+      "avg_us": 6666,
+      "max_us": 6731
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 17
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 15,
+      "body": {
+        "monotonic_ms": 179098467
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 18
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 16,
+      "body": {
+        "monotonic_ms": 179100499
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 19
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 17,
+      "body": {
+        "monotonic_ms": 179102535
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 20,
+      "window_ms": 5019,
+      "avg_us": 6664,
+      "max_us": 6740
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 20
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 18,
+      "body": {
+        "monotonic_ms": 179104703
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 21
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 19,
+      "body": {
+        "monotonic_ms": 179106736
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 38,
+      "window_ms": 5179,
+      "avg_us": 6553,
+      "max_us": 6740
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 22
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 20,
+      "body": {
+        "monotonic_ms": 179108871
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 23
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 21,
+      "body": {
+        "monotonic_ms": 179110888
+      }
+    },
+    {
+      "direction": "diag",
+      "render_updates": 32,
+      "window_ms": 5020,
+      "avg_us": 6496,
+      "max_us": 6650
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 24
+    },
+    {
+      "direction": "device",
+      "v": 2,
+      "type": "pong",
+      "link_id": "0d3148c9b98343d598282cedd83ae6ae",
+      "seq": 22,
+      "body": {
+        "monotonic_ms": 179113079
+      }
+    },
+    {
+      "direction": "host",
+      "type": "ping",
+      "json_bytes": 109,
+      "seq": 25
+    }
+  ]
+}

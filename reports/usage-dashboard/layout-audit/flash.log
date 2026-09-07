@@ -1,0 +1,57 @@
+esptool v5.4.0
+Serial port /dev/cu.usbmodem21201:
+Connecting...
+Connected to ESP32-S3 on /dev/cu.usbmodem21201:
+Chip type:          ESP32-S3 (QFN56) (revision v0.2)
+Features:           Wi-Fi, BT 5 (LE), Dual Core + LP Core, 240MHz, Embedded PSRAM 8MB (AP_3v3)
+Crystal frequency:  40MHz
+USB mode:           USB-Serial/JTAG
+MAC:                28:84:85:8d:71:e0
+
+Uploading stub flasher...
+Running stub flasher...
+Stub flasher running.
+Changing baud rate to 460800...
+Changed.
+
+Configuring flash size...
+Flash will be erased from 0x00010000 to 0x000ecfff...
+Compressed 901856 bytes to 539003...
+Writing at 0x0001bcba ╸                                3.0% 16.00kB/526.37kB [0s] 
+Writing at 0x00028306 ━╸                               6.1% 32.00kB/526.37kB [0s] 
+Writing at 0x0003a848 ━━╸                              9.1% 48.00kB/526.37kB [0s] 
+Writing at 0x00042561 ━━━╸                            12.2% 64.00kB/526.37kB [0s] 
+Writing at 0x0004a98c ━━━━╸                           15.2% 80.00kB/526.37kB [0s] 
+Writing at 0x000521a3 ━━━━━                           18.2% 96.00kB/526.37kB [1s] 
+Writing at 0x0005bacc ━━━━━━                          21.3% 112.00kB/526.37kB [1s] 
+Writing at 0x00063b45 ━━━━━━━                         24.3% 128.00kB/526.37kB [1s] 
+Writing at 0x0006939f ━━━━━━━━                        27.4% 144.00kB/526.37kB [1s] 
+Writing at 0x0006e641 ━━━━━━━━━                       30.4% 160.00kB/526.37kB [1s] 
+Writing at 0x00073ce9 ━━━━━━━━━━                      33.4% 176.00kB/526.37kB [1s] 
+Writing at 0x00078d3e ━━━━━━━━━━╸                     36.5% 192.00kB/526.37kB [2s] 
+Writing at 0x0007e707 ━━━━━━━━━━━╸                    39.5% 208.00kB/526.37kB [2s] 
+Writing at 0x000837ee ━━━━━━━━━━━━╸                   42.6% 224.00kB/526.37kB [2s] 
+Writing at 0x00088f16 ━━━━━━━━━━━━━╸                  45.6% 240.00kB/526.37kB [2s] 
+Writing at 0x0008e259 ━━━━━━━━━━━━━━╸                 48.6% 256.00kB/526.37kB [2s] 
+Writing at 0x00093400 ━━━━━━━━━━━━━━━╸                51.7% 272.00kB/526.37kB [2s] 
+Writing at 0x00099809 ━━━━━━━━━━━━━━━━                54.7% 288.00kB/526.37kB [2s] 
+Writing at 0x0009e6b1 ━━━━━━━━━━━━━━━━━               57.8% 304.00kB/526.37kB [2s] 
+Writing at 0x000a39ca ━━━━━━━━━━━━━━━━━━              60.8% 320.00kB/526.37kB [2s] 
+Writing at 0x000a89da ━━━━━━━━━━━━━━━━━━━             63.8% 336.00kB/526.37kB [3s] 
+Writing at 0x000adc81 ━━━━━━━━━━━━━━━━━━━━            66.9% 352.00kB/526.37kB [3s] 
+Writing at 0x000b3194 ━━━━━━━━━━━━━━━━━━━━╸           69.9% 368.00kB/526.37kB [3s] 
+Writing at 0x000b8f80 ━━━━━━━━━━━━━━━━━━━━━╸          73.0% 384.00kB/526.37kB [3s] 
+Writing at 0x000be69c ━━━━━━━━━━━━━━━━━━━━━━╸         76.0% 400.00kB/526.37kB [3s] 
+Writing at 0x000c4155 ━━━━━━━━━━━━━━━━━━━━━━━╸        79.0% 416.00kB/526.37kB [3s] 
+Writing at 0x000ca086 ━━━━━━━━━━━━━━━━━━━━━━━━╸       82.1% 432.00kB/526.37kB [3s] 
+Writing at 0x000cf52e ━━━━━━━━━━━━━━━━━━━━━━━━━╸      85.1% 448.00kB/526.37kB [3s] 
+Writing at 0x000d5716 ━━━━━━━━━━━━━━━━━━━━━━━━━━      88.2% 464.00kB/526.37kB [3s] 
+Writing at 0x000db1d7 ━━━━━━━━━━━━━━━━━━━━━━━━━━━     91.2% 480.00kB/526.37kB [4s] 
+Writing at 0x000e0ab3 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━    94.2% 496.00kB/526.37kB [4s] 
+Writing at 0x000e6e0a ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   97.3% 512.00kB/526.37kB [4s] 
+Writing at 0x000ec2e0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100.0% 526.37kB/526.37kB [4s] 
+Wrote 901856 bytes (539003 compressed) at 0x00010000 in 4.5 seconds (1588.0 kbit/s).
+Verifying written data...
+Hash of data verified.
+
+Hard resetting via RTS pin...

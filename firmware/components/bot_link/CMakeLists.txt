@@ -1,0 +1,1 @@
+idf_component_register(SRCS bot_link.c INCLUDE_DIRS include REQUIRES bot_core esp_driver_usb_serial_jtag esp_timer)

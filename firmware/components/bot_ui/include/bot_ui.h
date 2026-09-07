@@ -1,12 +1,5 @@
-/* bot_ui.h — three-screen UI for Bot Status (T06–T08).
- *
- * Screens (02_UI_UX): FACE / AGENT_PICKER / STATS(usage|quota).
- * All coordinates from design/ui_tokens.json; colors from the same file.
- *
- * SIM MODE: this build has no USB bridge yet (T10+). All data comes from the
- * built-in simulator and is visibly badged "SIM" on every screen — simulated
- * state must never be presented as real agent integration (project rule).
- */
+/* Production UI projects immutable snapshots from the single-owner bot_model.
+ * Synthetic presentation is compiled only with CONFIG_BOT_DEV_SIM. */
 #ifndef BOT_UI_H
 #define BOT_UI_H
 
@@ -14,15 +7,18 @@
 #include <stdint.h>
 
 #include "bot_gesture.h"
+#include "bot_navigation.h"
 #include "bot_motion.h"
 #include "bot_router.h"
 #include "bot_types.h"
+#include "bot_model.h"
+#include "lvgl.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-/* ---- simulated host model (SIM data, quality=simulated) ----------------- */
+/* Per-agent face animation projection; authoritative data lives in model. */
 
 typedef struct {
     const char *id;       /* codex/workbuddy/cursor/hermes */
@@ -32,7 +28,8 @@ typedef struct {
     /* Change only for a new logical transition/run, never for a heartbeat. */
     uint32_t transition_id;
     uint8_t active_sessions;
-    /* usage (simulated) */
+#if defined(CONFIG_BOT_DEV_SIM) || !defined(ESP_PLATFORM)
+    /* Development-only legacy fixture fields. */
     uint32_t turns;
     uint32_t total_tokens;
     uint32_t active_time_ms;
@@ -46,13 +43,17 @@ typedef struct {
         int used_pct; /* 0..100 when !unlimited && !na */
         const char *reset_label;
     } quota[2];
-} bot_sim_agent_t;
+#endif
+} bot_ui_agent_view_t;
 
 typedef struct {
-    bot_sim_agent_t agents[BOT_AGENT_COUNT];
+    bot_model_t model;
+    bool dev_sim;
+    uint32_t stats_received_ms;
+    bot_ui_agent_view_t agents[BOT_AGENT_COUNT];
     uint8_t selected;      /* index into agents */
     bot_screen_t screen;
-    uint8_t stats_tab;     /* 0=usage 1=quota */
+    uint8_t stats_tab;     /* production: 0=current task, 1=today, 2=quota */
     uint8_t picker_preview;
     bool picker_selecting;
     bot_screen_t picker_return;
@@ -64,12 +65,20 @@ extern bot_ui_model_t g_ui;
 
 /* Called once with the LVGL lock held (after bsp_display_start). */
 void bot_ui_init(void);
+const char *bot_ui_agent_name(unsigned agent);
+const char *bot_ui_state_name(bot_state_t state);
+const char *bot_ui_health(unsigned agent);
+void bot_ui_project(uint32_t now);
+extern const lv_font_t bot_font_22;
+extern const lv_font_t bot_font_24;
 /* Called by the UI owner only; the sensor thread publishes via its mailbox. */
 void bot_ui_set_motion(const bot_motion_view_t *view);
 
 /* Called every ~10 ms with the LVGL lock held: pumps touch samples into the
  * gesture FSM, applies router effects, drives animations and the SIM cycler. */
 void bot_ui_poll(void);
+void bot_ui_touch_frame(const bot_touch_frame_t *frame);
+const bot_navigation_t *bot_ui_navigation(void);
 
 /* Screen builders (internal, exposed for unit inspection) */
 void bot_ui_show_face(void);

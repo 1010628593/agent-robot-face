@@ -17,10 +17,12 @@ void bot_model_begin_handshake(bot_model_t *m)
      * actions from the previous connection must not resurrect. */
     char agent_keep = 0;
     (void)agent_keep;
+    bot_selection_mode_t mode=m->mode;
     bot_agent_id_t sel = m->selected_agent;
     uint32_t rev = m->selection_rev;
     memset(m, 0, sizeof(*m));
     m->state = BOT_MS_HANDSHAKING;
+    m->mode=mode;
     m->selected_agent = sel; /* selection is a user preference, kept across links */
     m->selection_rev = rev;
 }
@@ -32,6 +34,7 @@ static void apply_welcome(bot_model_t *m, const bot_msg_t *msg)
     m->rx_seq = msg->seq;
     m->state = BOT_MS_ONLINE;
     m->has_ping = false;
+    m->mode=w->mode;
     m->selected_agent = w->selected_agent;
     m->selection_rev = w->selection_rev;
     /* §3.4: clear per-link transient state and old stats/focus */
@@ -75,6 +78,32 @@ static bot_apply_result_t apply_online(bot_model_t *m, const bot_msg_t *msg)
     m->rx_seq = msg->seq;
 
     switch (msg->type) {
+    case BOT_MSG_SELECTION: {
+        const bot_selection_t *s=&msg->body.selection;
+        if(s->selection_rev<=m->selection_rev) return BOT_APPLY_IGNORED;
+        m->mode=s->mode;m->selected_agent=s->selected_agent;m->selection_rev=s->selection_rev;
+        m->has_focus=false;m->has_stats=false;
+        promote_buffered(m);
+        return BOT_APPLY_APPLIED;
+    }
+    case BOT_MSG_USAGE: {
+        const bot_usage_t *u=&msg->body.usage;
+        if(!m->has_usage && m->usage_view.usage_rev==0 && !m->usage_pending)m->usage_view=u->view;
+        if(u->view.usage_rev!=m->usage_view.usage_rev || u->view.subject!=m->usage_view.subject || u->view.period!=m->usage_view.period || u->view.page!=m->usage_view.page || (m->has_usage && u->data_rev<m->usage.data_rev))return BOT_APPLY_IGNORED;
+        m->usage=*u;m->has_usage=true;return BOT_APPLY_APPLIED;
+    }
+    case BOT_MSG_USAGE_ACK: {
+        const bot_usage_ack_t *a=&msg->body.usage_ack;
+        if(!m->usage_pending || strcmp(a->request_id,m->pending_usage_id))return BOT_APPLY_IGNORED;
+        if(a->view.usage_rev<m->usage_view.usage_rev)return BOT_APPLY_IGNORED;
+        if(!a->status && (a->view.subject!=m->requested_usage_view.subject || a->view.period!=m->requested_usage_view.period || a->view.page!=m->requested_usage_view.page))return BOT_APPLY_IGNORED;
+        m->usage_pending=false;m->usage_rejected=a->status!=0;
+        /* A conflict ACK carries the authoritative browse state too. Adopt
+         * its revision so retries and the immediately following usage recover.
+         * Keep the rejection flag; the UI must not enter the requested page. */
+        m->usage_view=a->view;m->has_usage=false;
+        return BOT_APPLY_APPLIED;
+    }
     case BOT_MSG_CATALOG:
         m->catalog = msg->body.catalog;
         m->has_catalog = true;
@@ -115,9 +144,14 @@ static bot_apply_result_t apply_online(bot_model_t *m, const bot_msg_t *msg)
             strncmp(a->action_id, m->pending_action_id, 32) != 0) {
             return BOT_APPLY_IGNORED; /* ack for unknown/stale action */
         }
+        if(a->status==0 && a->selection_rev==m->selection_rev && (a->mode!=m->mode || a->selected_agent!=m->selected_agent)) return BOT_APPLY_IGNORED;
         m->action_pending = false;
         m->pending_action_id[0] = '\0';
-        if (a->status == 0 /* accepted */) {
+        m->action_rejected=a->status!=0;
+        if (a->status == 0 /* accepted */ && a->selection_rev>=m->selection_rev) {
+            if(m->has_focus && (m->focus.agent_id!=a->selected_agent || m->focus.selection_rev!=a->selection_rev))m->has_focus=false;
+            if(m->has_stats && (m->stats.agent_id!=a->selected_agent || m->stats.selection_rev!=a->selection_rev))m->has_stats=false;
+            m->mode=a->mode;
             m->selected_agent = a->selected_agent;
             m->selection_rev = a->selection_rev;
             promote_buffered(m);
@@ -170,6 +204,7 @@ void bot_model_track_action(bot_model_t *m, const char action_id[33])
 {
     memcpy(m->pending_action_id, action_id, 33);
     m->action_pending = true;
+    m->action_rejected=false;
 }
 
 const char *bot_model_state_name(bot_model_state_t s)

@@ -127,6 +127,7 @@ static const enum_entry_t AGENTS[] = {
     { "codex", BOT_AGENT_CODEX }, { "workbuddy", BOT_AGENT_WORKBUDDY },
     { "cursor", BOT_AGENT_CURSOR }, { "hermes", BOT_AGENT_HERMES },
 };
+static const enum_entry_t MODES[] = {{"auto", BOT_SELECTION_AUTO}, {"pinned", BOT_SELECTION_PINNED}};
 static const enum_entry_t STATES[] = {
     { "idle", BOT_STATE_IDLE }, { "working", BOT_STATE_WORKING },
     { "tool", BOT_STATE_TOOL }, { "waiting", BOT_STATE_WAITING },
@@ -238,7 +239,7 @@ static bot_metric_unit_t metric_unit_for(bot_metric_key_t key)
 static bool dec_welcome(const bj_doc_t *doc, int32_t body, bot_welcome_t *w)
 {
     static const char *const KEYS[] = {
-        "bridge_epoch", "selected_agent", "selection_rev", "heartbeat_ms",
+        "mode", "bridge_epoch", "selected_agent", "selection_rev", "heartbeat_ms",
         "offline_after_ms", "max_frame_bytes", "demo"
     };
     if (!no_extra_keys(doc, body, KEYS, TBL_LEN(KEYS))) return false;
@@ -248,6 +249,8 @@ static bool dec_welcome(const bj_doc_t *doc, int32_t body, bot_welcome_t *w)
     int v;
     if (!req_enum(doc, body, "selected_agent", AGENTS, TBL_LEN(AGENTS), &v)) return false;
     w->selected_agent = (bot_agent_id_t)v;
+    if (!req_enum(doc, body, "mode", MODES, TBL_LEN(MODES), &v)) return false;
+    w->mode = (bot_selection_mode_t)v;
     double d;
     if (!req_int(doc, body, "selection_rev", 0, 2147483647, &d)) return false;
     w->selection_rev = (uint32_t)d;
@@ -504,7 +507,7 @@ static bool dec_quota(const bj_doc_t *doc, int32_t node, bot_quota_t *q,
 static bool dec_stats(const bj_doc_t *doc, int32_t body, bot_stats_t *s)
 {
     static const char *const KEYS[] = {
-        "agent_id", "selection_rev", "scope", "metrics", "quotas", "sparkline"
+        "agent_id", "selection_rev", "sent_at_ms", "scope", "metrics", "quotas", "sparkline"
     };
     static const char *const SCOPE_KEYS[] = {
         "kind", "timezone", "start_ms", "end_ms"
@@ -516,6 +519,8 @@ static bool dec_stats(const bj_doc_t *doc, int32_t body, bot_stats_t *s)
     double d;
     if (!req_int(doc, body, "selection_rev", 0, 2147483647, &d)) return false;
     s->selection_rev = (uint32_t)d;
+    if (!req_int(doc, body, "sent_at_ms", 0, 9007199254740991.0, &d)) return false;
+    s->sent_at_ms=(uint64_t)d;
     int32_t scope = bj_obj_get(doc, body, "scope");
     if (scope < 0 || doc->nodes[scope].type != BJ_OBJ) return false;
     if (!no_extra_keys(doc, scope, SCOPE_KEYS, TBL_LEN(SCOPE_KEYS))) return false;
@@ -581,7 +586,7 @@ static bool dec_stats(const bj_doc_t *doc, int32_t body, bot_stats_t *s)
 static bool dec_ack(const bj_doc_t *doc, int32_t body, bot_ack_t *a)
 {
     static const char *const KEYS[] = {
-        "action_id", "status", "selected_agent", "selection_rev", "reason"
+        "mode", "action_id", "status", "selected_agent", "selection_rev", "reason"
     };
     static const enum_entry_t STATUSES[] = {
         { "accepted", 0 }, { "rejected", 1 },
@@ -599,6 +604,8 @@ static bool dec_ack(const bj_doc_t *doc, int32_t body, bot_ack_t *a)
     a->status = (uint8_t)v;
     if (!req_enum(doc, body, "selected_agent", AGENTS, TBL_LEN(AGENTS), &v)) return false;
     a->selected_agent = (bot_agent_id_t)v;
+    if (!req_enum(doc, body, "mode", MODES, TBL_LEN(MODES), &v)) return false;
+    a->mode = (bot_selection_mode_t)v;
     double d;
     if (!req_int(doc, body, "selection_rev", 0, 2147483647, &d)) return false;
     a->selection_rev = (uint32_t)d;
@@ -634,6 +641,106 @@ static bool dec_notice(const bj_doc_t *doc, int32_t body, bot_notice_t *n)
     return true;
 }
 
+/* USBv3 usage is independent of business selection. All fields required. */
+static const enum_entry_t USUB[]={{"current",0},{"all",1},{"codex",2},{"cursor",3},{"hermes",4},{"workbuddy",5}};
+static const enum_entry_t UPER[]={{"today",0},{"7d",1},{"30d",2}};
+static bool unum(const bj_doc_t *d,int o,const char *k,bot_usage_number_t *n,bool pct) {
+ if(!opt_num_nullable(d,o,k,&n->has,&n->value))return false;
+
+ return !n->has || (n->value>=0 && n->value<=(pct?100:9007199254740991.0) && (pct || floor(n->value)==n->value));
+}
+static bool uview(const bj_doc_t *d,int o,bot_usage_view_t *v,const char *rev) {
+ int x;double n;
+ if(!req_enum(d,o,"subject",USUB,6,&x))return false;
+v->subject=x;
+ if(!req_enum(d,o,"period",UPER,3,&x))return false;
+v->period=x;
+ if(!req_int(d,o,"page",0,33,&n))return false;
+v->page=n;
+ if(!req_int(d,o,rev,0,2147483647,&n))return false;
+v->usage_rev=n;return true;
+
+}
+static bool dec_usage_ack(const bj_doc_t *d,int o,bot_usage_ack_t *a,bool request) {
+ static const char *const ak[]={"request_id","status","reason","usage_rev","subject","period","page"};
+ static const char *const rk[]={"request_id","expected_usage_rev","subject","period","page"};
+ if(!no_extra_keys(d,o,request?rk:ak,request?5:7) || !req_str(d,o,"request_id",a->request_id,33,32,true) || !is_hex32(a->request_id) || !uview(d,o,&a->view,request?"expected_usage_rev":"usage_rev"))return false;
+
+ if(request)return true;
+
+ static const enum_entry_t st[]={{"accepted",0},{"rejected",1}},re[]={{"ok",0},{"conflict",1}};int x;
+ if(!req_enum(d,o,"status",st,2,&x))return false;
+a->status=x;
+ if(!req_enum(d,o,"reason",re,2,&x))return false;
+a->reason=x;return a->status==a->reason;
+
+}
+static bool dec_usage(const bj_doc_t *d,int o,bot_usage_t *u) {
+ static const char *const keys[]={"usage_rev","subject","period","page","data_rev","host_now_ms","as_of_ms","stale","status","summary","agents","quotas","quota_total","models","model_total","history"};
+ if(!no_extra_keys(d,o,keys,16) || !uview(d,o,&u->view,"usage_rev"))return false;
+
+ double n;int x;
+ if(!req_int(d,o,"data_rev",0,2147483647,&n))return false;
+u->data_rev=n;
+ if(!req_int(d,o,"host_now_ms",0,9007199254740991.0,&n))return false;
+ u->host_now_ms=(uint64_t)n;
+ if(!unum(d,o,"as_of_ms",&u->as_of_ms,false) || !bj_get_bool(d,o,"stale",&u->stale))return false;
+
+ static const enum_entry_t status[]={{"ready",0},{"starting",1},{"error",2},{"unavailable",3}};
+ if(!req_enum(d,o,"status",status,4,&x))return false;
+u->status=x;
+ int b=bj_obj_get(d,o,"summary");if(b<0 || d->nodes[b].type!=BJ_OBJ)return false;
+
+ static const char *const sk[]={"agent_id","total","input","output","cache_read","cache_write","cost_micros","cost_currency","coverage","cost_coverage","cost_source"};
+ if(!no_extra_keys(d,b,sk,11) || !req_enum(d,b,"agent_id",USUB+1,5,&x))return false;
+u->summary_agent=x;
+ if(!unum(d,b,"total",&u->total,false)||!unum(d,b,"input",&u->input,false)||!unum(d,b,"output",&u->output,false)||!unum(d,b,"cache_read",&u->cache_read,false)||!unum(d,b,"cache_write",&u->cache_write,false)||!unum(d,b,"cost_micros",&u->cost_micros,false))return false;
+
+ if(bj_is_null(d,b,"cost_currency"))u->cost_currency[0]=0;
+ else {if(!req_str(d,b,"cost_currency",u->cost_currency,4,3,true)||strlen(u->cost_currency)!=3)return false;
+for(int i=0;i<3;i++)if(u->cost_currency[i]<'A'||u->cost_currency[i]>'Z')return false;
+}
+ if(u->cost_micros.has != (u->cost_currency[0]!=0))return false;
+
+ static const enum_entry_t cov[]={{"complete",0},{"partial",1},{"unknown",2}};
+ if(!req_enum(d,b,"coverage",cov,3,&x))return false;
+u->coverage=x;
+ if(!req_enum(d,b,"cost_coverage",cov,3,&x))return false;
+u->cost_coverage=x;
+ if(!req_str(d,b,"cost_source",u->cost_source,41,40,true))return false;
+if(!req_int(d,o,"quota_total",0,32,&n))return false;
+u->quota_total=n;
+ if(!req_int(d,o,"model_total",0,100,&n))return false;
+u->model_total=n;
+ const char *arrays[]={"agents","quotas","models","history"};int caps[]={4,3,3,30};
+ for(int a=0;a<4;a++) {int ar=bj_obj_get(d,o,arrays[a]);if(ar<0||d->nodes[ar].type!=BJ_ARR)return false;
+int count=0;
+ for(int r=d->nodes[ar].child;r!=-1;r=d->nodes[r].next) {if(count>=caps[a]||d->nodes[r].type!=BJ_OBJ)return false;
+
+ if(a==0) {static const char *const k[]={"id","total","used_pct","available"};static const int order[]={BOT_AGENT_CODEX,BOT_AGENT_CURSOR,BOT_AGENT_HERMES,BOT_AGENT_WORKBUDDY};bot_usage_agent_t *v=&u->agents[count];
+ if(!no_extra_keys(d,r,k,4)||!req_enum(d,r,"id",AGENTS,4,&x)||x!=order[count])return false;
+v->id=x;
+ if(!unum(d,r,"total",&v->total,false)||!unum(d,r,"used_pct",&v->used_pct,true)||!bj_get_bool(d,r,"available",&v->available))return false;
+
+ }else if(a==1) {static const char *const k[]={"id","agent_id","label","used_pct","reset_ms","stale","availability"};static const enum_entry_t av[]={{"available",0},{"unavailable",1},{"needs_auth",2},{"error",3}};bot_usage_quota_t *v=&u->quotas[count];
+ if(!no_extra_keys(d,r,k,7)||!req_str(d,r,"id",v->id,33,32,true)||!is_hex32(v->id)||!req_str(d,r,"label",v->label,25,24,true)||!req_enum(d,r,"agent_id",AGENTS,4,&x))return false;
+v->agent_id=x;
+ if(!unum(d,r,"used_pct",&v->used_pct,true)||!unum(d,r,"reset_ms",&v->reset_ms,false)||!bj_get_bool(d,r,"stale",&v->stale)||!req_enum(d,r,"availability",av,4,&x))return false;
+v->availability=x;
+ }else if(a==2) {static const char *const k[]={"label","total"};bot_usage_model_t *v=&u->models[count];if(!no_extra_keys(d,r,k,2)||!req_str(d,r,"label",v->label,33,32,true)||!unum(d,r,"total",&v->total,false))return false;
+
+ }else {static const char *const k[]={"day","total"};bot_usage_day_t *v=&u->history[count];if(!no_extra_keys(d,r,k,2)||!req_str(d,r,"day",v->day,11,10,true)||strlen(v->day)!=10||!unum(d,r,"total",&v->total,false))return false;
+for(int i=0;i<10;i++)if(i==4||i==7){if(v->day[i]!='-')return false;
+}else if(v->day[i]<'0'||v->day[i]>'9')return false;
+}
+ count++;}
+ if(a==0&&count!=4)return false;
+if(a==1) {u->quota_count=count;}
+ if(a==2) {u->model_count=count;}
+ if(a==3) {u->history_count=count;}
+ }return u->quota_count<=u->quota_total && u->model_count<=u->model_total;
+}
+
 static bool dec_hello(const bj_doc_t *doc, int32_t body, bot_msg_t *m)
 {
     /* Device->Host, decoded only for loopback tests. Shape check only. */
@@ -652,11 +759,13 @@ static bool dec_hello(const bj_doc_t *doc, int32_t body, bot_msg_t *m)
     if (!is_hex32(tmp)) return false;
     int32_t disp = bj_obj_get(doc, body, "display");
     if (disp < 0 || doc->nodes[disp].type != BJ_OBJ) return false;
+    static const char *const display_keys[]={"width","height"};
+    if(!no_extra_keys(doc,disp,display_keys,2))return false;
     double d;
     if (!req_int(doc, disp, "width", 466, 466, &d)) return false;
     if (!req_int(doc, disp, "height", 466, 466, &d)) return false;
-    if (!req_int(doc, body, "min_version", 1, 1, &d)) return false;
-    if (!req_int(doc, body, "max_version", 1, 1, &d)) return false;
+    if (!req_int(doc, body, "min_version", 3, 3, &d)) return false;
+    if (!req_int(doc, body, "max_version", 3, 3, &d)) return false;
     return true;
 }
 
@@ -669,7 +778,7 @@ static bool decode_message(bj_doc_t *doc, int32_t root, bot_msg_t *out)
     if (!no_extra_keys(doc, root, ENVELOPE_KEYS, TBL_LEN(ENVELOPE_KEYS))) return false;
 
     double d;
-    if (!req_int(doc, root, "v", 1, 1, &d)) return false;
+    if (!req_int(doc, root, "v", 3, 3, &d)) return false;
 
     int32_t type_node = bj_obj_get(doc, root, "type");
     if (type_node < 0 || doc->nodes[type_node].type != BJ_STR) return false;
@@ -678,10 +787,10 @@ static bool decode_message(bj_doc_t *doc, int32_t root, bot_msg_t *out)
         const char *name;
         bot_msg_type_t t;
     } types[] = {
-        { "welcome", BOT_MSG_WELCOME }, { "catalog", BOT_MSG_CATALOG },
+        {"usage",BOT_MSG_USAGE},{"usage_ack",BOT_MSG_USAGE_ACK},{"usage_request",BOT_MSG_USAGE_REQUEST}, { "selection", BOT_MSG_SELECTION }, { "welcome", BOT_MSG_WELCOME }, { "catalog", BOT_MSG_CATALOG },
         { "focus", BOT_MSG_FOCUS }, { "stats", BOT_MSG_STATS },
         { "ack", BOT_MSG_ACK }, { "notice", BOT_MSG_NOTICE },
-        { "ping", BOT_MSG_PING }, { "hello", BOT_MSG_HELLO },
+        { "ping", BOT_MSG_PING }, { "pong", BOT_MSG_PONG }, { "action", BOT_MSG_ACTION }, { "hello", BOT_MSG_HELLO },
     };
     bool found = false;
     for (size_t i = 0; i < sizeof(types) / sizeof(types[0]); i++) {
@@ -714,12 +823,42 @@ static bool decode_message(bj_doc_t *doc, int32_t root, bot_msg_t *out)
     if (body < 0 || doc->nodes[body].type != BJ_OBJ) return false;
 
     switch (out->type) {
+    case BOT_MSG_SELECTION: {
+        static const char *const keys[]={"mode","selected_agent","selection_rev"};
+        int v;
+        if(!no_extra_keys(doc,body,keys,3)) return false;
+        if(!req_enum(doc,body,"mode",MODES,TBL_LEN(MODES),&v)) return false;
+        out->body.selection.mode=(bot_selection_mode_t)v;
+        if(!req_enum(doc,body,"selected_agent",AGENTS,TBL_LEN(AGENTS),&v)) return false;
+        out->body.selection.selected_agent=(bot_agent_id_t)v;
+        if(!req_int(doc,body,"selection_rev",0,2147483647,&d)) return false;
+        out->body.selection.selection_rev=(uint32_t)d;
+        return true;
+    }
+    case BOT_MSG_USAGE: return dec_usage(doc,body,&out->body.usage);
+    case BOT_MSG_USAGE_ACK: return dec_usage_ack(doc,body,&out->body.usage_ack,false);
+    case BOT_MSG_USAGE_REQUEST: return dec_usage_ack(doc,body,&out->body.usage_ack,true);
     case BOT_MSG_WELCOME: return dec_welcome(doc, body, &out->body.welcome);
     case BOT_MSG_CATALOG: return dec_catalog(doc, body, &out->body.catalog);
     case BOT_MSG_FOCUS: return dec_focus(doc, body, &out->body.focus);
     case BOT_MSG_STATS: return dec_stats(doc, body, &out->body.stats);
+    case BOT_MSG_ACTION: {
+        static const char *const keys[]={"action_id","kind","mode","agent_id","expected_selection_rev"};
+        int v;char kind[16];bot_action_t *a=&out->body.action;
+        if(!no_extra_keys(doc,body,keys,5))return false;
+        if(!req_str(doc,body,"action_id",a->action_id,33,32,true) || !is_hex32(a->action_id))return false;
+        if(!req_str(doc,body,"kind",kind,sizeof(kind),15,true) || strcmp(kind,"select"))return false;
+        if(!req_enum(doc,body,"mode",MODES,TBL_LEN(MODES),&v))return false;
+        a->mode=(bot_selection_mode_t)v;
+        if(!req_enum(doc,body,"agent_id",AGENTS,TBL_LEN(AGENTS),&v))return false;
+        a->agent_id=(bot_agent_id_t)v;
+        if(!req_int(doc,body,"expected_selection_rev",0,2147483647,&d))return false;
+        a->expected_selection_rev=(uint32_t)d;
+        return true;
+    }
     case BOT_MSG_ACK: return dec_ack(doc, body, &out->body.ack);
     case BOT_MSG_NOTICE: return dec_notice(doc, body, &out->body.notice);
+    case BOT_MSG_PONG:
     case BOT_MSG_PING: {
         static const char *const KEYS[] = { "monotonic_ms" };
         if (!no_extra_keys(doc, body, KEYS, TBL_LEN(KEYS))) return false;
@@ -760,6 +899,7 @@ static bot_frame_result_t finish_line(bot_frame_parser_t *fp, bot_msg_t *out)
     if (len == 0) {
         return BOT_FRAME_NONE; /* "@bot \n" empty line: ignore quietly */
     }
+    fp->last_json_err=BJ_OK;
     bj_init(&fp->doc, fp->nodes, fp->node_cap, fp->str_pool, fp->str_cap);
     int32_t root = bj_parse(&fp->doc, fp->line, len);
     if (root < 0) {
@@ -838,12 +978,14 @@ const char *bot_msg_type_name(bot_msg_type_t t)
     case BOT_MSG_CATALOG: return "catalog";
     case BOT_MSG_FOCUS: return "focus";
     case BOT_MSG_STATS: return "stats";
+    case BOT_MSG_USAGE: return "usage";case BOT_MSG_USAGE_ACK:return "usage_ack";case BOT_MSG_USAGE_REQUEST:return "usage_request";
     case BOT_MSG_ACTION: return "action";
     case BOT_MSG_ACK: return "ack";
     case BOT_MSG_NOTICE: return "notice";
     case BOT_MSG_PING: return "ping";
     case BOT_MSG_PONG: return "pong";
     case BOT_MSG_HELLO: return "hello";
+    case BOT_MSG_SELECTION: return "selection";
     case BOT_MSG_NONE:
     default: return "none";
     }

@@ -1,0 +1,4 @@
+#!/bin/sh
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+export PYTHONPATH="$ROOT/bridge/src${PYTHONPATH:+:$PYTHONPATH}"
+exec "$ROOT/.venv-bridge/bin/python" -m bot_bridge.cli "$@"

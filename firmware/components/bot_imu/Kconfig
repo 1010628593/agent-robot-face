@@ -13,6 +13,12 @@ menu "Bot motion interactions"
             atan2(accel_x, -accel_y) in degrees, measured at rest with the
             screen upright. This board mounting value needs a local check;
             zero is a reference convention, NOT verified hardware alignment.
+    config BOT_IMU_MOUNT_FINE_TENTHS
+        int "Fine mounting correction (tenths of a degree)"
+        range -9 9
+        default 0
+        help
+            Added to BOT_IMU_MOUNT_DEG as tenths, for measured local alignment.
     config BOT_IMU_REVERSE_ROTATION
         bool "Reverse face compensation for opposite PCB/sensor normal"
         default n

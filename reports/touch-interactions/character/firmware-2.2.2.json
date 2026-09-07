@@ -1,0 +1,12 @@
+{
+  "firmware": "2.2.2",
+  "protocol": 2,
+  "source_base": "reports/os-motion/source-v2.tar.gz",
+  "overlay": [
+    "face_motion.c",
+    "include/bot_face_motion.h"
+  ],
+  "image_sha256": "c67d3cf34a6d6080f4fc04a2b0d536740794e6a372c21c1eeb6e608599e95d32",
+  "backup_sha256": "0beeb8dc24844b3b9cdf93baf34f66122e9520cc1ed2ae2fbbb1e369f0b7cf25",
+  "image_bytes": 865680
+}

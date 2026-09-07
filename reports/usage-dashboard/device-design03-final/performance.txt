@@ -1,0 +1,23 @@
+overview idle
+frame,time_ms,count,phase,card,progress,y,velocity,stable_open,render_cpu_ms,objects,usage_depth
+0,100,0,3,2,1.0000,12.00,0.00,1,0.002,2,0
+IDLE ticks=300 cpu_ms=0.164 flush_calls=0
+
+overview profile
+frame,time_ms,count,phase,card,progress,y,velocity,stable_open,render_cpu_ms,objects,usage_depth
+0,100,0,3,2,1.0000,12.00,0.00,1,0.002,2,0
+PROFILE clock_updates=300 cpu_ms=0.853 flush_calls=0 refresh_calls=303 labels=0 gauges=0 layouts=0
+
+quota_detail idle
+frame,time_ms,count,phase,card,progress,y,velocity,stable_open,render_cpu_ms,objects,usage_depth
+0,100,0,3,2,1.0000,12.00,0.00,1,0.003,2,0
+1,350,0,3,2,1.0000,12.00,0.00,1,0.009,2,1
+2,550,0,3,2,1.0000,12.00,0.00,1,0.003,2,2
+IDLE ticks=300 cpu_ms=0.156 flush_calls=0
+
+quota_detail profile
+frame,time_ms,count,phase,card,progress,y,velocity,stable_open,render_cpu_ms,objects,usage_depth
+0,100,0,3,2,1.0000,12.00,0.00,1,0.003,2,0
+1,350,0,3,2,1.0000,12.00,0.00,1,0.003,2,1
+2,550,0,3,2,1.0000,12.00,0.00,1,0.002,2,2
+PROFILE clock_updates=300 cpu_ms=2.269 flush_calls=10 refresh_calls=303 labels=5 gauges=0 layouts=0

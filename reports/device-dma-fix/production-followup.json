@@ -1,0 +1,155 @@
+[
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 25143,
+      "internal_free": 50843,
+      "largest_free": 31744,
+      "minimum_free": 7844,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780544654
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 30144,
+      "internal_free": 50839,
+      "largest_free": 31744,
+      "minimum_free": 7844,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780549654
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 35150,
+      "internal_free": 50843,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780554655
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 40157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780559651
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 1558
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 45157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780564657
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 50157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780569655
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 55157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780574666
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 60157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780579656
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 0
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.3",
+    "boot_id": "35b11e18fcbf345645c210ac60f93966",
+    "heap_diagnostics": {
+      "uptime_ms": 65157,
+      "internal_free": 50819,
+      "largest_free": 31744,
+      "minimum_free": 4256,
+      "psram_free": 7609664,
+      "screen": 2,
+      "as_of_ms": 1788780584655
+    },
+    "firmware_errors": [],
+    "reconnect_count": 1,
+    "tx_pending_bytes": 535
+  }
+]

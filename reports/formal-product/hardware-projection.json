@@ -1,0 +1,166 @@
+[
+  {
+    "agent": "workbuddy",
+    "match": true,
+    "selection": {
+      "mode": "pinned",
+      "selected_agent": "workbuddy",
+      "selection_rev": 13
+    },
+    "focus": {
+      "agent_id": "workbuddy",
+      "selection_rev": 13,
+      "session_key": "00d1b5e658685979966cf66da1fb2366",
+      "run_id": "e4c15f7d4e24468b862300070d1b48b4",
+      "state": "done",
+      "reason": "completed",
+      "quality": "observed",
+      "source_age_ms": 460833,
+      "stale": false,
+      "tool": "",
+      "detail": "",
+      "run_elapsed_ms": 15358,
+      "active_sessions": 0,
+      "progress": null
+    },
+    "device": {
+      "render_updates": 97,
+      "window_ms": 5326,
+      "avg_us": 8774,
+      "max_us": 30441,
+      "projection": {
+        "agent_id": "workbuddy",
+        "mode": "pinned",
+        "selection_rev": 13,
+        "focus_selection_rev": 13,
+        "state": "done",
+        "run_id": "e4c15f7d4e24468b862300070d1b48b4",
+        "screen": "stats"
+      },
+      "as_of_ms": 1788768647264
+    }
+  },
+  {
+    "agent": "hermes",
+    "match": true,
+    "selection": {
+      "mode": "pinned",
+      "selected_agent": "hermes",
+      "selection_rev": 14
+    },
+    "focus": {
+      "agent_id": "hermes",
+      "selection_rev": 14,
+      "session_key": "42692409261969be46aa2c188d6dffb4",
+      "run_id": "55abfc4251a6372424291482bd745a54",
+      "state": "done",
+      "reason": "completed",
+      "quality": "observed",
+      "source_age_ms": 1169846,
+      "stale": false,
+      "tool": "",
+      "detail": "",
+      "run_elapsed_ms": 20549,
+      "active_sessions": 0,
+      "progress": null
+    },
+    "device": {
+      "render_updates": 24,
+      "window_ms": 5187,
+      "avg_us": 28880,
+      "max_us": 29882,
+      "projection": {
+        "agent_id": "hermes",
+        "mode": "pinned",
+        "selection_rev": 14,
+        "focus_selection_rev": 14,
+        "state": "done",
+        "run_id": "55abfc4251a6372424291482bd745a54",
+        "screen": "stats"
+      },
+      "as_of_ms": 1788768652440
+    }
+  },
+  {
+    "agent": "cursor",
+    "match": true,
+    "selection": {
+      "mode": "pinned",
+      "selected_agent": "cursor",
+      "selection_rev": 15
+    },
+    "focus": {
+      "agent_id": "cursor",
+      "selection_rev": 15,
+      "session_key": "be73913fe5eb4bba8c5dc89987554716",
+      "run_id": "f991164d8528253fc4cf79ba7640ba89",
+      "state": "cancelled",
+      "reason": "cancelled",
+      "quality": "observed",
+      "source_age_ms": 3439807,
+      "stale": false,
+      "tool": "",
+      "detail": "",
+      "run_elapsed_ms": 20407,
+      "active_sessions": 0,
+      "progress": null
+    },
+    "device": {
+      "render_updates": 71,
+      "window_ms": 5001,
+      "avg_us": 8689,
+      "max_us": 32149,
+      "projection": {
+        "agent_id": "cursor",
+        "mode": "pinned",
+        "selection_rev": 15,
+        "focus_selection_rev": 15,
+        "state": "cancelled",
+        "run_id": "f991164d8528253fc4cf79ba7640ba89",
+        "screen": "picker"
+      },
+      "as_of_ms": 1788768657440
+    }
+  },
+  {
+    "agent": "codex",
+    "match": true,
+    "selection": {
+      "mode": "auto",
+      "selected_agent": "codex",
+      "selection_rev": 19
+    },
+    "focus": {
+      "agent_id": "codex",
+      "selection_rev": 19,
+      "session_key": "1d32846fc5001fe0e3d58b9ec07f0e73",
+      "run_id": "0f8b2d71232b3e8fa3f2df5c943a7928",
+      "state": "working",
+      "reason": "none",
+      "quality": "observed",
+      "source_age_ms": 3479,
+      "stale": false,
+      "tool": "",
+      "detail": "",
+      "run_elapsed_ms": 4879156,
+      "active_sessions": 3,
+      "progress": null
+    },
+    "device": {
+      "render_updates": 33,
+      "window_ms": 5600,
+      "avg_us": 16241,
+      "max_us": 20978,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 19,
+        "focus_selection_rev": 19,
+        "state": "working",
+        "run_id": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "screen": "picker"
+      },
+      "as_of_ms": 1788768663056
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "samples": 115,
+  "boots": 1,
+  "disconnected_samples": 0,
+  "firmware_error_samples": 0,
+  "last_link": {
+    "rx_dropped": 0,
+    "bad_lines": 0,
+    "queue_restarts": 0,
+    "timeout_restarts": 0,
+    "tx_failed": 0,
+    "rx_pending_bytes": 0,
+    "rx_chunks": 9231,
+    "rx_bytes": 577398,
+    "poll_gap_max_ms": 197,
+    "as_of_ms": 1788782931069
+  },
+  "last_heap": {
+    "uptime_ms": 170315,
+    "internal_free": 52339,
+    "largest_free": 31744,
+    "minimum_free": 4312,
+    "psram_free": 7586408,
+    "screen": 0,
+    "as_of_ms": 1788782931069
+  },
+  "host_reconnect_counts": [
+    null
+  ]
+}

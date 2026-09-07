@@ -2,30 +2,53 @@
 #include <math.h>
 #include <string.h>
 
-static uint8_t alpha(float a) {
-    return (uint8_t)lroundf(fmaxf(0,fminf(1,a))*255);
-}
 static void add(bot_face_geometry_t *g,bot_face_primitive_t p) {
     if(p.opacity && g->count<BOT_FACE_MAX_PRIMITIVES)g->items[g->count++]=p;
 }
 static void eye(bot_face_geometry_t *g,const bot_face_pose_t *p,int side) {
-    float cx=p->cx+(float)side*p->separation/2;
+    float cx=p->cx+(float)side*p->separation/2*cosf(p->roll);
+    float cy=p->cy+(float)side*p->separation/2*sinf(p->roll);
     float h=side<0?p->left_h:p->right_h;
-    float x=cx-p->eye_w/2,y=p->cy-h/2,w=p->eye_w;
-    float pill=(1-p->smile)*(1-p->cross)*p->opacity;
-    float smile=p->smile*(1-p->cross)*p->opacity;
-    if(alpha(pill)) {
+    float topology=fmaxf(p->smile,p->cross);
+    float closed=fminf(1,topology*2);
+    h=h+(8-h)*closed;
+    float x=cx-p->eye_w/2,y=cy-h/2,w=p->eye_w;
+    /* Collapse open eyes to an opaque closed line before changing topology. */
+    if(topology<=.5f) {
         add(g,(bot_face_primitive_t){.kind=BOT_FACE_RECT,.x1=x,.y1=y,
-            .x2=x+w,.y2=y+h,.radius=fminf(w/2,h/2),.opacity=alpha(pill)});
-        /* Both pupils share a gaze vector; never an accidental cross-eyed face.
-         * Fade them out when eyelids are too small to contain the circle. */
-        float pr=fminf(9,h*.14f);
-        float px=cx+p->gaze_x*(w/2-pr-5);
-        float py=p->cy+p->gaze_y*(h/2-pr-5);
-        float pupil_fade=fmaxf(0,fminf(1,(h-16)/24));
-        add(g,(bot_face_primitive_t){.kind=BOT_FACE_RECT,.x1=px-pr,.y1=py-pr,
-            .x2=px+pr,.y2=py+pr,.radius=pr,
-            .opacity=alpha(p->pupil*pupil_fade),.dark=true});
+            .x2=x+w,.y2=y+h,.radius=fminf(w/2,h/2),.opacity=255});
+        /* Pupils are opaque; closed-eye occlusion is geometric, never a fade.
+         * Keep the circle inside the pill at every open height. */
+        if(h>16) {
+            float spiral=fmaxf(0,fminf(1,p->spiral));
+            float radius=fmaxf(2,fminf(w,h)/2-6);
+            float pr=fminf(9,(h-8)*.22f);
+            float extent=fmaxf(pr,radius*spiral);
+            float gaze=fmaxf(-1,fminf(1,p->gaze_x-side*p->convergence));
+            float px=cx+gaze*fmaxf(0,w/2-extent-5);
+            float py=cy+fmaxf(-1,fminf(1,p->gaze_y))*fmaxf(0,h/2-extent-5);
+            float dot_radius=pr*(1-spiral);
+            if(dot_radius>.5f)
+                add(g,(bot_face_primitive_t){.kind=BOT_FACE_RECT,.x1=px-dot_radius,.y1=py-dot_radius,
+                    .x2=px+dot_radius,.y2=py+dot_radius,.radius=dot_radius,.opacity=255,.dark=true});
+            /* Two-turn Archimedean spiral, mirrored rotation in each eye.
+             * Inscribed circle + stroke margin keeps every segment in the pill.
+             * 40 segments per eye fits the fixed 96-primitive budget. */
+            if(spiral>.025f) {
+                float phase=p->spiral_phase*side;
+                float previous_x=px,previous_y=py;
+                for(unsigned i=1;i<=40;i++) {
+                    float t=(float)i/40;
+                    float angle=phase+side*t*12.5663706f;
+                    float r=radius*t*spiral;
+                    float next_x=px+r*cosf(angle),next_y=py+r*sinf(angle);
+                    add(g,(bot_face_primitive_t){.kind=BOT_FACE_LINE,
+                        .x1=previous_x,.y1=previous_y,.x2=next_x,.y2=next_y,
+                        .width=2+2*spiral,.opacity=255,.dark=true});
+                    previous_x=next_x;previous_y=next_y;
+                }
+            }
+        }
         /* An opaque black upper lid gives true sloped focused eyes, not
          * merely shorter pills. It only masks this eye's footprint. */
         float l=fmaxf(0,p->lid+side*p->tilt)*h;
@@ -39,24 +62,27 @@ static void eye(bot_face_geometry_t *g,const bot_face_pose_t *p,int side) {
                 .opacity=255,.dark=true});
         }
     }
-    if(alpha(smile)) {
-        /* 210..330 degrees is an upward arch (LVGL: zero at 3 o'clock). */
-        float radius=w*.49f;
-        add(g,(bot_face_primitive_t){.kind=BOT_FACE_ARC,
-            .x1=cx-radius,.y1=p->cy+15-radius,
-            .x2=cx+radius,.y2=p->cy+15+radius,
-            .radius=radius,.width=12,.start_angle=210,.end_angle=330,
-            .opacity=alpha(smile)});
+    if(p->smile>.5f && p->smile>=p->cross) {
+        /* An opaque closed line bends continuously into a contented arch. */
+        float gain=p->smile*2-1;
+        for(unsigned i=0;i<8;i++) {
+            float u=(float)i/8,v=(float)(i+1)/8;
+            add(g,(bot_face_primitive_t){.kind=BOT_FACE_LINE,
+                .x1=cx+(u-.5f)*(w-8),.y1=cy-18*sinf(u*3.14159265f)*gain,
+                .x2=cx+(v-.5f)*(w-8),.y2=cy-18*sinf(v*3.14159265f)*gain,
+                .width=8+4*gain,.opacity=255});
+        }
     }
-    float cross=p->cross*p->opacity;
-    if(alpha(cross)) {
-        const float d=22;
+
+    if(p->cross>.5f && p->cross>p->smile) {
+        float d=(w-8)/2+(22-(w-8)/2)*(p->cross*2-1);
+        float dy=22*(p->cross*2-1);
         add(g,(bot_face_primitive_t){.kind=BOT_FACE_LINE,
-            .x1=cx-d,.y1=p->cy-d,.x2=cx+d,.y2=p->cy+d,
-            .width=12,.opacity=alpha(cross)});
+            .x1=cx-d,.y1=cy-dy,.x2=cx+d,.y2=cy+dy,
+            .width=8+4*(p->cross*2-1),.opacity=255});
         add(g,(bot_face_primitive_t){.kind=BOT_FACE_LINE,
-            .x1=cx-d,.y1=p->cy+d,.x2=cx+d,.y2=p->cy-d,
-            .width=12,.opacity=alpha(cross)});
+            .x1=cx-d,.y1=cy+dy,.x2=cx+d,.y2=cy-dy,
+            .width=8+4*(p->cross*2-1),.opacity=255});
     }
 }
 void bot_face_geometry_build(const bot_face_pose_t *pose,bot_face_geometry_t *out) {

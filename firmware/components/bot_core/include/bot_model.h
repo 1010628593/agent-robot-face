@@ -36,6 +36,7 @@ typedef struct {
     bool has_ping;
 
     /* authoritative selection (from welcome/ack only) */
+    bot_selection_mode_t mode;
     bot_agent_id_t selected_agent;
     uint32_t selection_rev;
 
@@ -44,6 +45,8 @@ typedef struct {
     bot_catalog_t catalog;
     bool has_focus;
     bot_focus_t focus;
+    bool has_usage,usage_pending,usage_rejected;
+    bot_usage_t usage; bot_usage_view_t usage_view,requested_usage_view; char pending_usage_id[33];
     bool has_stats;
     bot_stats_t stats;
     bool has_notice;
@@ -57,6 +60,7 @@ typedef struct {
 
     /* in-flight user action awaiting its ack */
     bool action_pending;
+    bool action_rejected;
     char pending_action_id[33];
 } bot_model_t;
 

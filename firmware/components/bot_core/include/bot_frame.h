@@ -35,7 +35,8 @@ typedef enum {
     BOT_MSG_NOTICE,
     BOT_MSG_PING,
     BOT_MSG_PONG,
-    BOT_MSG_HELLO
+    BOT_MSG_HELLO,
+    BOT_MSG_SELECTION, BOT_MSG_USAGE, BOT_MSG_USAGE_ACK, BOT_MSG_USAGE_REQUEST
 } bot_msg_type_t;
 
 typedef enum {
@@ -117,7 +118,16 @@ typedef struct {
     bool cap_open_usage; /* host allowlist: open_usage action permitted */
 } bot_catalog_agent_t;
 
+typedef enum { BOT_SELECTION_AUTO = 0, BOT_SELECTION_PINNED } bot_selection_mode_t;
+
 typedef struct {
+    bot_selection_mode_t mode;
+    bot_agent_id_t selected_agent;
+    uint32_t selection_rev;
+} bot_selection_t;
+
+typedef struct {
+    bot_selection_mode_t mode;
     char bridge_epoch[33];
     bot_agent_id_t selected_agent;
     uint32_t selection_rev;
@@ -193,6 +203,7 @@ typedef struct {
 typedef struct {
     bot_agent_id_t agent_id;
     uint32_t selection_rev;
+    uint64_t sent_at_ms;
     uint8_t scope_kind; /* 0=today 1=session */
     char scope_timezone[65];
     uint64_t scope_start_ms;
@@ -207,6 +218,14 @@ typedef struct {
 
 typedef struct {
     char action_id[33];
+    bot_selection_mode_t mode;
+    bot_agent_id_t agent_id;
+    uint32_t expected_selection_rev;
+} bot_action_t;
+
+typedef struct {
+    char action_id[33];
+    bot_selection_mode_t mode;
     uint8_t status; /* 0=accepted 1=rejected */
     bot_agent_id_t selected_agent;
     uint32_t selection_rev;
@@ -223,6 +242,20 @@ typedef struct {
     uint32_t expires_in_ms;
 } bot_notice_t;
 
+typedef struct { bool has; double value; } bot_usage_number_t;
+typedef struct { uint8_t subject,period,page; uint32_t usage_rev; } bot_usage_view_t;
+typedef struct { char request_id[33]; bot_usage_view_t view; uint8_t status,reason; } bot_usage_ack_t;
+typedef struct { bot_agent_id_t id; bot_usage_number_t total,used_pct; bool available; } bot_usage_agent_t;
+typedef struct { char id[33],label[25]; bot_agent_id_t agent_id; bot_usage_number_t used_pct,reset_ms; bool stale; uint8_t availability; } bot_usage_quota_t;
+typedef struct { char label[33]; bot_usage_number_t total; } bot_usage_model_t;
+typedef struct { char day[11]; bot_usage_number_t total; } bot_usage_day_t;
+typedef struct {
+ bot_usage_view_t view; uint32_t data_rev; uint64_t host_now_ms; bot_usage_number_t as_of_ms; bool stale; uint8_t status,coverage,summary_agent;
+ bot_usage_number_t total,input,output,cache_read,cache_write,cost_micros; char cost_currency[4]; uint8_t cost_coverage; char cost_source[41];
+ bot_usage_agent_t agents[4]; bot_usage_quota_t quotas[3]; bot_usage_model_t models[3]; bot_usage_day_t history[30];
+ uint8_t quota_count,model_count,history_count,quota_total,model_total;
+} bot_usage_t;
+
 typedef struct {
     bot_msg_type_t type;
     bool has_link_id; /* hello is the only message allowed link_id=null */
@@ -230,10 +263,13 @@ typedef struct {
     uint32_t seq;
     union {
         bot_welcome_t welcome;
+        bot_selection_t selection;
         bot_catalog_t catalog;
         bot_focus_t focus;
         bot_stats_t stats;
+        bot_usage_t usage; bot_usage_ack_t usage_ack;
         bot_ack_t ack;
+        bot_action_t action;
         bot_notice_t notice;
         uint64_t ping_monotonic_ms;
     } body;

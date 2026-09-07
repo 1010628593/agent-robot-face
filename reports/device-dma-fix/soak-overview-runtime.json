@@ -1,0 +1,2420 @@
+[
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 15010,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 11152,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779023003
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 75,
+      "window_ms": 5007,
+      "avg_us": 5643,
+      "max_us": 32813,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779014504
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 15010,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 11152,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779023003
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 75,
+      "window_ms": 5007,
+      "avg_us": 5643,
+      "max_us": 32813,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779014504
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 20031,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 11152,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779028017
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 20031,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 11152,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779028017
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 20031,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 11152,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779028017
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 25039,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779033022
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 25039,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779033022
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 30039,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779038030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 37,
+      "window_ms": 13511,
+      "avg_us": 11152,
+      "max_us": 121334,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 455,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779028017
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 30039,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779038030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 43,
+      "window_ms": 12011,
+      "avg_us": 9076,
+      "max_us": 122553,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 456,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779040032
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 30039,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779038030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 43,
+      "window_ms": 12011,
+      "avg_us": 9076,
+      "max_us": 122553,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 456,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779040032
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 35041,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779043137
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 43,
+      "window_ms": 12011,
+      "avg_us": 9076,
+      "max_us": 122553,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 456,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779040032
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 35041,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779043137
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 43,
+      "window_ms": 12011,
+      "avg_us": 9076,
+      "max_us": 122553,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 456,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779040032
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 40041,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779048017
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 46,
+      "window_ms": 9008,
+      "avg_us": 8588,
+      "max_us": 121999,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779049048
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 40041,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779048017
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 46,
+      "window_ms": 9008,
+      "avg_us": 8588,
+      "max_us": 121999,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779049048
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 45046,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779053030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 46,
+      "window_ms": 9008,
+      "avg_us": 8588,
+      "max_us": 121999,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779049048
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 45046,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779053030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 24,
+      "window_ms": 5077,
+      "avg_us": 11652,
+      "max_us": 122043,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779054112
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 45046,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779053030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 24,
+      "window_ms": 5077,
+      "avg_us": 11652,
+      "max_us": 122043,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779054112
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 50049,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779058030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 24,
+      "window_ms": 5077,
+      "avg_us": 11652,
+      "max_us": 122043,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779054112
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 50049,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779058030
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 24,
+      "window_ms": 5077,
+      "avg_us": 11652,
+      "max_us": 122043,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779054112
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 55049,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779063033
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 24,
+      "window_ms": 5077,
+      "avg_us": 11652,
+      "max_us": 122043,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779054112
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 55049,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779063033
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 1,
+      "window_ms": 9913,
+      "avg_us": 32996,
+      "max_us": 32996,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779064022
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 55049,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 8020,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779063033
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 1,
+      "window_ms": 9913,
+      "avg_us": 32996,
+      "max_us": 32996,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779064022
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 60056,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779068109
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 1,
+      "window_ms": 9913,
+      "avg_us": 32996,
+      "max_us": 32996,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779064022
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 60056,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779068109
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 1,
+      "window_ms": 9913,
+      "avg_us": 32996,
+      "max_us": 32996,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 457,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779064022
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 65057,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779073034
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 27,
+      "window_ms": 8424,
+      "avg_us": 9233,
+      "max_us": 122424,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779072444
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 65057,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779073034
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 27,
+      "window_ms": 8424,
+      "avg_us": 9233,
+      "max_us": 122424,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779072444
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 70125,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779078110
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 18,
+      "window_ms": 5090,
+      "avg_us": 7339,
+      "max_us": 33048,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779077549
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 70125,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779078110
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 18,
+      "window_ms": 5090,
+      "avg_us": 7339,
+      "max_us": 33048,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779077549
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 70125,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779078110
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 18,
+      "window_ms": 5090,
+      "avg_us": 7339,
+      "max_us": 33048,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779077549
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 75125,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779083104
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 18,
+      "window_ms": 5090,
+      "avg_us": 7339,
+      "max_us": 33048,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779077549
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 75125,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779083104
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 18,
+      "window_ms": 5090,
+      "avg_us": 7339,
+      "max_us": 33048,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779077549
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 80129,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779088148
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 80129,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779088148
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 80129,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779088148
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 85133,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779093112
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 85133,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779093112
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 90133,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779098108
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 5,
+      "window_ms": 10481,
+      "avg_us": 34595,
+      "max_us": 122645,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 458,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779088020
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 90133,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779098108
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 11998,
+      "avg_us": 11416,
+      "max_us": 122200,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 459,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779100016
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 95135,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779103129
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 11998,
+      "avg_us": 11416,
+      "max_us": 122200,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 459,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779100016
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 95135,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779103129
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 11998,
+      "avg_us": 11416,
+      "max_us": 122200,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 459,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779100016
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 95135,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779103129
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 11998,
+      "avg_us": 11416,
+      "max_us": 122200,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 459,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779100016
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 100135,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779108125
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 26,
+      "window_ms": 11998,
+      "avg_us": 11416,
+      "max_us": 122200,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 459,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779100016
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 100135,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 2,
+      "as_of_ms": 1788779108125
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 64,
+      "window_ms": 11228,
+      "avg_us": 7820,
+      "max_us": 122813,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779111255
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 105140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779113132
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 64,
+      "window_ms": 11228,
+      "avg_us": 7820,
+      "max_us": 122813,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779111255
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 105140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779113132
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 64,
+      "window_ms": 11228,
+      "avg_us": 7820,
+      "max_us": 122813,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "stats"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779111255
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 110140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779118225
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 53,
+      "window_ms": 5070,
+      "avg_us": 6316,
+      "max_us": 33217,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779116325
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 110140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779118225
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 53,
+      "window_ms": 5070,
+      "avg_us": 6316,
+      "max_us": 33217,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779116325
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 110140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779118225
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 70,
+      "window_ms": 5320,
+      "avg_us": 5427,
+      "max_us": 5978,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779121643
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 115140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779123128
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 70,
+      "window_ms": 5320,
+      "avg_us": 5427,
+      "max_us": 5978,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779121643
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 115140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779123128
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 70,
+      "window_ms": 5320,
+      "avg_us": 5427,
+      "max_us": 5978,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779121643
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 120140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779128127
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 62,
+      "window_ms": 5179,
+      "avg_us": 5464,
+      "max_us": 6246,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779126825
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 120140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779128127
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 62,
+      "window_ms": 5179,
+      "avg_us": 5464,
+      "max_us": 6246,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779126825
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 125140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779133127
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 72,
+      "window_ms": 5019,
+      "avg_us": 5516,
+      "max_us": 6248,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779131841
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 125140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779133127
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 72,
+      "window_ms": 5019,
+      "avg_us": 5516,
+      "max_us": 6248,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 460,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779131841
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 125140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779133127
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 68,
+      "window_ms": 5020,
+      "avg_us": 5533,
+      "max_us": 5961,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779136869
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 130140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779138120
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 68,
+      "window_ms": 5020,
+      "avg_us": 5533,
+      "max_us": 5961,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779136869
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 130140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779138120
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 68,
+      "window_ms": 5020,
+      "avg_us": 5533,
+      "max_us": 5961,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779136869
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 135140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779143116
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 69,
+      "window_ms": 5099,
+      "avg_us": 5469,
+      "max_us": 5952,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779141967
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 135140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779143116
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 69,
+      "window_ms": 5099,
+      "avg_us": 5469,
+      "max_us": 5952,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779141967
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 135140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779143116
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 65,
+      "window_ms": 5080,
+      "avg_us": 5488,
+      "max_us": 6125,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779147082
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 140140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779148129
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 65,
+      "window_ms": 5080,
+      "avg_us": 5488,
+      "max_us": 6125,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779147082
+    }
+  },
+  {
+    "connected": true,
+    "firmware": "3.2.2",
+    "boot_id": "da51cd764b48b129c7b3f1b36994f7c5",
+    "heap_diagnostics": {
+      "uptime_ms": 140140,
+      "internal_free": 50859,
+      "largest_free": 31744,
+      "minimum_free": 7876,
+      "psram_free": 7609744,
+      "screen": 0,
+      "as_of_ms": 1788779148129
+    },
+    "firmware_errors": [],
+    "diagnostics": {
+      "render_updates": 65,
+      "window_ms": 5080,
+      "avg_us": 5488,
+      "max_us": 6125,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "7e23f0299277ec93e9a45572b17d68c5",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 461,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788779147082
+    }
+  }
+]

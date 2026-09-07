@@ -1,0 +1,68 @@
+{
+  "bridge": {
+    "version": "3.0.0",
+    "started_at_ms": 1788774157389,
+    "paused": false,
+    "launch_at_login": true,
+    "demo": false
+  },
+  "device": {
+    "connected": true,
+    "port": "/dev/cu.usbmodem21201",
+    "firmware": "3.0.1",
+    "protocol_version": 3,
+    "last_seen_ms": 1788775910052,
+    "error": null,
+    "diagnostics": {
+      "render_updates": 77,
+      "window_ms": 5125,
+      "avg_us": 4009,
+      "max_us": 28689,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "cbcc16ab7a387894e285e9cfeae3b158",
+        "screen": "face"
+      },
+      "usage": {
+        "usage_rev": 1,
+        "data_rev": 178,
+        "subject": "current",
+        "period": "today",
+        "page": 0,
+        "level": 0
+      },
+      "as_of_ms": 1788775907052
+    },
+    "touch_diagnostics": {
+      "reads": 1,
+      "dual": 0,
+      "errors": 1,
+      "overflow": 0,
+      "raw_count": 0,
+      "wire_count": 0,
+      "record0": 255,
+      "record1": 0,
+      "count": 0,
+      "gs": 3,
+      "pet": 0,
+      "blocked": 1,
+      "edge": 0,
+      "x": 0,
+      "y": 0,
+      "taps": 0,
+      "expression": 8,
+      "motion_count": 0,
+      "tapped": 0,
+      "tx": 0.0,
+      "ty": 0.0,
+      "left": 86.0,
+      "right": 86.0,
+      "revision": 2,
+      "as_of_ms": 1788775911473
+    }
+  }
+}

@@ -1,0 +1,290 @@
+[
+  {
+    "at": 1788774242425,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "tool",
+      "run_id": "feb5c59b5a367ee091e448bf11f65749",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 33,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 18
+    }
+  },
+  {
+    "at": 1788774248812,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "tool",
+      "run_id": "feb5c59b5a367ee091e448bf11f65749",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 33,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 19
+    }
+  },
+  {
+    "at": 1788774250956,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "feb5c59b5a367ee091e448bf11f65749",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 33,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 19
+    }
+  },
+  {
+    "at": 1788774260531,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 34,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 20
+    }
+  },
+  {
+    "at": 1788774265866,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 35,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 20
+    }
+  },
+  {
+    "at": 1788774274382,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 35,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 21
+    }
+  },
+  {
+    "at": 1788774275430,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "tool",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 35,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 21
+    }
+  },
+  {
+    "at": 1788774278622,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "tool",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 35,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 22
+    }
+  },
+  {
+    "at": 1788774280767,
+    "connected": true,
+    "firmware": "3.0.1",
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "working",
+      "run_id": "bfc7f244008e75ef031a18050c5e9e8f",
+      "screen": "stats"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 36,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "touch": {
+      "count": 0,
+      "blocked": 0,
+      "gs": 3,
+      "x": 239,
+      "y": 328,
+      "taps": 2,
+      "errors": 1,
+      "revision": 22
+    }
+  }
+]

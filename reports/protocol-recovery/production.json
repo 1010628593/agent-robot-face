@@ -1,0 +1,27 @@
+{
+  "connected": true,
+  "firmware": "3.2.7",
+  "boot_id": "ef1b61d9b61d34813db8a60713949f16",
+  "link_diagnostics": {
+    "rx_dropped": 0,
+    "bad_lines": 0,
+    "queue_restarts": 0,
+    "timeout_restarts": 0,
+    "tx_failed": 0,
+    "rx_pending_bytes": 0,
+    "rx_chunks": 1326,
+    "rx_bytes": 83182,
+    "poll_gap_max_ms": 12,
+    "as_of_ms": 1788782995016
+  },
+  "heap_diagnostics": {
+    "uptime_ms": 25003,
+    "internal_free": 73223,
+    "largest_free": 31744,
+    "minimum_free": 34656,
+    "psram_free": 7586408,
+    "screen": 0,
+    "as_of_ms": 1788782995016
+  },
+  "firmware_errors": []
+}

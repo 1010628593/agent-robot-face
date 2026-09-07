@@ -1,0 +1,875 @@
+{
+  "version": 1,
+  "revision": 1,
+  "subject": "all",
+  "period": "30d",
+  "timezone": "Asia/Shanghai",
+  "start_date": "2026-08-09",
+  "end_date": "2026-09-07",
+  "as_of_ms": 1788773567952,
+  "stale": false,
+  "status": "ready",
+  "error": null,
+  "collecting": false,
+  "summary": {
+    "input_tokens": 15451291650,
+    "output_tokens": 44004626,
+    "cache_read_tokens": 14914796562,
+    "cache_write_tokens": 1928335,
+    "total_tokens": 15495296276,
+    "as_of_ms": 1788773567952,
+    "actual_costs": [],
+    "coverage": "partial"
+  },
+  "agents": [
+    {
+      "id": "codex",
+      "input_tokens": 14819332602,
+      "output_tokens": 39136450,
+      "cache_read_tokens": 14331694592,
+      "cache_write_tokens": null,
+      "total_tokens": 14858469052,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "id": "cursor",
+      "input_tokens": 415328863,
+      "output_tokens": 3143324,
+      "cache_read_tokens": 377031392,
+      "cache_write_tokens": 1928335,
+      "total_tokens": 418472187,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "id": "hermes",
+      "input_tokens": 9046459,
+      "output_tokens": 320994,
+      "cache_read_tokens": 8551507,
+      "cache_write_tokens": null,
+      "total_tokens": 9367453,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "id": "workbuddy",
+      "input_tokens": 207583726,
+      "output_tokens": 1403858,
+      "cache_read_tokens": 197519071,
+      "cache_write_tokens": null,
+      "total_tokens": 208987584,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-08-09",
+      "input_tokens": 447342509,
+      "output_tokens": 966998,
+      "cache_read_tokens": 434288816,
+      "cache_write_tokens": null,
+      "total_tokens": 448309507,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-10",
+      "input_tokens": 620812508,
+      "output_tokens": 1742274,
+      "cache_read_tokens": 600384128,
+      "cache_write_tokens": null,
+      "total_tokens": 622554782,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-11",
+      "input_tokens": 845933109,
+      "output_tokens": 2262174,
+      "cache_read_tokens": 820828032,
+      "cache_write_tokens": null,
+      "total_tokens": 848195283,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-12",
+      "input_tokens": 640506635,
+      "output_tokens": 1602231,
+      "cache_read_tokens": 617056948,
+      "cache_write_tokens": 1776265,
+      "total_tokens": 642108866,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-13",
+      "input_tokens": 372837222,
+      "output_tokens": 1424591,
+      "cache_read_tokens": 356701789,
+      "cache_write_tokens": 0,
+      "total_tokens": 374261813,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-14",
+      "input_tokens": 270061724,
+      "output_tokens": 692140,
+      "cache_read_tokens": 260121912,
+      "cache_write_tokens": null,
+      "total_tokens": 270753864,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-15",
+      "input_tokens": 479499775,
+      "output_tokens": 1771989,
+      "cache_read_tokens": 467107968,
+      "cache_write_tokens": 0,
+      "total_tokens": 481271764,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-16",
+      "input_tokens": 664206423,
+      "output_tokens": 1637698,
+      "cache_read_tokens": 644735232,
+      "cache_write_tokens": 0,
+      "total_tokens": 665844121,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-17",
+      "input_tokens": 391336239,
+      "output_tokens": 1038276,
+      "cache_read_tokens": 379442432,
+      "cache_write_tokens": 0,
+      "total_tokens": 392374515,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-18",
+      "input_tokens": 552702597,
+      "output_tokens": 1966946,
+      "cache_read_tokens": 523948448,
+      "cache_write_tokens": 0,
+      "total_tokens": 554669543,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-19",
+      "input_tokens": 296835453,
+      "output_tokens": 968243,
+      "cache_read_tokens": 280681728,
+      "cache_write_tokens": 0,
+      "total_tokens": 297803696,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-20",
+      "input_tokens": 545413329,
+      "output_tokens": 1566926,
+      "cache_read_tokens": 524633216,
+      "cache_write_tokens": null,
+      "total_tokens": 546980255,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-21",
+      "input_tokens": 749354469,
+      "output_tokens": 2138479,
+      "cache_read_tokens": 722349056,
+      "cache_write_tokens": 0,
+      "total_tokens": 751492948,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-22",
+      "input_tokens": 753691377,
+      "output_tokens": 1431026,
+      "cache_read_tokens": 726117584,
+      "cache_write_tokens": null,
+      "total_tokens": 755122403,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-23",
+      "input_tokens": 596949907,
+      "output_tokens": 1305460,
+      "cache_read_tokens": 579931920,
+      "cache_write_tokens": null,
+      "total_tokens": 598255367,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-24",
+      "input_tokens": 154379290,
+      "output_tokens": 363713,
+      "cache_read_tokens": 147864320,
+      "cache_write_tokens": null,
+      "total_tokens": 154743003,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-25",
+      "input_tokens": 152263032,
+      "output_tokens": 563269,
+      "cache_read_tokens": 146081920,
+      "cache_write_tokens": null,
+      "total_tokens": 152826301,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-26",
+      "input_tokens": 533479538,
+      "output_tokens": 1984247,
+      "cache_read_tokens": 517641296,
+      "cache_write_tokens": 0,
+      "total_tokens": 535463785,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-27",
+      "input_tokens": 454986931,
+      "output_tokens": 1662779,
+      "cache_read_tokens": 437843328,
+      "cache_write_tokens": 0,
+      "total_tokens": 456649710,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-28",
+      "input_tokens": 799916313,
+      "output_tokens": 2428069,
+      "cache_read_tokens": 777740512,
+      "cache_write_tokens": 0,
+      "total_tokens": 802344382,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-29",
+      "input_tokens": 298506785,
+      "output_tokens": 1181751,
+      "cache_read_tokens": 289462083,
+      "cache_write_tokens": 0,
+      "total_tokens": 299688536,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-30",
+      "input_tokens": 150085648,
+      "output_tokens": 491161,
+      "cache_read_tokens": 145968640,
+      "cache_write_tokens": null,
+      "total_tokens": 150576809,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-08-31",
+      "input_tokens": 480623220,
+      "output_tokens": 1620742,
+      "cache_read_tokens": 465010892,
+      "cache_write_tokens": 152070,
+      "total_tokens": 482243962,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-01",
+      "input_tokens": 334370749,
+      "output_tokens": 909964,
+      "cache_read_tokens": 324927296,
+      "cache_write_tokens": 0,
+      "total_tokens": 335280713,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-02",
+      "input_tokens": 613258680,
+      "output_tokens": 1868448,
+      "cache_read_tokens": 595096576,
+      "cache_write_tokens": null,
+      "total_tokens": 615127128,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-03",
+      "input_tokens": 185248852,
+      "output_tokens": 622774,
+      "cache_read_tokens": 175617984,
+      "cache_write_tokens": null,
+      "total_tokens": 185871626,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-04",
+      "input_tokens": 735431786,
+      "output_tokens": 1965930,
+      "cache_read_tokens": 711091264,
+      "cache_write_tokens": null,
+      "total_tokens": 737397716,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-05",
+      "input_tokens": 644212230,
+      "output_tokens": 2016656,
+      "cache_read_tokens": 612822336,
+      "cache_write_tokens": 0,
+      "total_tokens": 646228886,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-06",
+      "input_tokens": 1029237030,
+      "output_tokens": 2749435,
+      "cache_read_tokens": 991884231,
+      "cache_write_tokens": 0,
+      "total_tokens": 1031986465,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "date": "2026-09-07",
+      "input_tokens": 657808290,
+      "output_tokens": 1060237,
+      "cache_read_tokens": 637414675,
+      "cache_write_tokens": 0,
+      "total_tokens": 658868527,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    }
+  ],
+  "models": [
+    {
+      "model": "gpt-5.6-sol",
+      "input_tokens": 11670594837,
+      "output_tokens": 32287820,
+      "cache_read_tokens": 11376321536,
+      "cache_write_tokens": null,
+      "total_tokens": 11702882657,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "gpt-6-astra",
+      "input_tokens": 1797867046,
+      "output_tokens": 4556092,
+      "cache_read_tokens": 1761066880,
+      "cache_write_tokens": null,
+      "total_tokens": 1802423138,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "codex-auto-review",
+      "input_tokens": 1002818207,
+      "output_tokens": 944058,
+      "cache_read_tokens": 857968640,
+      "cache_write_tokens": null,
+      "total_tokens": 1003762265,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "input_tokens": 302930182,
+      "output_tokens": 1074856,
+      "cache_read_tokens": 293704192,
+      "cache_write_tokens": null,
+      "total_tokens": 304005038,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "cursor-grok-4.6-high",
+      "input_tokens": 247904956,
+      "output_tokens": 1935407,
+      "cache_read_tokens": 220834816,
+      "cache_write_tokens": 0,
+      "total_tokens": 249840363,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "cursor-grok-4.6-xhigh",
+      "input_tokens": 87530353,
+      "output_tokens": 746809,
+      "cache_read_tokens": 81210752,
+      "cache_write_tokens": 0,
+      "total_tokens": 88277162,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "hy3",
+      "input_tokens": 68846417,
+      "output_tokens": 614355,
+      "cache_read_tokens": 64465077,
+      "cache_write_tokens": null,
+      "total_tokens": 69460772,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "claude-opus-5-thinking-high",
+      "input_tokens": 41540617,
+      "output_tokens": 185523,
+      "cache_read_tokens": 39709982,
+      "cache_write_tokens": 1531195,
+      "total_tokens": 41726140,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "input_tokens": 36658339,
+      "output_tokens": 159480,
+      "cache_read_tokens": 34752768,
+      "cache_write_tokens": null,
+      "total_tokens": 36817819,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "kimi-k3-1",
+      "input_tokens": 32982908,
+      "output_tokens": 213929,
+      "cache_read_tokens": 31758243,
+      "cache_write_tokens": null,
+      "total_tokens": 33196837,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "hy4-preview",
+      "input_tokens": 31016333,
+      "output_tokens": 281223,
+      "cache_read_tokens": 28950144,
+      "cache_write_tokens": null,
+      "total_tokens": 31297556,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "kimi-k3",
+      "input_tokens": 24647172,
+      "output_tokens": 113401,
+      "cache_read_tokens": 24055552,
+      "cache_write_tokens": null,
+      "total_tokens": 24760573,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "composer-2.5-fast",
+      "input_tokens": 17041354,
+      "output_tokens": 149147,
+      "cache_read_tokens": 15460096,
+      "cache_write_tokens": 0,
+      "total_tokens": 17190501,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "mimo-v2.5-pro",
+      "input_tokens": 16513322,
+      "output_tokens": 90741,
+      "cache_read_tokens": 15859968,
+      "cache_write_tokens": null,
+      "total_tokens": 16604063,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "glm-5.3",
+      "input_tokens": 13758920,
+      "output_tokens": 55518,
+      "cache_read_tokens": 13422083,
+      "cache_write_tokens": null,
+      "total_tokens": 13814438,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "mimo-v2.5",
+      "input_tokens": 11616278,
+      "output_tokens": 34220,
+      "cache_read_tokens": 10897984,
+      "cache_write_tokens": null,
+      "total_tokens": 11650498,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "gpt-5.3-codex-spark",
+      "input_tokens": 8463991,
+      "output_tokens": 114144,
+      "cache_read_tokens": 7880576,
+      "cache_write_tokens": null,
+      "total_tokens": 8578135,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "minimax-m3",
+      "input_tokens": 7927996,
+      "output_tokens": 25605,
+      "cache_read_tokens": 7816964,
+      "cache_write_tokens": null,
+      "total_tokens": 7953601,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "claude-fable-5-thinking-high",
+      "input_tokens": 7816658,
+      "output_tokens": 31082,
+      "cache_read_tokens": 7571510,
+      "cache_write_tokens": 245070,
+      "total_tokens": 7847740,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "cursor-grok-4.6-high-fast",
+      "input_tokens": 7070468,
+      "output_tokens": 59331,
+      "cache_read_tokens": 6573696,
+      "cache_write_tokens": 0,
+      "total_tokens": 7129799,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "input_tokens": 5666415,
+      "output_tokens": 14345,
+      "cache_read_tokens": 5473920,
+      "cache_write_tokens": null,
+      "total_tokens": 5680760,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "cursor-grok-4.5-high-fast",
+      "input_tokens": 2778177,
+      "output_tokens": 16751,
+      "cache_read_tokens": 2584320,
+      "cache_write_tokens": 0,
+      "total_tokens": 2794928,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "claude-4.5-sonnet",
+      "input_tokens": 2472976,
+      "output_tokens": 10076,
+      "cache_read_tokens": 2320396,
+      "cache_write_tokens": 152070,
+      "total_tokens": 2483052,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "qwen3.8-27b-oq4-mtp",
+      "input_tokens": 2292881,
+      "output_tokens": 93611,
+      "cache_read_tokens": 2172928,
+      "cache_write_tokens": null,
+      "total_tokens": 2386492,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "qwen3.8-27b-oq8-mtp",
+      "input_tokens": 1233946,
+      "output_tokens": 186967,
+      "cache_read_tokens": 1126400,
+      "cache_write_tokens": null,
+      "total_tokens": 1420913,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "grok-bot-default",
+      "input_tokens": 1173304,
+      "output_tokens": 9198,
+      "cache_read_tokens": 765824,
+      "cache_write_tokens": 0,
+      "total_tokens": 1182502,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "qwen3.8-max-preview",
+      "input_tokens": 127597,
+      "output_tokens": 937,
+      "cache_read_tokens": 71315,
+      "cache_write_tokens": null,
+      "total_tokens": 128534,
+      "as_of_ms": 1788773567954,
+      "actual_costs": [],
+      "coverage": "partial"
+    },
+    {
+      "model": "cursor-grok-4.6-xhigh-fast",
+      "input_tokens": null,
+      "output_tokens": null,
+      "cache_read_tokens": null,
+      "cache_write_tokens": null,
+      "total_tokens": null,
+      "as_of_ms": 1788773567952,
+      "actual_costs": [],
+      "coverage": "partial"
+    }
+  ],
+  "model_count": 28,
+  "quotas": [
+    {
+      "provider": "codex",
+      "account_hash": "e026530be9edb391a0aa6255dc7df9aeb80b70d8668299db2358644e4d499098",
+      "window_key": "codex:primary_window",
+      "label": "Session",
+      "used_pct": 66,
+      "remaining": 34,
+      "limit": 100,
+      "used": 66,
+      "unit": "percent",
+      "reset_ms": 1789305848000,
+      "as_of_ms": 1788773569102,
+      "availability": "available",
+      "reason": "",
+      "agents": [
+        "codex"
+      ]
+    },
+    {
+      "provider": "codex",
+      "account_hash": "e026530be9edb391a0aa6255dc7df9aeb80b70d8668299db2358644e4d499098",
+      "window_key": "0:primary_window",
+      "label": "Session",
+      "used_pct": 0,
+      "remaining": 100,
+      "limit": 100,
+      "used": 0,
+      "unit": "percent",
+      "reset_ms": 1788791568000,
+      "as_of_ms": 1788773569102,
+      "availability": "available",
+      "reason": "",
+      "agents": [
+        "codex"
+      ]
+    },
+    {
+      "provider": "codex",
+      "account_hash": "e026530be9edb391a0aa6255dc7df9aeb80b70d8668299db2358644e4d499098",
+      "window_key": "0:secondary_window",
+      "label": "Weekly",
+      "used_pct": 8,
+      "remaining": 92,
+      "limit": 100,
+      "used": 8,
+      "unit": "percent",
+      "reset_ms": 1789217274000,
+      "as_of_ms": 1788773569102,
+      "availability": "available",
+      "reason": "",
+      "agents": [
+        "codex"
+      ]
+    },
+    {
+      "provider": "cursor",
+      "account_hash": "e32745ee35421e8891e8fe85a32059ae85edd9241d09e1354f6c5f3c0be562aa",
+      "window_key": "plan",
+      "label": "plan",
+      "used_pct": 100,
+      "remaining": 0,
+      "limit": 20,
+      "used": 20,
+      "unit": "USD",
+      "reset_ms": 1789213792000,
+      "as_of_ms": 1788773569381,
+      "availability": "available",
+      "reason": "",
+      "agents": [
+        "cursor"
+      ]
+    },
+    {
+      "provider": "cursor",
+      "account_hash": "e32745ee35421e8891e8fe85a32059ae85edd9241d09e1354f6c5f3c0be562aa",
+      "window_key": "on_demand",
+      "label": "on_demand",
+      "used_pct": null,
+      "remaining": null,
+      "limit": null,
+      "used": 0,
+      "unit": "USD",
+      "reset_ms": 1789213792000,
+      "as_of_ms": 1788773569381,
+      "availability": "available",
+      "reason": "",
+      "agents": [
+        "cursor"
+      ]
+    },
+    {
+      "provider": "hermes",
+      "account_hash": null,
+      "window_key": "unknown",
+      "label": "hermes",
+      "used_pct": null,
+      "remaining": null,
+      "limit": null,
+      "used": null,
+      "unit": "percent",
+      "reset_ms": null,
+      "as_of_ms": 1788773569381,
+      "availability": "unavailable",
+      "reason": "provider_adapter_not_configured",
+      "agents": [
+        "hermes"
+      ]
+    },
+    {
+      "provider": "workbuddy",
+      "account_hash": null,
+      "window_key": "unknown",
+      "label": "workbuddy",
+      "used_pct": null,
+      "remaining": null,
+      "limit": null,
+      "used": null,
+      "unit": "percent",
+      "reset_ms": null,
+      "as_of_ms": 1788773569381,
+      "availability": "unavailable",
+      "reason": "unsupported",
+      "agents": [
+        "workbuddy"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "codex",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788773567954,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    },
+    {
+      "id": "cursor",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788773567952,
+      "provenance": "cursor.official.usage-events",
+      "reason": null
+    },
+    {
+      "id": "hermes",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788773567954,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    },
+    {
+      "id": "workbuddy",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788773567954,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    }
+  ]
+}

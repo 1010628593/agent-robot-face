@@ -1,0 +1,40 @@
+{
+  "connected": true,
+  "firmware": "3.2.4",
+  "boot_id": "355b5454b8286dd86adae5a543077497",
+  "heap_diagnostics": {
+    "uptime_ms": 35004,
+    "internal_free": 73519,
+    "largest_free": 31744,
+    "minimum_free": 34952,
+    "psram_free": 7609648,
+    "screen": 0,
+    "as_of_ms": 1788781202030
+  },
+  "firmware_errors": [],
+  "reconnect_count": 1,
+  "diagnostics": {
+    "render_updates": 73,
+    "window_ms": 5000,
+    "avg_us": 5247,
+    "max_us": 6289,
+    "projection": {
+      "agent_id": "codex",
+      "mode": "auto",
+      "selection_rev": 22,
+      "focus_selection_rev": 22,
+      "state": "tool",
+      "run_id": "18ad557ca7a43463c9f9dc0cf5d0766f",
+      "screen": "face"
+    },
+    "usage": {
+      "usage_rev": 1,
+      "data_rev": 644,
+      "subject": "current",
+      "period": "today",
+      "page": 0,
+      "level": 0
+    },
+    "as_of_ms": 1788781204019
+  }
+}

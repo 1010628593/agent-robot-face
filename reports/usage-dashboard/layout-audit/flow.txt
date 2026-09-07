@@ -1,0 +1,17 @@
+fixture
+stats
+500 0
+tap 11
+800 0
+tap 10
+tap 0
+ack
+1100 0
+tap 0
+1400 0
+tap 11
+1700 0
+tap 12
+2000 0
+tap 31
+2300 0

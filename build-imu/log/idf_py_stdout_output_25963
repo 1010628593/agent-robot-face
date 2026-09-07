@@ -1,0 +1,110 @@
+Command: ninja all
+[1/12] Performing build step for 'bootloader'
+[1/1] cd /Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader && /Users/hanxin/.espressif/tools/python/v6.1/venv/bin/python /Users/hanxin/.espressif/v6.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/hanxin/Workspace/llm/agent-robot-face/build-imu/bootloader/bootloader.bin
+Bootloader binary size 0x5820 bytes. 0x27e0 bytes (31%) free.
+[2/12] No install step for 'bootloader'
+[3/12] Completed 'bootloader'
+[4/12] Building C object esp-idf/bot_core/CMakeFiles/__idf_bot_core.dir/bot_frame.c.obj
+FAILED: esp-idf/bot_core/CMakeFiles/__idf_bot_core.dir/bot_frame.c.obj 
+/Users/hanxin/.espressif/tools/xtensa-esp-elf/esp-15.2.0_20251204/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc -DESP_PLATFORM -DIDF_VER=\"v6.1-dirty\" -DSOC_MMU_PAGE_SIZE=CONFIG_MMU_PAGE_SIZE -DSOC_XTAL_FREQ_MHZ=CONFIG_XTAL_FREQ -D_GLIBCXX_HAVE_POSIX_SEMAPHORE -D_GLIBCXX_USE_POSIX_SEMAPHORE -D_GNU_SOURCE -D_POSIX_READER_WRITER_LOCKS -I/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/config -I/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_libc/platform_include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/config/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/config/include/freertos -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/config/xtensa/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/include/freertos -I/Users/hanxin/.espressif/v6.1/esp-idf/components/freertos/esp_additions/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/include/soc -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/ldo/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/debug_probe/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/etm/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/tuning_scheme_impl/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/mspi/mspi_intr/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/power_supply/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/modem/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/include/soc/esp32s3 -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/port/esp32s3/. -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/port/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/port/esp32s3/. -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hw_support/mspi/mspi_timing_tuning/port/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/heap/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/heap/tlsf -I/Users/hanxin/.espressif/v6.1/esp-idf/components/log/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/soc/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/soc/esp32s3 -I/Users/hanxin/.espressif/v6.1/esp-idf/components/soc/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/soc/esp32s3/register -I/Users/hanxin/.espressif/v6.1/esp-idf/components/hal/platform_port/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/hal/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/hal/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_rom/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_rom/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_rom/esp32s3/include/esp32s3 -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_rom/esp32s3 -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_common/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/port/soc -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_system/port/include/private -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_stdio/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/xtensa/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/xtensa/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/xtensa/deprecated_include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_gpio/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_gpio/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_usb/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_usb/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_pmu/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_pmu/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_regi2c/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_regi2c/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_uart/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_uart/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_ana_conv/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_ana_conv/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_dma/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/esp_hal_dma/esp32s3/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/include/apps -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/lwip/src/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/port/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/port/freertos/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/port/esp32xx/include -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/port/esp32xx/include/arch -I/Users/hanxin/.espressif/v6.1/esp-idf/components/lwip/port/esp32xx/include/sys @"/Users/hanxin/Workspace/llm/agent-robot-face/build-imu/toolchain/cflags" -fdiagnostics-color=always -Wno-format -fdiagnostics-color=always -ffunction-sections -fdata-sections -Wall -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wno-error=unused-but-set-variable -Wno-error=deprecated-declarations -Wextra -Wno-error=extra -Wno-unused-parameter -Wno-sign-compare -Wno-enum-conversion -gdwarf-4 -ggdb -O2 -fmacro-prefix-map=/Users/hanxin/Workspace/llm/agent-robot-face/firmware=. -fmacro-prefix-map=/Users/hanxin/.espressif/v6.1/esp-idf=/IDF -fstrict-volatile-bitfields -fno-jump-tables -fno-tree-switch-conversion -std=gnu23 -Wno-old-style-declaration -fzero-init-padding-bits=all -fno-malloc-dce -MD -MT esp-idf/bot_core/CMakeFiles/__idf_bot_core.dir/bot_frame.c.obj -MF esp-idf/bot_core/CMakeFiles/__idf_bot_core.dir/bot_frame.c.obj.d -o esp-idf/bot_core/CMakeFiles/__idf_bot_core.dir/bot_frame.c.obj -c /Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c: In function 'uview':
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:653:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  653 |  if(!req_enum(d,o,"subject",USUB,6,&x))return false;v->subject=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:653:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  653 |  if(!req_enum(d,o,"subject",USUB,6,&x))return false;v->subject=x;
+      |                                                     ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:654:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  654 |  if(!req_enum(d,o,"period",UPER,3,&x))return false;v->period=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:654:52: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  654 |  if(!req_enum(d,o,"period",UPER,3,&x))return false;v->period=x;
+      |                                                    ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:655:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  655 |  if(!req_int(d,o,"page",0,33,&n))return false;v->page=n;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:655:47: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  655 |  if(!req_int(d,o,"page",0,33,&n))return false;v->page=n;
+      |                                               ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:656:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  656 |  if(!req_int(d,o,rev,0,2147483647,&n))return false;v->usage_rev=n;return true;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:656:52: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  656 |  if(!req_int(d,o,rev,0,2147483647,&n))return false;v->usage_rev=n;return true;
+      |                                                    ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c: In function 'dec_usage_ack':
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:664:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  664 |  if(!req_enum(d,o,"status",st,2,&x))return false;a->status=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:664:50: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  664 |  if(!req_enum(d,o,"status",st,2,&x))return false;a->status=x;
+      |                                                  ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:665:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  665 |  if(!req_enum(d,o,"reason",re,2,&x))return false;a->reason=x;return a->status==a->reason;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:665:50: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  665 |  if(!req_enum(d,o,"reason",re,2,&x))return false;a->reason=x;return a->status==a->reason;
+      |                                                  ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c: In function 'dec_usage':
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:671:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  671 |  if(!req_int(d,o,"data_rev",0,2147483647,&n))return false;u->data_rev=n;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:671:59: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  671 |  if(!req_int(d,o,"data_rev",0,2147483647,&n))return false;u->data_rev=n;
+      |                                                           ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:674:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  674 |  if(!req_enum(d,o,"status",status,4,&x))return false;u->status=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:674:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  674 |  if(!req_enum(d,o,"status",status,4,&x))return false;u->status=x;
+      |                                                      ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:677:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  677 |  if(!no_extra_keys(d,b,sk,9) || !req_enum(d,b,"agent_id",USUB+1,5,&x))return false;u->summary_agent=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:677:84: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  677 |  if(!no_extra_keys(d,b,sk,9) || !req_enum(d,b,"agent_id",USUB+1,5,&x))return false;u->summary_agent=x;
+      |                                                                                    ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:683:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  683 |  if(!req_enum(d,b,"coverage",cov,3,&x))return false;u->coverage=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:683:53: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  683 |  if(!req_enum(d,b,"coverage",cov,3,&x))return false;u->coverage=x;
+      |                                                     ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:684:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  684 |  if(!req_int(d,o,"quota_total",0,32,&n))return false;u->quota_total=n;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:684:54: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  684 |  if(!req_int(d,o,"quota_total",0,32,&n))return false;u->quota_total=n;
+      |                                                      ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:685:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  685 |  if(!req_int(d,o,"model_total",0,100,&n))return false;u->model_total=n;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:685:55: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  685 |  if(!req_int(d,o,"model_total",0,100,&n))return false;u->model_total=n;
+      |                                                       ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:690:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  690 |  if(!no_extra_keys(d,r,k,4)||!req_enum(d,r,"id",AGENTS,4,&x)||x!=order[count])return false;v->id=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:690:92: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  690 |  if(!no_extra_keys(d,r,k,4)||!req_enum(d,r,"id",AGENTS,4,&x)||x!=order[count])return false;v->id=x;
+      |                                                                                            ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:693:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  693 |  if(!no_extra_keys(d,r,k,7)||!req_str(d,r,"id",v->id,33,32,true)||!is_hex32(v->id)||!req_str(d,r,"label",v->label,25,24,true)||!req_enum(d,r,"agent_id",AGENTS,4,&x))return false;v->agent_id=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:693:179: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  693 |  if(!no_extra_keys(d,r,k,7)||!req_str(d,r,"id",v->id,33,32,true)||!is_hex32(v->id)||!req_str(d,r,"label",v->label,25,24,true)||!req_enum(d,r,"agent_id",AGENTS,4,&x))return false;v->agent_id=x;
+      |                                                                                                                                                                                   ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:694:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  694 |  if(!unum(d,r,"used_pct",&v->used_pct,true)||!unum(d,r,"reset_ms",&v->reset_ms,false)||!bj_get_bool(d,r,"stale",&v->stale)||!req_enum(d,r,"availability",av,4,&x))return false;v->availability=x;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:694:176: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  694 |  if(!unum(d,r,"used_pct",&v->used_pct,true)||!unum(d,r,"reset_ms",&v->reset_ms,false)||!bj_get_bool(d,r,"stale",&v->stale)||!req_enum(d,r,"availability",av,4,&x))return false;v->availability=x;
+      |                                                                                                                                                                                ^
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:698:2: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+  698 |  if(a==0&&count!=4)return false;if(a==1)u->quota_count=count;if(a==2)u->model_count=count;if(a==3)u->history_count=count;
+      |  ^~
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_frame.c:698:33: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+  698 |  if(a==0&&count!=4)return false;if(a==1)u->quota_count=count;if(a==2)u->model_count=count;if(a==3)u->history_count=count;
+      |                                 ^~
+cc1: all warnings being treated as errors
+ninja: build stopped: subcommand failed.

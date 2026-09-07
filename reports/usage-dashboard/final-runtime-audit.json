@@ -1,0 +1,85 @@
+{
+  "device": {
+    "connected": true,
+    "firmware": "3.0.2",
+    "protocol_version": 3,
+    "error": null,
+    "last_seen_ms": 1788776873829
+  },
+  "usage": {
+    "revision": 274,
+    "subject": "all",
+    "period": "30d",
+    "status": "ready",
+    "stale": false,
+    "start_date": "2026-08-09",
+    "end_date": "2026-09-07",
+    "model_count": 28
+  },
+  "sources": [
+    {
+      "id": "codex",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788776871222,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    },
+    {
+      "id": "cursor",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788776624854,
+      "provenance": "cursor.official.usage-events",
+      "reason": null
+    },
+    {
+      "id": "hermes",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788776871222,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    },
+    {
+      "id": "workbuddy",
+      "availability": "available",
+      "coverage": "partial",
+      "as_of_ms": 1788776871222,
+      "provenance": "tokscale.local_logs",
+      "reason": null
+    }
+  ],
+  "quota_windows": [
+    {
+      "provider": "codex",
+      "label": "codex",
+      "availability": "unavailable",
+      "reason": "network_timeout"
+    },
+    {
+      "provider": "cursor",
+      "label": "plan",
+      "availability": "available",
+      "reason": ""
+    },
+    {
+      "provider": "cursor",
+      "label": "on_demand",
+      "availability": "available",
+      "reason": ""
+    },
+    {
+      "provider": "hermes",
+      "label": "hermes",
+      "availability": "unavailable",
+      "reason": "provider_adapter_not_configured"
+    },
+    {
+      "provider": "workbuddy",
+      "label": "workbuddy",
+      "availability": "unavailable",
+      "reason": "unsupported"
+    }
+  ]
+}

@@ -51,17 +51,14 @@ static void advance(uint32_t ms)
         lv_refr_now(display);
     }
 }
-static lv_obj_t *surface(void)
+/* Read the actual face coordinate mapping, independent of LVGL layer styles. */
+static int rotation(void)
 {
-    lv_obj_t *root = bot_ui_screen();
-    for (uint32_t i = 0; i < lv_obj_get_child_count(root); i++) {
-        lv_obj_t *obj = lv_obj_get_child(root, (int32_t)i);
-        if (lv_obj_get_width(obj) == 322 && lv_obj_get_height(obj) == 244) return obj;
-    }
-    assert(!"Face surface must exist");
-    return NULL;
+    int16_t x,y;
+    face_map_input(pressed,333,233,&x,&y);
+    int angle=(int)lroundf(atan2f(233-y,x-233)*572.95779513f);
+    return (angle+3600)%3600;
 }
-static int rotation(void) { return lv_obj_get_style_transform_rotation(surface(), 0); }
 static void orient(float degrees)
 {
     motion.available = true;
@@ -88,15 +85,15 @@ static void rotated_navigation(void)
 {
     /* At +90, an on-glass upward swipe is a left swipe in Face coordinates. */
     orient(90);
-    swipe(233, 310, 233, 190);
+    swipe(233, 435, 233, 320);
     assert(g_ui.screen == BOT_SCR_STATS);
     assert_agent_unchanged();
     /* Stats remains unrotated: its own ordinary right swipe still returns. */
-    swipe(190, 233, 310, 233);
+    swipe(190, 233, 435, 233);
     assert(g_ui.screen == BOT_SCR_FACE);
     /* At +45, a diagonal on glass must become horizontal before arbitration. */
     orient(45);
-    swipe(288, 288, 178, 178);
+    swipe(377, 377, 293, 293);
     assert(g_ui.screen == BOT_SCR_STATS);
     assert_agent_unchanged();
 }
@@ -111,10 +108,10 @@ static void contact_matrix(void)
     face_map_input(false, 233, 296, &x, &y);
     assert(x == 296 && y == 233); /* final UP uses the DOWN matrix */
     motion.rotation_deg = 90;
-    point = (lv_point_t){233, 310}; pressed = true; advance(20);
+    point = (lv_point_t){233, 435}; pressed = true; advance(20);
     motion.rotation_deg = -90; advance(100);
     assert(rotation() == 900); /* Cannot rotate underneath a held finger. */
-    point = (lv_point_t){233, 190}; advance(60);
+    point = (lv_point_t){233, 320}; advance(60);
     pressed = false; advance(20);
     assert(g_ui.screen == BOT_SCR_STATS); /* final release must still be mapped */
     assert_agent_unchanged();
@@ -134,9 +131,9 @@ static void stale_and_flat(void)
     assert(rotation() == 900);
     /* Sensor absence must preserve gesture navigation, not stall the UI. */
     motion.available = false;
-    swipe(233, 310, 233, 190);
+    swipe(233, 435, 233, 320);
     assert(g_ui.screen == BOT_SCR_STATS);
-    swipe(190, 233, 310, 233);
+    swipe(190, 233, 435, 233);
     assert(g_ui.screen == BOT_SCR_FACE);
     motion.flat = false;
     orient(-45);

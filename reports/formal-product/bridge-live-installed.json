@@ -1,0 +1,442 @@
+{
+  "api_version": 1,
+  "bridge": {
+    "version": "2.0.0",
+    "started_at_ms": 1788768534103,
+    "paused": false,
+    "launch_at_login": true,
+    "demo": false
+  },
+  "device": {
+    "connected": true,
+    "port": "/dev/cu.usbmodem21201",
+    "firmware": "2.0.0",
+    "protocol_version": 2,
+    "last_seen_ms": 1788769193301,
+    "error": null,
+    "diagnostics": {
+      "render_updates": 117,
+      "window_ms": 5259,
+      "avg_us": 6933,
+      "max_us": 7631,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "tool",
+        "run_id": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "screen": "face"
+      },
+      "as_of_ms": 1788769191428
+    }
+  },
+  "selection": {
+    "mode": "auto",
+    "selected_agent": "codex",
+    "selection_rev": 22
+  },
+  "sources": [
+    {
+      "id": "codex",
+      "label": "Codex",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": true,
+      "health": "partial",
+      "last_event_ms": 1788769193109,
+      "last_scan_ms": 1788769193786,
+      "stale": false,
+      "active_sessions": 3,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "observed",
+        "cancellation": "observed",
+        "waiting": "unverified",
+        "usage": "observed",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "desktop_rollout",
+        "cli_start_tool_success_failure_interrupt"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified",
+        "oversized_record_skipped"
+      ]
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768704295,
+      "last_scan_ms": 1788769193782,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "observed",
+        "waiting": "unverified",
+        "usage": "unverified",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "native_completed_aborted"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified"
+      ]
+    },
+    {
+      "id": "hermes",
+      "label": "Hermes",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768950239,
+      "last_scan_ms": 1788769193787,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "unverified",
+        "waiting": "unverified",
+        "usage": "observed",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "cli_db_success"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified"
+      ]
+    },
+    {
+      "id": "workbuddy",
+      "label": "WorkBuddy",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768186958,
+      "last_scan_ms": 1788769188597,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "unverified",
+        "waiting": "unverified",
+        "usage": "unverified",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "desktop_jsonl_start_tool_success"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified",
+        "native_terminal_unverified",
+        "cancellation_ambiguous"
+      ]
+    }
+  ],
+  "focus": {
+    "agent_id": "codex",
+    "selection_rev": 22,
+    "session_key": "1d32846fc5001fe0e3d58b9ec07f0e73",
+    "run_id": "0f8b2d71232b3e8fa3f2df5c943a7928",
+    "state": "working",
+    "reason": "none",
+    "quality": "observed",
+    "source_age_ms": 1075,
+    "stale": false,
+    "tool": "",
+    "detail": "",
+    "run_elapsed_ms": 5409961,
+    "active_sessions": 3,
+    "progress": null
+  },
+  "stats": {
+    "agent_id": "codex",
+    "selection_rev": 22,
+    "sent_at_ms": 1788769194190,
+    "scope": {
+      "kind": "today",
+      "timezone": "Asia/Shanghai",
+      "start_ms": 1788710400000,
+      "end_ms": 1788796800000
+    },
+    "metrics": [
+      {
+        "key": "turns",
+        "label": "Turns",
+        "value": 139,
+        "unit": "turn",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_ledger",
+        "as_of_ms": 1788769193109,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "tool_calls",
+        "label": "Tools",
+        "value": 2927,
+        "unit": "call",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_ledger",
+        "as_of_ms": 1788769193109,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "total_tokens",
+        "label": "Tokens",
+        "value": 435954883.0,
+        "unit": "token",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_native_usage",
+        "as_of_ms": 1788769193111,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "cost_usd_micros",
+        "label": "Cost",
+        "value": null,
+        "unit": "usd_micros",
+        "quality": "unavailable",
+        "coverage": "unknown",
+        "source": "codex_native_usage",
+        "as_of_ms": null,
+        "stale_after_ms": 120000
+      }
+    ],
+    "quotas": [],
+    "sparkline": []
+  },
+  "diagnostics": {
+    "event_count": 25593,
+    "recent_events": [
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_end",
+        "ts": 1788769193109,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_end",
+        "ts": 1788769190838,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_start",
+        "ts": 1788769189695,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_end",
+        "ts": 1788769179300,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_start",
+        "ts": 1788769178736,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_end",
+        "ts": 1788769167737,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_start",
+        "ts": 1788769164939,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_start",
+        "ts": 1788769162091,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_end",
+        "ts": 1788769150975,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_start",
+        "ts": 1788769150422,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "a2cbd15689926d37c9d902a529d71637",
+        "run": "8f7884cd5f8ea590b2040ce5fbad6039",
+        "kind": "done",
+        "ts": 1788769137575,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_end",
+        "ts": 1788769135490,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_end",
+        "ts": 1788769133697,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "0f8b2d71232b3e8fa3f2df5c943a7928",
+        "kind": "tool_start",
+        "ts": 1788769133300,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_start",
+        "ts": 1788769132140,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_end",
+        "ts": 1788769121920,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "c56de9a299a87d6f4644b2ab7df49831",
+        "kind": "tool_end",
+        "ts": 1788769121705,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "e19d83449e2a409040bd157027619d3d",
+        "kind": "tool_start",
+        "ts": 1788769119979,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "c56de9a299a87d6f4644b2ab7df49831",
+        "kind": "tool_start",
+        "ts": 1788769112925,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "a2cbd15689926d37c9d902a529d71637",
+        "run": "8f7884cd5f8ea590b2040ce5fbad6039",
+        "kind": "tool_end",
+        "ts": 1788769112464,
+        "tool": "",
+        "channel": "codex_desktop"
+      }
+    ],
+    "errors": []
+  }
+}

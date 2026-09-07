@@ -1,0 +1,469 @@
+{
+  "api_version": 1,
+  "bridge": {
+    "version": "2.0.0",
+    "started_at_ms": 1788771940681,
+    "paused": false,
+    "launch_at_login": true,
+    "demo": false
+  },
+  "device": {
+    "connected": true,
+    "port": "/dev/cu.usbmodem21201",
+    "firmware": "2.2.3",
+    "protocol_version": 2,
+    "last_seen_ms": 1788773508578,
+    "error": null,
+    "diagnostics": {
+      "render_updates": 156,
+      "window_ms": 5002,
+      "avg_us": 29870,
+      "max_us": 49276,
+      "projection": {
+        "agent_id": "codex",
+        "mode": "auto",
+        "selection_rev": 22,
+        "focus_selection_rev": 22,
+        "state": "working",
+        "run_id": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "screen": "face"
+      },
+      "as_of_ms": 1788773507269
+    },
+    "touch_diagnostics": {
+      "reads": 205,
+      "dual": 0,
+      "errors": 1,
+      "overflow": 0,
+      "raw_count": 0,
+      "wire_count": 1,
+      "record0": 171,
+      "record1": 0,
+      "count": 0,
+      "gs": 3,
+      "pet": 1,
+      "blocked": 0,
+      "edge": 0,
+      "x": 190,
+      "y": 242,
+      "taps": 11,
+      "expression": 8,
+      "motion_count": 0,
+      "tapped": 0,
+      "tx": 0.0,
+      "ty": 0.0,
+      "left": 86.0,
+      "right": 86.0,
+      "revision": 2,
+      "as_of_ms": 1788773509285
+    }
+  },
+  "selection": {
+    "mode": "auto",
+    "selected_agent": "codex",
+    "selection_rev": 22
+  },
+  "sources": [
+    {
+      "id": "codex",
+      "label": "Codex",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": true,
+      "health": "partial",
+      "last_event_ms": 1788773505608,
+      "last_scan_ms": 1788773508559,
+      "stale": false,
+      "active_sessions": 4,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "observed",
+        "cancellation": "observed",
+        "waiting": "unverified",
+        "usage": "observed",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "desktop_rollout",
+        "cli_start_tool_success_failure_interrupt"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified",
+        "oversized_record_skipped"
+      ]
+    },
+    {
+      "id": "cursor",
+      "label": "Cursor",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768704295,
+      "last_scan_ms": 1788773508560,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "observed",
+        "waiting": "unverified",
+        "usage": "unverified",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "native_completed_aborted"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified"
+      ]
+    },
+    {
+      "id": "hermes",
+      "label": "Hermes",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768950239,
+      "last_scan_ms": 1788773508562,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "unverified",
+        "waiting": "unverified",
+        "usage": "observed",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "cli_db_success"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified"
+      ]
+    },
+    {
+      "id": "workbuddy",
+      "label": "WorkBuddy",
+      "installed": true,
+      "configured": true,
+      "observed": true,
+      "running": false,
+      "health": "partial",
+      "last_event_ms": 1788768186958,
+      "last_scan_ms": 1788773503366,
+      "stale": true,
+      "active_sessions": 0,
+      "synchronizing": false,
+      "backlog_bytes": 0,
+      "capabilities": {
+        "start": "observed",
+        "tool": "observed",
+        "success": "observed",
+        "failure": "unverified",
+        "cancellation": "unverified",
+        "waiting": "unverified",
+        "usage": "unverified",
+        "quota": "unsupported"
+      },
+      "validated_coverage": [
+        "desktop_jsonl_start_tool_success"
+      ],
+      "gaps": [
+        "official_quota_unavailable",
+        "waiting_unverified",
+        "bounded_2day_backfill_partial",
+        "silent_active_liveness_unverified",
+        "native_terminal_unverified",
+        "cancellation_ambiguous"
+      ]
+    }
+  ],
+  "focus": {
+    "agent_id": "codex",
+    "selection_rev": 22,
+    "session_key": "1d32846fc5001fe0e3d58b9ec07f0e73",
+    "run_id": "42fa9f7b960b31e2c2b18a1d93da50d6",
+    "state": "working",
+    "reason": "none",
+    "quality": "observed",
+    "source_age_ms": 6086,
+    "stale": false,
+    "tool": "",
+    "detail": "",
+    "run_elapsed_ms": 1976929,
+    "active_sessions": 4,
+    "progress": null
+  },
+  "stats": {
+    "agent_id": "codex",
+    "selection_rev": 22,
+    "sent_at_ms": 1788773509365,
+    "scope": {
+      "kind": "today",
+      "timezone": "Asia/Shanghai",
+      "start_ms": 1788710400000,
+      "end_ms": 1788796800000
+    },
+    "metrics": [
+      {
+        "key": "turns",
+        "label": "Turns",
+        "value": 172,
+        "unit": "turn",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_ledger",
+        "as_of_ms": 1788773505608,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "tool_calls",
+        "label": "Tools",
+        "value": 3647,
+        "unit": "call",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_ledger",
+        "as_of_ms": 1788773505608,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "total_tokens",
+        "label": "Tokens",
+        "value": 536683678.0,
+        "unit": "token",
+        "quality": "exact",
+        "coverage": "partial",
+        "source": "codex_native_usage",
+        "as_of_ms": 1788773503534,
+        "stale_after_ms": 120000
+      },
+      {
+        "key": "cost_usd_micros",
+        "label": "Cost",
+        "value": null,
+        "unit": "usd_micros",
+        "quality": "unavailable",
+        "coverage": "unknown",
+        "source": "codex_native_usage",
+        "as_of_ms": null,
+        "stale_after_ms": 120000
+      }
+    ],
+    "quotas": [],
+    "sparkline": []
+  },
+  "diagnostics": {
+    "event_count": 27308,
+    "recent_events": [
+      {
+        "agent": "codex",
+        "session": "7fc162f360c96dcf1d40a9e53b9df002",
+        "run": "62a0bbdd71b4dc3d4b2011af3acb708c",
+        "kind": "tool_start",
+        "ts": 1788773505608,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "feb5c59b5a367ee091e448bf11f65749",
+        "kind": "start",
+        "ts": 1788773504241,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "8149f67f3d9d3f20735313cfaaf2a568",
+        "kind": "done",
+        "ts": 1788773504023,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_end",
+        "ts": 1788773503326,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_end",
+        "ts": 1788773503273,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_start",
+        "ts": 1788773502948,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_start",
+        "ts": 1788773500834,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_end",
+        "ts": 1788773494488,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_start",
+        "ts": 1788773494126,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_end",
+        "ts": 1788773493229,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "7fc162f360c96dcf1d40a9e53b9df002",
+        "run": "62a0bbdd71b4dc3d4b2011af3acb708c",
+        "kind": "tool_end",
+        "ts": 1788773491621,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_start",
+        "ts": 1788773491072,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "7fc162f360c96dcf1d40a9e53b9df002",
+        "run": "62a0bbdd71b4dc3d4b2011af3acb708c",
+        "kind": "tool_start",
+        "ts": 1788773490912,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "8149f67f3d9d3f20735313cfaaf2a568",
+        "kind": "tool_end",
+        "ts": 1788773484819,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_end",
+        "ts": 1788773480519,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_end",
+        "ts": 1788773478362,
+        "tool": "",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "1d32846fc5001fe0e3d58b9ec07f0e73",
+        "run": "42fa9f7b960b31e2c2b18a1d93da50d6",
+        "kind": "tool_start",
+        "ts": 1788773477854,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "e67b5715b98677f317bf7f24921b4820",
+        "run": "f10ab2094fff8abc30a1bc846471483b",
+        "kind": "tool_start",
+        "ts": 1788773475270,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "5908795905cf9707ea550787ace50764",
+        "run": "8149f67f3d9d3f20735313cfaaf2a568",
+        "kind": "tool_start",
+        "ts": 1788773474095,
+        "tool": "tool",
+        "channel": "codex_desktop"
+      },
+      {
+        "agent": "codex",
+        "session": "7fc162f360c96dcf1d40a9e53b9df002",
+        "run": "62a0bbdd71b4dc3d4b2011af3acb708c",
+        "kind": "tool_end",
+        "ts": 1788773473793,
+        "tool": "",
+        "channel": "codex_desktop"
+      }
+    ],
+    "errors": []
+  }
+}

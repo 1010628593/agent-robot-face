@@ -1,0 +1,9 @@
+{
+  "cycles": 30,
+  "final_phase": "0",
+  "root_children_after_first_cycle": "2",
+  "root_children_at_end": "2",
+  "host_render_cpu_ms_mean": 0.20667916666666666,
+  "host_render_cpu_ms_max": 0.941,
+  "limitation": "host software render only; root count is not a heap leak measurement"
+}

@@ -1,0 +1,112 @@
+Test project /tmp/robot-touch-native
+    Start 1: bot_types
+1/6 Test #1: bot_types ........................   Passed    1.21 sec
+    Start 2: gesture
+2/6 Test #2: gesture ..........................***Failed    0.37 sec
+PASS G01
+PASS G02
+FAIL G03: expected 1 event(s), got 0 ()
+PASS G04
+PASS G05
+PASS G06
+PASS G07
+PASS G08
+PASS G09
+PASS G10
+PASS G11
+PASS G12
+test_gesture: 1 FAILURE(S)
+
+    Start 3: frame_parser
+3/6 Test #3: frame_parser .....................***Failed    0.35 sec
+FAIL example 01_hello.json: msgs=0 bad=1 json_err=ok
+FAIL example 02_welcome.json: msgs=0 bad=1 json_err=ok
+FAIL example 03_catalog.json: msgs=0 bad=1 json_err=ok
+FAIL example 04_focus_working.json: msgs=0 bad=1 json_err=ok
+FAIL example 05_focus_waiting.json: msgs=0 bad=1 json_err=ok
+FAIL example 06_focus_done.json: msgs=0 bad=1 json_err=ok
+FAIL example 07_stats_codex.json: msgs=0 bad=1 json_err=ok
+FAIL example 08_stats_unavailable.json: msgs=0 bad=1 json_err=ok
+FAIL example 09_stats_manual_balance.json: msgs=0 bad=1 json_err=ok
+FAIL example 11_select_ack.json: msgs=0 bad=1 json_err=ok
+FAIL example 12_conflict_ack.json: msgs=0 bad=1 json_err=ok
+FAIL example 14_notice.json: msgs=0 bad=1 json_err=ok
+FAIL example 15_ping.json: msgs=0 bad=1 json_err=ok
+FAIL example 17_stats_over_budget.json: msgs=0 bad=1 json_err=ok
+FAIL example 18_stats_unlimited.json: msgs=0 bad=1 json_err=ok
+SKIP 01_oversize_budget.json (not present)
+SKIP 02_nan_value.json (not present)
+SKIP 03_duplicate_key.json (not present)
+SKIP 04_too_deep.json (not present)
+SKIP 05_wrong_reason.json (not present)
+PASS invalid 06_wrong_metric_unit.json rejected
+PASS invalid 07_duplicate_agent.json rejected
+SKIP 08_terminal_reason.json (not present)
+PASS invalid 09_missing_link.json rejected
+FAIL coalesced + log noise -> 2 msgs (line 221)
+FAIL oversize dropped, next frame resyncs (line 234)
+FAIL CRLF tolerated (line 245)
+PASS strict: duplicate key
+PASS strict: NaN
+PASS strict: Infinity
+PASS strict: 1e999 overflow
+PASS strict: array root
+PASS strict: trailing garbage
+PASS strict: unknown envelope key
+PASS strict: bad utf8
+PASS depth 13 rejected
+FAIL non-ASCII label rejected; multibyte split ok; next frame recovers (line 311)
+PASS semantic: quota unknown with numbers
+PASS semantic: ack accepted with conflict
+PASS semantic: focus waiting without reason
+PASS semantic: metric key/unit mismatch
+PASS semantic: unavailable metric with value
+PASS semantic: unknown body key rejected (v1 strict)
+PASS semantic: hello with link_id null ok but seq must be 0
+FAIL hello link_id=null seq=0 accepted (only exception) (line 388)
+test_frame_parser: 20 FAILURE(S)
+
+    Start 4: device_model
+4/6 Test #4: device_model .....................   Passed    0.35 sec
+    Start 5: router
+5/6 Test #5: router ...........................***Failed    0.35 sec
+FAIL face tap -> poke+detail: nav 0->0 delta 0->0 toggle 0->0 confirm 0->0 poke 1->1 detail 0->1 edge 0->0
+FAIL face swipe_left -> stats: nav 0->1 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face swipe_right -> stats: nav 0->1 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face hold -> picker: nav 0->3 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face swipe_up -> none: nav 1->0 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face swipe_down -> none: nav 3->0 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+PASS face wake_only -> none
+PASS picker tap -> confirm
+PASS picker swipe_left -> next
+PASS picker swipe_right -> prev
+FAIL picker hold -> cancel: nav 0->4 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL picker swipe_down -> cancel: nav 0->4 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL picker swipe_up -> none: nav 4->0 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+PASS stats tap -> detail
+FAIL stats swipe_up -> toggle tab: nav 0->0 delta 0->0 toggle 0->1 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_down -> toggle tab: nav 2->0 delta 0->0 toggle 0->1 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_right -> face: nav 0->2 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_left -> edge bump, NO nav: nav 0->0 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->1
+FAIL stats hold -> picker: nav 0->3 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+test_router: 14 FAILURE(S)
+
+    Start 6: gesture_coalesced
+6/6 Test #6: gesture_coalesced ................Subprocess aborted***Exception:   0.77 sec
+Assertion failed: (bot_gesture_feed(&g, BOT_TOUCH_TICK, 650, 245, 233) == BOT_GESTURE_HOLD), function exact_slop_preserves_stationary_hold, file test_gesture_coalesced.c, line 51.
+PASS tick_displacement_cancels_hold
+PASS up_displacement_is_not_a_tap
+PASS final_sample_can_be_a_swipe
+PASS cancelled_hold_can_finish_as_swipe
+
+
+33% tests passed, 4 tests failed out of 6
+
+Total Test time (real) =   3.41 sec
+
+The following tests FAILED:
+	  2 - gesture (Failed)
+	  3 - frame_parser (Failed)
+	  5 - router (Failed)
+	  6 - gesture_coalesced (Subprocess aborted)
+Errors while running CTest

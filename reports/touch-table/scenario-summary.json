@@ -1,0 +1,506 @@
+{
+  "01-contact-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.1157,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0579,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0579,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "01-contact-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0934,
+    "peak_streak": 1,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0467,
+    "peak_streak": 1,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0467,
+    "peak_streak": 1,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "02-eye-tap-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "03-repeat-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.1112,
+    "peak_streak": 3,
+    "peak_alternating": 0
+  },
+  "03-repeat-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0556,
+    "peak_streak": 3,
+    "peak_alternating": 0
+  },
+  "03-repeat-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0556,
+    "peak_streak": 3,
+    "peak_alternating": 0
+  },
+  "03-repeat-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "03-repeat-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "03-repeat-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "03-repeat-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "03-repeat-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "04-alternate-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.1216,
+    "peak_streak": 1,
+    "peak_alternating": 5
+  },
+  "04-alternate-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0608,
+    "peak_streak": 1,
+    "peak_alternating": 5
+  },
+  "04-alternate-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0608,
+    "peak_streak": 1,
+    "peak_alternating": 5
+  },
+  "04-alternate-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "04-alternate-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "04-alternate-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "04-alternate-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "04-alternate-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0929,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0464,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0464,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "05-follow-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.1038,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0519,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0519,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "06-stroke-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.1259,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0629,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0629,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "07-cup-release-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-1": {
+    "min_left": 8.229,
+    "min_right": 8.229,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-8": {
+    "min_left": 8.246,
+    "min_right": 8.246,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-10": {
+    "min_left": 8.246,
+    "min_right": 8.246,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "08-pinch-spread-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-1": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.094,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-8": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.047,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-10": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.047,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-11": {
+    "min_left": 8.0,
+    "min_right": 8.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-13": {
+    "min_left": 108.0,
+    "min_right": 108.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-15": {
+    "min_left": 72.0,
+    "min_right": 72.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-18": {
+    "min_left": 48.0,
+    "min_right": 58.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  },
+  "09-eyes-release-0": {
+    "min_left": 76.0,
+    "min_right": 64.0,
+    "max_roll": 0.0,
+    "peak_streak": 0,
+    "peak_alternating": 0
+  }
+}

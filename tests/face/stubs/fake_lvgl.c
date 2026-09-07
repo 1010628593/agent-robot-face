@@ -53,3 +53,12 @@ void lv_obj_set_style_transform_pivot_x(lv_obj_t *p,int v,int s){(void)p;(void)v
 void lv_obj_set_style_transform_pivot_y(lv_obj_t *p,int v,int s){(void)p;(void)v;(void)s;}
 void lv_obj_set_style_transform_rotation(lv_obj_t *p,int v,int s){(void)s;p->rotation=v;}
 int lv_obj_get_style_transform_rotation(lv_obj_t *p,int s){(void)s;return p->rotation;}
+
+/* Compatibility for production dirty-region and capsule drawing APIs. */
+void lv_obj_invalidate_area(lv_obj_t *p,const lv_area_t *area){(void)area;lv_obj_invalidate(p);}
+lv_color_t lv_color_mix(lv_color_t a,lv_color_t b,uint8_t mix){
+    uint32_t out=0;
+    for(int shift=0;shift<=16;shift+=8)
+        out|=((((a>>shift)&255)*mix+((b>>shift)&255)*(255-mix))/255)<<shift;
+    return out;
+}
