@@ -1,0 +1,43 @@
+name: IMU integration validation
+on:
+  push:
+    branches: [feat/imu-face-interactions]
+  pull_request:
+    branches: [main, fix/face-gesture-coalesced-input]
+permissions:
+  contents: read
+concurrency:
+  group: imu-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Test existing source before integration
+        run: |
+          for suite in native face lvgl; do
+            cmake -S tests/$suite -B .build/$suite -DCMAKE_BUILD_TYPE=Debug
+            cmake --build .build/$suite --parallel 2 > .build/$suite-build.log 2>&1 || { tail -80 .build/$suite-build.log; exit 1; }
+            ctest --test-dir .build/$suite --output-on-failure
+          done
+      - name: Offline reproducibility bundle (source only, no credentials or git metadata)
+        run: |
+          git archive --format=tar HEAD firmware tests tools Bot_Status_v1_Handoff/contracts > .build/review-source.tar
+          tar --exclude=.git --exclude=examples --exclude=demos --exclude=docs --exclude=tests --exclude=.github -czf .build/lvgl-source.tar.gz -C .build/lvgl/_deps lvgl-src
+          git rev-parse HEAD > .build/source-commit.txt
+      - name: Save baseline logs and source snapshot
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: imu-baseline
+          path: |
+            .build/review-source.tar
+            .build/lvgl-source.tar.gz
+            .build/source-commit.txt
+            .build/*/Testing/Temporary/LastTest.log
+          include-hidden-files: true
+          retention-days: 2
