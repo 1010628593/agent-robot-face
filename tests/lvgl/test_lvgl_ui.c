@@ -1,5 +1,5 @@
-/* Real LVGL software renderer, production three-screen code, virtual hardware.
- * Each CTest case is a fresh process. No ESP-IDF, USB or Agent account access. */
+/* Real LVGL software rendering of production UI with virtual physical I/O.
+ * Each CTest scenario starts in a new process; account data remains SIM. */
 #ifdef NDEBUG
 #undef NDEBUG
 #endif
@@ -12,37 +12,31 @@
 static uint32_t clock_ms;
 static lv_display_t *display;
 static lv_indev_t *pointer;
-static lv_point_t contact = {233,233};
+static lv_point_t contact={233,233};
 static bool down;
-static uint32_t pixels[466][466];
-static uint32_t draw_buffer[466 * 32];
+static uint32_t pixels[466][466], draw_buffer[466*32];
 extern lv_obj_t *bot_ui_screen(void);
 static uint32_t get_clock(void) { return clock_ms; }
 lv_indev_t *bsp_display_get_input_dev(void) { return pointer; }
-static void read_pointer(lv_indev_t *dev, lv_indev_data_t *data)
+static void read_pointer(lv_indev_t *dev,lv_indev_data_t *data)
 {
-    (void)dev;
-    data->point=contact;
-    data->state=down ? LV_INDEV_STATE_PRESSED : LV_INDEV_STATE_RELEASED;
+    (void)dev;data->point=contact;
+    data->state=down?LV_INDEV_STATE_PRESSED:LV_INDEV_STATE_RELEASED;
     data->continue_reading=false;
 }
-static void flush(lv_display_t *dev, const lv_area_t *a, uint8_t *map)
+static void flush(lv_display_t *dev,const lv_area_t *a,uint8_t *map)
 {
     assert(a->x1>=0 && a->y1>=0 && a->x2<466 && a->y2<466);
     size_t width=(size_t)(a->x2-a->x1+1);
-    for(int y=a->y1;y<=a->y2;y++)
-        memcpy(&pixels[y][a->x1],map+(size_t)(y-a->y1)*width*4,width*4);
+    for(int y=a->y1;y<=a->y2;y++)memcpy(&pixels[y][a->x1],map+(size_t)(y-a->y1)*width*4,width*4);
     lv_display_flush_ready(dev);
 }
 static void tick(uint32_t elapsed)
 {
     for(uint32_t i=0;i<elapsed;i+=10) {
-        clock_ms+=10;
-        g_ui.sim_cycle_ms=clock_ms; /* Suppress only automatic demo state advances. */
-        lv_indev_read(pointer);
-        bot_ui_poll();
-        lv_obj_update_layout(bot_ui_screen());
-        lv_refr_now(display);
+        clock_ms+=10;g_ui.sim_cycle_ms=clock_ms;
+        lv_indev_read(pointer);bot_ui_poll();
+        lv_obj_update_layout(bot_ui_screen());lv_refr_now(display);
     }
 }
 static void tap(int x,int y)
@@ -58,10 +52,17 @@ static lv_obj_t *label(lv_obj_t *root,const char *text)
 {
     if(lv_obj_check_type(root,&lv_label_class) && !strcmp(lv_label_get_text(root),text))return root;
     for(uint32_t i=0;i<lv_obj_get_child_count(root);i++) {
-        lv_obj_t *found=label(lv_obj_get_child(root,(int32_t)i),text);
-        if(found)return found;
+        lv_obj_t *found=label(lv_obj_get_child(root,(int32_t)i),text);if(found)return found;
     }
     return NULL;
+}
+static void fits(lv_obj_t *root,const char *text)
+{
+    lv_obj_t *l=label(root,text);assert(l);
+    lv_point_t size;
+    lv_text_get_size(&size,text,lv_obj_get_style_text_font(l,0),
+        lv_obj_get_style_text_letter_space(l,0),0,10000,LV_TEXT_FLAG_NONE);
+    assert(size.x<=lv_obj_get_width(l) && size.y<=lv_obj_get_height(l));
 }
 static unsigned bars(lv_obj_t *root)
 {
@@ -98,24 +99,23 @@ static void set_state(uint8_t agent,bot_state_t state)
 }
 int main(int argc,char **argv)
 {
-    assert(argc==2);
-    lv_init();lv_tick_set_cb(get_clock);
+    assert(argc==2);lv_init();lv_tick_set_cb(get_clock);
     display=lv_display_create(466,466);assert(display);
     lv_display_set_color_format(display,LV_COLOR_FORMAT_XRGB8888);
     lv_display_set_buffers(display,draw_buffer,NULL,sizeof(draw_buffer),LV_DISPLAY_RENDER_MODE_PARTIAL);
     lv_display_set_flush_cb(display,flush);
     pointer=lv_indev_create();assert(pointer);
     lv_indev_set_type(pointer,LV_INDEV_TYPE_POINTER);lv_indev_set_read_cb(pointer,read_pointer);
-    bot_ui_init();tick(500);
-    lv_obj_t *root=bot_ui_screen();
+    bot_ui_init();tick(500);lv_obj_t *root=bot_ui_screen();
     if(!strcmp(argv[1],"smoke")) {
         assert(label(root,"SIM"));assert(lit(100,140,365,319)>1000);snapshot("face");
-        /* The first DOWN is sampled after 10ms; 660ms gives a full observed hold. */
+        /* First DOWN arrives at +10ms; this yields an observed 650ms hold. */
         contact=(lv_point_t){233,233};down=true;tick(660);down=false;tick(50);
         assert(g_ui.screen==BOT_SCR_PICKER);snapshot("picker");
         tap(233,233);assert(g_ui.screen==BOT_SCR_FACE);
         swipe(310,233,200,233);assert(g_ui.screen==BOT_SCR_STATS);snapshot("usage");
-        swipe(233,300,233,190);assert(g_ui.stats_tab==1);snapshot("quota");
+        swipe(233,300,233,190);assert(g_ui.stats_tab==1);
+        fits(root,"SHORT WINDOW");fits(root,"LONG WINDOW");fits(root,"73% LEFT");snapshot("quota");
         swipe(190,233,310,233);assert(g_ui.screen==BOT_SCR_FACE);
         set_state(BOT_AGENT_CODEX,BOT_STATE_DONE);tick(1800);snapshot("done");
         set_state(BOT_AGENT_CODEX,BOT_STATE_ERROR);tick(800);snapshot("error");
@@ -128,36 +128,31 @@ int main(int argc,char **argv)
         swipe(233,190,233,300);assert(label(root,"USAGE") && !label(root,"QUOTA"));
     } else if(!strcmp(argv[1],"quota_unknown")) {
         show_stats(BOT_AGENT_WORKBUDDY,1);assert(label(root,"N/A"));assert(bars(root)==0);snapshot("quota-na");
-        show_stats(BOT_AGENT_HERMES,1);assert(label(root,"UNLIMITED"));assert(bars(root)==0);snapshot("quota-unlimited");
-        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=-1;
-        g_ui.agents[BOT_AGENT_CODEX].quota[1].label="";
+        show_stats(BOT_AGENT_HERMES,1);fits(root,"UNLIMITED");assert(bars(root)==0);snapshot("quota-unlimited");
+        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=-1;g_ui.agents[BOT_AGENT_CODEX].quota[1].label="";
         show_stats(BOT_AGENT_CODEX,1);assert(label(root,"N/A") && bars(root)==0);
     } else if(!strcmp(argv[1],"quota_full")) {
-        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=100;
-        g_ui.agents[BOT_AGENT_CODEX].quota[1].label="";
+        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=100;g_ui.agents[BOT_AGENT_CODEX].quota[1].label="";
         show_stats(BOT_AGENT_CODEX,1);assert(label(root,"0% LEFT") && !label(root,"OVER"));
-        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=101;
-        show_stats(BOT_AGENT_CODEX,1);assert(label(root,"OVER"));
+        g_ui.agents[BOT_AGENT_CODEX].quota[0].used_pct=101;show_stats(BOT_AGENT_CODEX,1);assert(label(root,"OVER"));
     } else if(!strcmp(argv[1],"picker_target")) {
         g_ui.picker_return=BOT_SCR_FACE;g_ui.picker_preview=BOT_AGENT_CURSOR;
         g_ui.screen=BOT_SCR_PICKER;bot_ui_show_picker();tick(50);
         tap(50,225);assert(g_ui.screen==BOT_SCR_PICKER && g_ui.selected==BOT_AGENT_CODEX);
         tap(233,75);assert(g_ui.screen==BOT_SCR_PICKER);
-        /* Starting outside and drifting inside is not a deliberate confirmation. */
         contact=(lv_point_t){158,200};down=true;tick(20);
         contact=(lv_point_t){164,200};down=false;tick(20);assert(g_ui.screen==BOT_SCR_PICKER);
         tap(233,233);assert(g_ui.screen==BOT_SCR_FACE && g_ui.selected==BOT_AGENT_CURSOR);
     } else if(!strcmp(argv[1],"terminal_resume")) {
-        set_state(BOT_AGENT_CODEX,BOT_STATE_DONE);tick(2000);
-        assert(lit(150,250,187,275)==0); /* smile has no lower pill body */
-        g_ui.selected=BOT_AGENT_CURSOR;set_state(BOT_AGENT_CURSOR,BOT_STATE_IDLE);tick(500);
-        assert(lit(150,250,187,275)>100);
-        g_ui.selected=BOT_AGENT_CODEX;tick(100);
-        assert(lit(150,250,187,275)==0); /* selection must not replay the old DONE */
+        set_state(BOT_AGENT_CODEX,BOT_STATE_DONE);tick(2000);assert(lit(150,250,187,275)==0);
+        /* ERROR has no blink that could accidentally conceal a replayed transition. */
+        g_ui.selected=BOT_AGENT_CURSOR;set_state(BOT_AGENT_CURSOR,BOT_STATE_ERROR);tick(1000);
+        assert(lit(150,250,187,275)>10);
+        g_ui.selected=BOT_AGENT_CODEX;tick(100);assert(lit(150,250,187,275)==0);
     } else if(!strcmp(argv[1],"terminal_hidden")) {
         show_stats(BOT_AGENT_CODEX,0);set_state(BOT_AGENT_CODEX,BOT_STATE_DONE);tick(2000);
         swipe(190,233,310,233);assert(g_ui.screen==BOT_SCR_FACE);
-        assert(lit(150,250,187,275)==0); /* event age advances while Stats is visible */
+        assert(lit(150,250,187,275)==0);
     } else if(!strcmp(argv[1],"cycling")) {
         for(unsigned i=0;i<100;i++) {
             show_stats(i%BOT_AGENT_COUNT,i%2);

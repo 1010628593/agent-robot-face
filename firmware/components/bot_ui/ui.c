@@ -147,7 +147,6 @@ static void apply_effect(bot_effect_t e)
 }
 static bool picker_center(int16_t x, int16_t y)
 {
-    /* Matches the central 144x144 card in picker.c, not the whole screen. */
     return x >= 161 && x < 305 && y >= 154 && y < 298;
 }
 static void touch_pump(uint32_t now)
@@ -200,6 +199,7 @@ void bot_ui_poll(void)
     uint32_t now=now_ms();
     touch_pump(now);
     sim_tick(now);
+    face_sync(now);
     if (g_ui.screen == BOT_SCR_FACE) face_tick(now);
 }
 lv_obj_t *bot_ui_screen(void) { return s_screen; }

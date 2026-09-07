@@ -1,7 +1,7 @@
 name: Host UI regression
 on:
   push:
-    branches: [main, fix/face-gesture-coalesced-input]
+    branches: [main]
   pull_request:
     branches: [main]
 permissions:
@@ -13,6 +13,26 @@ jobs:
   host:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: gcc
+            cc: gcc
+            cxx: g++
+            flags: ''
+          - variant: clang-sanitized
+            cc: clang
+            cxx: clang++
+            flags: '-fsanitize=address,undefined -fno-omit-frame-pointer'
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+      CFLAGS: ${{ matrix.flags }}
+      CXXFLAGS: ${{ matrix.flags }}
+      LDFLAGS: ${{ matrix.flags }}
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -42,7 +62,7 @@ jobs:
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: host-ui-evidence
+          name: host-ui-${{ matrix.variant }}
           path: |
             .build/*/Testing/Temporary/LastTest.log
             .build/lvgl-build.log
