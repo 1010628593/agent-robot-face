@@ -109,7 +109,6 @@ int main(int argc,char **argv)
     bot_ui_init();tick(500);lv_obj_t *root=bot_ui_screen();
     if(!strcmp(argv[1],"smoke")) {
         assert(label(root,"SIM"));assert(lit(100,140,365,319)>1000);snapshot("face");
-        /* First DOWN arrives at +10ms; this yields an observed 650ms hold. */
         contact=(lv_point_t){233,233};down=true;tick(660);down=false;tick(50);
         assert(g_ui.screen==BOT_SCR_PICKER);snapshot("picker");
         tap(233,233);assert(g_ui.screen==BOT_SCR_FACE);
@@ -145,7 +144,6 @@ int main(int argc,char **argv)
         tap(233,233);assert(g_ui.screen==BOT_SCR_FACE && g_ui.selected==BOT_AGENT_CURSOR);
     } else if(!strcmp(argv[1],"terminal_resume")) {
         set_state(BOT_AGENT_CODEX,BOT_STATE_DONE);tick(2000);assert(lit(150,250,187,275)==0);
-        /* ERROR has no blink that could accidentally conceal a replayed transition. */
         g_ui.selected=BOT_AGENT_CURSOR;set_state(BOT_AGENT_CURSOR,BOT_STATE_ERROR);tick(1000);
         assert(lit(150,250,187,275)>10);
         g_ui.selected=BOT_AGENT_CODEX;tick(100);assert(lit(150,250,187,275)==0);
@@ -162,5 +160,13 @@ int main(int argc,char **argv)
             set_state(g_ui.selected,(bot_state_t)(i%8));tick(300);
         }
     } else {fprintf(stderr,"Unknown case: %s\n",argv[1]);return 2;}
-    puts("PASS real LVGL UI scenario");lv_deinit();return 0;
+    /* Release owned devices using their correctly typed APIs before global
+     * teardown. This also exercises actual widget deletion callbacks. */
+    lv_indev_delete(pointer);
+    pointer=NULL;
+    lv_display_delete(display);
+    display=NULL;
+    lv_deinit();
+    puts("PASS real LVGL UI scenario");
+    return 0;
 }
