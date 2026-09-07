@@ -11,6 +11,20 @@ FetchContent_Declare(lvgl
     GIT_REPOSITORY https://github.com/lvgl/lvgl.git
     GIT_TAG c016f72d4c125098287be5e83c0f1abed4706ee5)
 FetchContent_MakeAvailable(lvgl)
+
+# OFF by default. The pinned upstream mask dispatcher uses a cast callback.
+# This exception applies ONLY to function-type UBSan at that LVGL callsite;
+# not to application code, memory checking or any other UB check. See README.
+option(BOT_LVGL_MASK_CALLBACK_COMPAT "Allow documented LVGL 9.4 callback sanitizer exception" OFF)
+if(BOT_LVGL_MASK_CALLBACK_COMPAT)
+    if(NOT CMAKE_C_COMPILER_ID MATCHES "Clang")
+        message(FATAL_ERROR "LVGL callback compatibility is a Clang-only test option")
+    endif()
+    message(WARNING "LVGL 9.4: known mask callback function-type check excluded; see tests/lvgl/README.md")
+    target_compile_options(lvgl PRIVATE
+        "-fsanitize-ignorelist=${CMAKE_CURRENT_SOURCE_DIR}/lvgl-ubsan.ignore")
+endif()
+
 set(UI "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_ui")
 set(CORE "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_core")
 add_executable(test_lvgl_ui test_lvgl_ui.c

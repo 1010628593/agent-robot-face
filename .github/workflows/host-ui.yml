@@ -21,10 +21,12 @@ jobs:
             cc: gcc
             cxx: g++
             flags: ''
+            lvgl_compat: 'OFF'
           - variant: clang-sanitized
             cc: clang
             cxx: clang++
             flags: '-fsanitize=address,undefined -fno-omit-frame-pointer'
+            lvgl_compat: 'ON'
     env:
       CC: ${{ matrix.cc }}
       CXX: ${{ matrix.cxx }}
@@ -51,7 +53,7 @@ jobs:
       - name: Build against pinned real LVGL 9.4
         if: ${{ !cancelled() }}
         run: |
-          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug
+          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug -DBOT_LVGL_MASK_CALLBACK_COMPAT=${{ matrix.lvgl_compat }}
           cmake --build .build/lvgl --parallel 2 > .build/lvgl-build.log 2>&1 || { tail -80 .build/lvgl-build.log; exit 1; }
       - name: Render and exercise actual three-screen UI
         if: ${{ !cancelled() }}
