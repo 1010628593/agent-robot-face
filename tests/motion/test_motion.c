@@ -93,12 +93,33 @@ static void test_time_wrap(void) {
         assert(fabsf(bot_motion_wrap(x.rotation_deg-y.rotation_deg))<.01f);
     }
 }
+static void test_mount_and_tilt(void) {
+    bot_motion_t m;bot_motion_init(&m,90,-1);
+    bot_motion_sample_t s={.ms=1,.accel={1,0,0}};assert(bot_motion_feed(&m,&s));
+    assert(fabsf(bot_motion_view(&m,1).rotation_deg)<.1f);
+    setup(&m);
+    for(int i=1;i<=100;i++) {
+        float theta=(float)i*.9f*PI/180;
+        now+=10;s=(bot_motion_sample_t){.ms=now,.accel={0,-cosf(theta),sinf(theta)},.gyro={90,0,0}};
+        assert(bot_motion_feed(&m,&s));assert(bot_motion_view(&m,now).reaction!=BOT_REACTION_DIZZY);
+    }
+    assert(bot_motion_view(&m,now).flat);
+}
+static void test_gap_and_direction(void) {
+    bot_motion_t m;setup(&m);
+    for(int i=0;i<6;i++)pulse(&m,.9f);
+    assert(bot_motion_view(&m,now).reaction!=BOT_REACTION_DIZZY);
+    rest(&m,100);pulse(&m,.9f);pulse(&m,-.9f);
+    now+=400;rest(&m,1);pulse(&m,.9f);
+    assert(bot_motion_view(&m,now).reaction!=BOT_REACTION_DIZZY);
+    rest(&m,80);assert(bot_motion_view(&m,now).available);
+}
 static void test_inverse(void) {
     int16_t x,y;bot_motion_unrotate(90,233,296,&x,&y);assert(abs(x-296)<=1 && abs(y-233)<=1);
     bot_motion_unrotate(-90,233,170,&x,&y);assert(abs(x-296)<=1 && abs(y-233)<=1);
 }
 int main(void) {
     test_upright();test_rotation();test_flat_and_stale();test_shake();
-    test_continuous_shake_cannot_rearm();test_bad_samples();test_bias();test_time_wrap();test_inverse();
-    puts("motion: 9 test groups passed");return 0;
+    test_continuous_shake_cannot_rearm();test_bad_samples();test_bias();test_time_wrap();test_inverse();test_mount_and_tilt();test_gap_and_direction();
+    puts("motion: 11 test groups passed");return 0;
 }

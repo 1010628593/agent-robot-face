@@ -9,8 +9,10 @@ static float signed_word(const uint8_t *b) {
     return n>=32768?(float)((int32_t)n-65536):(float)n;
 }
 bot_qmi_result_t bot_qmi_init(bot_qmi_t *q,bot_qmi_bus_t bus) {
-    if(!q || !bus.read || !bus.write)return BOT_QMI_CONFIG;
-    memset(q,0,sizeof(*q));q->bus=bus;uint8_t id=0;
+    if(!q)return BOT_QMI_CONFIG;
+    memset(q,0,sizeof(*q));
+    if(!bus.read || !bus.write)return BOT_QMI_CONFIG;
+    q->bus=bus;uint8_t id=0;
     if(bus.read(bus.ctx,0,&id,1))return BOT_QMI_IO;
     if(id!=BOT_QMI_WHOAMI)return BOT_QMI_ID;
     /* Disabled -> little endian + auto increment -> +-4g / +-1024dps.

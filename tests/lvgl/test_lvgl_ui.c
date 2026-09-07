@@ -200,6 +200,19 @@ int main(int argc,char **argv)
         show_stats(BOT_AGENT_CODEX,0);motion_event_id=2;motion_event_ms=clock_ms;tick(200);
         g_ui.screen=BOT_SCR_FACE;bot_ui_show_face();tick(300);
         assert((pixels[233][170]&0xffffff)!=0); /* hidden reaction was consumed */
+    } else if(!strcmp(argv[1],"motion_preview")) {
+        /* Reproducible code-rendered frames, not hardware data or a new UI. */
+        set_state(BOT_AGENT_CODEX,BOT_STATE_IDLE);tick(250);
+        motion_enabled=true;motion_reaction=BOT_REACTION_NONE;
+        for(unsigned f=0;f<60;f++) {
+            motion_angle=f<30?(float)f*3:(float)(60-f)*3;
+            tick(40);char name[48];snprintf(name,sizeof(name),"level-%03u",f);snapshot(name);
+        }
+        motion_angle=0;tick(500);motion_reaction=BOT_REACTION_DIZZY;
+        motion_event_ms=clock_ms;motion_event_id=1;
+        for(unsigned f=0;f<70;f++) {
+            tick(40);char name[48];snprintf(name,sizeof(name),"dizzy-%03u",f);snapshot(name);
+        }
     } else {fprintf(stderr,"Unknown case: %s\n",argv[1]);return 2;}
     /* Release owned devices using their correctly typed APIs before global
      * teardown. This also exercises actual widget deletion callbacks. */

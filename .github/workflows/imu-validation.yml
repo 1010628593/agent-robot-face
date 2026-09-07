@@ -80,8 +80,10 @@ jobs:
           cp firmware/dependencies.lock /tmp/bot-dependencies.before
           idf.py -C firmware -B build-imu build > idf-imu.log 2>&1 || { tail -120 idf-imu.log; exit 1; }
           cmp firmware/dependencies.lock /tmp/bot-dependencies.before
+          grep '^CONFIG_BOT_IMU_ENABLE=y' firmware/sdkconfig
+          grep '^CONFIG_BOT_IMU_' firmware/sdkconfig
           tail -25 idf-imu.log
-          find firmware/build-imu -maxdepth 1 -name '*.bin' -exec sha256sum {} \;
+          sha256sum build-imu/bot_status.bin | tee idf-imu.sha256
       - name: Preserve build log (no hardware flashing)
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -89,6 +91,7 @@ jobs:
           name: imu-idf61-build
           path: |
             idf-imu.log
-            firmware/build-imu/project_description.json
-            firmware/build-imu/size.json
+            idf-imu.sha256
+            build-imu/project_description.json
+            build-imu/size.json
           retention-days: 7
