@@ -2,6 +2,7 @@
  * UI-owner context only. No hardware, model, permission or account writes. */
 #include "bot_face.h"
 #include "bot_face_geometry.h"
+#include "bot_face_reaction.h"
 #include "bot_ui.h"
 #include <math.h>
 
@@ -17,10 +18,33 @@ static bot_face_geometry_t s_geometry, s_next_geometry;
 static bool s_have_frame;
 static uint32_t s_frame_ms;
 static uint8_t s_surface_agent;
+static bot_motion_view_t s_environment;
+static uint32_t s_suppressed_event;
+static float s_rotation, s_contact_rotation;
+static bool s_contact;
+static bool environment_fresh(uint32_t now) {
+    return s_environment.available && now-s_environment.sampled_ms<=BOT_MOTION_STALE_MS;
+}
+void face_set_motion(const bot_motion_view_t *v) {
+    if(!v) {s_environment.available=false;return;}
+    s_environment=*v;
+    if(!isfinite(v->rotation_deg) || v->reaction>BOT_REACTION_DIZZY) {
+        s_environment.available=false;s_environment.reaction=BOT_REACTION_NONE;
+    }
+}
+void face_map_input(bool pressed,int16_t x,int16_t y,int16_t *ox,int16_t *oy) {
+    if(pressed && !s_contact)s_contact_rotation=s_rotation;
+    /* Use the same frozen matrix for DOWN, MOVE and final UP. */
+    bot_motion_unrotate(s_contact?s_contact_rotation:s_rotation,x,y,ox,oy);
+    s_contact=pressed;
+}
 static int32_t px(float v) { return (int32_t)lroundf(v); }
 
 void face_sync(uint32_t now)
 {
+    if(g_ui.selected>=BOT_AGENT_COUNT || g_ui.screen!=BOT_SCR_FACE ||
+       !bot_face_reaction_allowed(g_ui.agents[g_ui.selected].state) || !environment_fresh(now))
+        s_suppressed_event=s_environment.event_id;
     for (unsigned i=0;i<BOT_AGENT_COUNT;i++) {
         face_track_t *t=&s_tracks[i];
         const bot_sim_agent_t *a=&g_ui.agents[i];
@@ -112,6 +136,19 @@ void face_tick(uint32_t now)
     s_frame_ms=now-elapsed%BOT_FACE_FRAME_MS;
     bot_face_pose_t pose;
     bot_face_motion_sample(&s_tracks[s_surface_agent].motion,now,&pose);
+    if(s_environment.event_id!=s_suppressed_event)
+        bot_face_reaction_apply(&s_environment,g_ui.agents[s_surface_agent].state,now,&pose);
+    /* LVGL transforms only the bounded face surface; root/text pages are not
+     * continuously rotated. Its invalidation includes old/new transformed bounds. */
+    if(!s_contact && environment_fresh(now) && s_environment.orientation_valid) {
+        float delta=bot_motion_wrap(s_environment.rotation_deg-s_rotation);
+        float dt=fminf((float)elapsed/1000,.05f),limit=240*dt;
+        s_rotation=bot_motion_wrap(s_rotation+fmaxf(-limit,fminf(limit,delta)));
+    }
+    int32_t angle=(int32_t)lroundf(s_rotation*10);
+    if(angle<0)angle+=3600;
+    if(lv_obj_get_style_transform_rotation(s_surface,0)!=angle)
+        lv_obj_set_style_transform_rotation(s_surface,angle,0);
     bot_face_geometry_build(&pose,&s_next_geometry);
     if(!s_have_frame || !same_geometry(&s_next_geometry,&s_geometry)) {
         s_geometry=s_next_geometry;s_have_frame=true;
@@ -127,6 +164,10 @@ void face_build(lv_obj_t *screen)
     lv_obj_remove_style_all(s_surface);
     lv_obj_set_pos(s_surface,BOT_FACE_AREA_X,BOT_FACE_AREA_Y);
     lv_obj_set_size(s_surface,BOT_FACE_AREA_W,BOT_FACE_AREA_H);
+    lv_obj_set_style_transform_pivot_x(s_surface,233-BOT_FACE_AREA_X,0);
+    lv_obj_set_style_transform_pivot_y(s_surface,233-BOT_FACE_AREA_Y,0);
+    int32_t angle=(int32_t)lroundf(s_rotation*10);if(angle<0)angle+=3600;
+    lv_obj_set_style_transform_rotation(s_surface,angle,0);
     lv_obj_set_style_bg_color(s_surface,lv_color_hex(0),0);
     lv_obj_set_style_bg_opa(s_surface,LV_OPA_COVER,0);
     lv_obj_remove_flag(s_surface,LV_OBJ_FLAG_SCROLLABLE|LV_OBJ_FLAG_CLICKABLE);
@@ -142,4 +183,5 @@ void face_touch(bool pressed,int16_t x,int16_t y,float hold,uint32_t now)
 void face_suspend(uint32_t now)
 {
     face_touch(false,233,233,0,now);
+    s_contact=false;
 }

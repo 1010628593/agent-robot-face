@@ -10,12 +10,16 @@
 #include "lvgl.h"
 
 #include "bot_ui.h"
+#include "bot_imu.h"
 
 static const char *TAG = "bot_status";
 
 static void ui_timer_cb(lv_timer_t *t)
 {
     (void)t;
+    bot_motion_view_t motion;
+    bot_imu_latest(lv_tick_get(),&motion);
+    bot_ui_set_motion(&motion);
     bot_ui_poll();
 }
 
@@ -29,6 +33,8 @@ void app_main(void)
     /* design/ui_tokens.json brightness_percent.normal = 28 */
     bsp_display_brightness_set(28);
 
+    esp_err_t imu_ret=bot_imu_start();
+    if(imu_ret!=ESP_OK)ESP_LOGW(TAG,"motion service unavailable: %s",esp_err_to_name(imu_ret));
     esp_err_t lock_ret = bsp_display_lock((uint32_t)-1);
     if (lock_ret == ESP_OK) {
         bot_ui_init();

@@ -1,0 +1,97 @@
+name: IMU integration validation
+on:
+  push:
+    branches: [feat/imu-face-interactions]
+  pull_request:
+    branches: [main, fix/face-gesture-coalesced-input]
+permissions:
+  contents: read
+concurrency:
+  group: imu-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: gcc
+            cc: gcc
+            cxx: g++
+            flags: ''
+            compat: 'OFF'
+          - variant: clang-sanitized
+            cc: clang
+            cxx: clang++
+            flags: '-fsanitize=address,undefined -fno-omit-frame-pointer'
+            compat: 'ON'
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+      CFLAGS: ${{ matrix.flags }}
+      CXXFLAGS: ${{ matrix.flags }}
+      LDFLAGS: ${{ matrix.flags }}
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Core, motion and face tests
+        run: |
+          for suite in native motion face; do
+            cmake -S tests/$suite -B .build/$suite -DCMAKE_BUILD_TYPE=Debug
+            cmake --build .build/$suite --parallel 2
+            ctest --test-dir .build/$suite --output-on-failure
+          done
+      - name: Real LVGL integration and snapshots
+        run: |
+          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug -DBOT_LVGL_MASK_CALLBACK_COMPAT=${{ matrix.compat }}
+          cmake --build .build/lvgl --parallel 2 > .build/lvgl-build.log 2>&1 || { tail -80 .build/lvgl-build.log; exit 1; }
+          mkdir -p .build/snapshots
+          BOT_SNAPSHOT_DIR="$PWD/.build/snapshots" ctest --test-dir .build/lvgl --output-on-failure
+      - name: Preserve verification evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: imu-host-${{ matrix.variant }}
+          path: |
+            .build/*/Testing/Temporary/LastTest.log
+            .build/lvgl-build.log
+            .build/snapshots/*.ppm
+          include-hidden-files: true
+          retention-days: 7
+  firmware:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    container:
+      image: espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Compile only using the pinned IDF and component lock
+        shell: bash
+        run: |
+          . /opt/esp/idf/export.sh
+          idf.py --version
+          cp firmware/dependencies.lock /tmp/bot-dependencies.before
+          idf.py -C firmware -B build-imu build > idf-imu.log 2>&1 || { tail -120 idf-imu.log; exit 1; }
+          cmp firmware/dependencies.lock /tmp/bot-dependencies.before
+          grep '^CONFIG_BOT_IMU_ENABLE=y' firmware/sdkconfig
+          grep '^CONFIG_BOT_IMU_' firmware/sdkconfig
+          tail -25 idf-imu.log
+          sha256sum build-imu/bot_status.bin | tee idf-imu.sha256
+      - name: Preserve build log (no hardware flashing)
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: imu-idf61-build
+          path: |
+            idf-imu.log
+            idf-imu.sha256
+            build-imu/project_description.json
+            build-imu/size.json
+          retention-days: 7

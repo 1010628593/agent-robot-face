@@ -4,6 +4,7 @@
 #undef NDEBUG
 #endif
 #include "bot_ui.h"
+#include "bot_face.h"
 #include "lvgl.h"
 #include <assert.h>
 #include <stdio.h>
@@ -14,6 +15,10 @@ static lv_display_t *display;
 static lv_indev_t *pointer;
 static lv_point_t contact={233,233};
 static bool down;
+static bool motion_enabled;
+static float motion_angle;
+static uint32_t motion_event_ms,motion_event_id;
+static bot_reaction_t motion_reaction;
 static uint32_t pixels[466][466], draw_buffer[466*32];
 extern lv_obj_t *bot_ui_screen(void);
 static uint32_t get_clock(void) { return clock_ms; }
@@ -35,6 +40,11 @@ static void tick(uint32_t elapsed)
 {
     for(uint32_t i=0;i<elapsed;i+=10) {
         clock_ms+=10;g_ui.sim_cycle_ms=clock_ms;
+        if(motion_enabled) {
+            bot_motion_view_t v={.available=true,.orientation_valid=true,.sampled_ms=clock_ms,
+                .rotation_deg=motion_angle,.reaction=motion_reaction,.event_ms=motion_event_ms,.event_id=motion_event_id};
+            bot_ui_set_motion(&v);
+        }
         lv_indev_read(pointer);bot_ui_poll();
         lv_obj_update_layout(bot_ui_screen());lv_refr_now(display);
     }
@@ -97,6 +107,13 @@ static void set_state(uint8_t agent,bot_state_t state)
 {
     g_ui.agents[agent].state=state;g_ui.agents[agent].transition_id++;
 }
+static lv_obj_t *surface(lv_obj_t *root) {
+    for(uint32_t i=0;i<lv_obj_get_child_count(root);i++) {
+        lv_obj_t *o=lv_obj_get_child(root,(int32_t)i);
+        if(lv_obj_get_width(o)==322 && lv_obj_get_height(o)==244)return o;
+    }
+    assert(!"face surface missing");return NULL;
+}
 int main(int argc,char **argv)
 {
     assert(argc==2);lv_init();lv_tick_set_cb(get_clock);
@@ -158,6 +175,43 @@ int main(int argc,char **argv)
             g_ui.screen=BOT_SCR_PICKER;bot_ui_show_picker();tick(50);
             tap(233,233);assert(g_ui.screen==BOT_SCR_FACE);
             set_state(g_ui.selected,(bot_state_t)(i%8));tick(300);
+        }
+    } else if(!strcmp(argv[1],"motion_rotation")) {
+        set_state(BOT_AGENT_CODEX,BOT_STATE_IDLE);tick(250);
+        motion_enabled=true;motion_angle=90;tick(600);
+        assert(lv_obj_get_style_transform_rotation(surface(root),0)==900);
+        assert(lit(140,210,160,256)==0 && lit(212,135,255,175)>200);snapshot("motion-90");
+        assert(label(root,"SIM"));
+        contact=(lv_point_t){233,296};down=true;tick(50);
+        motion_angle=-90;tick(300);
+        assert(lv_obj_get_style_transform_rotation(surface(root),0)==900);
+        down=false;tick(900);
+        assert(lv_obj_get_style_transform_rotation(surface(root),0)==2700);
+        motion_angle=45;tick(900);snapshot("motion-45");
+        motion_enabled=false;tick(500);
+        assert(lv_obj_get_style_transform_rotation(surface(root),0)==450);
+    } else if(!strcmp(argv[1],"motion_reaction")) {
+        motion_enabled=true;motion_reaction=BOT_REACTION_DIZZY;
+        motion_event_ms=clock_ms;motion_event_id=1;tick(500);snapshot("motion-dizzy");
+        assert(g_ui.agents[BOT_AGENT_CODEX].state==BOT_STATE_WORKING);
+        set_state(BOT_AGENT_CODEX,BOT_STATE_WAITING);tick(300);snapshot("motion-waiting-priority");
+        set_state(BOT_AGENT_CODEX,BOT_STATE_WORKING);tick(300);
+        assert((pixels[233][170]&0xffffff)!=0); /* no delayed dizzy pupil */
+        show_stats(BOT_AGENT_CODEX,0);motion_event_id=2;motion_event_ms=clock_ms;tick(200);
+        g_ui.screen=BOT_SCR_FACE;bot_ui_show_face();tick(300);
+        assert((pixels[233][170]&0xffffff)!=0); /* hidden reaction was consumed */
+    } else if(!strcmp(argv[1],"motion_preview")) {
+        /* Reproducible code-rendered frames, not hardware data or a new UI. */
+        set_state(BOT_AGENT_CODEX,BOT_STATE_IDLE);tick(250);
+        motion_enabled=true;motion_reaction=BOT_REACTION_NONE;
+        for(unsigned f=0;f<60;f++) {
+            motion_angle=f<30?(float)f*3:(float)(60-f)*3;
+            tick(40);char name[48];snprintf(name,sizeof(name),"level-%03u",f);snapshot(name);
+        }
+        motion_angle=0;tick(500);motion_reaction=BOT_REACTION_DIZZY;
+        motion_event_ms=clock_ms;motion_event_id=1;
+        for(unsigned f=0;f<70;f++) {
+            tick(40);char name[48];snprintf(name,sizeof(name),"dizzy-%03u",f);snapshot(name);
         }
     } else {fprintf(stderr,"Unknown case: %s\n",argv[1]);return 2;}
     /* Release owned devices using their correctly typed APIs before global

@@ -27,14 +27,27 @@ endif()
 
 set(UI "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_ui")
 set(CORE "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_core")
+set(MOTION "${CMAKE_CURRENT_SOURCE_DIR}/../../firmware/components/bot_motion")
 add_executable(test_lvgl_ui test_lvgl_ui.c
-    ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c
+    ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
     ${UI}/picker.c ${UI}/stats.c ${CORE}/gesture.c ${CORE}/bot_router.c)
 target_include_directories(test_lvgl_ui PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include)
+    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include)
 target_compile_options(test_lvgl_ui PRIVATE -Wall -Wextra -Werror)
 target_link_libraries(test_lvgl_ui PRIVATE lvgl::lvgl m)
 enable_testing()
-foreach(case smoke stats_tab quota_unknown quota_full picker_target terminal_resume terminal_hidden cycling)
+foreach(case smoke stats_tab quota_unknown quota_full picker_target terminal_resume terminal_hidden cycling motion_rotation motion_reaction)
     add_test(NAME lvgl_${case} COMMAND test_lvgl_ui ${case})
+endforeach()
+
+# Exercise inverse touch mapping through real UI routing, not only math helpers.
+add_executable(test_motion_input test_motion_input.c
+    ${UI}/ui.c ${UI}/face.c ${UI}/face_motion.c ${UI}/face_geometry.c ${UI}/face_reaction.c ${MOTION}/bot_motion.c
+    ${UI}/picker.c ${UI}/stats.c ${CORE}/gesture.c ${CORE}/bot_router.c)
+target_include_directories(test_motion_input PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR} ${UI}/include ${CORE}/include ${MOTION}/include)
+target_compile_options(test_motion_input PRIVATE -Wall -Wextra -Werror)
+target_link_libraries(test_motion_input PRIVATE lvgl::lvgl m)
+foreach(case navigation contact stale)
+    add_test(NAME lvgl_motion_input_${case} COMMAND test_motion_input ${case})
 endforeach()
