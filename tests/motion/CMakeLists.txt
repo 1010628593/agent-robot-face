@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.20)
+project(bot_motion_tests C)
+set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+add_compile_options(-Wall -Wextra -Werror)
+set(ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+add_library(bot_motion STATIC ${ROOT}/firmware/components/bot_motion/bot_motion.c)
+target_include_directories(bot_motion PUBLIC ${ROOT}/firmware/components/bot_motion/include)
+target_link_libraries(bot_motion PUBLIC m)
+add_executable(test_motion test_motion.c)
+target_link_libraries(test_motion PRIVATE bot_motion)
+add_executable(test_qmi test_qmi.c ${ROOT}/firmware/components/bot_imu/bot_qmi8658.c)
+target_include_directories(test_qmi PRIVATE ${ROOT}/firmware/components/bot_imu/include)
+target_link_libraries(test_qmi PRIVATE bot_motion)
+enable_testing()
+add_test(NAME motion COMMAND test_motion)
+add_test(NAME qmi COMMAND test_qmi)
+
+add_executable(test_reaction test_reaction.c
+    ${ROOT}/firmware/components/bot_ui/face_motion.c
+    ${ROOT}/firmware/components/bot_ui/face_reaction.c)
+target_include_directories(test_reaction PRIVATE
+    ${ROOT}/firmware/components/bot_ui/include ${ROOT}/firmware/components/bot_core/include)
+target_link_libraries(test_reaction PRIVATE bot_motion)
+add_test(NAME reaction COMMAND test_reaction)

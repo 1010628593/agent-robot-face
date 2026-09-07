@@ -155,6 +155,10 @@ static void touch_pump(uint32_t now)
     lv_point_t p={0,0};
     lv_indev_get_point(s_indev, &p);
     bool pressed=lv_indev_get_state(s_indev)==LV_INDEV_STATE_PRESSED;
+    if(g_ui.screen==BOT_SCR_FACE) {
+        int16_t x,y;face_map_input(pressed,(int16_t)p.x,(int16_t)p.y,&x,&y);
+        p.x=x;p.y=y;
+    }
     bot_gesture_kind_t ev=BOT_GESTURE_NONE;
     if (pressed && !s_was_pressed) {
         ev=bot_gesture_feed(&s_gesture, BOT_TOUCH_DOWN, now, (int16_t)p.x, (int16_t)p.y);
@@ -194,6 +198,7 @@ void bot_ui_init(void)
     lv_scr_load(s_screen);
     bot_ui_show_face();
 }
+void bot_ui_set_motion(const bot_motion_view_t *view) { face_set_motion(view); }
 void bot_ui_poll(void)
 {
     uint32_t now=now_ms();
@@ -205,7 +210,7 @@ void bot_ui_poll(void)
 lv_obj_t *bot_ui_screen(void) { return s_screen; }
 void bot_ui_show_face(void)
 {
-    lv_obj_clean(s_screen);sim_badge(s_screen);face_build(s_screen);
+    lv_obj_clean(s_screen);face_build(s_screen);sim_badge(s_screen);
 }
 void bot_ui_show_picker(void)
 {

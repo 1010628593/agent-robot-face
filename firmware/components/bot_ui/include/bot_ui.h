@@ -14,6 +14,7 @@
 #include <stdint.h>
 
 #include "bot_gesture.h"
+#include "bot_motion.h"
 #include "bot_router.h"
 #include "bot_types.h"
 
@@ -63,6 +64,8 @@ extern bot_ui_model_t g_ui;
 
 /* Called once with the LVGL lock held (after bsp_display_start). */
 void bot_ui_init(void);
+/* Called by the UI owner only; the sensor thread publishes via its mailbox. */
+void bot_ui_set_motion(const bot_motion_view_t *view);
 
 /* Called every ~10 ms with the LVGL lock held: pumps touch samples into the
  * gesture FSM, applies router effects, drives animations and the SIM cycler. */

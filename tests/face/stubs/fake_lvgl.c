@@ -48,3 +48,8 @@ lv_obj_t *fake_find_label(const char *text){
     for(unsigned i=0;i<next;i++)if(objects[i].alive && !strcmp(objects[i].text,text))return &objects[i];
     return NULL;
 }
+
+void lv_obj_set_style_transform_pivot_x(lv_obj_t *p,int v,int s){(void)p;(void)v;(void)s;}
+void lv_obj_set_style_transform_pivot_y(lv_obj_t *p,int v,int s){(void)p;(void)v;(void)s;}
+void lv_obj_set_style_transform_rotation(lv_obj_t *p,int v,int s){(void)s;p->rotation=v;}
+int lv_obj_get_style_transform_rotation(lv_obj_t *p,int s){(void)s;return p->rotation;}

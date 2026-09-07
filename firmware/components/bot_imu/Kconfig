@@ -1,0 +1,25 @@
+menu "Bot motion interactions"
+    config BOT_IMU_ENABLE
+        bool "Enable optional QMI8658 motion service"
+        default y
+        help
+            WHO_AM_I is verified before sensor-only writes. Missing sensor
+            disables motion; it must not interrupt display or touch.
+    config BOT_IMU_MOUNT_DEG
+        int "Sensor gravity angle when face is physically upright (degrees)"
+        range -180 180
+        default 0
+        help
+            atan2(accel_x, -accel_y) in degrees, measured at rest with the
+            screen upright. This board mounting value needs a local check;
+            zero is a reference convention, NOT verified hardware alignment.
+    config BOT_IMU_REVERSE_ROTATION
+        bool "Reverse face compensation for opposite PCB/sensor normal"
+        default n
+        help
+            Enable only if the mounting-axis check shows compensation moves
+            in the same physical direction as the enclosure.
+    config BOT_IMU_DIAGNOSTICS
+        bool "Log six-axis samples and orientation at most once per second"
+        default n
+endmenu

@@ -10,34 +10,85 @@ concurrency:
   group: imu-${{ github.ref }}
   cancel-in-progress: true
 jobs:
-  baseline:
+  host:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: gcc
+            cc: gcc
+            cxx: g++
+            flags: ''
+            compat: 'OFF'
+          - variant: clang-sanitized
+            cc: clang
+            cxx: clang++
+            flags: '-fsanitize=address,undefined -fno-omit-frame-pointer'
+            compat: 'ON'
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+      CFLAGS: ${{ matrix.flags }}
+      CXXFLAGS: ${{ matrix.flags }}
+      LDFLAGS: ${{ matrix.flags }}
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
-      - name: Test existing source before integration
+      - name: Core, motion and face tests
         run: |
-          for suite in native face lvgl; do
+          for suite in native motion face; do
             cmake -S tests/$suite -B .build/$suite -DCMAKE_BUILD_TYPE=Debug
-            cmake --build .build/$suite --parallel 2 > .build/$suite-build.log 2>&1 || { tail -80 .build/$suite-build.log; exit 1; }
+            cmake --build .build/$suite --parallel 2
             ctest --test-dir .build/$suite --output-on-failure
           done
-      - name: Offline reproducibility bundle (source only, no credentials or git metadata)
+      - name: Real LVGL integration and snapshots
         run: |
-          git archive --format=tar HEAD firmware tests tools Bot_Status_v1_Handoff/contracts > .build/review-source.tar
-          tar --exclude=.git --exclude=examples --exclude=demos --exclude=docs --exclude=tests --exclude=.github -czf .build/lvgl-source.tar.gz -C .build/lvgl/_deps lvgl-src
-          git rev-parse HEAD > .build/source-commit.txt
-      - name: Save baseline logs and source snapshot
+          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug -DBOT_LVGL_MASK_CALLBACK_COMPAT=${{ matrix.compat }}
+          cmake --build .build/lvgl --parallel 2 > .build/lvgl-build.log 2>&1 || { tail -80 .build/lvgl-build.log; exit 1; }
+          mkdir -p .build/snapshots
+          BOT_SNAPSHOT_DIR="$PWD/.build/snapshots" ctest --test-dir .build/lvgl --output-on-failure
+      - name: Preserve verification evidence
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: imu-baseline
+          name: imu-host-${{ matrix.variant }}
           path: |
-            .build/review-source.tar
-            .build/lvgl-source.tar.gz
-            .build/source-commit.txt
             .build/*/Testing/Temporary/LastTest.log
+            .build/lvgl-build.log
+            .build/snapshots/*.ppm
           include-hidden-files: true
-          retention-days: 2
+          retention-days: 7
+  firmware:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    container:
+      image: espressif/idf:v6.1@sha256:81893c71bb5e570088901f21def8684c25cd2a9020281bd01b843a7655edb18c
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Compile only using the pinned IDF and component lock
+        shell: bash
+        run: |
+          . /opt/esp/idf/export.sh
+          idf.py --version
+          cp firmware/dependencies.lock /tmp/bot-dependencies.before
+          idf.py -C firmware -B build-imu build > idf-imu.log 2>&1 || { tail -120 idf-imu.log; exit 1; }
+          cmp firmware/dependencies.lock /tmp/bot-dependencies.before
+          tail -25 idf-imu.log
+          find firmware/build-imu -maxdepth 1 -name '*.bin' -exec sha256sum {} \;
+      - name: Preserve build log (no hardware flashing)
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: imu-idf61-build
+          path: |
+            idf-imu.log
+            firmware/build-imu/project_description.json
+            firmware/build-imu/size.json
+          retention-days: 7
