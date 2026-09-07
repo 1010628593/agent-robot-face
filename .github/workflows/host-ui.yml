@@ -1,0 +1,73 @@
+name: Host UI regression
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: host-ui-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - variant: gcc
+            cc: gcc
+            cxx: g++
+            flags: ''
+            lvgl_compat: 'OFF'
+          - variant: clang-sanitized
+            cc: clang
+            cxx: clang++
+            flags: '-fsanitize=address,undefined -fno-omit-frame-pointer'
+            lvgl_compat: 'ON'
+    env:
+      CC: ${{ matrix.cc }}
+      CXX: ${{ matrix.cxx }}
+      CFLAGS: ${{ matrix.flags }}
+      CXXFLAGS: ${{ matrix.flags }}
+      LDFLAGS: ${{ matrix.flags }}
+      ASAN_OPTIONS: detect_leaks=1:halt_on_error=1
+      UBSAN_OPTIONS: halt_on_error=1:print_stacktrace=1
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Native core regressions
+        run: |
+          cmake -S tests/native -B .build/native -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .build/native --parallel 2
+          ctest --test-dir .build/native --output-on-failure
+      - name: Face geometry and UI lifecycle regressions
+        if: ${{ !cancelled() }}
+        run: |
+          cmake -S tests/face -B .build/face -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .build/face --parallel 2
+          ctest --test-dir .build/face --output-on-failure
+      - name: Build against pinned real LVGL 9.4
+        if: ${{ !cancelled() }}
+        run: |
+          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug -DBOT_LVGL_MASK_CALLBACK_COMPAT=${{ matrix.lvgl_compat }}
+          cmake --build .build/lvgl --parallel 2 > .build/lvgl-build.log 2>&1 || { tail -80 .build/lvgl-build.log; exit 1; }
+      - name: Render and exercise actual three-screen UI
+        if: ${{ !cancelled() }}
+        run: |
+          mkdir -p .build/snapshots
+          BOT_SNAPSHOT_DIR="$PWD/.build/snapshots" ctest --test-dir .build/lvgl --output-on-failure
+      - name: Keep logs and software-rendered snapshots
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: host-ui-${{ matrix.variant }}
+          path: |
+            .build/*/Testing/Temporary/LastTest.log
+            .build/lvgl-build.log
+            .build/snapshots/*.ppm
+          include-hidden-files: true
+          retention-days: 7

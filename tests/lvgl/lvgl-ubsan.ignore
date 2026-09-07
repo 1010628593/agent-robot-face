@@ -1,0 +1,7 @@
+# Upstream LVGL 9.4.0 c016f72: lv_draw_sw_mask_apply calls typed mask callbacks
+# via a void*-parameter function pointer. Strict Clang UBSan reports this at
+# src/draw/sw/lv_draw_sw_mask.c:102. This is a documented upstream limitation,
+# NOT a claim that the cast is fixed or that strict UBSan is clean.
+# Limit the exception to this check and callsite, on the LVGL target only.
+[function]
+fun:lv_draw_sw_mask_apply

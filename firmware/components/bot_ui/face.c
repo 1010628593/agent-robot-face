@@ -1,24 +1,41 @@
-/* The display IS the face: two eyes on black, no state ring, labels or icons.
- * SIM provenance is rendered by ui.c, not concealed by this presentation.
- * One local drawing surface; no object allocation in tick/state transitions. */
+/* Eye-only Face. Each Agent owns a clock; one surface draws the selected one.
+ * UI-owner context only. No hardware, model, permission or account writes. */
 #include "bot_face.h"
 #include "bot_face_geometry.h"
 #include "bot_ui.h"
 #include <math.h>
 
+typedef struct {
+    bot_face_motion_t motion;
+    bot_state_t state;
+    uint32_t revision, generation;
+    bool initialized;
+} face_track_t;
+static face_track_t s_tracks[BOT_AGENT_COUNT];
 static lv_obj_t *s_surface;
-static bot_face_motion_t s_motion;
-static bot_face_geometry_t s_geometry;
-static bot_face_geometry_t s_next_geometry; /* Keep the bounded scratch off the LVGL task stack. */
-static bool s_ready, s_have_frame, s_have_state;
-static uint32_t s_frame_ms, s_revision, s_generation;
-static uint8_t s_agent;
-static bot_state_t s_state;
-
+static bot_face_geometry_t s_geometry, s_next_geometry;
+static bool s_have_frame;
+static uint32_t s_frame_ms;
+static uint8_t s_surface_agent;
 static int32_t px(float v) { return (int32_t)lroundf(v); }
 
-static void draw_primitive(lv_layer_t *layer,const bot_face_primitive_t *p,
-                           int32_t dx,int32_t dy)
+void face_sync(uint32_t now)
+{
+    for (unsigned i=0;i<BOT_AGENT_COUNT;i++) {
+        face_track_t *t=&s_tracks[i];
+        const bot_sim_agent_t *a=&g_ui.agents[i];
+        bool fresh=!t->initialized;
+        if (fresh) {
+            bot_face_motion_init(&t->motion,0xB07FACEu+i*0x9E3779B9u,now);
+            t->initialized=true;
+        }
+        if (fresh || t->state!=a->state || t->revision!=a->transition_id) {
+            t->state=a->state;t->revision=a->transition_id;
+            bot_face_motion_set(&t->motion,bot_face_for_state(a->state),++t->generation,now);
+        }
+    }
+}
+static void draw_primitive(lv_layer_t *layer,const bot_face_primitive_t *p,int32_t dx,int32_t dy)
 {
     lv_color_t color=lv_color_hex(p->dark?0:BOT_FACE_EYE_COLOR);
     switch(p->kind) {
@@ -56,7 +73,10 @@ static void draw_primitive(lv_layer_t *layer,const bot_face_primitive_t *p,
 static void face_event(lv_event_t *e)
 {
     if(lv_event_get_code(e)==LV_EVENT_DELETE) {
-        if(lv_event_get_target_obj(e)==s_surface)s_surface=NULL;
+        if(lv_event_get_target_obj(e)==s_surface) {
+            face_suspend(lv_tick_get());
+            s_surface=NULL;
+        }
         return;
     }
     if(lv_event_get_code(e)!=LV_EVENT_DRAW_MAIN)return;
@@ -80,28 +100,29 @@ static bool same_geometry(const bot_face_geometry_t *a,const bot_face_geometry_t
 }
 void face_tick(uint32_t now)
 {
-    if(!s_ready || !s_surface)return;
-    const bot_sim_agent_t *a=&g_ui.agents[g_ui.selected];
-    if(!s_have_state || s_agent!=g_ui.selected || s_state!=a->state ||
-       s_revision!=a->transition_id) {
-        s_agent=g_ui.selected;s_state=a->state;s_revision=a->transition_id;
-        s_have_state=true;
-        bot_face_motion_set(&s_motion,bot_face_for_state(a->state),++s_generation,now);
+    face_sync(now);
+    if(!s_surface || g_ui.selected>=BOT_AGENT_COUNT)return;
+    if(s_surface_agent!=g_ui.selected) {
+        face_suspend(now);
+        s_surface_agent=g_ui.selected;
+        s_have_frame=false;
     }
     uint32_t elapsed=now-s_frame_ms;
     if(s_have_frame && elapsed<BOT_FACE_FRAME_MS)return;
-    s_frame_ms=now-elapsed%BOT_FACE_FRAME_MS; /* skip missed frames; never catch up in a loop */
-    bot_face_pose_t pose;bot_face_motion_sample(&s_motion,now,&pose);
+    s_frame_ms=now-elapsed%BOT_FACE_FRAME_MS;
+    bot_face_pose_t pose;
+    bot_face_motion_sample(&s_tracks[s_surface_agent].motion,now,&pose);
     bot_face_geometry_build(&pose,&s_next_geometry);
     if(!s_have_frame || !same_geometry(&s_next_geometry,&s_geometry)) {
         s_geometry=s_next_geometry;s_have_frame=true;
-        lv_obj_invalidate(s_surface); /* only the local eye region, not all 466x466 */
+        lv_obj_invalidate(s_surface);
     }
 }
 void face_build(lv_obj_t *screen)
 {
     uint32_t now=lv_tick_get();
-    if(!s_ready) {bot_face_motion_init(&s_motion,0xB07FACEu,now);s_ready=true;}
+    face_sync(now);
+    s_surface_agent=g_ui.selected<BOT_AGENT_COUNT?g_ui.selected:BOT_AGENT_CODEX;
     s_surface=lv_obj_create(screen);
     lv_obj_remove_style_all(s_surface);
     lv_obj_set_pos(s_surface,BOT_FACE_AREA_X,BOT_FACE_AREA_Y);
@@ -115,7 +136,8 @@ void face_build(lv_obj_t *screen)
 }
 void face_touch(bool pressed,int16_t x,int16_t y,float hold,uint32_t now)
 {
-    if(s_ready)bot_face_motion_touch(&s_motion,pressed,x,y,hold,now);
+    if(s_surface && s_surface_agent<BOT_AGENT_COUNT && s_tracks[s_surface_agent].initialized)
+        bot_face_motion_touch(&s_tracks[s_surface_agent].motion,pressed,x,y,hold,now);
 }
 void face_suspend(uint32_t now)
 {
