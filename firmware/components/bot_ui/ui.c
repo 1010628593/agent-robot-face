@@ -1,34 +1,23 @@
 /* ui.c — screen manager, touch->gesture pump, router effects, SIM cycler. */
 #include "bot_ui.h"
 #include "bot_face.h"
-
 #include <string.h>
-
 #include "bsp/esp-bsp.h"
 #include "lvgl.h"
 
-/* shared UI objects defined in face.c / picker.c / stats.c */
 void picker_build(lv_obj_t *scr);
 void picker_refresh(void);
 void stats_build(lv_obj_t *scr);
 void stats_refresh(void);
-
 bot_ui_model_t g_ui;
-
 static lv_obj_t *s_screen;
 static bot_gesture_t s_gesture;
 static lv_indev_t *s_indev;
 static bool s_was_pressed;
 static uint32_t s_down_since;
-
-/* design tokens (design/ui_tokens.json) */
 #define COL_BG 0x000000
 #define COL_SIM 0x83949F
-
-static uint32_t now_ms(void)
-{
-    return lv_tick_get(); /* Same epoch as all face/gesture animation times. */
-}
+static uint32_t now_ms(void) { return lv_tick_get(); }
 
 static void sim_init(void)
 {
@@ -56,7 +45,7 @@ static void sim_init(void)
         .state = BOT_STATE_UNKNOWN, .active_sessions = 0,
         .turns = 0, .total_tokens = 0, .active_time_ms = 0,
         .quota = {
-            { "BALANCE", false, true, 0, "N/A" },      /* BLOCKED_SOURCE: N/A */
+            { "BALANCE", false, true, 0, "N/A" },
             { "", false, true, 0, "" },
         },
     };
@@ -86,40 +75,33 @@ static void sim_init(void)
     g_ui.stats_tab = 0;
     g_ui.sim_cycle_ms = now_ms();
 }
-
-/* SIM state cycler: advances the selected agent through the state machine so
- * every face expression can be verified on-device. Clearly simulated. */
 static const bot_state_t SIM_CYCLE[] = {
     BOT_STATE_IDLE, BOT_STATE_WORKING, BOT_STATE_TOOL, BOT_STATE_WAITING,
     BOT_STATE_DONE, BOT_STATE_ERROR, BOT_STATE_CANCELLED, BOT_STATE_UNKNOWN,
 };
-
 static void sim_tick(uint32_t now)
 {
     if (now - g_ui.sim_cycle_ms < 7000) return;
     g_ui.sim_cycle_ms = now;
     bot_sim_agent_t *a = &g_ui.agents[g_ui.selected];
     int idx = 0;
-    for (size_t i = 0; i < sizeof(SIM_CYCLE) / sizeof(SIM_CYCLE[0]); i++) {
-        if (SIM_CYCLE[i] == a->state) { idx = (int)i; break; }
+    for (size_t i=0;i<sizeof(SIM_CYCLE)/sizeof(SIM_CYCLE[0]);i++) {
+        if (SIM_CYCLE[i] == a->state) { idx=(int)i; break; }
     }
-    a->state = SIM_CYCLE[(idx + 1) % (int)(sizeof(SIM_CYCLE) / sizeof(SIM_CYCLE[0]))];
+    a->state = SIM_CYCLE[(idx+1) % (int)(sizeof(SIM_CYCLE)/sizeof(SIM_CYCLE[0]))];
     a->transition_id++;
-    /* face_tick observes the new target without deleting/recreating objects. */
+    if (g_ui.screen == BOT_SCR_PICKER) picker_refresh();
 }
-
 static void sim_badge(lv_obj_t *parent)
 {
     lv_obj_t *sim = lv_label_create(parent);
     lv_label_set_text(sim, "SIM");
     lv_obj_set_style_text_font(sim, &lv_font_montserrat_20, 0);
     lv_obj_set_style_text_color(sim, lv_color_hex(COL_SIM), 0);
-    /* Inside the circular safe area; the previous corner position was clipped. */
     lv_obj_set_size(sim, 48, 24);
     lv_obj_set_style_text_align(sim, LV_TEXT_ALIGN_CENTER, 0);
     lv_obj_set_pos(sim, 209, 24);
 }
-
 static void screen_switch(bot_screen_t scr)
 {
     if (g_ui.screen == BOT_SCR_FACE) face_suspend(now_ms());
@@ -130,14 +112,11 @@ static void screen_switch(bot_screen_t scr)
     case BOT_SCR_STATS: bot_ui_show_stats(); break;
     }
 }
-
 static void apply_effect(bot_effect_t e)
 {
-    if (e.nav == BOT_NAV_TO_STATS) {
-        screen_switch(BOT_SCR_STATS);
-    } else if (e.nav == BOT_NAV_TO_FACE) {
-        screen_switch(BOT_SCR_FACE);
-    } else if (e.nav == BOT_NAV_TO_PICKER) {
+    if (e.nav == BOT_NAV_TO_STATS) screen_switch(BOT_SCR_STATS);
+    else if (e.nav == BOT_NAV_TO_FACE) screen_switch(BOT_SCR_FACE);
+    else if (e.nav == BOT_NAV_TO_PICKER) {
         g_ui.picker_return = g_ui.screen;
         g_ui.picker_preview = g_ui.selected;
         g_ui.picker_selecting = false;
@@ -148,109 +127,91 @@ static void apply_effect(bot_effect_t e)
     }
     if (e.picker_delta != 0 && g_ui.screen == BOT_SCR_PICKER) {
         int p = (int)g_ui.picker_preview + e.picker_delta;
-        p = (p + BOT_AGENT_COUNT) % BOT_AGENT_COUNT; /* wrap both ends */
-        g_ui.picker_preview = (uint8_t)p;
+        g_ui.picker_preview = (uint8_t)((p+BOT_AGENT_COUNT) % BOT_AGENT_COUNT);
         picker_refresh();
     }
-    if (e.picker_confirm && g_ui.screen == BOT_SCR_PICKER) {
-        if (!g_ui.picker_selecting) {
-            g_ui.picker_selecting = true;
-            picker_refresh();
-            /* SIM transaction: simulated accepted ack after a beat */
-            g_ui.selected = g_ui.picker_preview;
-            g_ui.picker_selecting = false;
-            g_ui.sim_cycle_ms = now_ms();
-            screen_switch(BOT_SCR_FACE);
-        }
+    if (e.picker_confirm && g_ui.screen == BOT_SCR_PICKER && !g_ui.picker_selecting) {
+        g_ui.picker_selecting = true;
+        picker_refresh();
+        /* Existing SIM transaction only, not a real Bridge acknowledgment. */
+        g_ui.selected = g_ui.picker_preview;
+        g_ui.picker_selecting = false;
+        g_ui.sim_cycle_ms = now_ms();
+        screen_switch(BOT_SCR_FACE);
     }
     if (e.stats_toggle && g_ui.screen == BOT_SCR_STATS) {
         g_ui.stats_tab ^= 1;
         stats_refresh();
     }
-    /* FACE touch gaze/hold is handled continuously by touch_pump.
-     * Deliberately no detail text overlay: the display itself is the face.
-     * STATS detail/edge_bump remains outside this animation-only change. */
+    /* Face touches only animate eyes. No hidden command execution or approval. */
 }
-
-/* Poll the LVGL indev and feed the gesture FSM (LVGL gesture recognition
- * stays OFF — bot_gesture is the single recognizer, T04 contract). */
+static bool picker_center(int16_t x, int16_t y)
+{
+    /* Matches the central 144x144 card in picker.c, not the whole screen. */
+    return x >= 161 && x < 305 && y >= 154 && y < 298;
+}
 static void touch_pump(uint32_t now)
 {
     if (!s_indev) return;
-    lv_point_t p = { 0, 0 };
+    lv_point_t p={0,0};
     lv_indev_get_point(s_indev, &p);
-    lv_indev_state_t st = lv_indev_get_state(s_indev);
-    bool pressed = (st == LV_INDEV_STATE_PRESSED);
-
-    bot_gesture_kind_t ev = BOT_GESTURE_NONE;
+    bool pressed=lv_indev_get_state(s_indev)==LV_INDEV_STATE_PRESSED;
+    bot_gesture_kind_t ev=BOT_GESTURE_NONE;
     if (pressed && !s_was_pressed) {
-        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_DOWN, now, (int16_t)p.x, (int16_t)p.y);
-        s_down_since = now;
+        ev=bot_gesture_feed(&s_gesture, BOT_TOUCH_DOWN, now, (int16_t)p.x, (int16_t)p.y);
+        s_down_since=now;
     } else if (pressed && s_was_pressed) {
-        /* Apply the newest movement before testing the 650ms HOLD deadline. */
         bot_gesture_feed(&s_gesture, BOT_TOUCH_MOVE, now, (int16_t)p.x, (int16_t)p.y);
-        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_TICK, now, (int16_t)p.x, (int16_t)p.y);
+        ev=bot_gesture_feed(&s_gesture, BOT_TOUCH_TICK, now, (int16_t)p.x, (int16_t)p.y);
     } else if (!pressed && s_was_pressed) {
-        /* Include final displacement even when no MOVE sample preceded UP. */
         bot_gesture_feed(&s_gesture, BOT_TOUCH_MOVE, now, (int16_t)p.x, (int16_t)p.y);
-        ev = bot_gesture_feed(&s_gesture, BOT_TOUCH_UP, now, (int16_t)p.x, (int16_t)p.y);
+        ev=bot_gesture_feed(&s_gesture, BOT_TOUCH_UP, now, (int16_t)p.x, (int16_t)p.y);
     }
     if (g_ui.screen == BOT_SCR_FACE) {
-        bool tracking = pressed && s_gesture.state == BOT_GS_PRESSED;
-        float hold = tracking && !s_gesture.moved_beyond_slop
-            ? (float)(now - s_down_since) / (float)BOT_HOLD_MS : 0;
+        bool tracking=pressed && s_gesture.state==BOT_GS_PRESSED;
+        float hold=tracking && !s_gesture.moved_beyond_slop ? (float)(now-s_down_since)/BOT_HOLD_MS : 0;
         face_touch(tracking, (int16_t)p.x, (int16_t)p.y, hold, now);
     }
-    if (ev != BOT_GESTURE_NONE) apply_effect(bot_route(g_ui.screen, ev));
-    s_was_pressed = pressed;
+    if (ev != BOT_GESTURE_NONE) {
+        bot_effect_t effect=bot_route(g_ui.screen, ev);
+        if (effect.picker_confirm &&
+            (!picker_center(s_gesture.down_x, s_gesture.down_y) ||
+             !picker_center((int16_t)p.x, (int16_t)p.y))) effect.picker_confirm=false;
+        apply_effect(effect);
+    }
+    s_was_pressed=pressed;
 }
-
 void bot_ui_init(void)
 {
     sim_init();
     bot_gesture_init(&s_gesture);
-    s_indev = bsp_display_get_input_dev();
-    s_was_pressed = false;
-
-    s_screen = lv_obj_create(NULL);
+    s_indev=bsp_display_get_input_dev();
+    s_was_pressed=false;
+    s_screen=lv_obj_create(NULL);
+    lv_obj_remove_style_all(s_screen);
     lv_obj_set_style_bg_color(s_screen, lv_color_hex(COL_BG), 0);
     lv_obj_set_style_bg_opa(s_screen, LV_OPA_COVER, 0);
+    lv_obj_remove_flag(s_screen, LV_OBJ_FLAG_SCROLLABLE);
     lv_scr_load(s_screen);
     bot_ui_show_face();
 }
-
 void bot_ui_poll(void)
 {
-    uint32_t now = now_ms();
+    uint32_t now=now_ms();
     touch_pump(now);
     sim_tick(now);
-    if (g_ui.screen == BOT_SCR_FACE) {
-        face_tick(now);
-    }
+    if (g_ui.screen == BOT_SCR_FACE) face_tick(now);
 }
-
-lv_obj_t *bot_ui_screen(void)
-{
-    return s_screen;
-}
-
+lv_obj_t *bot_ui_screen(void) { return s_screen; }
 void bot_ui_show_face(void)
 {
-    lv_obj_clean(s_screen);
-    sim_badge(s_screen);
-    face_build(s_screen);
+    lv_obj_clean(s_screen);sim_badge(s_screen);face_build(s_screen);
 }
-
 void bot_ui_show_picker(void)
 {
-    lv_obj_clean(s_screen);
-    sim_badge(s_screen);
-    picker_build(s_screen);
+    lv_obj_clean(s_screen);sim_badge(s_screen);picker_build(s_screen);
 }
-
 void bot_ui_show_stats(void)
 {
-    lv_obj_clean(s_screen);
-    sim_badge(s_screen);
-    stats_build(s_screen);
+    lv_obj_clean(s_screen);sim_badge(s_screen);stats_build(s_screen);
 }
