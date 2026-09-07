@@ -1,0 +1,47 @@
+name: Host UI regression
+on:
+  push:
+    branches: [main, fix/face-gesture-coalesced-input]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: host-ui-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  host:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Native core and face regressions
+        run: |
+          cmake -S tests/native -B .build/native -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .build/native --parallel 2
+          ctest --test-dir .build/native --output-on-failure
+          cmake -S tests/face -B .build/face -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .build/face --parallel 2
+          ctest --test-dir .build/face --output-on-failure
+      - name: Build against pinned real LVGL 9.4
+        if: ${{ !cancelled() }}
+        run: |
+          cmake -S tests/lvgl -B .build/lvgl -DCMAKE_BUILD_TYPE=Debug
+          cmake --build .build/lvgl --parallel 2
+      - name: Render and exercise actual three-screen UI
+        if: ${{ !cancelled() }}
+        run: |
+          mkdir -p .build/snapshots
+          BOT_SNAPSHOT_DIR="$PWD/.build/snapshots" ctest --test-dir .build/lvgl --output-on-failure
+      - name: Keep test logs and software-rendered snapshots
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: host-ui-evidence
+          path: |
+            .build/*/Testing/Temporary/LastTest.log
+            .build/snapshots/*.ppm
+          include-hidden-files: true
+          retention-days: 7
