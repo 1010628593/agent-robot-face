@@ -10,6 +10,8 @@ __pycache__/
 .build/
 build/
 build-idf*/
+build-imu/
+build-audio*/
 **/build/
 **/managed_components/
 sdkconfig.old
