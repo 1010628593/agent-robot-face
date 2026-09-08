@@ -3849,15 +3849,6 @@ CONFIG_WL_SECTOR_SIZE=4096
 # end of Wear Levelling
 
 #
-# Bot audio interactions
-#
-CONFIG_BOT_AUDIO_ENABLE=y
-# CONFIG_BOT_AUDIO_AUTOSTART is not set
-# CONFIG_BOT_AUDIO_DIAGNOSTICS is not set
-CONFIG_BOT_AUDIO_G0_PROBE=y
-# end of Bot audio interactions
-
-#
 # Bot motion interactions
 #
 # default:

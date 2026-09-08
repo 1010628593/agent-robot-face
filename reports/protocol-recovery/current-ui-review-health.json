@@ -1,0 +1,46 @@
+{
+  "connected": true,
+  "port": "/dev/cu.usbmodem101",
+  "firmware": "3.2.7",
+  "protocol_version": 3,
+  "last_seen_ms": 1788796389705,
+  "boot_id": "3ae810834bb242dafe7e58b57fa3b5a5",
+  "heap_diagnostics": {
+    "uptime_ms": 2397263,
+    "internal_free": 49027,
+    "largest_free": 31744,
+    "minimum_free": 10168,
+    "psram_free": 7586408,
+    "screen": 0,
+    "as_of_ms": 1788796388412
+  },
+  "link_diagnostics": {
+    "rx_dropped": 0,
+    "bad_lines": 0,
+    "queue_restarts": 0,
+    "timeout_restarts": 0,
+    "tx_failed": 0,
+    "rx_pending_bytes": 0,
+    "rx_chunks": 112867,
+    "rx_bytes": 7083146,
+    "poll_gap_max_ms": 117,
+    "as_of_ms": 1788796388412
+  },
+  "firmware_errors": [],
+  "reconnect_count": 1,
+  "reconnect_reason": "OSError:[Errno 6] Device not configured",
+  "reconnect_evidence": {
+    "at_ms": 1788790631010,
+    "last_protocol_age_ms": 972,
+    "pending_tx_bytes": 0,
+    "protocol_rx": {
+      "hello": 1,
+      "pong": 3708,
+      "accepted_pong": 3708,
+      "link_rejected": 0,
+      "seq_rejected": 0
+    },
+    "heap_as_of_ms": 1788790627770,
+    "invalid_protocol_json": 0
+  }
+}

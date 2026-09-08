@@ -203,7 +203,7 @@ private struct UsageStatusCard: View {
                             openQuota(quotas[index])
                         }
                     })
-                Text(quotas.count > 1 ? "已用额度 · 点击查看周期" : reset).font(.system(size: 12)).foregroundStyle(.secondary).lineLimit(2).multilineTextAlignment(.center).padding(.top, -18).padding(.bottom, 18)
+                Text(quotas.count > 1 ? "已用额度 · 点击查看周期" : reset).font(.system(size: 12)).foregroundStyle(.secondary).lineLimit(2).multilineTextAlignment(.center).padding(.top, quotas.count > 1 ? 0 : -18).padding(.bottom, 18)
             }.frame(maxWidth: .infinity).frame(height: 285)
             Divider().overlay(Color(white: 0.15))
             HStack { Text("今日 Token").foregroundStyle(.secondary); Spacer(); Text(usageNumber(model.snapshot["summary"]["total_tokens"].number)).monospacedDigit() }.font(.system(size: 14)).padding(.vertical, 14)

@@ -1,0 +1,39 @@
+menu "Bot audio interactions"
+    config BOT_AUDIO_ENABLE
+        bool "Enable optional microphone audio service"
+        default n
+        help
+            Enable microphone audio processing for environmental sound response.
+            When enabled, the bot can respond to environmental sounds with
+            facial expressions. When disabled, no audio hardware is initialized.
+            Default is n (disabled) per privacy-first design.
+
+    config BOT_AUDIO_AUTOSTART
+        bool "Auto-start audio service on boot"
+        default n
+        depends on BOT_AUDIO_ENABLE
+        help
+            Automatically start audio service when the device boots.
+            Default is n. Audio must be explicitly enabled by user action.
+            Do not change to y without explicit product authorization.
+
+    config BOT_AUDIO_DIAGNOSTICS
+        bool "Enable audio diagnostics logging"
+        default n
+        depends on BOT_AUDIO_ENABLE
+        help
+            Enable low-frequency diagnostic logging of audio processing.
+            Logs include RMS levels, event counts, and service state.
+            No PCM data is logged. Maximum 1 Hz log rate.
+
+    config BOT_AUDIO_G0_PROBE
+        bool "G0 audio contract probe (development verification only)"
+        default n
+        help
+            Runs a bounded hardware contract probe at boot INSTEAD of the
+            normal UI: verifies init/open/read timing/short reads/close and
+            prints a "@g0 {...}" summary. Does not start LVGL or the IMU.
+            Operator must keep quiet for phase A, then clap/talk for phase B.
+            DEVELOPMENT ONLY - do not ship. Requires BOT_AUDIO_ENABLE.
+        depends on BOT_AUDIO_ENABLE
+endmenu

@@ -17,6 +17,10 @@
 #include "bot_link.h"
 #include "bot_imu.h"
 
+#ifdef CONFIG_BOT_AUDIO_G0_PROBE
+#include "bot_audio_g0_probe.h"
+#endif
+
 static const char *TAG = "bot_status";
 static void allocation_failed(size_t bytes,uint32_t caps,const char *function)
 {
@@ -88,6 +92,15 @@ static void ui_timer_cb(lv_timer_t *t)
 void app_main(void)
 {
     heap_caps_register_failed_alloc_callback(allocation_failed);
+#ifdef CONFIG_BOT_AUDIO_G0_PROBE
+    /* Contract verification build: probe the microphone, print facts, stop.
+     * LVGL and the IMU are intentionally not started so the numbers are clean. */
+    bot_audio_g0_probe();
+    ESP_LOGI(TAG, "G0 probe done; halting (this build never starts the UI)");
+    while (true) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
+#endif
     lv_display_t *display = bsp_display_start();
     if (!display) {
         ESP_LOGE(TAG, "bsp_display_start failed");

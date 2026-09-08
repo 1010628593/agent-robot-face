@@ -1,0 +1,16 @@
+idf_component_register(
+    SRCS 
+        bot_audio.c
+        bot_audio_port.c
+        bot_audio_g0_probe.c
+    INCLUDE_DIRS 
+        include
+    REQUIRES 
+        esp_codec_dev
+        esp_timer
+        freertos
+        heap
+        waveshare__esp32_s3_touch_amoled_1_75
+    PRIV_REQUIRES 
+        esp_driver_i2s
+)
