@@ -15,7 +15,7 @@ from pathlib import Path
 import csv,sys
 report,out=map(Path,sys.argv[1:])
 with (report/'pixel-comparison.csv').open('w') as f:
- w=csv.writer(f);w.writerow(['scenario','frame','changed_rgb_bytes'])
+ w=csv.writer(f,lineterminator='\n');w.writerow(['scenario','frame','changed_rgb_bytes'])
  for control in sorted(report.glob('*-control.txt')):
   name=control.stem.removesuffix('-control')
   for p in sorted((out/name).glob('*.ppm')):
