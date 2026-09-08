@@ -16,6 +16,7 @@
 #include "bot_ui.h"
 #include "bot_link.h"
 #include "bot_imu.h"
+#include "bot_audio.h"
 
 #ifdef CONFIG_BOT_AUDIO_G0_PROBE
 #include "bot_audio_g0_probe.h"
@@ -79,7 +80,13 @@ static void ui_timer_cb(lv_timer_t *t)
     bot_motion_view_t motion;
     bot_imu_latest(lv_tick_get(),&motion);
     bot_ui_set_motion(&motion);
+    bot_audio_view_t audio;
+    bot_audio_latest(lv_tick_get(),&audio);
+    bot_ui_set_audio(&audio);
     bot_ui_poll();
+    bot_audio_set_environment(bot_ui_audio_background_suppressed(),motion.available);
+    bot_audio_config_t audio_config;
+    if(bot_ui_take_audio_config(&audio_config))bot_audio_request_config(&audio_config);
 #ifdef BOT_DEVICE_SOAK
     device_soak_tick(lv_tick_get());
 #endif
@@ -109,6 +116,8 @@ void app_main(void)
     /* design/ui_tokens.json brightness_percent.normal = 28 */
     bsp_display_brightness_set(28);
 
+    esp_err_t audio_ret=bot_audio_init();
+    if(audio_ret!=ESP_OK)ESP_LOGW(TAG,"audio service unavailable: %s",esp_err_to_name(audio_ret));
     esp_err_t imu_ret=bot_imu_start();
     if(imu_ret!=ESP_OK)ESP_LOGW(TAG,"motion service unavailable: %s",esp_err_to_name(imu_ret));
     esp_err_t lock_ret = bsp_display_lock((uint32_t)-1);

@@ -1,0 +1,6 @@
+frame,time_ms,count,phase,card,progress,y,velocity,stable_open,render_cpu_ms,objects,audio_suppression
+0,1000,0,0,0,0.0000,478.00,0.00,0,0.001,1,none
+1,1070,0,0,0,0.0000,478.00,0.00,0,0.003,1,none
+2,1200,0,0,0,0.0000,478.00,0.00,0,0.006,1,none
+3,1300,0,0,0,0.0000,478.00,0.00,0,0.000,1,none
+4,1600,0,0,0,0.0000,478.00,0.00,0,0.003,1,none

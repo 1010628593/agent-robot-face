@@ -20,6 +20,9 @@ void picker_press(bool pressed);
 void stats_press(int tab,bool pressed);
 void stats_build(lv_obj_t *scr);
 void stats_refresh(void);
+bool stats_options_open(void);
+void face_audio_contact(const bot_touch_frame_t *frame);
+void face_audio_motion(const bot_motion_view_t *view);
 uint8_t stats_depth(void);void stats_reset(void);int stats_hit(int,int);void stats_tap(int);void stats_swipe(bot_gesture_kind_t);
 bot_ui_model_t g_ui;
 static lv_obj_t *s_screen;
@@ -295,6 +298,7 @@ static int stats_forgiving_tap(const bot_touch_frame_t *f)
 void bot_ui_touch_frame(const bot_touch_frame_t *raw)
 {
     bot_touch_frame_t f=*raw;
+    face_audio_contact(raw);
     if(f.count>2){f.count=0;f.cancelled=true;}
     /* Edge arbitration always sees physical display coordinates, before
      * the expression layer applies its frozen inverse rotation. */
@@ -309,7 +313,7 @@ void bot_ui_touch_frame(const bot_touch_frame_t *raw)
      * recognizer. A downward drag pops once on UP; multi/replaced IDs cancel. */
     static bool nested_session;
     if(!g_ui.dev_sim && !nested_session && f.count && !s_nav.session &&
-       g_ui.screen==BOT_SCR_STATS && stats_depth()>0 && bot_navigation_content_enabled(&s_nav)) {
+       g_ui.screen==BOT_SCR_STATS && (stats_depth()>0 || stats_options_open()) && bot_navigation_content_enabled(&s_nav)) {
         nested_session=true;bot_gesture_set_face_mode(&s_gesture,false);
         s_pressed_tab=f.count==1?stats_hit(f.points[0].x,f.points[0].y):-1;
         if(s_pressed_tab>=0)stats_press(s_pressed_tab,true);
@@ -454,7 +458,7 @@ void bot_ui_init(void)
     lv_scr_load(s_screen);
     bot_ui_show_face();
 }
-void bot_ui_set_motion(const bot_motion_view_t *view) { face_set_motion(view); }
+void bot_ui_set_motion(const bot_motion_view_t *view) { face_set_motion(view);face_audio_motion(view); }
 void bot_ui_poll(void)
 {
     uint32_t now=now_ms();

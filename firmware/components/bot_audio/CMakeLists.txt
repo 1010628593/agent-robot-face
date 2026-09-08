@@ -6,11 +6,13 @@ idf_component_register(
     INCLUDE_DIRS 
         include
     REQUIRES 
+        bot_audio_core
         esp_codec_dev
         esp_timer
         freertos
         heap
         waveshare__esp32_s3_touch_amoled_1_75
     PRIV_REQUIRES 
+        esp_driver_i2c
         esp_driver_i2s
 )

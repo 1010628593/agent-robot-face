@@ -8,14 +8,14 @@ menu "Bot audio interactions"
             facial expressions. When disabled, no audio hardware is initialized.
             Default is n (disabled) per privacy-first design.
 
-    config BOT_AUDIO_AUTOSTART
-        bool "Auto-start audio service on boot"
+    config BOT_AUDIO_G0_VERIFIED
+        bool "Board audio contract physically verified (release gate)"
         default n
         depends on BOT_AUDIO_ENABLE
         help
-            Automatically start audio service when the device boots.
-            Default is n. Audio must be explicitly enabled by user action.
-            Do not change to y without explicit product authorization.
+            Enable runtime microphone requests only after the board-specific
+            G0 input, stop and resource report has passed. Compile success is
+            not verification. Probe builds bypass this gate, never normal UI.
 
     config BOT_AUDIO_DIAGNOSTICS
         bool "Enable audio diagnostics logging"

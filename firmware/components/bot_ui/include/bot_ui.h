@@ -7,6 +7,7 @@
 #include <stdint.h>
 
 #include "bot_gesture.h"
+#include "bot_audio_types.h"
 #include "bot_navigation.h"
 #include "bot_motion.h"
 #include "bot_router.h"
@@ -73,6 +74,14 @@ extern const lv_font_t bot_font_22;
 extern const lv_font_t bot_font_24;
 /* Called by the UI owner only; the sensor thread publishes via its mailbox. */
 void bot_ui_set_motion(const bot_motion_view_t *view);
+void bot_ui_set_audio(const bot_audio_view_t *view);
+bool bot_ui_audio_background_suppressed(void);
+bool bot_ui_take_audio_config(bot_audio_config_t *out);
+/* UI owner only: settings and diagnostic projection. */
+void bot_ui_audio_request(bot_audio_config_t config);
+const bot_audio_config_t *bot_ui_audio_config(void);
+const bot_audio_view_t *bot_ui_audio_view(void);
+const char *bot_ui_audio_suppression(void);
 
 /* Called every ~10 ms with the LVGL lock held: pumps touch samples into the
  * gesture FSM, applies router effects, drives animations and the SIM cycler. */

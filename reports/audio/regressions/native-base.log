@@ -1,0 +1,148 @@
+-- The C compiler identification is AppleClang 21.0.0.21000333
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/bot-audio-native-base
+[ 14%] Building C object CMakeFiles/test_gesture.dir/test_gesture.c.o
+[ 14%] Building C object CMakeFiles/test_frame_parser.dir/test_frame_parser.c.o
+[ 19%] Building C object CMakeFiles/test_bot_types.dir/test_bot_types.c.o
+[ 19%] Building C object CMakeFiles/test_router.dir/test_router.c.o
+[ 23%] Building C object CMakeFiles/test_gesture_coalesced.dir/test_gesture_coalesced.c.o
+[ 28%] Building C object CMakeFiles/test_device_model.dir/test_device_model.c.o
+[ 33%] Linking C executable test_bot_types
+[ 38%] Building C object CMakeFiles/test_gesture.dir/tmp/audio-ui-baseline/firmware/components/bot_core/gesture.c.o
+[ 47%] Building C object CMakeFiles/test_router.dir/tmp/audio-ui-baseline/firmware/components/bot_core/gesture.c.o
+[ 47%] Building C object CMakeFiles/test_gesture_coalesced.dir/tmp/audio-ui-baseline/firmware/components/bot_core/gesture.c.o
+[ 52%] Building C object CMakeFiles/test_device_model.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_json.c.o
+[ 57%] Building C object CMakeFiles/test_frame_parser.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_json.c.o
+[ 61%] Linking C executable test_gesture
+[ 66%] Building C object CMakeFiles/test_router.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_router.c.o
+[ 71%] Linking C executable test_gesture_coalesced
+[ 71%] Built target test_bot_types
+[ 76%] Building C object CMakeFiles/test_device_model.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_frame.c.o
+[ 80%] Building C object CMakeFiles/test_frame_parser.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_frame.c.o
+[ 85%] Building C object CMakeFiles/test_device_model.dir/tmp/audio-ui-baseline/firmware/components/bot_core/bot_model.c.o
+[ 90%] Linking C executable test_router
+[ 90%] Built target test_gesture_coalesced
+[ 90%] Built target test_gesture
+[100%] Linking C executable test_device_model
+[100%] Linking C executable test_frame_parser
+[100%] Built target test_router
+[100%] Built target test_frame_parser
+[100%] Built target test_device_model
+Test project /tmp/bot-audio-native-base
+    Start 1: bot_types
+1/6 Test #1: bot_types ........................   Passed    0.81 sec
+    Start 2: gesture
+2/6 Test #2: gesture ..........................***Failed    0.18 sec
+PASS G01
+PASS G02
+FAIL G03: expected 1 event(s), got 0 ()
+PASS G04
+PASS G05
+PASS G06
+PASS G07
+PASS G08
+PASS G09
+PASS G10
+PASS G11
+PASS G12
+test_gesture: 1 FAILURE(S)
+
+    Start 3: frame_parser
+3/6 Test #3: frame_parser .....................***Failed    0.25 sec
+FAIL load 01_hello.json
+FAIL load 02_welcome.json
+FAIL load 03_catalog.json
+FAIL load 04_focus_working.json
+FAIL load 05_focus_waiting.json
+FAIL load 06_focus_done.json
+FAIL load 07_stats_codex.json
+FAIL load 08_stats_unavailable.json
+FAIL load 09_stats_manual_balance.json
+FAIL load 11_select_ack.json
+FAIL load 12_conflict_ack.json
+FAIL load 14_notice.json
+FAIL load 15_ping.json
+FAIL load 17_stats_over_budget.json
+FAIL load 18_stats_unlimited.json
+SKIP 01_oversize_budget.json (not present)
+SKIP 02_nan_value.json (not present)
+SKIP 03_duplicate_key.json (not present)
+SKIP 04_too_deep.json (not present)
+SKIP 05_wrong_reason.json (not present)
+SKIP 06_wrong_metric_unit.json (not present)
+SKIP 07_duplicate_agent.json (not present)
+SKIP 08_terminal_reason.json (not present)
+SKIP 09_missing_link.json (not present)
+FAIL coalesced + log noise -> 2 msgs (line 221)
+FAIL oversize dropped, next frame resyncs (line 234)
+FAIL CRLF tolerated (line 245)
+PASS strict: duplicate key
+PASS strict: NaN
+PASS strict: Infinity
+PASS strict: 1e999 overflow
+PASS strict: array root
+PASS strict: trailing garbage
+PASS strict: unknown envelope key
+PASS strict: bad utf8
+PASS depth 13 rejected
+FAIL non-ASCII label rejected; multibyte split ok; next frame recovers (line 311)
+PASS semantic: quota unknown with numbers
+PASS semantic: ack accepted with conflict
+PASS semantic: focus waiting without reason
+PASS semantic: metric key/unit mismatch
+PASS semantic: unavailable metric with value
+PASS semantic: unknown body key rejected (v1 strict)
+PASS semantic: hello with link_id null ok but seq must be 0
+FAIL hello link_id=null seq=0 accepted (only exception) (line 388)
+test_frame_parser: 20 FAILURE(S)
+
+    Start 4: device_model
+4/6 Test #4: device_model .....................   Passed    0.23 sec
+    Start 5: router
+5/6 Test #5: router ...........................***Failed    0.19 sec
+FAIL face tap -> poke+detail: nav 0->0 delta 0->0 toggle 0->0 confirm 0->0 poke 1->1 detail 0->1 edge 0->0
+FAIL face swipe_left -> stats: nav 0->1 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face swipe_right -> stats: nav 0->1 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL face hold -> picker: nav 0->3 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+PASS face swipe_up -> none
+PASS face swipe_down -> none
+PASS face wake_only -> none
+PASS picker tap -> confirm
+PASS picker swipe_left -> next
+PASS picker swipe_right -> prev
+FAIL picker hold -> cancel: nav 0->4 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL picker swipe_down -> cancel: nav 0->4 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+PASS picker swipe_up -> none
+PASS stats tap -> detail
+FAIL stats swipe_up -> toggle tab: nav 0->0 delta 0->0 toggle 0->1 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_down -> toggle tab: nav 0->0 delta 0->0 toggle 0->1 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_right -> face: nav 0->2 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+FAIL stats swipe_left -> edge bump, NO nav: nav 0->0 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->1
+FAIL stats hold -> picker: nav 0->3 delta 0->0 toggle 0->0 confirm 0->0 poke 0->0 detail 0->0 edge 0->0
+test_router: 11 FAILURE(S)
+
+    Start 6: gesture_coalesced
+6/6 Test #6: gesture_coalesced ................Subprocess aborted***Exception:   0.20 sec
+Assertion failed: (bot_gesture_feed(&g, BOT_TOUCH_TICK, 650, 245, 233) == BOT_GESTURE_HOLD), function exact_slop_preserves_stationary_hold, file test_gesture_coalesced.c, line 51.
+PASS tick_displacement_cancels_hold
+PASS up_displacement_is_not_a_tap
+PASS final_sample_can_be_a_swipe
+PASS cancelled_hold_can_finish_as_swipe
+
+
+33% tests passed, 4 tests failed out of 6
+
+Total Test time (real) =   1.88 sec
+
+The following tests FAILED:
+	  2 - gesture (Failed)
+	  3 - frame_parser (Failed)
+	  5 - router (Failed)
+	  6 - gesture_coalesced (Subprocess aborted)
+Errors while running CTest

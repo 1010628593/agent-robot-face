@@ -147,7 +147,7 @@ bool bot_motion_feed(bot_motion_t *m,const bot_motion_sample_t *s) {
     }
     m->last_ms=s->ms;memcpy(m->previous_accel,s->accel,sizeof(m->previous_accel));
     m->view.sampled_ms=s->ms;m->view.available=true;m->view.gyro_calibrated=m->bias_ready;
-    m->view.linear_g=energy;
+    m->view.linear_g=energy;m->view.gyro_dps=wn;
     float c=cosf(m->mount_deg*RAD),sn=sinf(m->mount_deg*RAD);
     m->view.screen_accel[0]=m->rotation_sign*(c*linear[0]+sn*linear[1]);
     m->view.screen_accel[1]=-sn*linear[0]+c*linear[1];

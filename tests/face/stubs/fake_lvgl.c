@@ -16,6 +16,8 @@ lv_obj_t *lv_label_create(lv_obj_t *p){return lv_obj_create(p);}
 void lv_obj_clean(lv_obj_t *p){fake_cleans++;for(unsigned i=0;i<next;i++)if(objects[i].alive && objects[i].parent==p){lv_obj_t *o=&objects[i];if(o->cb){lv_event_t e={LV_EVENT_DELETE,o};o->cb(&e);}o->alive=false;}}
 void lv_obj_remove_style_all(lv_obj_t *p){(void)p;}
 void lv_obj_remove_flag(lv_obj_t *p,int f){(void)p;(void)f;}
+void lv_obj_add_flag(lv_obj_t *p,int f){(void)p;(void)f;}
+const char *lv_label_get_text(lv_obj_t *p){return p->text;}
 void lv_obj_set_size(lv_obj_t *p,int w,int h){p->w=w;p->h=h;}
 void lv_obj_set_pos(lv_obj_t *p,int x,int y){p->x=x;p->y=y;}
 void lv_obj_set_style_bg_color(lv_obj_t *p,lv_color_t c,int s){(void)p;(void)c;(void)s;}

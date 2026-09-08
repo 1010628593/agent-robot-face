@@ -1,0 +1,14 @@
+Test project /tmp/bot-audio-face
+    Start 1: face_motion
+1/1 Test #1: face_motion ......................Subprocess aborted***Exception:   0.28 sec
+/Users/hanxin/Workspace/llm/agent-robot-face/tests/face/test_face_motion.c:32: bot_face_for_state(BOT_STATE_CANCELLED)==BOT_FACE_SLEEP
+Assertion failed: (bot_face_for_state(BOT_STATE_CANCELLED)==BOT_FACE_SLEEP), function mappings, file test_face_motion.c, line 32.
+
+
+0% tests passed, 1 tests failed out of 1
+
+Total Test time (real) =   0.28 sec
+
+The following tests FAILED:
+	  1 - face_motion (Subprocess aborted)
+Errors while running CTest

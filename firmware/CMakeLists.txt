@@ -7,3 +7,5 @@ add_compile_options(-Wno-format)
 project(bot_status)
 
 include(${CMAKE_CURRENT_LIST_DIR}/bsp_dma_buffers.cmake)
+
+include(${CMAKE_CURRENT_LIST_DIR}/audio_dma_clear.cmake)

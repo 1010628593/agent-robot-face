@@ -1,0 +1,11 @@
+agent 0
+mode 1
+audio 3 0 0 0 1
+1000 0
+stats
+1010 0
+audio 3 0 0 0 1
+1080 0
+face
+1100 0
+1200 0

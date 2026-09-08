@@ -1,0 +1,17 @@
+[ 29%] Built target face_motion
+[ 52%] Built target test_face_motion
+[ 52%] Built target dump_face_frames
+[ 58%] Building C object CMakeFiles/test_ui_lifecycle.dir/test_ui_lifecycle.c.o
+[ 70%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c.o
+[ 70%] Building C object CMakeFiles/test_ui_lifecycle.dir/stubs/fake_lvgl.c.o
+[ 76%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face.c.o
+[ 88%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_audio.c.o
+[ 88%] Building C object CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_core/bot_router.c.o
+/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c:5:10: fatal error: 'bot_link.h' file not found
+    5 | #include "bot_link.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+make[2]: *** [CMakeFiles/test_ui_lifecycle.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/ui.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/test_ui_lifecycle.dir/all] Error 2
+make: *** [all] Error 2

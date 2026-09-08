@@ -28,7 +28,10 @@ static lv_obj_t *detail,*detail_arc,*detail_value,*detail_note,*detail_reset,*me
 static lv_obj_t *rings[3],*ring_labels[3];
 static bool concentric;
 static uint8_t depth,dimension,metric,selected_row;
-static bool info_open,pending_enter;
+static bool info_open,pending_enter,options_open,diagnostics_open;
+static lv_obj_t *options,*options_entry,*options_state,*options_diagnostics,*option_modes[3],*option_sensitivity[3];
+static void options_refresh(void);
+bool stats_options_open(void){return options_open;}
 static int slide_direction;
 static uint32_t pending_rev;
 static int layout_key=-1;
@@ -61,7 +64,7 @@ static void slide_x(void *object,int32_t x){lv_obj_set_x(object,x);}
 static void slide(void){if(!content||!slide_direction)return;lv_anim_delete(content,slide_x);lv_anim_t a;lv_anim_init(&a);lv_anim_set_var(&a,content);lv_anim_set_values(&a,slide_direction*18,0);lv_anim_set_duration(&a,140);lv_anim_set_exec_cb(&a,slide_x);lv_anim_set_path_cb(&a,lv_anim_path_ease_out);lv_anim_start(&a);slide_direction=0;}
 static bool request(uint8_t subject,uint8_t period,uint8_t page){bot_model_t *m=&g_ui.model;if(m->usage_pending)return false;if(subject==m->usage_view.subject&&period==m->usage_view.period&&page==m->usage_view.page)return true;return bot_link_usage_request(m,subject,period,page,lv_tick_get());}
 uint8_t stats_depth(void){return depth;}
-void stats_reset(void){depth=0;info_open=false;selected_row=0;pending_enter=false;slide_direction=0;layout_key=-1;}
+void stats_reset(void){depth=0;info_open=false;options_open=false;selected_row=0;pending_enter=false;slide_direction=0;layout_key=-1;}
 static int row_count(const bot_usage_t *u){return metric==0?u->quota_count:metric==1?u->model_count:metric==2?1:2;}
 static void layout(void){int key=depth+4*dimension+8*metric+32*info_open+64*concentric;if(layout_key==key)return;layout_key=key;counters[3]++;lv_obj_invalidate(root);
  for(int i=0;i<4;i++){visible(grid[i],depth==0);visible(grid_icon[i],!dimension);lv_obj_set_x(grid_name[i],0);lv_obj_set_y(grid_name[i],dimension?12:27);lv_obj_set_width(grid_name[i],172);}
@@ -70,7 +73,7 @@ static void layout(void){int key=depth+4*dimension+8*metric+32*info_open+64*conc
  for(int i=0;i<3;i++){visible(direct_tabs[i],depth>0);lv_obj_set_style_text_color(direct_tabs[i],lv_color_hex(metric==i?WHITE:MUTED),0);}
  visible(active_dot,depth>0&&metric<3);if(depth>0&&metric<3)lv_obj_set_x(active_dot,161+metric*78);
  for(int i=0;i<3;i++){visible(rows[i],depth==1&&!concentric&&metric!=2);visible(rings[i],depth==1&&concentric);visible(ring_labels[i],depth==1&&concentric);visible(row_arc[i],metric==0);visible(row_center[i],metric==0);lv_obj_set_pos(row_name[i],metric==0?84:8,metric==0?7:5);lv_obj_set_size(row_name[i],metric==0?177:330,30);lv_obj_set_style_text_align(row_name[i],LV_TEXT_ALIGN_LEFT,0);lv_obj_set_pos(row_value[i],metric==0?266:8,metric==0?7:40);lv_obj_set_size(row_value[i],metric==0?80:330,32);lv_obj_set_style_text_align(row_value[i],metric==0?LV_TEXT_ALIGN_RIGHT:LV_TEXT_ALIGN_LEFT,0);visible(row_note[i],metric==0);}
- visible(scope,depth==0&&dimension);visible(range,depth==1&&metric!=0);visible(category,false);visible(back,depth>0);visible(info,depth==2||(depth==1&&metric==2));visible(detail,depth==2||(depth==1&&metric==2));visible(page_label,depth==1&&metric!=2);visible(subtitle,depth==2);
+ visible(options_entry,depth==0);visible(scope,depth==0&&dimension);visible(range,depth==1&&metric!=0);visible(category,false);visible(back,depth>0);visible(info,depth==2||(depth==1&&metric==2));visible(detail,depth==2||(depth==1&&metric==2));visible(page_label,depth==1&&metric!=2);visible(subtitle,depth==2);
  lv_obj_set_pos(range,174,88);
  visible(detail_arc,depth==2&&metric==0&&!info_open);visible(detail_value,!info_open);visible(detail_note,!info_open&&metric<3);visible(detail_reset,!info_open&&metric==0);
  for(int i=0;i<3;i++)visible(metadata[i],info_open);
@@ -82,6 +85,7 @@ void stats_refresh(void){
  if(g_ui.dev_sim){stats_dev_refresh();return;}
 #endif
  if(!root)return;
+ options_refresh();
  counters[0]++;
  bot_model_t *m=&g_ui.model;
  /* Retain the confirmed content while a request/ACK snapshot is in flight. */
@@ -127,7 +131,37 @@ void stats_refresh(void){
  }
  slide();
 }
-static void deleted(lv_event_t *e){if(lv_event_get_target_obj(e)==root){root=NULL;layout_key=-1;pressed_object=NULL;memset(gauge_cache,0,sizeof(gauge_cache));}}
+static const char *audio_state_name(bot_audio_service_state_t state){
+ static const char *names[]={"已关闭","启动中","校准中","运行","停止中","故障"};
+ return (unsigned)state<6?names[state]:"故障";
+}
+static void options_refresh(void){
+ if(!options)return;
+ visible(options,options_open);
+ if(!options_open)return;
+ const bot_audio_config_t *c=bot_ui_audio_config();const bot_audio_view_t *v=bot_ui_audio_view();char b[240];
+ for(int i=0;i<3;i++){lv_obj_set_style_text_color(option_modes[i],lv_color_hex(i==(int)c->mode?WHITE:MUTED),0);lv_obj_set_style_border_opa(option_modes[i],i==(int)c->mode?190:0,0);lv_obj_set_style_text_color(option_sensitivity[i],lv_color_hex(i==(int)c->sensitivity?WHITE:MUTED),0);lv_obj_set_style_border_opa(option_sensitivity[i],i==(int)c->sensitivity?190:0,0);}
+ snprintf(b,sizeof(b),"%s%s",audio_state_name(v->service_state),v->supported&&!v->verified?" · 待硬件验收":!v->supported?" · 未启用":"");text(options_state,b);
+ visible(options_diagnostics,diagnostics_open);
+ if(diagnostics_open){
+  if(v->available)snprintf(b,sizeof(b),"dBFS %.1f / floor %.1f\nMic %u | age %lu ms | Q %04x\n%s | error %ld",(double)v->rms_dbfs,(double)v->noise_floor_dbfs,v->active_mics,(unsigned long)(lv_tick_get()-v->sampled_ms),v->quality_flags,bot_ui_audio_suppression(),(long)v->last_error);
+  else snprintf(b,sizeof(b),"dBFS N/A / floor N/A\nMic N/A | age N/A\n%s | error %ld",v->service_state==BOT_AUDIO_FAULT?"fault":v->service_state==BOT_AUDIO_DISABLED?"disabled":"no valid sample",(long)v->last_error);
+  text(options_diagnostics,b);
+ }
+}
+static void options_build(void){
+ options_entry=label(root,324,58,68,32,false);text(options_entry,"设置");feedback_style(options_entry);
+ options=box(root,52,52,362,362);lv_obj_set_style_bg_color(options,lv_color_hex(0x121214),0);lv_obj_set_style_bg_opa(options,255,0);lv_obj_set_style_radius(options,24,0);
+ lv_obj_t *o=label(options,28,14,255,32,true);text(o,"设备选项");o=label(options,302,14,36,32,false);text(o,"×");
+ o=label(options,20,56,322,28,false);text(o,"声响应");
+ static const char *mode_names[]={"关","自然","节奏"};static const char *sensitivity_names[]={"低","中","高"};
+ for(int i=0;i<3;i++){option_modes[i]=label(options,25+i*105,89,102,38,true);text(option_modes[i],mode_names[i]);feedback_style(option_modes[i]);option_sensitivity[i]=label(options,25+i*105,160,102,38,false);text(option_sensitivity[i],sensitivity_names[i]);feedback_style(option_sensitivity[i]);}
+ o=label(options,20,128,322,28,false);text(o,"灵敏度");options_state=label(options,12,207,338,30,false);
+ o=label(options,80,245,202,28,false);text(o,"诊断  ›");
+ options_diagnostics=label(options,12,281,338,76,false);lv_obj_set_style_text_font(options_diagnostics,&lv_font_montserrat_20,0);lv_label_set_long_mode(options_diagnostics,LV_LABEL_LONG_WRAP);
+ options_refresh();
+}
+static void deleted(lv_event_t *e){if(lv_event_get_target_obj(e)==root){root=NULL;options=NULL;options_open=false;layout_key=-1;pressed_object=NULL;memset(gauge_cache,0,sizeof(gauge_cache));}}
 void stats_build(lv_obj_t *s){
 #ifdef CONFIG_BOT_DEV_SIM
  if(g_ui.dev_sim){stats_dev_build(s);return;}
@@ -152,7 +186,7 @@ void stats_build(lv_obj_t *s){
  active_dot=box(root,161,431,12,3);lv_obj_set_style_bg_color(active_dot,lv_color_hex(WHITE),0);lv_obj_set_style_bg_opa(active_dot,255,0);lv_obj_set_style_radius(active_dot,4,0);
  range=chip(root,174,88,119,"",&range_text);category=chip(root,126,392,115,"",&category_text);
  back=label(root,75,56,44,34,true);text(back,"<");lv_obj_set_style_text_font(back,&lv_font_montserrat_24,0);feedback_style(back);info=label(root,333,56,45,34,false);text(info,"i");feedback_style(info);
- page_label=label(root,191,361,84,28,false);for(uint32_t i=0;i<lv_obj_get_child_count(content);i++){lv_obj_t *child=lv_obj_get_child(content,i);lv_obj_set_y(child,lv_obj_get_style_y(child,0)-108);}layout_key=-1;stats_refresh();
+ page_label=label(root,191,361,84,28,false);for(uint32_t i=0;i<lv_obj_get_child_count(content);i++){lv_obj_t *child=lv_obj_get_child(content,i);lv_obj_set_y(child,lv_obj_get_style_y(child,0)-108);}layout_key=-1;options_build();stats_refresh();
 }
 void stats_press(int hit,bool pressed){
 #ifdef CONFIG_BOT_DEV_SIM
@@ -164,6 +198,14 @@ void stats_press(int hit,bool pressed){
  if(o){lv_obj_set_style_border_opa(o,190,0);pressed_object=o;}
 }
 int stats_hit(int x,int y){
+ if(options_open){
+  if(x>=346&&x<402&&y>=58&&y<106)return 41;
+  if(x>=77&&x<392&&y>=141&&y<179)return 50+(x-77)/105;
+  if(x>=77&&x<392&&y>=212&&y<250)return 60+(x-77)/105;
+  if(x>=132&&x<334&&y>=290&&y<329)return 42;
+  return -1;
+ }
+ if(depth==0&&x>=324&&x<399&&y>=54&&y<94)return 40;
  if(depth>0&&y>=54&&y<96){if(x>=75&&x<121)return 31;if((depth==2||(depth==1&&metric==2))&&x>=333&&x<378)return 32;}
  if(depth==1&&metric!=0&&y>=88&&y<126&&x>=174&&x<293)return 20;
  if(depth>0&&y>=390&&y<432&&x>=123&&x<357)return 10+(x-123)/78;
@@ -175,6 +217,14 @@ int stats_hit(int x,int y){
  return -1;
 }
 void stats_tap(int hit){bot_model_t *m=&g_ui.model;if(hit<0)return;
+ if(hit==40){options_open=true;options_refresh();return;}
+ if(options_open){bot_audio_config_t c=*bot_ui_audio_config();
+  if(hit==41)options_open=false;
+  else if(hit==42)diagnostics_open=!diagnostics_open;
+  else if(hit>=50&&hit<=52){c.mode=(bot_audio_mode_t)(hit-50);bot_ui_audio_request(c);}
+  else if(hit>=60&&hit<=62){c.sensitivity=(bot_audio_sensitivity_t)(hit-60);bot_ui_audio_request(c);}
+  options_refresh();return;
+ }
  if(hit==31){pending_enter=false;if(info_open)info_open=false;else if(depth)depth--;slide_direction=-1;}
  else if(hit==32&&(depth==2||(depth==1&&metric==2))){info_open=!info_open;slide_direction=info_open?1:-1;}
  else if(hit==20&&depth>0){if(request(m->usage_view.subject,(m->usage_view.period+1)%3,0))selected_row=0;}
@@ -185,6 +235,7 @@ void stats_tap(int hit){bot_model_t *m=&g_ui.model;if(hit<0)return;
  stats_refresh();
 }
 void stats_swipe(bot_gesture_kind_t ev){bot_model_t *m=&g_ui.model;
+ if(options_open)return;
  if(ev==BOT_GESTURE_SWIPE_DOWN){pending_enter=false;if(info_open)info_open=false;else if(depth)depth--;slide_direction=-1;stats_refresh();return;}
  if(ev!=BOT_GESTURE_SWIPE_LEFT&&ev!=BOT_GESTURE_SWIPE_RIGHT)return;
  if(!depth){pending_enter=false;dimension=!dimension;slide_direction=ev==BOT_GESTURE_SWIPE_LEFT?1:-1;stats_refresh();return;}

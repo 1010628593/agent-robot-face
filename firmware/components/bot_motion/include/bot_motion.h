@@ -11,6 +11,7 @@ typedef enum { BOT_REACTION_NONE, BOT_REACTION_ATTENTION, BOT_REACTION_SETTLE, B
 typedef struct {
     uint32_t sampled_ms, event_ms, event_id;
     float rotation_deg, linear_g, reaction_strength;
+    float gyro_dps; /* Bias-corrected angular-speed magnitude. */
     float screen_accel[3]; /* gravity removed, mounted display XY and normal Z, in g */
     bot_reaction_t reaction;
     bool available, orientation_valid, flat, gyro_calibrated;

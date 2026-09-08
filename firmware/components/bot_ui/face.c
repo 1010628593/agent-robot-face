@@ -5,6 +5,7 @@
 #include "bot_face_reaction.h"
 #include "bot_ui.h"
 #include <math.h>
+#include <string.h>
 #ifdef ESP_PLATFORM
 #include "sdkconfig.h"
 #include "driver/usb_serial_jtag.h"
@@ -17,8 +18,13 @@ typedef struct {
     uint32_t revision, generation;
     bool initialized;
 } face_track_t;
+void face_audio_sync(uint32_t now,bool imu_active);
+void face_audio_cancel(void);
+bool face_audio_apply(uint32_t now,bot_face_pose_t *pose);
+static bool imu_active(uint32_t now);
 static face_track_t s_tracks[BOT_AGENT_COUNT];
-static lv_obj_t *s_surface;
+static lv_obj_t *s_surface,*s_audio_feedback;
+const char *face_audio_feedback(uint32_t now);
 static bot_face_geometry_t s_geometry, s_next_geometry;
 static bool s_have_frame;
 static uint32_t s_frame_ms;
@@ -46,8 +52,16 @@ void face_map_input(bool pressed,int16_t x,int16_t y,int16_t *ox,int16_t *oy) {
 }
 static int32_t px(float v) { return (int32_t)lroundf(v); }
 
+static bool imu_active(uint32_t now) {
+    uint32_t age=now-s_environment.event_ms;
+    return environment_fresh(now)&&s_environment.event_id!=s_suppressed_event&&
+        ((s_environment.reaction==BOT_REACTION_DIZZY&&age<BOT_MOTION_DIZZY_MS)||
+         (s_environment.reaction==BOT_REACTION_ATTENTION&&age<600)||
+         (s_environment.reaction==BOT_REACTION_SETTLE&&age<450));
+}
 void face_sync(uint32_t now)
 {
+    face_audio_sync(now,imu_active(now));
     if(g_ui.selected>=BOT_AGENT_COUNT || g_ui.screen!=BOT_SCR_FACE ||
        !bot_face_reaction_allowed(g_ui.agents[g_ui.selected].state) || !environment_fresh(now))
         s_suppressed_event=s_environment.event_id;
@@ -132,7 +146,7 @@ static void face_event(lv_event_t *e)
     if(lv_event_get_code(e)==LV_EVENT_DELETE) {
         if(lv_event_get_target_obj(e)==s_surface) {
             face_suspend(lv_tick_get());
-            s_surface=NULL;
+            s_surface=NULL;s_audio_feedback=NULL;
         }
         return;
     }
@@ -192,12 +206,17 @@ void face_tick(uint32_t now)
         s_surface_agent=g_ui.selected;
         s_have_frame=false;
     }
+    const char *feedback=face_audio_feedback(now);
+    if(s_audio_feedback){
+        if(feedback){if(strcmp(lv_label_get_text(s_audio_feedback),feedback))lv_label_set_text(s_audio_feedback,feedback);lv_obj_remove_flag(s_audio_feedback,LV_OBJ_FLAG_HIDDEN);}
+        else lv_obj_add_flag(s_audio_feedback,LV_OBJ_FLAG_HIDDEN);
+    }
     uint32_t elapsed=now-s_frame_ms;
     if(s_have_frame && elapsed<BOT_FACE_FRAME_MS)return;
     s_frame_ms=now-elapsed%BOT_FACE_FRAME_MS;
     bot_face_pose_t pose;
     bot_face_motion_sample(&s_tracks[s_surface_agent].motion,now,&pose);
-    if(s_environment.event_id!=s_suppressed_event)
+    if(!s_contact && s_environment.event_id!=s_suppressed_event)
         bot_face_reaction_apply(&s_environment,g_ui.agents[s_surface_agent].state,now,&pose);
     float previous_rotation=s_rotation;
     if(!s_contact && environment_fresh(now) && s_environment.orientation_valid) {
@@ -205,8 +224,9 @@ void face_tick(uint32_t now)
         float dt=fminf((float)elapsed/1000,.25f),limit=720*dt;
         s_rotation=bot_motion_wrap(s_rotation+fmaxf(-limit,fminf(limit,delta)));
     }
+    bool audio_active=face_audio_apply(now,&pose);
     bot_face_inertia_apply(&s_inertia,&s_environment,s_rotation,
-        !s_contact && bot_face_reaction_allowed(g_ui.agents[s_surface_agent].state),now,&pose);
+        !s_contact && !audio_active && !imu_active(now) && bot_face_reaction_allowed(g_ui.agents[s_surface_agent].state),now,&pose);
 #if defined(ESP_PLATFORM) && defined(CONFIG_BOT_IMU_DIAGNOSTICS)
     static uint32_t motion_log_ms;
     if(now-motion_log_ms>=250) {
@@ -246,6 +266,13 @@ void face_build(lv_obj_t *screen)
     lv_obj_set_style_bg_opa(s_surface,LV_OPA_COVER,0);
     lv_obj_remove_flag(s_surface,LV_OBJ_FLAG_SCROLLABLE|LV_OBJ_FLAG_CLICKABLE);
     lv_obj_add_event_cb(s_surface,face_event,LV_EVENT_ALL,NULL);
+    s_audio_feedback=lv_label_create(s_surface);
+    lv_obj_set_pos(s_audio_feedback,53,320);lv_obj_set_size(s_audio_feedback,300,32);
+    lv_obj_set_style_text_font(s_audio_feedback,&bot_font_22,0);
+    lv_obj_set_style_text_color(s_audio_feedback,lv_color_hex(0x8d9199),0);
+    lv_obj_set_style_text_align(s_audio_feedback,LV_TEXT_ALIGN_CENTER,0);
+    lv_obj_remove_flag(s_audio_feedback,LV_OBJ_FLAG_CLICKABLE);
+    lv_obj_add_flag(s_audio_feedback,LV_OBJ_FLAG_HIDDEN);
     s_have_frame=false;s_frame_ms=now-BOT_FACE_FRAME_MS;
     face_tick(now);
 }
@@ -271,6 +298,7 @@ void face_pet(bool stroke,uint32_t now)
 }
 void face_suspend(uint32_t now)
 {
+    face_audio_cancel();
     s_inertia=(bot_face_inertia_t){0};
     face_touch(false,233,233,0,now);
     if(s_surface_agent<BOT_AGENT_COUNT)bot_face_motion_clear_touch(&s_tracks[s_surface_agent].motion,now);

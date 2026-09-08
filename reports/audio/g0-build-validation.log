@@ -1,0 +1,46 @@
+Added environment variable ESP_IDF_VERSION = 6.1
+Added environment variable IDF_VERSION = 6.1.0
+Added environment variable IDF_TOOLS_PATH = /Users/hanxin/.espressif/tools
+Added environment variable IDF_COMPONENT_LOCAL_STORAGE_URL = file:///Users/hanxin/.espressif/tools
+Added environment variable IDF_PATH = /Users/hanxin/.espressif/v6.1/esp-idf
+Added environment variable ESP_ROM_ELF_DIR = /Users/hanxin/.espressif/tools/esp-rom-elfs/20241011/
+Added environment variable OPENOCD_SCRIPTS = /Users/hanxin/.espressif/tools/openocd-esp32/v0.12.0-esp32-20260703/openocd-esp32/share/openocd/scripts
+Added environment variable IDF_PYTHON_ENV_PATH = /Users/hanxin/.espressif/tools/python/v6.1/venv
+Added environment variable ESP_CLANG_LIBS_PATH = /Users/hanxin/.espressif/tools/esp-clang-libs/esp-21.1.3_20260408/esp-clang/lib
+Added proper directory to PATH
+Activated virtual environment at /Users/hanxin/.espressif/tools/python/v6.1/venv
+Environment setup complete for the current shell session.
+These changes will be lost when you close this terminal.
+You are now using IDF version 6.1.0.
+[idf-env] IDF        : ESP-IDF v6.1-dirty
+[idf-env] IDF_PATH   : /Users/hanxin/.espressif/v6.1/esp-idf
+[idf-env] cmake      : cmake version 4.4.3
+[idf-env] ninja      : 1.12.1
+[idf-env] python     : /Users/hanxin/.espressif/tools/python/v6.1/venv/bin/python
+{
+  "created_utc": "2026-09-08T04:16:27.435296+00:00",
+  "build": "/Users/hanxin/Workspace/llm/agent-robot-face/build-audio-g0",
+  "port": "/dev/cu.usbmodem21201",
+  "project_version": "231f590-dirty",
+  "idf_revision": "v6.1-dirty",
+  "config_sha256": "dd355f6da98424d5751fe978b5ad8749e0a4f44450769c683e0f9c480440d7ed",
+  "images": [
+    {
+      "offset": "0x0",
+      "path": "/Users/hanxin/Workspace/llm/agent-robot-face/build-audio-g0/bootloader/bootloader.bin",
+      "sha256": "2b9925cb8684006700283ff77c263a1fb3ddb61ccfe14db63973d4d960b5e97c"
+    },
+    {
+      "offset": "0x8000",
+      "path": "/Users/hanxin/Workspace/llm/agent-robot-face/build-audio-g0/partition_table/partition-table.bin",
+      "sha256": "d3e6663d9cbd407623c82f215df58a5c9bd1e353fd937ad519018c06fd9298fb"
+    },
+    {
+      "offset": "0x10000",
+      "path": "/Users/hanxin/Workspace/llm/agent-robot-face/build-audio-g0/bot_status.bin",
+      "sha256": "3d69ef7287b92f26f01fac0dfbb7621fba52d00cdde4c52f8863b302964316ae"
+    }
+  ],
+  "g0_verified": false
+}
+[g0] Build validation only; device was not opened, reset or flashed.

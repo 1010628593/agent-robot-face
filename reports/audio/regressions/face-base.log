@@ -1,0 +1,35 @@
+-- The C compiler identification is AppleClang 21.0.0.21000333
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/bot-audio-face-base
+[ 25%] Building C object CMakeFiles/face_motion.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/face_motion.c.o
+[ 25%] Building C object CMakeFiles/face_motion.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/face_reaction.c.o
+[ 25%] Building C object CMakeFiles/face_motion.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/face_geometry.c.o
+[ 25%] Building C object CMakeFiles/face_motion.dir/tmp/audio-ui-baseline/firmware/components/bot_motion/bot_motion.c.o
+[ 31%] Linking C static library libface_motion.a
+[ 31%] Built target face_motion
+[ 56%] Building C object CMakeFiles/test_face_motion.dir/test_face_motion.c.o
+[ 62%] Building C object CMakeFiles/dump_face_frames.dir/tmp/audio-ui-baseline/tools/dump_face_frames.c.o
+[ 62%] Building C object CMakeFiles/test_ui_lifecycle.dir/stubs/fake_lvgl.c.o
+[ 62%] Building C object CMakeFiles/test_ui_lifecycle.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/ui.c.o
+[ 62%] Building C object CMakeFiles/test_ui_lifecycle.dir/test_ui_lifecycle.c.o
+[ 68%] Building C object CMakeFiles/test_ui_lifecycle.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/face.c.o
+/tmp/audio-ui-baseline/firmware/components/bot_ui/ui.c:5:10: fatal error: 'bot_link.h' file not found
+    5 | #include "bot_link.h"
+      |          ^~~~~~~~~~~~
+1 error generated.
+make[2]: *** [CMakeFiles/test_ui_lifecycle.dir/tmp/audio-ui-baseline/firmware/components/bot_ui/ui.c.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+[ 75%] Building C object CMakeFiles/test_ui_lifecycle.dir/tmp/audio-ui-baseline/firmware/components/bot_core/gesture.c.o
+[ 81%] Linking C executable dump_face_frames
+[ 87%] Linking C executable test_face_motion
+make[1]: *** [CMakeFiles/test_ui_lifecycle.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 87%] Built target dump_face_frames
+[ 87%] Built target test_face_motion
+make: *** [all] Error 2

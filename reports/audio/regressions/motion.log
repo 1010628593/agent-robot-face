@@ -1,0 +1,35 @@
+-- The C compiler identification is AppleClang 21.0.0.21000333
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/bot-audio-motion
+[  9%] Building C object CMakeFiles/bot_motion.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_motion/bot_motion.c.o
+[ 18%] Linking C static library libbot_motion.a
+[ 18%] Built target bot_motion
+[ 27%] Building C object CMakeFiles/test_motion.dir/test_motion.c.o
+[ 45%] Building C object CMakeFiles/test_reaction.dir/test_reaction.c.o
+[ 72%] Building C object CMakeFiles/test_reaction.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_motion.c.o
+[ 72%] Building C object CMakeFiles/test_qmi.dir/test_qmi.c.o
+[ 72%] Building C object CMakeFiles/test_qmi.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_imu/bot_qmi8658.c.o
+[ 72%] Building C object CMakeFiles/test_reaction.dir/Users/hanxin/Workspace/llm/agent-robot-face/firmware/components/bot_ui/face_reaction.c.o
+[ 81%] Linking C executable test_qmi
+[ 90%] Linking C executable test_motion
+[100%] Linking C executable test_reaction
+[100%] Built target test_qmi
+[100%] Built target test_motion
+[100%] Built target test_reaction
+Test project /tmp/bot-audio-motion
+    Start 1: motion
+1/3 Test #1: motion ...........................   Passed    0.29 sec
+    Start 2: qmi
+2/3 Test #2: qmi ..............................   Passed    0.30 sec
+    Start 3: reaction
+3/3 Test #3: reaction .........................   Passed    0.24 sec
+
+100% tests passed out of 3
+
+Total Test time (real) =   0.83 sec

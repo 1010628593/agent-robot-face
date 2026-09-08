@@ -10,6 +10,7 @@
 #define LV_OPA_TRANSP 0
 #define LV_OBJ_FLAG_SCROLLABLE 1
 #define LV_OBJ_FLAG_CLICKABLE 2
+#define LV_OBJ_FLAG_HIDDEN 4
 #define LV_EVENT_DRAW_MAIN 1
 #define LV_EVENT_DELETE 2
 #define LV_EVENT_ALL 255
@@ -42,6 +43,7 @@ void lv_obj_set_style_transform_rotation(lv_obj_t *p,int v,int s);
 int lv_obj_get_style_transform_rotation(lv_obj_t *p,int s);
 void lv_obj_remove_style_all(lv_obj_t *p);
 void lv_obj_remove_flag(lv_obj_t *p,int f);
+void lv_obj_add_flag(lv_obj_t *p,int f);
 void lv_obj_set_size(lv_obj_t *p,int w,int h);
 void lv_obj_set_pos(lv_obj_t *p,int x,int y);
 void lv_obj_set_style_bg_color(lv_obj_t *p,lv_color_t c,int s);
@@ -50,6 +52,7 @@ void lv_obj_set_style_text_font(lv_obj_t *p,const lv_font_t *f,int s);
 void lv_obj_set_style_text_color(lv_obj_t *p,lv_color_t c,int s);
 void lv_obj_set_style_text_align(lv_obj_t *p,int a,int s);
 void lv_label_set_text(lv_obj_t *p,const char *t);
+const char *lv_label_get_text(lv_obj_t *p);
 lv_color_t lv_color_hex(uint32_t c);
 lv_color_t lv_color_mix(lv_color_t a,lv_color_t b,uint8_t mix);
 void lv_scr_load(lv_obj_t *p);

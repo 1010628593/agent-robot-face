@@ -1,0 +1,3 @@
+#pragma once
+#define CONFIG_BOT_AUDIO_ENABLE 1
+#define CONFIG_BOT_AUDIO_G0_VERIFIED 1
